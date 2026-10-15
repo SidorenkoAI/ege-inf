@@ -1,0 +1,68 @@
+{
+ "site": "https://sidorenkoai.github.io/ege-inf/",
+ "cards": [
+  {
+   "numbers": [
+    2
+   ],
+   "title": "№2. Таблица истинности",
+   "url": "tasks/task-2/"
+  },
+  {
+   "numbers": [
+    4
+   ],
+   "title": "№4. Условие Фано",
+   "url": "tasks/task-4/"
+  },
+  {
+   "numbers": [
+    5
+   ],
+   "title": "№5. Алгоритм с двоичной записью",
+   "url": "tasks/task-5/"
+  },
+  {
+   "numbers": [
+    8
+   ],
+   "title": "№8. Комбинаторика слов",
+   "url": "tasks/task-8/"
+  },
+  {
+   "numbers": [
+    13
+   ],
+   "title": "№13. Число программ",
+   "url": "tasks/task-13/"
+  },
+  {
+   "numbers": [
+    15
+   ],
+   "title": "№15. Логика: параметр A",
+   "url": "tasks/task-15/"
+  },
+  {
+   "numbers": [
+    16
+   ],
+   "title": "№16. Рекурсивные функции",
+   "url": "tasks/task-16/"
+  },
+  {
+   "numbers": [
+    17
+   ],
+   "title": "№17. Последовательность из файла",
+   "url": "tasks/task-17/"
+  },
+  {
+   "numbers": [
+    18
+   ],
+   "title": "№18. Робот в таблице",
+   "url": "tasks/task-18/"
+  }
+ ]
+}

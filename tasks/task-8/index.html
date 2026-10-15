@@ -1,0 +1,1479 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Шаблоны и разборы заданий 1–27 ЕГЭ по информатике (2027), основы Python и электронных таблиц">
+      
+      
+      
+        <link rel="canonical" href="https://sidorenkoai.github.io/ege-inf/tasks/task-8/">
+      
+      
+        <link rel="prev" href="../task-5/">
+      
+      
+        <link rel="next" href="../task-13/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/cmit-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>№8. Комбинаторика слов - Подготовка к успешной сдаче ЕГЭ по информатике</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no8" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+<header class="md-header brand-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a class="brand__logo" href="https://cmit22.ru" title="Бийский ЦМИТ Политех">
+      <img class="brand__logo-full" src="../../assets/cmit-logo.png" alt="Бийский ЦМИТ Политех">
+      <img class="brand__logo-icon" src="../../assets/cmit-icon.png" alt="Бийский ЦМИТ Политех">
+    </a>
+    <div class="brand__text">
+      <a class="brand__title" href="../..">Подготовка к успешной сдаче ЕГЭ по информатике</a>
+      <div class="brand__who">
+        <span>Сидоренко Антон Игоревич</span>
+        <a href="tel:+79237156628">8 923 715 6628</a>
+        <a href="https://cmit22.ru">Бийский ЦМИТ Политех</a>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <a class="brand__bot" href="https://t.me/egeSidorenkoBot" title="Тренироваться в боте @egeSidorenkoBot">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+      <span>Тренироваться в боте<br><small>@egeSidorenkoBot</small></span>
+    </a>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../base/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  База Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Номера 1–27
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cheatsheet/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шпаргалка
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Подготовка к успешной сдаче ЕГЭ по информатике" class="md-nav__button md-logo" aria-label="Подготовка к успешной сдаче ЕГЭ по информатике" data-md-component="logo">
+      
+  <img src="../../assets/cmit-icon.png" alt="logo">
+
+    </a>
+    Подготовка к успешной сдаче ЕГЭ по информатике
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    База Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Номера 1–27
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Номера 1–27
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №2. Таблица истинности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №4. Условие Фано
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №5. Алгоритм с двоичной записью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №8. Комбинаторика слов
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №8. Комбинаторика слов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №13. Число программ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №15. Логика: параметр A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №16. Рекурсивные функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №17. Последовательность из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №18. Робот в таблице
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шпаргалка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no8">№8. Комбинаторика: слова из букв<a class="headerlink" href="#no8" title="Permanent link">&para;</a></h1>
+<div class="task-meta">
+<p><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> Python</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg></span> можно вручную</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"/></svg></span> ~4 мин</span>
+<span>1 балл</span>
+<span>без файла</span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Коротко</p>
+<p>Перебрать <strong>все</strong> слова через <code>product(sorted(буквы), repeat=длина)</code>, номер — <code>enumerate(…, 1)</code>,
+условие из задачи — в <code>if</code>.</p>
+</div>
+<h2 id="_1">Как узнать задачу<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>«Все <strong>N-буквенные слова</strong>, составленные из букв …, записаны <strong>в алфавитном порядке</strong> и пронумерованы».</li>
+<li>Спрашивают <strong>номер</strong> слова, <strong>слово по номеру</strong> или <strong>сколько</strong> слов подходит под условие.</li>
+<li>Иногда вместо букв — цифры: «сколько существует пятизначных чисел в восьмеричной системе, у которых…».</li>
+</ul>
+<h2 id="_2">Шаблон<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №8, демоверсия ФИПИ-2027: слова из 5 букв А, К, Ц, Е, Н, Т в алфавитном порядке.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Первое слово с чётным номером, которое не начинается с А, Е, К и содержит хотя бы одну Т.</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Ответ: 3914 НААТЕ</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">alphabet</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="s1">'АКЦЕНТ'</span><span class="p">)</span>                               <span class="c1"># буквы по алфавиту — обязательно!</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">product</span><span class="p">(</span><span class="n">alphabet</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>    <span class="c1"># i — номер слова, с 1</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">w</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>                                        <span class="c1"># кортеж букв -&gt; строка</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">'АЕК'</span> <span class="ow">and</span> <span class="s1">'Т'</span> <span class="ow">in</span> <span class="n">w</span><span class="p">:</span>     <span class="c1"># условие из задачи</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="k">break</span>                                             <span class="c1"># «первое» — дальше не ищем</span>
+</code></pre></div>
+<p><strong>Что менять под задачу:</strong></p>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>В шаблоне</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>буквы</td>
+<td><code>sorted('…')</code> — порядок букв не важен, <code>sorted</code> расставит по алфавиту</td>
+</tr>
+<tr>
+<td>длина слова</td>
+<td><code>repeat=5</code></td>
+</tr>
+<tr>
+<td>условие</td>
+<td>строка <code>if …</code> (как переписывать — в таблице «Разновидности» ниже)</td>
+</tr>
+<tr>
+<td>«первое» слово</td>
+<td><code>break</code> после <code>print</code></td>
+</tr>
+<tr>
+<td>«последнее» слово</td>
+<td>убрать <code>break</code> — останется напечатанным последнее подошедшее</td>
+</tr>
+<tr>
+<td>«сколько слов»</td>
+<td>вместо <code>print</code> и <code>break</code> — счётчик (пример ниже)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">Пример с разбором<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>Задача</strong> (демоверсия ФИПИ-2027, пересказ). Из букв А, К, Ц, Е, Н, Т составляют пятибуквенные слова
+(буквы могут повторяться), все слова записаны в алфавитном порядке и пронумерованы с 1.
+Найдите первое слово с <strong>чётным номером</strong>, которое <strong>не начинается</strong> с букв А, Е, К и <strong>содержит хотя бы одну</strong> Т.
+В ответ запишите номер слова.</p>
+<p><strong>Решение — шаблон выше</strong>, условие переводим дословно:</p>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>В коде</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>чётный номер</td>
+<td><code>i % 2 == 0</code></td>
+</tr>
+<tr>
+<td>не начинается с А, Е, К</td>
+<td><code>w[0] not in 'АЕК'</code></td>
+</tr>
+<tr>
+<td>хотя бы одна Т</td>
+<td><code>'Т' in w</code></td>
+</tr>
+<tr>
+<td>все три условия сразу</td>
+<td><code>and</code> между ними</td>
+</tr>
+</tbody>
+</table>
+<p>Программа печатает <code>3914 НААТЕ</code>. <strong>Ответ: 3914.</strong></p>
+<details class="tip">
+<summary>Проверка вручную: слово — это число</summary>
+<p>Пронумеруйте буквы по алфавиту цифрами с нуля: А = 0, Е = 1, К = 2, Н = 3, Т = 4, Ц = 5.
+Тогда каждое слово — это пятизначное число в шестеричной системе, а <strong>номер слова = значение числа + 1</strong>
+(первое слово ААААА = 0, его номер 1).</p>
+<p>НААТЕ → 3 0 0 4 1₆ = 3·6⁴ + 4·6 + 1 = 3888 + 24 + 1 = 3913, номер 3913 + 1 = <strong>3914</strong>. Сходится.</p>
+<p>Так же быстро ищется «слово по номеру»: номер − 1 → перевести в систему с основанием «число букв»
+→ цифры заменить буквами.</p>
+</details>
+<h2 id="_4">Разновидности<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>На экзамене встречаются две группы: <strong>список слов</strong> (номер, слово по номеру, количество по номерам) и
+<strong>все комбинации</strong> — чаще всего числа в k-ичной системе. Шаблон один, меняются строка <code>product(…)</code> и <code>if</code>.</p>
+<p><strong>Что спрашивают</strong></p>
+<table>
+<thead>
+<tr>
+<th>Вопрос</th>
+<th>Как записать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>номер <strong>первого</strong> слова с условием</td>
+<td><code>print(i)</code> и <code>break</code> — как в шаблоне</td>
+</tr>
+<tr>
+<td>номер <strong>последнего</strong> слова</td>
+<td>без <code>break</code>: последним напечатается нужное (или <code>last = i</code> и <code>print(last)</code> после цикла)</td>
+</tr>
+<tr>
+<td>слово <strong>по номеру</strong> («что стоит на 350-м месте»)</td>
+<td><code>if i == 350: print(w)</code></td>
+</tr>
+<tr>
+<td><strong>сколько</strong> слов / чисел</td>
+<td>счётчик <code>count</code> — вкладка «Количество» ниже</td>
+</tr>
+<tr>
+<td>сколько слов <strong>с чётными (нечётными) номерами</strong> и условием</td>
+<td><code>if i % 2 == 0 and …: count += 1</code> — номер <code>i</code> от <code>enumerate</code>, а счётчик отдельно</td>
+</tr>
+<tr>
+<td>номер в списке, куда попали <strong>не все</strong> слова («коды, где буква В ровно одна, записаны по алфавиту»)</td>
+<td>номер считаем сами: <code>i += 1</code> внутри <code>if</code> отбора, а не <code>enumerate</code> — номер есть только у кодов из списка</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Что за слова</strong></p>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Как записать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>буквы могут повторяться</td>
+<td><code>product(буквы, repeat=длина)</code></td>
+</tr>
+<tr>
+<td>каждая буква — <strong>не больше одного раза</strong></td>
+<td><code>permutations(буквы, длина)</code>; если спрашивают номер — <code>permutations(sorted(буквы), длина)</code></td>
+</tr>
+<tr>
+<td>слова из <strong>перестановок букв слова</strong> (КАПКАН, КАРЕТА)</td>
+<td><code>set(permutations('КАПКАН'))</code> — <code>set</code> убирает одинаковые слова</td>
+</tr>
+<tr>
+<td><strong>k-ичные числа</strong></td>
+<td>цифры системы как буквы: <code>product('01234567', repeat=5)</code> и <strong>обязательно</strong> <code>w[0] != '0'</code></td>
+</tr>
+<tr>
+<td>система <strong>больше 10</strong></td>
+<td>цифры <code>'0123456789AB…'</code>; «цифр больше 9» — буквы <code>A…</code> (вкладка ниже)</td>
+</tr>
+<tr>
+<td>все цифры <strong>разные</strong></td>
+<td><code>permutations('0123456789', 4)</code> или <code>len(set(w)) == len(w)</code></td>
+</tr>
+<tr>
+<td>длина числа <strong>не задана</strong> («сколько чисел с разными цифрами делятся на 5»)</td>
+<td>цикл по длинам: <code>for n in range(1, 11):</code> и внутри <code>permutations('0123456789', n)</code></td>
+</tr>
+<tr>
+<td>цифры идут <strong>по возрастанию</strong> (не по убыванию)</td>
+<td><code>w[0] &lt; w[1] &lt; w[2]</code> (<code>&gt;=</code> — «невозрастание»); строго по возрастанию <strong>любой</strong> длины — <code>combinations(цифры, n)</code></td>
+</tr>
+<tr>
+<td><strong>коды всех длин подряд</strong> (A…Z, потом AA…ZZ, потом AAA…)</td>
+<td>номер = все более короткие коды + код как число + 1 — вкладка «Коды всех длин»</td>
+</tr>
+<tr>
+<td><strong>очень много</strong> вариантов (8–12 цифр в системе 9–16)</td>
+<td>перебор не дождаться — вкладка «Без полного перебора»</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Условия на буквы</strong></p>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Как записать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ровно две буквы А / не меньше двух / от одной до двух</td>
+<td><code>w.count('А') == 2</code> / <code>&gt;= 2</code> / <code>1 &lt;= w.count('А') &lt;= 2</code></td>
+</tr>
+<tr>
+<td>ровно одна гласная (из Э, А)</td>
+<td><code>w.count('Э') + w.count('А') == 1</code></td>
+</tr>
+<tr>
+<td>начинается / заканчивается на …</td>
+<td><code>w[0] == '…'</code>, <code>w[-1] == '…'</code>; «не на А, Е, К» — <code>w[0] not in 'АЕК'</code></td>
+</tr>
+<tr>
+<td>нет сочетания КК</td>
+<td><code>'КК' not in w</code></td>
+</tr>
+<tr>
+<td>нет двух одинаковых букв подряд</td>
+<td><code>all(w[k] != w[k + 1] for k in range(len(w) - 1))</code></td>
+</tr>
+<tr>
+<td>рядом с 3 нет чётной цифры</td>
+<td><code>all('3' + d not in w and d + '3' not in w for d in '024')</code> — вкладка «Числа»</td>
+</tr>
+<tr>
+<td>чётные и нечётные цифры чередуются</td>
+<td><code>all(int(w[k]) % 2 != int(w[k + 1]) % 2 for k in range(len(w) - 1))</code></td>
+</tr>
+<tr>
+<td>гласные и согласные чередуются</td>
+<td><code>all((w[k] in 'ЕАИ') != (w[k + 1] in 'ЕАИ') for k in range(len(w) - 1))</code> — в строке гласные <strong>этой</strong> задачи</td>
+</tr>
+<tr>
+<td>две гласные не стоят рядом</td>
+<td><code>all(not (w[k] in 'УА' and w[k + 1] in 'УА') for k in range(len(w) - 1))</code>; Й — согласная, Ь — ни гласная, ни согласная</td>
+</tr>
+<tr>
+<td>ровно две цифры больше 12, <strong>причём рядом</strong></td>
+<td><code>sum(1 for c in w if c in 'DEF') == 2 and any(w[k] in 'DEF' and w[k + 1] in 'DEF' for k in range(len(w) - 1))</code></td>
+</tr>
+<tr>
+<td>гласных больше, чем согласных (6 букв)</td>
+<td><code>sum(1 for c in w if c in 'ЕОИА') &gt; 3</code></td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:7"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Количество</label><label for="__tabbed_1_2">Перестановки букв слова</label><label for="__tabbed_1_3">Числа в k-ичной системе</label><label for="__tabbed_1_4">Система больше 10</label><label for="__tabbed_1_5">Буква Ё</label><label for="__tabbed_1_6">Коды всех длин</label><label for="__tabbed_1_7">Без полного перебора</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №8, количество: сколько слов из 6 букв можно составить из букв В, Е, С, Н, А,</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># если буква А встречается ровно 2 раза и слово не начинается с Н?</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: 3200</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="s1">'ВЕСНА'</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">6</span><span class="p">):</span>      <span class="c1"># для количества порядок букв не важен</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">w</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">if</span> <span class="n">w</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'А'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'Н'</span><span class="p">:</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №8, перестановки: сколько различных слов можно получить перестановкой букв слова КАПКАН,</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># если две буквы К не стоят рядом?</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Ответ: 120</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">permutations</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">permutations</span><span class="p">(</span><span class="s1">'КАПКАН'</span><span class="p">)):</span>     <span class="c1"># set — убрать одинаковые слова (две К, две А)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">w</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="k">if</span> <span class="s1">'КК'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">w</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># №8, числа: сколько существует шестеричных пятизначных чисел, в которых ровно одна цифра 3</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># и рядом с цифрой 3 не стоит чётная цифра?</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Ответ: 710</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="s1">'012345'</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>         <span class="c1"># цифры шестеричной системы — с нулём!</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">w</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'0'</span> <span class="ow">and</span> <span class="n">w</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'3'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>     <span class="c1"># w[0] != '0' — иначе число не пятизначное</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="s1">'3'</span> <span class="o">+</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">w</span> <span class="ow">and</span> <span class="n">d</span> <span class="o">+</span> <span class="s1">'3'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">w</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="s1">'024'</span><span class="p">):</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># №8, система больше 10: сколько существует шестнадцатеричных четырёхзначных чисел,</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># в которых ровно одна цифра F и не больше двух цифр, больших 9?</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Ответ: 9400</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="s1">'0123456789ABCDEF'</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">w</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">big</span> <span class="o">=</span> <span class="mi">0</span>                                   <span class="c1"># сколько цифр больше 9 (это буквы A…F)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">w</span><span class="p">:</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="s1">'ABCDEF'</span><span class="p">:</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>            <span class="n">big</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'0'</span> <span class="ow">and</span> <span class="n">w</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'F'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">big</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># №8, буква Ё: слова из 4 букв Л, Ё, Ж, Е записаны в алфавитном порядке и пронумерованы с 1.</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Какое слово стоит под номером 100?</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Ответ: ЁЖЕЛ</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">order</span> <span class="o">=</span> <span class="s1">'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">alphabet</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="s1">'ЛЁЖЕ'</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">order</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>    <span class="c1"># просто sorted() поставит Ё первой — неверно!</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">product</span><span class="p">(</span><span class="n">alphabet</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">w</span><span class="p">))</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="k">break</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Перебирать все коды долго и не нужно: сначала идут <strong>все более короткие</strong> коды, а среди кодов той же длины
+номер — это код как число в системе «число букв» плюс 1 (как в «Проверке вручную» выше).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># №8, коды всех длин: выписаны все коды из латинских букв A…Z — сначала однобуквенные по алфавиту,</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># потом двухбуквенные (AA, AB, …, ZZ), потом трёхбуквенные и так далее. Под каким номером код HELLO?</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Ответ: 3752127</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">'HELLO'</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">26</span> <span class="o">**</span> <span class="n">k</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)))</span>    <span class="c1"># все более короткие коды: 26 + 26² + 26³ + 26⁴</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">v</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>                                   <span class="c1"># код — число в 26-ричной системе: A = 0, B = 1, …, Z = 25</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="mi">26</span> <span class="o">+</span> <span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">'A'</span><span class="p">))</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>                              <span class="c1"># + 1 — нумерация с единицы</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><code>product</code> перебирает примерно 3 млн слов в секунду: 60 млн — около 20 секунд, это нормально. Но 15⁸ ≈ 2,5 млрд —
+уже больше 8 минут. Тогда перебираем не сами числа, а <strong>виды цифр</strong> на каждом месте (ноль / буква / остальные)
+и умножаем, сколько цифр каждого вида.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># №8, без полного перебора: сколько существует 16-ричных девятизначных чисел, в записи которых</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># ровно три нуля и не больше двух цифр-букв (A…F)?</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Ответ: 347208120</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># 16⁹ ≈ 69 млрд чисел — перебор не дождаться. Цифры трёх видов: 0, буквы A…F (6 штук), 1…9 (9 штук).</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Перебираем вид цифры на каждом месте (3⁹ = 19 683 варианта) и умножаем, сколько цифр каждого вида.</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="s1">'0LD'</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">9</span><span class="p">):</span>            <span class="c1"># 0 — ноль, L — буква, D — цифра 1…9</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">w</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'0'</span> <span class="ow">and</span> <span class="n">w</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'0'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">w</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'L'</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">6</span> <span class="o">**</span> <span class="n">w</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'L'</span><span class="p">)</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">**</span> <span class="n">w</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'D'</span><span class="p">)</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</code></pre></div>
+<p>Тот же приём — «чётная / нечётная» на месте (11-значные числа, где нечётные цифры не стоят рядом). Совсем
+редкие задачи (подсчёт «подходящих» чисел по соседним парам, числа не больше N с разными цифрами) решаются
+динамикой или счётом по цифрам N — за рамками шаблона.</p>
+</div>
+</div>
+</div>
+<h2 id="_5">Типичные ошибки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Скрытые ловушки — проверены запуском</p>
+<ul>
+<li><strong>Ведущий ноль.</strong> «Пятизначное число» не может начинаться с 0, хотя в условии этого не пишут.
+  Без <code>w[0] != '0'</code> в задаче «8-ричные пятизначные, не начинаются с нечётной…» получается 12180 вместо 9135.</li>
+<li><strong>Буква Ё.</strong> <code>sorted</code> ставит Ё <strong>перед</strong> А: <code>sorted('ЁЛКА')</code> → Ё, А, К, Л — номера слов уедут. Если в
+  словах есть Ё — порядок задаётся алфавитом (вкладка «Буква Ё»). В примере без этого вместо ЁЖЕЛ выходит ЕЖЁЛ.</li>
+<li><strong>Латинские буквы вместо русских.</strong> О и O, А и A, Е и E выглядят одинаково, но <code>'О' == 'O'</code> — это <code>False</code>:
+  программа ничего не найдёт или даст неверный ответ. Буквы условия набирайте в русской раскладке, а не
+  копируйте: на Решу ЕГЭ так набраны условия минимум четырёх задач №8 (латинские M, A, C, T в списке букв,
+  латинская T в «ровно одну букву T»).</li>
+<li><strong>«Не может начинаться с А и заканчиваться Г»</strong> — это <strong>два отдельных</strong> запрета: <code>w[0] != 'А' and w[-1] != 'Г'</code>.
+  Запись <code>not (w[0] == 'А' and w[-1] == 'Г')</code> запрещает только оба сразу: в 4-буквенных словах из А, Б, В, Г
+  получится 240 вместо 144. Так понимают эту формулировку во всех задачах Решу ЕГЭ, где она встречается.</li>
+<li><strong>Номер только у кодов из списка.</strong> «Коды, где В ровно одна, записаны по алфавиту и пронумерованы» — номер
+  есть только у таких кодов; <code>enumerate</code> по всем словам даст номер больше нужного.</li>
+<li><strong><code>count</code> не считает пересекающиеся вхождения:</strong> <code>'АААА'.count('АА')</code> = 2, хотя пар «АА» там три.
+  Для «нет АА» (<code>'АА' not in w</code>) это неважно, а для «ровно одно сочетание АА» — ошибка.</li>
+</ul>
+</div>
+<ul>
+<li><strong>Буквы не отсортированы.</strong> <code>product('АКЦЕНТ', …)</code> перебирает слова не в алфавитном порядке — номера будут
+  неверными. Всегда <code>sorted(…)</code>, когда спрашивают номер. Если в условии <strong>обратный</strong> алфавитный порядок —
+  <code>sorted(…, reverse=True)</code>.</li>
+<li><strong>Номер с нуля.</strong> <code>enumerate(…)</code> без <code>1</code> начинает с 0 — ответ на 1 меньше.</li>
+<li><strong>Номер растёт только у подходящих слов.</strong> Номер — у <strong>каждого</strong> слова списка; поэтому <code>enumerate</code>, а не
+  <code>count += 1</code> внутри <code>if</code>. Номер (<code>i</code>) и количество (<code>count</code>) — разные переменные.</li>
+<li><strong>Сравнение кортежа со строкой.</strong> <code>product</code> выдаёт кортеж <code>('Н', 'А', …)</code>; без <code>''.join(w)</code> проверка
+  <code>'КК' in w</code> всегда ложна.</li>
+<li><strong>Повторы при перестановке слова с одинаковыми буквами</strong> — без <code>set</code> слова посчитаются по несколько раз
+  (КАРЕТА, 4 буквы без АА: 288 вместо 156).</li>
+<li><strong>Чередование через <code>replace</code></strong> (чётные → 0, нечётные → 1) делайте <strong>после</strong> проверки <code>w[0] != '0'</code>, иначе
+  после замены уже не понять, был ли ноль первым.</li>
+<li><strong>Печать всех слов в IDLE.</strong> Перебор 10 млн слов идёт около 2 секунд, но <code>print</code> каждого слова повесит среду.
+  Печатайте только ответ.</li>
+<li>«<strong>Ровно</strong> две» и «<strong>не менее</strong> двух» — разные условия (<code>==</code> и <code>&gt;=</code>).</li>
+</ul>
+<details class="info">
+<summary>Откуда разновидности</summary>
+<p>Задания ЕГЭ прошлых лет и сборников по видеоразборам <a href="https://www.youtube.com/watch?v=pM_2ktQZtqw">Умскул (В. Ланская)</a>
+и <a href="https://www.youtube.com/watch?v=BudEmjf_RvM">EXtremum</a>; все ответы из них перепроверены нашим шаблоном.
+Каталог Решу ЕГЭ, тип 8: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=243">«Слова по порядку»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=379">«…слов с ограничениями»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=395">«…разных последовательностей»</a> — 133 задачи
+(ЕГЭ 2014–2026, демоверсии, СтатГрад). Все решены нашими программами на Python 3.11 и 3.12, ответы совпали
+со всеми 133.</p>
+</details>
+<h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Задачи №8 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №8</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../task-5/" class="md-footer__link md-footer__link--prev" aria-label="Назад: №5. Алгоритм с двоичной записью">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                №5. Алгоритм с двоичной записью
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../task-13/" class="md-footer__link md-footer__link--next" aria-label="Вперед: №13. Число программ">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                №13. Число программ
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
