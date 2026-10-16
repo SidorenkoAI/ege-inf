@@ -1,0 +1,1617 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Шаблоны и разборы заданий 1–27 ЕГЭ по информатике (2027), основы Python и электронных таблиц">
+      
+      
+      
+        <link rel="canonical" href="https://sidorenkoai.github.io/ege-inf/tasks/task-6/">
+      
+      
+        <link rel="prev" href="../task-5/">
+      
+      
+        <link rel="next" href="../task-8/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/cmit-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>№6. Исполнитель Черепаха - Подготовка к успешной сдаче ЕГЭ по информатике</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no6" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+<header class="md-header brand-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a class="brand__logo" href="https://cmit22.ru" title="Бийский ЦМИТ Политех">
+      <img class="brand__logo-full" src="../../assets/cmit-logo.png" alt="Бийский ЦМИТ Политех">
+      <img class="brand__logo-icon" src="../../assets/cmit-icon.png" alt="Бийский ЦМИТ Политех">
+    </a>
+    <div class="brand__text">
+      <a class="brand__title" href="../..">Подготовка к успешной сдаче ЕГЭ по информатике</a>
+      <div class="brand__who">
+        <span>Сидоренко Антон Игоревич</span>
+        <a href="tel:+79237156628">8 923 715 6628</a>
+        <a href="https://cmit22.ru">Бийский ЦМИТ Политех</a>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <a class="brand__bot" href="https://t.me/egeSidorenkoBot" title="Тренироваться в боте @egeSidorenkoBot">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+      <span>Тренироваться в боте<br><small>@egeSidorenkoBot</small></span>
+    </a>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../base/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  База Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Номера 1–27
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cheatsheet/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шпаргалка
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Подготовка к успешной сдаче ЕГЭ по информатике" class="md-nav__button md-logo" aria-label="Подготовка к успешной сдаче ЕГЭ по информатике" data-md-component="logo">
+      
+  <img src="../../assets/cmit-icon.png" alt="logo">
+
+    </a>
+    Подготовка к успешной сдаче ЕГЭ по информатике
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    База Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Номера 1–27
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Номера 1–27
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №2. Таблица истинности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №4. Условие Фано
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №5. Алгоритм с двоичной записью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №6. Исполнитель Черепаха
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №6. Исполнитель Черепаха
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №8. Комбинаторика слов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №12. Машина Тьюринга
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №13. Число программ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №15. Логика: параметр A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №16. Рекурсивные функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №17. Последовательность из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №18. Робот в таблице
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-19-21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №19–21. Теория игр
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шпаргалка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no6">№6. Исполнитель Черепаха<a class="headerlink" href="#no6" title="Permanent link">&para;</a></h1>
+<div class="task-meta">
+<p><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> Python (turtle)</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg></span> можно вручную</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"/></svg></span> ~4 мин</span>
+<span>1 балл</span>
+<span>без файла</span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Коротко</p>
+<p><strong>Шаг 1 — рисунок.</strong> Алгоритм переписываем в <code>turtle</code> почти дословно: <code>forward(n * k)</code>, <code>right(m)</code>,
+<code>for i in range(k)</code>, <code>penup()</code> / <code>pendown()</code>; масштаб <code>k</code> — <strong>только у длин</strong>, в начале <code>left(90)</code> и <code>tracer(0)</code>.
+Поднимаем хвост и ставим точку в каждом узле сетки — видно, где лежат фигуры. <strong>Шаг 2 — подсчёт.</strong> Для каждой
+фигуры — условие «точка внутри» по её координатам; пересечение — <code>and</code>, объединение — <code>or</code>, с границей — <code>&lt;=</code>,
+без границы — <code>&lt;</code>. Площадь и периметр — по длинам сторон.</p>
+</div>
+<h2 id="_1">Как узнать задачу<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>«Исполнитель Черепаха действует на плоскости с декартовой системой координат…», команды <strong>Поднять хвост, Опустить
+  хвост, Вперёд n, Назад n, Направо m, Налево m</strong> и запись <strong>Повтори k [ … ]</strong>. Описание одинаковое из года в год —
+  всё важное после слов «Черепахе был дан для исполнения следующий алгоритм».</li>
+<li>Вопрос: <strong>сколько точек с целочисленными координатами</strong> внутри фигуры, внутри <strong>пересечения</strong> или <strong>объединения</strong>
+  фигур — «включая точки на границах (на линиях)» или «точки на линии учитывать не следует». Реже — площадь, периметр,
+  точки на линиях.</li>
+<li>В демоверсии 2027 и на ЕГЭ 2023–2026 чаще всего — <strong>два прямоугольника</strong> (повороты только на 90°), между ними
+  Черепаха переходит с поднятым хвостом. Наклонные стороны (45°, 60°, 120°) бывают реже — на ЕГЭ-2026 был
+  параллелограмм и ромб.</li>
+</ul>
+<p>Кумира (исполнитель «Черепаха» с сеткой) на ЕГЭ-2027, скорее всего, не будет — решаем в Python модулем <code>turtle</code>
+(он встроен в Python, ставить ничего не нужно).</p>
+<h2 id="_2">Шаблон<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>Шаг 1 — рисунок.</strong> Программа рисует фигуры и ставит красную точку в каждом узле с целыми координатами:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №6, демоверсия ЕГЭ-2027 — шаг 1: переписать алгоритм в turtle и поставить точки в узлах сетки.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Повтори 6 [Вперёд 24 Направо 90 Вперёд 30 Направо 90]  Поднять хвост  Вперёд 2 Направо 90 Вперёд 10 Налево 90</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Опустить хвост  Повтори 6 [Вперёд 75 Направо 90 Вперёд 71 Направо 90]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Программа печатает, где начинается вторая фигура (в шагах Черепахи):</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Ответ: 10 2</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">turtle</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">k</span> <span class="o">=</span> <span class="mi">10</span>                          <span class="c1"># масштаб: 1 шаг Черепахи = 10 пикселей (только для длин!)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">tracer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                       <span class="c1"># рисовать сразу, без анимации</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">screensize</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">)</span>          <span class="c1"># большое поле с полосами прокрутки</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>                        <span class="c1"># в turtle голова смотрит вправо, в условии — вверх</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>              <span class="c1"># Повтори 6 [Вперёд 24 Направо 90 Вперёд 30 Направо 90]</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">forward</span><span class="p">(</span><span class="mi">24</span> <span class="o">*</span> <span class="n">k</span><span class="p">);</span> <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span> <span class="n">forward</span><span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="n">k</span><span class="p">);</span> <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">penup</span><span class="p">()</span>                         <span class="c1"># Поднять хвост</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">forward</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">k</span><span class="p">);</span> <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span> <span class="n">forward</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">k</span><span class="p">);</span> <span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">xcor</span><span class="p">()</span> <span class="o">/</span> <span class="n">k</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">ycor</span><span class="p">()</span> <span class="o">/</span> <span class="n">k</span><span class="p">))</span>   <span class="c1"># где сейчас Черепаха — round, не int!</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">pendown</span><span class="p">()</span>                       <span class="c1"># Опустить хвост</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="n">forward</span><span class="p">(</span><span class="mi">75</span> <span class="o">*</span> <span class="n">k</span><span class="p">);</span> <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">);</span> <span class="n">forward</span><span class="p">(</span><span class="mi">71</span> <span class="o">*</span> <span class="n">k</span><span class="p">);</span> <span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="n">penup</span><span class="p">()</span>                         <span class="c1"># обязательно: иначе Черепаха нарисует путь к каждой точке</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">91</span><span class="p">):</span>        <span class="c1"># сетка: точка в каждом узле с целыми координатами</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">81</span><span class="p">):</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        <span class="n">goto</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">k</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        <span class="n">dot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'red'</span><span class="p">)</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="n">update</span><span class="p">()</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="n">done</span><span class="p">()</span>                          <span class="c1"># окно не закроется само</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>В шаблоне</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Вперёд n / Назад n</td>
+<td><code>forward(n * k)</code> / <code>backward(n * k)</code> — длины умножаем на масштаб</td>
+</tr>
+<tr>
+<td>Направо m / Налево m</td>
+<td><code>right(m)</code> / <code>left(m)</code> — углы <strong>без</strong> <code>k</code></td>
+</tr>
+<tr>
+<td>Повтори k [ … ]</td>
+<td><code>for i in range(k):</code> и команды с отступом; повтор внутри повтора — <code>for j in range(…):</code></td>
+</tr>
+<tr>
+<td>Поднять хвост / Опустить хвост</td>
+<td><code>penup()</code> / <code>pendown()</code></td>
+</tr>
+<tr>
+<td>голова «вдоль положительного направления оси ординат»</td>
+<td><code>left(90)</code> в начале — в <code>turtle</code> голова смотрит вправо</td>
+</tr>
+<tr>
+<td>хвост в начале поднят</td>
+<td>первой командой <code>penup()</code></td>
+</tr>
+<tr>
+<td>фигура не помещается в окно / слишком мелкая</td>
+<td>меньше / больше <code>k</code> (обычно 5–30); <code>screensize</code> даёт полосы прокрутки</td>
+</tr>
+<tr>
+<td>точки не покрывают фигуру</td>
+<td>шире <code>range</code> в сетке (видно по рисунку)</td>
+</tr>
+</tbody>
+</table>
+<p><code>print(round(xcor() / k), round(ycor() / k))</code> — где сейчас Черепаха, в шагах. Удобно перед второй фигурой: сразу
+видно, откуда она начинается.</p>
+<p><strong>Шаг 2 — подсчёт.</strong> Координаты фигур берём с рисунка и считаем точки циклом:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №6, демоверсия ЕГЭ-2027 — шаг 2: сколько точек с целыми координатами в пересечении фигур, включая границу.</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># По рисунку (shablon.py): первая фигура — x от 0 до 30, y от 0 до 24;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># вторая начинается в (10; 2), идёт вверх на 75 и вправо на 71 — x от 10 до 81, y от 2 до 77.</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Ответ: 483</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1001</span><span class="p">):</span>              <span class="c1"># с запасом: дальше всех координат фигур</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1001</span><span class="p">):</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">30</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">24</span>     <span class="c1"># точка в первой фигуре (с границей — &lt;=)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">81</span> <span class="ow">and</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">77</span>    <span class="c1"># точка во второй фигуре</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="k">if</span> <span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">:</span>                           <span class="c1"># пересечение — «и», объединение — «или»</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>В вопросе</th>
+<th>В условии <code>if</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>точка в прямоугольнике x от x1 до x2, y от y1 до y2, <strong>включая границу</strong></td>
+<td><code>x1 &lt;= x &lt;= x2 and y1 &lt;= y &lt;= y2</code></td>
+</tr>
+<tr>
+<td>«точки на линии учитывать не следует»</td>
+<td><code>x1 &lt; x &lt; x2 and y1 &lt; y &lt; y2</code></td>
+</tr>
+<tr>
+<td>пересечение (общая часть)</td>
+<td><code>a and b</code></td>
+</tr>
+<tr>
+<td>объединение (всё вместе)</td>
+<td><code>a or b</code></td>
+</tr>
+<tr>
+<td>внутри первой и вне второй</td>
+<td><code>a and not b</code></td>
+</tr>
+<tr>
+<td>ровно в одной из фигур</td>
+<td><code>a != b</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">Пример с разбором<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>Задача</strong> (демоверсия ЕГЭ-2027, пересказ). Черепаха в начале координат, голова вверх, хвост опущен. Алгоритм:
+<code>Повтори 6 [Вперёд 24 Направо 90 Вперёд 30 Направо 90]</code>, <code>Поднять хвост</code>, <code>Вперёд 2 Направо 90 Вперёд 10 Налево 90</code>,
+<code>Опустить хвост</code>, <code>Повтори 6 [Вперёд 75 Направо 90 Вперёд 71 Направо 90]</code>. Сколько точек с целыми координатами внутри
+пересечения фигур, включая точки на границах?</p>
+<p><strong>Решение.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Код и рисунок</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>первая фигура: вверх 24, вправо 30 (6 повторов — один и тот же прямоугольник)</td>
+<td><code>a = 0 &lt;= x &lt;= 30 and 0 &lt;= y &lt;= 24</code></td>
+</tr>
+<tr>
+<td>переход с поднятым хвостом</td>
+<td>программа печатает <code>10 2</code> — вторая фигура начинается в (10; 2)</td>
+</tr>
+<tr>
+<td>вторая фигура: вверх 75, вправо 71</td>
+<td><code>b = 10 &lt;= x &lt;= 81 and 2 &lt;= y &lt;= 77</code></td>
+</tr>
+<tr>
+<td>пересечение, включая границу</td>
+<td><code>if a and b:</code> и нестрогие <code>&lt;=</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ответ: 483.</strong></p>
+<details class="tip">
+<summary>Проверка формулой: точки по длинам сторон</summary>
+<p>Пересечение — прямоугольник x от 10 до 30, y от 2 до 24. На отрезке длины L точек <strong>L + 1</strong> вместе с концами
+(и <strong>L − 1</strong> без концов): по x 30 − 10 + 1 = 21, по y 24 − 2 + 1 = 23. Точек 21 · 23 = <strong>483</strong>.
+Так — «формулой по рисунку» — решают большинство разборщиков; цикл не ошибается на ±1 и годится для любых фигур
+из прямоугольников.</p>
+</details>
+<h2 id="_4">Разновидности<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Как записать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>два прямоугольника, <strong>пересечение</strong> или <strong>объединение</strong>, с границей или без (демо-2027, ЕГЭ 2023–2026)</td>
+<td>шаблон: <code>a and b</code> / <code>a or b</code>, <code>&lt;=</code> / <code>&lt;</code> (вкладка «Объединение»)</td>
+</tr>
+<tr>
+<td>одна фигура, обведённая несколько раз: <code>Повтори 4 [Вперёд 5 Направо 90 Вперёд 10 Направо 90]</code></td>
+<td>шаблон с одной фигурой: <code>if a:</code>; повторы рисуют те же линии</td>
+</tr>
+<tr>
+<td>в рисовании фигуры <code>Назад</code>, <code>Налево 270</code>, <code>Налево 180</code></td>
+<td>переписать как есть — <code>turtle</code> нарисует сам; <code>Направо 270</code> = <code>Налево 90</code></td>
+</tr>
+<tr>
+<td><strong>площадь</strong> объединения / пересечения (ЕГЭ-2025)</td>
+<td>длины сторон: S₁ + S₂ − S(общей части) (вкладка «Площадь и периметр»); три фигуры — клетки (ниже)</td>
+</tr>
+<tr>
+<td>площадь объединения <strong>трёх</strong> фигур</td>
+<td>считать клетки 1 × 1: клетка покрыта, если её центр <code>(x + 0.5, y + 0.5)</code> внутри хотя бы одной фигуры</td>
+</tr>
+<tr>
+<td><strong>периметр</strong> пересечения (СтатГрад 2025), длина границы объединения (сборник Крылова)</td>
+<td>пересечение — 2 · (ширина + высота); объединение — P₁ + P₂ − P(пересечения)</td>
+</tr>
+<tr>
+<td>наклонные стороны: треугольник <code>Повтори 7 [Вперёд 10 Направо 120]</code>, параллелограмм <code>Направо 45 Повтори 7 [Вперёд 5 Направо 45 Вперёд 10 Направо 135]</code> (ЕГЭ-2026), шестиугольник, ромб</td>
+<td>небольшие — по рисунку глазами при большом <code>k</code>; надёжно — программой (вкладка «Наклонные стороны»)</td>
+</tr>
+<tr>
+<td><strong>площадь</strong> ромба / параллелограмма (ЕГЭ-2026, пересдача), «целая часть» или «ближайшее целое»</td>
+<td>a · b · sin(угла), угол = 180 − поворот (вкладка «Площадь ромба»); <code>int</code> / <code>round</code> — как в вопросе</td>
+</tr>
+<tr>
+<td>площадь равностороннего треугольника</td>
+<td>a² · √3 / 4: <code>a * a * 3 ** 0.5 / 4</code></td>
+</tr>
+<tr>
+<td>фигура из прямоугольных частей — «крест», «уголок» (повороты то направо, то налево)</td>
+<td>разбить на прямоугольники, которые <strong>перекрываются</strong>, и <code>or</code></td>
+</tr>
+<tr>
+<td>внутри одной фигуры и вне другой (квадрат и треугольник, нарисованные подряд)</td>
+<td><code>a and not b</code>; у наклонной фигуры — свои <code>begin_poly</code> / <code>get_poly</code></td>
+</tr>
+<tr>
+<td>наименьшее x, при котором точек (площадь) больше N; в алгоритме <code>Вперёд x</code></td>
+<td>нарисовать при небольшом x, вывести формулу и перебрать x (вкладка «Параметр x»)</td>
+</tr>
+<tr>
+<td>сколько <strong>различных точек на линиях</strong>; где Черепаха побывала <strong>больше одного раза</strong> (пробник СПб 2025 — точки на линиях)</td>
+<td>по рисунку; программой — идти по одному шагу (<code>forward(1)</code>) и запоминать точки</td>
+</tr>
+<tr>
+<td>расстояние между началом и концом пути, «ближайшее целое»</td>
+<td>без масштаба, в конце <code>print(round(distance(0, 0)))</code></td>
+</tr>
+<tr>
+<td>рисунок — «набор непересекающихся прямоугольников»: наибольшая площадь / больше всего точек внутри одного (СтатГрад 2024)</td>
+<td>по рисунку выписать части и их размеры; внутри части a × b — (a − 1)(b − 1) точек</td>
+</tr>
+<tr>
+<td>две Черепахи, вторая «в неизвестной точке»; наибольшее число точек в пересечении</td>
+<td>рассуждение: вторую фигуру можно сдвинуть на дробное число — по такой оси внутри помещается на 1 точку больше</td>
+</tr>
+<tr>
+<td>точки с <strong>положительными</strong> координатами (только в первой четверти)</td>
+<td>к условию <code>and x &gt; 0 and y &gt; 0</code>; здесь <code>left(90)</code> обязателен</td>
+</tr>
+<tr>
+<td>Чертёжник (<code>Вектор (a, b)</code>, <code>Точка (x, y)</code>) — площадь треугольника</td>
+<td>вершины из векторов; площадь <code>abs(a * d - b * c) / 2</code></td>
+</tr>
+<tr>
+<td>дуги окружностей («Дуга r, a, b, α» — сборники)</td>
+<td>точка внутри круга: <code>(x - a) ** 2 + (y - b) ** 2 &lt; r * r</code></td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Объединение</label><label for="__tabbed_1_2">Площадь и периметр</label><label for="__tabbed_1_3">Наклонные стороны</label><label for="__tabbed_1_4">Площадь ромба</label><label for="__tabbed_1_5">Параметр x</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №6: Повтори 2 [Вперёд 12 Направо 90 Вперёд 20 Направо 90]  Поднять хвост  Вперёд 4 Направо 90 Вперёд 15 Налево 90</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Опустить хвост  Повтори 2 [Вперёд 14 Направо 90 Вперёд 9 Направо 90].</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Сколько точек с целыми координатами внутри объединения фигур, включая точки на линиях?</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># По рисунку: первая фигура — x от 0 до 20, y от 0 до 12; вторая — из (15; 4) вверх на 14 и вправо на 9.</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Ответ: 369</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1001</span><span class="p">):</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1001</span><span class="p">):</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">20</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">12</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">b</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">24</span> <span class="ow">and</span> <span class="mi">4</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="mi">18</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="k">if</span> <span class="n">a</span> <span class="ow">or</span> <span class="n">b</span><span class="p">:</span>                            <span class="c1"># объединение — точка хотя бы в одной фигуре</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</code></pre></div>
+<p>Та же задача формулой — по длинам сторон и общей части:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># №6: та же задача, что obedinenie.py, — подсчёт формулой по размерам прямоугольников.</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Сторона длины L: точек L + 1 (с концами) или L − 1 (без концов).</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Ответ: 369</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">12</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>                 <span class="c1"># первая фигура 20 × 12, с границей</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">9</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">14</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>                  <span class="c1"># вторая 9 × 14</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">obshee</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span> <span class="o">-</span> <span class="mi">15</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">12</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># общая часть: x от 15 до 20, y от 4 до 12</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">-</span> <span class="n">obshee</span><span class="p">)</span>                   <span class="c1"># общую часть посчитали дважды — вычесть один раз</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># №6: та же пара фигур, что в obedinenie.py. Площадь объединения, площадь и периметр пересечения,</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># периметр объединения. Площадь и периметр считаем по длинам сторон, а не по точкам.</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Ответ: 326</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Ответ: 40</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># Ответ: 26</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># Ответ: 84</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">s_a</span><span class="p">,</span> <span class="n">p_a</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">20</span> <span class="o">+</span> <span class="mi">12</span><span class="p">)</span>       <span class="c1"># первая фигура 20 × 12</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">s_b</span><span class="p">,</span> <span class="n">p_b</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">*</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">9</span> <span class="o">+</span> <span class="mi">14</span><span class="p">)</span>         <span class="c1"># вторая 9 × 14</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">w</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">-</span> <span class="mi">15</span>                             <span class="c1"># пересечение: x от 15 до 20 — ширина 5</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">h</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">-</span> <span class="mi">4</span>                              <span class="c1"># y от 4 до 12 — высота 8</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">s_a</span> <span class="o">+</span> <span class="n">s_b</span> <span class="o">-</span> <span class="n">w</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>                <span class="c1"># площадь объединения</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>                            <span class="c1"># площадь пересечения</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">w</span> <span class="o">+</span> <span class="n">h</span><span class="p">))</span>                      <span class="c1"># периметр пересечения</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">p_a</span> <span class="o">+</span> <span class="n">p_b</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">w</span> <span class="o">+</span> <span class="n">h</span><span class="p">))</span>          <span class="c1"># периметр объединения (фигуры пересекаются «крестом» или углом)</span>
+</code></pre></div>
+<p>Площадь и периметр считают <strong>отрезки</strong> (длины сторон), а не точки: у квадрата 2 × 2 площадь 4, а точек с границей —
+3 · 3 = 9. Периметр объединения P₁ + P₂ − P(пересечения) верен для пересекающихся прямоугольников (проверено на
+20 000 случайных парах).</p>
+</div>
+<div class="tabbed-block">
+<p>Считать глазами точки у наклонной линии рискованно (см. «Типичные ошибки»). Программа без рисунка: <code>turtle</code>
+записывает вершины фигуры (<code>begin_poly</code> / <code>end_poly</code> / <code>get_poly</code>), а для каждой точки считаем, <strong>с какой стороны</strong>
+от каждой стороны фигуры она лежит:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># №6: Направо 30  Повтори 2 [Вперёд 12 Направо 60 Вперёд 8 Направо 120] — параллелограмм с наклонными сторонами.</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Сколько точек с целыми координатами внутри фигуры? Точки на линии не учитывать.</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Подсчёт без рисунка: turtle запоминает вершины, а программа проверяет каждую точку.</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Ответ: 80</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">turtle</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">tracer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">left</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>                        <span class="c1"># голова — вверх, как в условии</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">begin_poly</span><span class="p">()</span>                    <span class="c1"># с этого места turtle записывает вершины</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">right</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">forward</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span> <span class="n">right</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span> <span class="n">forward</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span> <span class="n">right</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>   <span class="c1"># масштаб не нужен: картинку не смотрим</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">end_poly</span><span class="p">()</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">F</span> <span class="o">=</span> <span class="n">get_poly</span><span class="p">()</span>                  <span class="c1"># вершины по порядку обхода</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">):</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>                  <span class="c1"># для каждой стороны: слева от неё точка (&gt; 0), справа (&lt; 0) или на ней (0)</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        <span class="k">for</span> <span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">F</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>            <span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x1</span><span class="p">),</span> <span class="mi">6</span><span class="p">))</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>        <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">min</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>        <span class="c1"># по одну сторону от всех сторон — внутри</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>            <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>                          <span class="c1"># с границей: max(s) &lt;= 0 or min(s) &gt;= 0</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</code></pre></div>
+<p>Годится для <strong>выпуклой</strong> фигуры — Черепаха всё время поворачивает в одну сторону (треугольник, ромб,
+параллелограмм, шестиугольник). Если повороты то направо, то налево («крест», «звезда», «уголок») — фигуру
+разбить на выпуклые части или считать по рисунку. Обходит фигуру несколько раз (<code>Повтори 7</code> у треугольника) —
+не страшно: стороны повторяются, знаки те же.</p>
+<p>У разборщиков встречается и другой автоподсчёт — заливка (<code>begin_fill</code>) и <code>getcanvas().find_overlapping(…) == (5,)</code>. Мы его не берём: 5 — внутренний номер объекта на холсте (меняется от рисунка), нужен большой масштаб и ровно один обход фигуры.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># №6 (как на ЕГЭ-2026): Повтори 3 [Вперёд 21 Направо 120 Вперёд 21 Направо 60].</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># Определите площадь фигуры; в ответе — целая часть.</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Фигура — ромб со стороной 21: после «Направо 120» угол между сторонами 180 − 120 = 60°.</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Ответ: 381</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">radians</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mi">21</span> <span class="o">*</span> <span class="mi">21</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="mi">60</span><span class="p">))))</span>      <span class="c1"># площадь параллелограмма: a · b · sin(угла между сторонами)</span>
+</code></pre></div>
+<p>Чтобы понять, что это ромб, — нарисовать (шаг 1). Площадь «по клеткам» здесь не посчитать: стороны наклонные.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># №6: Повтори 2 [Вперёд x Направо 90 Вперёд 3*x Направо 90] (x — натуральное число).</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># При каком наименьшем x внутри фигуры больше 500 точек с целыми координатами (точки на линии не считать)?</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Фигура — прямоугольник x × 3x: внутри (x − 1) · (3x − 1) точек.</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Ответ: 14</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">):</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="k">break</span>
+</code></pre></div>
+<p>Нарисуйте фигуру при каком-нибудь x (например, 3) — станет видно, какие у неё стороны. Формулу проверьте:
+при x = 3 программа шаблона должна дать столько же точек, сколько формула.</p>
+</div>
+</div>
+</div>
+<details class="info">
+<summary>Подробнее: решение вручную, на бумаге</summary>
+<p>Так советует большинство разборщиков (и для экзамена, и для проверки программы):</p>
+<ol>
+<li>Нарисовать оси и пройти алгоритм карандашом: «вверх 24, направо — вправо 30, направо — вниз…». Если все
+   повороты в повторе направо по 90° — получится прямоугольник со сторонами из повтора.</li>
+<li>Отметить, где Черепаха стоит после перехода с поднятым хвостом и куда смотрит голова. При <strong>нечётном</strong> числе
+   повторов <code>[Вперёд a Направо 90 Вперёд b Направо 90]</code> она заканчивает в противоположном углу и смотрит вниз —
+   вторая фигура окажется в другом месте рисунка. На число точек это не влияет (прямоугольник симметричен —
+   картинка просто повёрнута на 180°), но рисовать нужно правильно.</li>
+<li>Найти общую часть: от большего из левых краёв до меньшего из правых (так же по y).</li>
+<li>Точек на стороне длины L: <strong>L + 1</strong> с концами, <strong>L − 1</strong> без концов. Прямоугольник a × b: (a + 1)(b + 1)
+   с границей, (a − 1)(b − 1) без. Объединение: точки первой + точки второй − точки общей части.</li>
+<li>Сомневаетесь — мини-пример: квадраты 2 × 2, посчитать точки пальцем.</li>
+</ol>
+</details>
+<h2 id="_5">Типичные ошибки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Скрытые ловушки — проверены запуском</p>
+<ul>
+<li><strong><code>int</code> вместо <code>round</code> у координат.</strong> Координаты Черепахи — дробные: после поворотов <code>ycor()</code> бывает
+  <code>8.999999999999998</code>, и <code>int(ycor() / k)</code> даёт 8 вместо 9. На 3000 случайных путях с поворотами на 90° так
+  ошибается каждая третья координата (Python 3.11 и 3.12). Только <code>round(…)</code>.</li>
+<li><strong>Без <code>round(…, 6)</code> в подсчёте по вершинам</strong> точки на линии становятся то «внутри», то «снаружи»: параллелограмм
+  ЕГЭ-2026 (Решу ЕГЭ 57413) — 40 вместо 27, даже прямоугольник 5 × 10 — 48 вместо 66.</li>
+<li><strong>Невыпуклая фигура в подсчёте по вершинам</strong> — ответ неверный без ошибки: «звезда» (Решу 58242) — 27 вместо 99.
+  Проверяйте по алгоритму: все повороты в одну сторону?</li>
+<li><strong>Точки у самой наклонной линии.</strong> В Решу 47390 точка (3; −6) лежит <strong>ровно</strong> на стороне под 60° (проверено
+  точным расчётом с √3), а в Решу 58245 точка (−8; 5) — в 0,01 от линии: на рисунке это неразличимо даже при
+  <code>k = 100</code>. Наклонные стороны — считать программой, рисунок — для проверки.</li>
+<li><strong><code>range</code> в подсчёте меньше фигуры</strong> — ответ меньше, ошибки нет. В Решу 83136 вторая фигура доходит до 398:
+  с <code>range(-100, 101)</code> ответ неверный. Берите с запасом: <code>range(-1000, 1001)</code> (≈ 1 с).</li>
+<li><strong>Объединение без границы, фигуры касаются стороной.</strong> <code>a or b</code> со строгими <code>&lt;</code> не считает точки на общей
+  стороне, а они внутри объединения: прямоугольники 5 × 4 и 4 × 4 рядом — 21 вместо 24. Если фигуры
+  пересекаются (так в задачах ЕГЭ), <code>a or b</code> верно — Решу 59829 (объединение без границы) сошлась.</li>
+<li><strong><code>left(90)</code> и число повторов на ответ не влияют</strong> (вопреки частому совету): поворот всей картинки на 90°
+  переводит целые точки в целые — у треугольника, параллелограмма 45° и девятиугольника 40° ответы с <code>left(90)</code> и
+  без совпали. Но рисунок и координаты будут другими — <code>left(90)</code> пишем всегда, а для «положительных координат»
+  он обязателен.</li>
+</ul>
+</div>
+<ul>
+<li><strong>Перепутали пересечение и объединение</strong> — по словам разборщиков, самая частая ошибка на ЕГЭ. Пересечение — только
+  общая часть (<code>and</code>), объединение — всё вместе (<code>or</code>).</li>
+<li><strong>Граница:</strong> «включая точки на линиях» — <code>&lt;=</code>, «не учитывать» — <code>&lt;</code>. Вручную: L + 1 против L − 1.</li>
+<li><strong>Площадь — не число точек.</strong> Площадь и периметр считают по длинам сторон.</li>
+<li><strong>Масштаб у угла</strong> (<code>right(90 * k)</code>) или <strong>забыли <code>k</code> у одной длины</strong> — фигура разваливается; сверяйте рисунок
+  с алгоритмом.</li>
+<li><strong>Нет <code>penup()</code> перед сеткой</strong> — Черепаха тянет линию к каждой точке. <strong>Нет <code>done()</code></strong> — окно сразу закрывается.
+  <strong>Нет <code>tracer(0)</code></strong> — тысячи точек рисуются минутами.</li>
+<li><strong>Направо ↔ налево перепутали</strong> при переписывании — фигуры «разъезжаются». Пишите команды полностью
+  (<code>forward</code>, <code>right</code>), а не <code>fd</code>, <code>rt</code>: так легче сверить с условием.</li>
+<li><strong><code>Налево 180</code> и <code>Назад</code>:</strong> после разворота «Назад 10» ведёт <strong>в прежнюю сторону</strong> — Черепаха продолжает линию.</li>
+<li><strong>Хвост поднят в начале</strong> (бывает в условии) — первая часть пути ничего не рисует: <code>penup()</code> первой строкой.</li>
+</ul>
+<details class="info">
+<summary>Откуда разновидности</summary>
+<p>Демоверсии ФИПИ 2023–2027; сборник С. С. Крылова (2026) — видеоразбор
+<a href="https://www.youtube.com/watch?v=F0JT58aIYzI">Умскул, «Все типы задания 6»</a> (ссылка преподавателя) и
+<a href="https://www.youtube.com/watch?v=1OyRIAn39f8">Умскул, «Все типы №6 из сборника Крылова»</a>;
+<a href="https://www.youtube.com/watch?v=fVqSYxaC9Cs">Умскул, «Самая сложная черепаха»</a> (ЕГКР) и
+<a href="https://www.youtube.com/watch?v=x3zC3uTHq7w">«Самый лёгкий способ»</a> (автоподсчёт по холсту);
+<a href="https://www.youtube.com/watch?v=QvhkGVO1QJw">Дядя Саша, «Все прототипы №6 2027»</a>,
+<a href="https://www.youtube.com/watch?v=6w4xTm9fR2A">«Все №6 с нуля»</a> и
+<a href="https://www.youtube.com/watch?v=5TiuoY0jakg">«Код сам считает точки»</a>;
+<a href="https://www.youtube.com/watch?v=0LFXw_xYJgg">Иванформатика, демоверсия 2027</a>;
+<a href="https://www.youtube.com/watch?v=EZv2ByFWyf0">Сеня Информатик, «Все типы №6 2027»</a>;
+<a href="https://www.youtube.com/watch?v=08LleddhfmI">Алексей Ковальчук</a>;
+<a href="https://www.youtube.com/watch?v=HJCfsD_eJoo">Вадим Смирнов, «Все способы: Кумир, Python, на листке»</a>;
+<a href="https://www.youtube.com/watch?v=2ctnTAA8p3A">Информатик Родя</a>;
+<a href="https://www.youtube.com/watch?v=sYS0f6XRzhU">Информатик БУ, демоверсия 2026</a>;
+<a href="https://www.youtube.com/watch?v=hgCc4jrAWbs">Информатика от блондинки</a>;
+<a href="https://www.youtube.com/watch?v=qLikuHpsRnI">Вова Информатик, «Черепаха на Python»</a>;
+<a href="https://www.youtube.com/watch?v=VidMhu_zmc4">People May Learn</a>;
+<a href="https://www.youtube.com/watch?v=RLuH89eXYQ4">Leviafan</a>.
+Ответы из видео перепроверены своим кодом на Python 3.11 и 3.12.
+Каталог Решу ЕГЭ, тип 6: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=316">«Задания для подготовки»</a> —
+54 задачи (ЕГЭ 2023–2026, демоверсии, СтатГрад, пробники); все решены своим кодом, ответы совпали со всеми 54.</p>
+</details>
+<h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Задачи №6 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №6</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../task-5/" class="md-footer__link md-footer__link--prev" aria-label="Назад: №5. Алгоритм с двоичной записью">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                №5. Алгоритм с двоичной записью
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../task-8/" class="md-footer__link md-footer__link--next" aria-label="Вперед: №8. Комбинаторика слов">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                №8. Комбинаторика слов
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
