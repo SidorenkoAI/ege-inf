@@ -1,0 +1,1633 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Шаблоны и разборы заданий 1–27 ЕГЭ по информатике (2027), основы Python и электронных таблиц">
+      
+      
+      
+        <link rel="canonical" href="https://sidorenkoai.github.io/ege-inf/tasks/task-12/">
+      
+      
+        <link rel="prev" href="../task-8/">
+      
+      
+        <link rel="next" href="../task-13/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/cmit-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>№12. Машина Тьюринга - Подготовка к успешной сдаче ЕГЭ по информатике</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no12" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+<header class="md-header brand-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a class="brand__logo" href="https://cmit22.ru" title="Бийский ЦМИТ Политех">
+      <img class="brand__logo-full" src="../../assets/cmit-logo.png" alt="Бийский ЦМИТ Политех">
+      <img class="brand__logo-icon" src="../../assets/cmit-icon.png" alt="Бийский ЦМИТ Политех">
+    </a>
+    <div class="brand__text">
+      <a class="brand__title" href="../..">Подготовка к успешной сдаче ЕГЭ по информатике</a>
+      <div class="brand__who">
+        <span>Сидоренко Антон Игоревич</span>
+        <a href="tel:+79237156628">8 923 715 6628</a>
+        <a href="https://cmit22.ru">Бийский ЦМИТ Политех</a>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <a class="brand__bot" href="https://t.me/egeSidorenkoBot" title="Тренироваться в боте @egeSidorenkoBot">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+      <span>Тренироваться в боте<br><small>@egeSidorenkoBot</small></span>
+    </a>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../base/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  База Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Номера 1–27
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cheatsheet/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шпаргалка
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Подготовка к успешной сдаче ЕГЭ по информатике" class="md-nav__button md-logo" aria-label="Подготовка к успешной сдаче ЕГЭ по информатике" data-md-component="logo">
+      
+  <img src="../../assets/cmit-icon.png" alt="logo">
+
+    </a>
+    Подготовка к успешной сдаче ЕГЭ по информатике
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    База Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Номера 1–27
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Номера 1–27
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №2. Таблица истинности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №4. Условие Фано
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №5. Алгоритм с двоичной записью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №8. Комбинаторика слов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №12. Машина Тьюринга
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №12. Машина Тьюринга
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №13. Число программ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №15. Логика: параметр A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №16. Рекурсивные функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №17. Последовательность из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №18. Робот в таблице
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-19-21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №19–21. Теория игр
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шпаргалка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no12">№12. Машина Тьюринга (исполнитель МТ)<a class="headerlink" href="#no12" title="Permanent link">&para;</a></h1>
+<div class="task-meta">
+<p><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> Python</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg></span> можно вручную</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"/></svg></span> ~6 мин</span>
+<span>1 балл</span>
+<span>без файла</span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Коротко</p>
+<p>Таблицу программы — в словарь <code>prog</code> (клетки <strong>как в условии</strong>, пустой символ λ пишем <code>_</code>), ленту — в список
+с запасом <code>_</code> по краям; цикл: взять команду → <strong>записать</strong> символ → <code>S</code> — стоп, <code>L</code>/<code>R</code> — сдвиг. «Результат
+работы» — один прогон; «какое исходное число» — перебор чисел; «лента неизвестна, наибольшее/наименьшее» —
+понять, что делает программа, и перебрать <strong>строение</strong> ленты.</p>
+</div>
+<h2 id="_1">Как узнать задачу<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>«Исполнитель МТ представляет собой читающую и записывающую головку…» — почти две страницы описания, таблица
+  программы со столбцами λ, 0, 1 и строками q0, q1, …</li>
+<li>Всё, что меняется от варианта к варианту, — <strong>после слов «Выполните задание»</strong>: что записано на ленте (двоичная
+  запись числа или «последовательность из 1000 символов»), где головка, таблица и вопрос. Описание до этих слов
+  одинаковое — его достаточно понять один раз.</li>
+<li>Команда в клетке — «<strong>что записать, куда сдвинуться, новое состояние</strong>»: <code>L</code> — влево, <code>R</code> — вправо, <code>N</code> — остаться
+  на месте, <code>S</code> — остановиться (символ при этом <strong>записывается</strong>). Начинает головка всегда в состоянии q0.</li>
+</ul>
+<p>До 2026 года №12 был «Исполнитель Редактор» (команды «заменить» и «нашлось») — его разборы сюда не подходят.</p>
+<h2 id="_2">Шаблон<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №12: на ленте — двоичная запись числа 2030, головка в ближайшей клетке справа от неё.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Программа идёт влево, меняет 0 ↔ 1, на пустой клетке слева пишет 1 и останавливается. Число на ленте после работы?</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Ответ: 2065</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">prog</span> <span class="o">=</span> <span class="p">{</span>                                       <span class="c1"># таблица: состояние → {символ: 'запись, сдвиг, новое состояние'}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="s1">'q0'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'_, L, q1'</span><span class="p">},</span>                   <span class="c1"># пустой символ λ пишем как '_'</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="s1">'q1'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'1, S, q1'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">:</span> <span class="s1">'1, L, q1'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">:</span> <span class="s1">'0, L, q1'</span><span class="p">},</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">mt</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>                                     <span class="c1"># s — что записано на ленте; вернёт ленту после работы</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">lenta</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>  <span class="c1"># пустые клетки по краям — с запасом</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>                            <span class="c1"># головка: ближайшая клетка справа (слева — i = 9)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">q</span> <span class="o">=</span> <span class="s1">'q0'</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="n">z</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">prog</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span>   <span class="c1"># команда на пересечении состояния и символа</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        <span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>                           <span class="c1"># сначала записать символ</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">:</span>                           <span class="c1"># S — стоп (символ уже записан)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>            <span class="k">break</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'L'</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'R'</span><span class="p">:</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>                             <span class="c1"># N — головка остаётся на месте</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lenta</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)</span>           <span class="c1"># лента без пустых клеток по краям</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">mt</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="mi">2030</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]),</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Что менять под задачу:</strong></p>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>В шаблоне</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>таблица программы</td>
+<td><code>prog</code>: строка таблицы — <code>'q1': {…}</code>, клетка — <code>'символ': 'запись, сдвиг, состояние'</code> <strong>как в условии</strong>, λ → <code>_</code>; пустые клетки таблицы не пишем</td>
+</tr>
+<tr>
+<td>«двоичная запись числа 2025 без ведущих нулей»</td>
+<td><code>bin(2025)[2:]</code> — <code>[2:]</code> убирает <code>0b</code></td>
+</tr>
+<tr>
+<td>«300 единиц, затем 200 двоек, затем …»</td>
+<td><code>'1' * 300 + '2' * 200 + …</code> (вкладка «Лента из блоков»)</td>
+</tr>
+<tr>
+<td>головка «в ближайшей ячейке справа от последовательности»</td>
+<td><code>i = 10 + len(s)</code></td>
+</tr>
+<tr>
+<td>головка «в ближайшей ячейке слева»</td>
+<td><code>i = 9</code>; на первом символе — <code>i = 10</code>, на последнем — <code>i = 9 + len(s)</code></td>
+</tr>
+<tr>
+<td>«запишите число в десятичной системе»</td>
+<td><code>int(mt(s), 2)</code></td>
+</tr>
+<tr>
+<td>«сколько нулей», «сумма цифр»</td>
+<td><code>mt(s).count('0')</code>, <code>sum(map(int, mt(s)))</code></td>
+</tr>
+<tr>
+<td>«какое наименьшее (наибольшее) число было на ленте»</td>
+<td>перебор исходных чисел (вкладка «Перебор чисел»)</td>
+</tr>
+<tr>
+<td>«1000 символов в неизвестном порядке, … наибольшее возможное»</td>
+<td>перебор строения ленты (вкладка «Лента неизвестна»)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">Пример с разбором<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>Задача</strong> (демоверсия ЕГЭ-2027, пересказ). На ленте — двоичная запись числа 2025 без ведущих нулей, по краям
+пустые клетки λ, головка — в ближайшей клетке справа от записи, состояние q0. Программа:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>λ</th>
+<th>0</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>q0</td>
+<td>λ, L, q1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>q1</td>
+<td>1, L, q2</td>
+<td>0, L, q1</td>
+<td>1, L, q1</td>
+</tr>
+<tr>
+<td>q2</td>
+<td>λ, S, q2</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Определите результат работы программы — число на ленте в десятичной системе.</p>
+<p><strong>Решение.</strong> Переписываем таблицу и данные в шаблон:</p>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Код</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>строка q1: на λ — <code>1, L, q2</code>, на 0 — <code>0, L, q1</code>, на 1 — <code>1, L, q1</code></td>
+<td><code>'q1': {'_': '1, L, q2', '0': '0, L, q1', '1': '1, L, q1'}</code></td>
+</tr>
+<tr>
+<td>на ленте — двоичная запись 2025</td>
+<td><code>mt(bin(2025)[2:])</code></td>
+</tr>
+<tr>
+<td>головка справа от записи</td>
+<td><code>i = 10 + len(s)</code></td>
+</tr>
+<tr>
+<td>ответ — в десятичной системе</td>
+<td><code>int(…, 2)</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №12, демоверсия ЕГЭ-2027: на ленте — двоичная запись числа 2025, головка в ближайшей клетке справа.</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># Определите результат работы программы — число на ленте в десятичной системе.</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: 111111101001</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Ответ: 4073</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">prog</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="s1">'q0'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'_, L, q1'</span><span class="p">},</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="s1">'q1'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'1, L, q2'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">:</span> <span class="s1">'0, L, q1'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">:</span> <span class="s1">'1, L, q1'</span><span class="p">},</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="s1">'q2'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'_, S, q2'</span><span class="p">},</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">mt</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="n">lenta</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>                            <span class="c1"># головка справа от записи</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="n">q</span> <span class="o">=</span> <span class="s1">'q0'</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="n">z</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">prog</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">:</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>            <span class="k">break</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'L'</span><span class="p">:</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'R'</span><span class="p">:</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lenta</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="nb">print</span><span class="p">(</span><span class="n">mt</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="mi">2025</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]))</span>                       <span class="c1"># 111111101001 — слева приписана единица</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">mt</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="mi">2025</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]),</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Ответ: 4073.</strong></p>
+<details class="tip">
+<summary>Проверка вручную: что делает каждое состояние</summary>
+<p>q0 — один шаг с пустой клетки влево, на последнюю цифру. q1 едет влево по цифрам и <strong>ничего не меняет</strong>
+(0 → 0, 1 → 1), а на пустой клетке слева пишет 1 и переходит в q2. q2 сразу останавливается. Значит, программа
+приписывает <strong>слева единицу</strong>: в записи 2025 одиннадцать цифр, и число становится 2025 + 2¹¹ = 2025 + 2048 = 4073.
+Так — «словами по строкам таблицы» — решают вручную; программа — проверка (и выручает, когда таблица большая).</p>
+</details>
+<h2 id="_4">Разновидности<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Как записать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>«определите результат работы программы», на ленте двоичная запись числа (демо-2027, ЕГЭ-2026, ЕГКР, апробация)</td>
+<td>шаблон: <code>int(mt(bin(N)[2:]), 2)</code></td>
+</tr>
+<tr>
+<td>программа дописывает цифры справа / слева, меняет одну цифру, прибавляет 1, идёт «туда и обратно»</td>
+<td>шаблон — таблица сама всё сделает; запас пустых клеток <strong>10</strong> (см. «Типичные ошибки»)</td>
+</tr>
+<tr>
+<td>лента «блоками»: 323 двойки, затем 115 нулей, затем 562 единицы; вопрос — сумма или количество цифр</td>
+<td>лента из блоков + <code>sum</code>/<code>count</code> (вкладка)</td>
+</tr>
+<tr>
+<td>«в произвольном порядке», но количества цифр известны и в вопросе <strong>нет</strong> «наибольшее/наименьшее»</td>
+<td>ответ от порядка не зависит — собрать ленту в любом порядке (проверка — переставить блоки)</td>
+</tr>
+<tr>
+<td>«наименьшее число, которое могло быть на ленте, если получилось 240»</td>
+<td>перебор исходных чисел (вкладка); у исходного числа нет ведущих нулей, у результата — могут быть</td>
+</tr>
+<tr>
+<td>«наибольшее число, не превышающее 903, которое может получиться»</td>
+<td>тот же перебор: <code>max</code> из результатов ≤ 903</td>
+</tr>
+<tr>
+<td>«1000 символов (0 и 1), после работы осталось 343 нуля — наибольшее (наименьшее) число нулей (единиц) в исходной»</td>
+<td>понять, где программа останавливается, и перебрать строение ленты (вкладка «Лента неизвестна»)</td>
+</tr>
+<tr>
+<td>«сколько различных значений может принимать число нулей», «наибольшее число заменённых символов»</td>
+<td>то же; закономерность (N − K + 1) видна на уменьшенной копии</td>
+</tr>
+<tr>
+<td>программа проходит <strong>всю</strong> ленту без остановки, цифры меняются по кругу (0 → 1 → 2 → 0, 3 ↔ 0, 5 и 7 → 1) + условие на количества или сумму после работы</td>
+<td>перебор количеств цифр (вкладка «Перебор количеств»)</td>
+</tr>
+<tr>
+<td>«после работы все соседние символы различны» (СтатГрад)</td>
+<td>на ленте чередование 1010…; при нечётной длине — два варианта, взять лучший</td>
+</tr>
+<tr>
+<td>«S — сумма цифр после работы, шестизначная; наименьшее S + N»</td>
+<td>перебор количеств цифр с запасом</td>
+</tr>
+<tr>
+<td>«каждая вторая единица становится нулём» (пара состояний q2 ⇄ q3)</td>
+<td>шаблон; вручную — 103 единицы → 51 нуль (<code>103 // 2</code>)</td>
+</tr>
+<tr>
+<td>команда <code>N</code> (без сдвига): в одной клетке 2 → 1 → 3</td>
+<td>шаблон: сдвига нет — следующая команда в той же клетке</td>
+</tr>
+<tr>
+<td>программа пишет λ (стирает символы)</td>
+<td>шаблон; лента становится короче — считать по <code>mt(s)</code></td>
+</tr>
+<tr>
+<td>алфавит не 0 и 1 (2, 3, 7; 4, 6, 8; 5, 7, 9; 1, 3, 4)</td>
+<td>шаблон: ключи словаря — эти символы</td>
+</tr>
+<tr>
+<td>головка «на неизвестном расстоянии справа»</td>
+<td>q0 идёт по пустым клеткам: <code>i = 10 + len(s) + 3</code> — расстояние не важно</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Перебор чисел</label><label for="__tabbed_1_2">Лента неизвестна</label><label for="__tabbed_1_3">Перебор количеств</label><label for="__tabbed_1_4">Лента из блоков</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №12: на ленте — двоичная запись натурального числа без ведущих нулей, головка справа от неё.</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Программа меняет каждую цифру на противоположную. После работы на ленте — двоичная запись числа 100.</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Какое наименьшее число могло быть записано на ленте?</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Ответ: 155</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">prog</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="s1">'q0'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'_, L, q1'</span><span class="p">},</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="s1">'q1'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'_, S, q1'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">:</span> <span class="s1">'1, L, q1'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">:</span> <span class="s1">'0, L, q1'</span><span class="p">},</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">mt</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">lenta</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="n">q</span> <span class="o">=</span> <span class="s1">'q0'</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="n">z</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">prog</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">:</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>            <span class="k">break</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'L'</span><span class="p">:</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'R'</span><span class="p">:</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lenta</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">):</span>                      <span class="c1"># перебираем исходные числа по возрастанию</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">mt</span><span class="p">(</span><span class="nb">bin</span><span class="p">(</span><span class="n">n</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]),</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">100</span><span class="p">:</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>                               <span class="c1"># первое найденное — наименьшее</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>        <span class="k">break</span>
+</code></pre></div>
+<p>Инверсия 100 = 1100100₂ — это 0011011, но с нуля запись числа начинаться не может. Значит, слева была ещё
+единица (после работы она стала незначащим нулём): 10011011₂ = 155, а не 27. Перебор это учитывает сам.</p>
+</div>
+<div class="tabbed-block">
+<p>Все 2¹⁰⁰⁰ лент не перебрать. Сначала понимаем, где программа останавливается и что остаётся нетронутым, потом
+перебираем <strong>строение</strong> ленты — несколько чисел, а не символы:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># №12, демоверсия ЕГЭ-2026: 1000 символов (0 и 1), головка справа; программа идёт влево, каждый 0 меняет на 1,</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># на первой единице пишет 0 и останавливается. Осталось ровно 343 нуля. Наибольшее число нулей в исходной ленте?</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Лента = «левая часть» + 1 + j нулей: левая часть не меняется, единица станет нулём, j нулей — единицами.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Ответ: 999</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">N</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">343</span>                               <span class="c1"># длина ленты; нулей после работы</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">best</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>                             <span class="c1"># j нулей справа от самой правой единицы</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">j</span><span class="p">):</span>                     <span class="c1"># z нулей в левой части (остальное в ней — единицы)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="k">if</span> <span class="n">z</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="n">K</span><span class="p">:</span>                         <span class="c1"># нулей после работы: z и бывшая единица</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>            <span class="n">best</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">best</span><span class="p">,</span> <span class="n">z</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span>            <span class="c1"># нулей до работы</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">best</span><span class="p">)</span>                                    <span class="c1"># лента без единиц не подходит: все нули станут единицами</span>
+</code></pre></div>
+<p><strong>Проверка — уменьшенная копия:</strong> та же программа на <strong>всех</strong> лентах длины 6–10 и «осталось k нулей». Шаблон
+здесь работает целиком, а закономерность видна по выводу (здесь — всегда n − 1):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># №12, демоверсия ЕГЭ-2026: на ленте 1000 символов (только 0 и 1), головка в ближайшей клетке справа.</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># После работы программы на ленте осталось ровно 343 нуля. Наибольшее возможное число нулей в исходной ленте?</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Все 2^1000 лент не перебрать — решаем «уменьшенную копию»: все ленты длины n, «осталось k нулей».</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Ответ: 6 2 5</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># Ответ: 8 3 7</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># Ответ: 10 4 9</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Ответ: 999</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">prog</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="s1">'q0'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'_, L, q1'</span><span class="p">},</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="s1">'q1'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'_, S, q1'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">:</span> <span class="s1">'1, L, q1'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">:</span> <span class="s1">'0, S, q1'</span><span class="p">},</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">}</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="k">def</span><span class="w"> </span><span class="nf">mt</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span class="n">lenta</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="n">q</span> <span class="o">=</span> <span class="s1">'q0'</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>        <span class="n">z</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">prog</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        <span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">:</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>            <span class="k">break</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'L'</span><span class="p">:</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'R'</span><span class="p">:</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lenta</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>           <span class="c1"># маленькие длины и «осталось k нулей»</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>    <span class="n">best</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="s1">'01'</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="n">n</span><span class="p">):</span>          <span class="c1"># все ленты длины n</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>        <span class="n">s</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>        <span class="k">if</span> <span class="n">mt</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'0'</span><span class="p">)</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>            <span class="n">best</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">best</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'0'</span><span class="p">))</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">best</span><span class="p">)</span>                          <span class="c1"># каждый раз n - 1, от k не зависит</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="nb">print</span><span class="p">(</span><span class="mi">1000</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># №12: на ленте 1000 символов — нули, единицы и двойки в неизвестном порядке, головка слева от них.</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Программа идёт вправо и меняет каждую цифру. После работы единиц на ленте втрое больше, чем двоек,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># а сумма всех цифр равна 500. Сколько единиц было на ленте до начала работы?</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Ответ: 201</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Ответ: 600</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">prog</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="s1">'q0'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'_, R, q1'</span><span class="p">},</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="s1">'q1'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'_, S, q1'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">:</span> <span class="s1">'2, R, q1'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">:</span> <span class="s1">'0, R, q1'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">:</span> <span class="s1">'1, R, q1'</span><span class="p">},</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">mt</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">lenta</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">9</span>                                      <span class="c1"># головка слева от записи</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">q</span> <span class="o">=</span> <span class="s1">'q0'</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        <span class="n">z</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">prog</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">:</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>            <span class="k">break</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'L'</span><span class="p">:</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'R'</span><span class="p">:</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lenta</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="nb">print</span><span class="p">(</span><span class="n">mt</span><span class="p">(</span><span class="s1">'012'</span><span class="p">))</span>                               <span class="c1"># что делает программа: 0 → 2, 1 → 0, 2 → 1</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1001</span><span class="p">):</span>                          <span class="c1"># a нулей, b единиц, c двоек в исходной ленте</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1001</span> <span class="o">-</span> <span class="n">a</span><span class="p">):</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>        <span class="n">c</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">-</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>        <span class="n">n0</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span> <span class="n">n2</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">a</span>                   <span class="c1"># после работы: нули — из единиц, единицы — из двоек, двойки — из нулей</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>        <span class="k">if</span> <span class="n">n1</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">n2</span> <span class="ow">and</span> <span class="n">n1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n2</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+<p>Если программа проходит всю ленту и меняет каждую цифру сама по себе, порядок цифр не важен — только сколько
+каких. Что во что превращается, показывает прогон короткой ленты: <code>mt('012')</code> → <code>201</code>.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># №12: на ленте подряд 300 единиц, затем 200 двоек, затем 500 нулей; головка в ближайшей клетке слева.</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># Программа идёт вправо: 0 → 1, 1 → 2, а на первой двойке пишет 0 и останавливается. Сумма цифр на ленте после работы?</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Ответ: 998</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">prog</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="s1">'q0'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'_, R, q1'</span><span class="p">},</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="s1">'q1'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'_'</span><span class="p">:</span> <span class="s1">'_, S, q1'</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">:</span> <span class="s1">'1, R, q1'</span><span class="p">,</span> <span class="s1">'1'</span><span class="p">:</span> <span class="s1">'2, R, q1'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">:</span> <span class="s1">'0, S, q1'</span><span class="p">},</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">mt</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">lenta</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="s1">'_'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">9</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">q</span> <span class="o">=</span> <span class="s1">'q0'</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="n">z</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">prog</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>        <span class="n">lenta</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'S'</span><span class="p">:</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>            <span class="k">break</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'L'</span><span class="p">:</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>            <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="s1">'R'</span><span class="p">:</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lenta</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'_'</span><span class="p">)</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">'1'</span> <span class="o">*</span> <span class="mi">300</span> <span class="o">+</span> <span class="s1">'2'</span> <span class="o">*</span> <span class="mi">200</span> <span class="o">+</span> <span class="s1">'0'</span> <span class="o">*</span> <span class="mi">500</span>          <span class="c1"># ленту собираем из блоков, как в условии</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">mt</span><span class="p">(</span><span class="n">s</span><span class="p">))))</span>                    <span class="c1"># 300·2 + 0 + 199·2 + 500·0 — нули после остановки не тронуты</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<details class="info">
+<summary>Подробнее: решение вручную</summary>
+<p>Так решают большинство разборщиков — и демо, и задачи с неизвестной лентой.</p>
+<ol>
+<li>Где головка и что делает q0 — обычно один шаг с пустой клетки на запись.</li>
+<li><strong>Словами по строкам таблицы</strong>: «q1: 0 → 1 и влево, 1 → 0 и стоп, λ — стоп». Если во всей строке одно и то же
+   направление и одно состояние, головка просто едет в одну сторону.</li>
+<li>Где программа <strong>останавливается</strong> и что остаётся <strong>нетронутым</strong> (всё за точкой остановки).</li>
+<li>Если неясно — прогнать 3–5 символов на бумаге (или <code>mt</code> на коротких лентах).</li>
+<li>Для «наибольшего/наименьшего» — построить крайнюю ленту и пересчитать её: «342 нуля, 1, 657 нулей» → после
+   работы 342 + 1 = 343 нуля, в исходной 999.</li>
+</ol>
+</details>
+<h2 id="_5">Типичные ошибки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Скрытые ловушки — проверены запуском</p>
+<ul>
+<li><strong>Мало пустых клеток слева — ошибки нет, ответ неверный.</strong> Если головка уходит левее начала списка, <code>lenta[-1]</code>
+  в Python — это <strong>последняя</strong> клетка ленты: программа молча пишет в другой конец. Задача «приписать 10 слева
+  к 2028» с одной пустой клеткой слева даёт 4057 вместо 6124 (Python 3.11 и 3.12). Справа нехватка даёт
+  <code>IndexError</code>. Запас — <strong>10</strong> клеток с каждой стороны.</li>
+<li><strong>Остановка раньше записи.</strong> <code>S</code> — «записать и остановиться». Если проверить <code>d == 'S'</code> до <code>lenta[i] = z</code>,
+  последний символ потеряется: в шаблоне 17 вместо 2065.</li>
+<li><strong><code>int</code> пропускает подчёркивание.</strong> <code>int('1_0', 2)</code> = 2: Python разрешает <code>_</code> между цифрами. Если программа
+  стирает символы (пишет λ) посреди записи, <code>int</code> молча склеит куски. По краям <code>_</code> убирает <code>strip('_')</code>.</li>
+<li><strong>Ведущие нули.</strong> Число на ленте до работы — без ведущих нулей, а после работы они могут быть. «Получилось 240,
+  какое наименьшее было?» — 271, а не 15 (у Крылова и в разборах; так же 88 → 167, 100 → 155).</li>
+<li><strong>«Как в демо» — не всегда.</strong> Головка слева, на первом нуле стоп (600 символов, осталось 250 нулей,
+  наименьшее число единиц): ответ 349, а не 599 по аналогии. Каждый раз смотрите, где остановка.</li>
+<li><strong>±1 от остановки.</strong> Символ, на котором программа остановилась, тоже изменился: 343 нуля после работы — это
+  342 нетронутых и бывшая единица; «осталось 45 единиц» — одна из них бывший ноль (887, а не 888).</li>
+</ul>
+</div>
+<ul>
+<li><strong>Перепутали, где головка.</strong> Слева — <code>i = 9</code>, справа — <code>i = 10 + len(s)</code>. Начали на цифре вместо пустой клетки —
+  в <code>prog['q0']</code> нет такого символа: <code>KeyError</code>.</li>
+<li><strong><code>bin(n)</code> без <code>[2:]</code></strong> — на ленту попадают <code>0</code> и <code>b</code>: <code>KeyError</code>.</li>
+<li><strong>Опечатка при переписывании таблицы</strong> — самая частая ошибка программой. Сверьте словарь с таблицей построчно,
+  и проверьте одну-две строки «словами».</li>
+<li><strong>Лента строкой, а не списком.</strong> Строку менять нельзя: <code>s[i] = '1'</code> — <code>TypeError</code>. Поэтому <code>list(s)</code>.</li>
+<li><strong>«Наибольшее возможное» при единственном ответе.</strong> Если программа меняет каждый символ без остановки,
+  ответ один: слово «наибольшее» — не подвох (инверсия, осталось 515 нулей → было 485).</li>
+<li><strong>Жадность в задачах на сумму.</strong> «Больше четвёрок — больше сумма» неверно: 799 цифр 1/3/4, сумма после 900 —
+  максимум 2497 при 100 четвёрках. Перебирайте количества, а не угадывайте.</li>
+</ul>
+<details class="info">
+<summary>Откуда разновидности</summary>
+<p>Демоверсии ФИПИ 2026 и 2027; сборник С. С. Крылова (2026) — видеоразбор
+<a href="https://www.youtube.com/watch?v=W51OzdANW9A">Умскул, «Все 12 задания из сборника Крылова»</a> (ссылка
+преподавателя) и <a href="https://www.youtube.com/watch?v=hjIanErZxLo">Лёня Шастин, «Все задания №12 из сборника Крылова»</a>;
+<a href="https://www.youtube.com/watch?v=VFCKOHCKFGI">Алексей Кабанов, «Задание 12, КЕГЭ-2026»</a>,
+<a href="https://www.youtube.com/watch?v=5MVoXF-yqeI">PRO100, «Решаем в Python №12 с сайта К. Ю. Полякова»</a>,
+<a href="https://www.youtube.com/watch?v=JRvhHiijZ7Y">Информатик БУ, «Большая нарешка»</a>,
+<a href="https://www.youtube.com/watch?v=gt5VEIOHCcE">Информатик Родя</a>,
+<a href="https://www.youtube.com/watch?v=zgVDb9hflxc">insperia (Натали Солдаева)</a>,
+<a href="https://www.youtube.com/watch?v=1Hz1qBu9tD8">Вова Информатик</a>,
+<a href="https://www.youtube.com/watch?v=P7srXHUvMGs">Дядя Саша, «Все типы №12»</a> и
+<a href="https://www.youtube.com/watch?v=wuqHqD9Jh60">«№12 за 10 минут»</a>,
+<a href="https://www.youtube.com/watch?v=GkC-8sgIwgE">Лёня Шастин, «№12 с нуля»</a>,
+<a href="https://www.youtube.com/watch?v=GiR9orghPpg">Пацанская информатика</a>,
+<a href="https://www.youtube.com/watch?v=_VkZgbiaYFM">Казаков</a>,
+<a href="https://www.youtube.com/watch?v=Imsacke4r7c">ЕГЭ от Технаря</a>,
+<a href="https://www.youtube.com/watch?v=oJO0Uv5_9js">Арсений Информатика</a>,
+<a href="https://www.youtube.com/watch?v=L5sPm5zg7DE">Алексей Ковальчук</a>,
+<a href="https://www.youtube.com/watch?v=kCg1el4jX68">Иванформатика</a>.
+Все ответы из видео (60) перепроверены своим кодом на Python 3.11 и 3.12.
+Каталог Решу ЕГЭ, тип 12: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=426">«Машина Тьюринга»</a> —
+21 задача (ЕГЭ-2026, демоверсия, СтатГрад); все решены своим кодом, ответы совпали со всеми 21.</p>
+</details>
+<h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Задачи №12 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №12</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../task-8/" class="md-footer__link md-footer__link--prev" aria-label="Назад: №8. Комбинаторика слов">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                №8. Комбинаторика слов
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../task-13/" class="md-footer__link md-footer__link--next" aria-label="Вперед: №13. Число программ">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                №13. Число программ
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
