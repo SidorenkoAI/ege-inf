@@ -1129,9 +1129,33 @@
 <td>маленькое n («найдите F(5)»)</td>
 <td>можно раскрутить вручную: F(5) через F(4), …, до базы, потом собрать обратно</td>
 </tr>
+<tr>
+<td>«наименьшее n, для которого F(n) = 12»</td>
+<td><code>n = 1</code>, <code>while F(n) != 12: n += 1</code> — цикл снизу вверх, он же прогрев</td>
+</tr>
+<tr>
+<td>сумма «F(i) от i = 1 до n − 1»</td>
+<td><code>sum(F(i) for i in range(1, n))</code> — <code>range</code> не включает n</td>
+</tr>
+<tr>
+<td>функция делит, и дробь сокращается только в конце (G(n) = n / 4 + 18)</td>
+<td><code>Fraction(n, 4)</code> из <code>fractions</code> — точно; <code>n // 4</code> даёт неверный ответ</td>
+</tr>
+<tr>
+<td>F(n) не задана при каком-то n (F(2)), но и не нужна</td>
+<td>прогревать только нужные n, например нечётные: <code>range(1, N + 1, 2)</code></td>
+</tr>
+<tr>
+<td>F(a, b) от двух чисел, интервал в миллиард чисел, 2⁶³</td>
+<td>понять, что считает F (сумма цифр, число единиц, НОД, a · b), проверить догадку перебором на малых и считать без перебора (вкладка)</td>
+</tr>
+<tr>
+<td>числа слишком велики даже с кэшем (F(320 726), F(247 563))</td>
+<td>сократить вручную, как в «Проверке вручную»; формулу проверить на малых n</td>
+</tr>
 </tbody>
 </table>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ветвление</label><label for="__tabbed_2_2">Две функции</label><label for="__tabbed_2_3">Рекурсия вверх</label><label for="__tabbed_2_4">Целая часть [x]</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ветвление</label><label for="__tabbed_2_2">Две функции</label><label for="__tabbed_2_3">Рекурсия вверх</label><label for="__tabbed_2_4">Целая часть [x]</label><label for="__tabbed_2_5">Огромный интервал</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №16, ветвление: F(n) = n при n &lt; 3;</span>
@@ -1227,6 +1251,38 @@
 <a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="mi">3000</span><span class="p">))</span>
 </code></pre></div>
 </div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># №16, огромный интервал: F(0) = 0;  F(n) = F(n div 10) + (n mod 10) при n &gt; 0.</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Сколько чисел n от 1 000 000 000 до 3 000 000 000, для которых F(n) &gt; F(n + 1)?</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Ответ: 200000000</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nd">@lru_cache</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">F</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="k">return</span> <span class="n">F</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">10</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1"># 1. Что считает F? Сумму цифр. Когда F(n) &gt; F(n + 1)? Догадка: когда n оканчивается на 9</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1">#    (при +1 девятки становятся нулями). Проверяем догадку перебором на маленьких числах:</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100000</span><span class="p">):</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">F</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">!=</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">9</span><span class="p">):</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">'догадка неверна:'</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="c1"># 2. Считаем без перебора: в интервале подходит каждое десятое число</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="mi">1000000000</span><span class="p">,</span> <span class="mi">3000000000</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="n">first</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="p">(</span><span class="mi">9</span> <span class="o">-</span> <span class="n">lo</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span>          <span class="c1"># первое число ≥ lo, которое оканчивается на 9</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">hi</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)))</span>
+</code></pre></div>
+<p>Миллиард чисел Python перебирает десятки минут. Порядок такой: напечатать F для маленьких n и понять, что она
+считает; проверить догадку перебором на малых числах; посчитать ответ без перебора. Что встречалось на Решу ЕГЭ:
+F — сумма цифр (F(n) &gt; F(n + 1) ⇔ n оканчивается на 9), число единиц в двоичной записи (перебирать только
+<code>2 ** i + 2 ** j</code>), сумма чётных цифр (= 0, когда цифры только 0, 1, 3, 5, 7, 9), НОД (вычитание по 14 —
+зависит от остатка n по модулю 14), F(a, b) = a · b. Для «сумма цифр равна 159 среди чисел меньше 2⁶³» нужен
+счёт по разрядам — это уже за рамками шаблона.</p>
+</div>
 </div>
 </div>
 <h2 id="_6">Типичные ошибки<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
@@ -1241,6 +1297,13 @@
 <li><strong>Отрицательные числа:</strong> <code>int(-7 / 2)</code> = −3, а целая часть −3,5 — это −4 (так считает <code>//</code>).</li>
 <li><strong>Прогрев не в ту сторону.</strong> Если F(n) выражается через F(n + 1), прогрев снизу вверх снова упирается
   в <code>RecursionError</code>. Прогрев — от базы.</li>
+<li><strong>Дробь посередине.</strong> В задаче Решу ЕГЭ G(n) = n / 4 + 18, а ответ — целый, потому что дальше всё умножается
+  на 8. <code>n // 4</code> молча даёт 2 703 080 вместо 2 703 082, в похожей задаче с n / 6 — 3 396 732 вместо 3 396 736.
+  Точно — <code>Fraction(n, 4)</code> (обычное <code>/</code> тут случайно сработало, но с дробями вроде 1/6 может ошибиться).</li>
+<li><strong>Сумма «до n − 1», записанная до n.</strong> <code>sum(F(i) for i in range(1, n + 1))</code> вызывает F(n) внутри F(n) —
+  бесконечная рекурсия и <code>RecursionError</code>.</li>
+<li><strong>Граница интервала тоже считается.</strong> «4 · 10⁷ ≤ n ≤ 9 · 10⁷»: само 90 000 000 подходит, без него —
+  559 872 вместо 559 873.</li>
 </ul>
 </div>
 <ul>
@@ -1259,7 +1322,13 @@
 <summary>Откуда разновидности</summary>
 <p>Задания ЕГЭ и сборников по видеоразборам <a href="https://www.youtube.com/watch?v=Z6cCUIGhans">Умскул (В. Ланская)</a>,
 <a href="https://www.youtube.com/watch?v=jZ0HPw14ETI">EXtremum</a> и <a href="https://www.youtube.com/watch?v=BrtaPO_aoXI">«Иван»</a>;
-приёмы и ответы перепроверены запуском на Python 3.11 и 3.12.</p>
+приёмы и ответы перепроверены запуском на Python 3.11 и 3.12.
+Каталог Решу ЕГЭ, тип 16: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=214">«Рекурсивные функции с возвращаемыми значениями»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=275">«…несколько предыдущих значений»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=209">«…одно предыдущее значение»</a> — 104 задачи (ЕГЭ
+2013–2026, демоверсии, СтатГрад, пробники СПб). Все решены нашими программами на Python 3.11 и 3.12, ответы
+совпали со всеми 104. Без прогрева задачи с n от 2000 падают (<code>RecursionError</code>; на 3.11 с <code>setrecursionlimit</code> —
+молча закрываются), «кэш + прогрев» решает все.</p>
 </details>
 <h2 id="_7">Потренируйся<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>Задачи №16 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №16</strong>.</p>

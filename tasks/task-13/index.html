@@ -1166,12 +1166,44 @@
 <td>третий параметр-счётчик: <code>+1</code>, когда <code>x</code> из набора; в конце <code>return k &gt;= 2</code></td>
 </tr>
 <tr>
+<td>условие на <strong>сами команды</strong>: «нет двух команд A подряд», «никакая команда не повторяется больше двух раз подряд», «ровно одна команда умножения»</td>
+<td>третий параметр — строка команд <code>p</code>, проверка <code>'33' in p</code> (вкладка)</td>
+</tr>
+<tr>
+<td>«вычти 1» вместе с увеличивающими и «нет двух A подряд»</td>
+<td>первая проверка <code>x &gt; y + 1</code>: из y + 1 ещё можно вернуться одной A (см. «Типичные ошибки»)</td>
+</tr>
+<tr>
+<td>«на экране ни разу не появляется цифра 2»</td>
+<td>запрещённое число: <code>if x &gt; y or '2' in str(x):</code></td>
+</tr>
+<tr>
+<td>одна команда, но «если чётное — раздели на 2, <strong>иначе</strong> вычти 5»</td>
+<td><code>if x % 2 == 0: k += f(x // 2, y)</code> и <code>else: k += f(x - 5, y)</code></td>
+</tr>
+<tr>
+<td>«подели на 2, нецелое округляется вверх»</td>
+<td><code>f((x + 1) // 2, y)</code></td>
+</tr>
+<tr>
+<td>«сделай нечётное» (x → 2x + 1), «прибавь предыдущее» (x + (x − 1)), «возведи в квадрат»</td>
+<td><code>f(2 * x + 1, y)</code>, <code>f(x + (x - 1), y)</code>, <code>f(x * x, y)</code></td>
+</tr>
+<tr>
+<td>«увеличь старшую цифру на 1» (23 → 33; у 9… число не меняется)</td>
+<td><code>if s[0] != '9': k += f(x + 10 ** (len(s) - 1), y)</code></td>
+</tr>
+<tr>
+<td>«поменяй местами» для <strong>убывающих</strong> команд (только если единицы &lt; десятков)</td>
+<td><code>if x &lt; y</code>, условие <code>s[-1] &lt; s[-2]</code>, тот же срез</td>
+</tr>
+<tr>
 <td>большие числа (сотни, тысячи)</td>
 <td><code>@lru_cache(None)</code> и прогрев от цели (вкладка, см. «Типичные ошибки»)</td>
 </tr>
 </tbody>
 </table>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:7"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Обязательное и запрещённое</label><label for="__tabbed_1_2">Команды уменьшают</label><label for="__tabbed_1_3">Замена цифр (как в 2026)</label><label for="__tabbed_1_4">Две команды с условием</label><label for="__tabbed_1_5">Ровно одно из двух</label><label for="__tabbed_1_6">Ровно N команд</label><label for="__tabbed_1_7">Большие числа</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:8"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Обязательное и запрещённое</label><label for="__tabbed_1_2">Команды уменьшают</label><label for="__tabbed_1_3">Замена цифр (как в 2026)</label><label for="__tabbed_1_4">Две команды с условием</label><label for="__tabbed_1_5">Ровно одно из двух</label><label for="__tabbed_1_6">Ровно N команд</label><label for="__tabbed_1_7">Условие на команды</label><label for="__tabbed_1_8">Большие числа</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №13: команды +1, +3, *2. Сколько программ переводят 3 в 30,</span>
@@ -1276,24 +1308,42 @@
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># №13: команды +1 и *2. Сколько программ переводят 1 в 1000?</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># Ответ: 1981471878</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="nd">@lru_cache</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>                 <span class="c1"># без кэша программа считала бы часами</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        <span class="k">return</span> <span class="mi">0</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>        <span class="k">return</span> <span class="mi">1</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>     <span class="c1"># прогрев ОТ ЦЕЛИ: f(1000), f(999), ... — иначе RecursionError</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># №13: команды 1: прибавь 1, 2: прибавь 2, 3: умножь на 2. Сколько программ переводят 2 в 20,</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># если в программе нет двух команд «умножь на 2» подряд?</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Ответ: 7828</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>                  <span class="c1"># p — строка команд, выполненных до сих пор</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="ow">or</span> <span class="s1">'33'</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>       <span class="c1"># перелетели или две команды 3 подряд</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="s1">'1'</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="s1">'2'</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="s1">'3'</span><span class="p">)</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+</code></pre></div>
+<p>Строка <code>p</code> помнит, какие команды уже выполнены, — проверяем её так же, как запрещённое число. «Никакая команда
+не больше двух раз подряд» — <code>'111' in p or '222' in p</code>; «ровно одна команда умножения» — пишем в <code>p</code> знак
+<code>'*'</code> для умножений и в цели <code>return 1 if p.count('*') == 1 else 0</code>.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># №13: команды +1 и *2. Сколько программ переводят 1 в 1000?</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># Ответ: 1981471878</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nd">@lru_cache</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>                 <span class="c1"># без кэша программа считала бы часами</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>     <span class="c1"># прогрев ОТ ЦЕЛИ: f(1000), f(999), ... — иначе RecursionError</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
 </code></pre></div>
 </div>
 </div>
@@ -1302,7 +1352,9 @@
 <summary>Подробнее: что ещё бывает в сборниках (за рамками ЕГЭ)</summary>
 <p>В тренировочных сборниках встречаются «сколько <strong>разных чисел</strong> можно получить из 1 программами из N команд»
 (результаты складывают в множество <code>set</code>) и «длина <strong>самой короткой</strong> программы» (вместо суммы — <code>min</code>, при
-перелёте — очень большое число вместо 0). На ЕГЭ таких не было, но вторая — прямой мостик к №23 (графы).</p>
+перелёте — очень большое число вместо 0). На ЕГЭ таких не было, но вторая — прямой мостик к №23 (графы).
+В банке Решу ЕГЭ есть родственная: «наименьшее число, которое <strong>нельзя</strong> получить из 1 не более чем пятью
+командами» — множество всех получаемых чисел (<code>a = a | {x + 1 for x in a} | …</code> пять раз) и первое пропущенное.</p>
 </details>
 <h2 id="_5">Типичные ошибки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
@@ -1315,8 +1367,18 @@
   нескольких сотен — шаблон как есть; дольше пары секунд — добавьте <code>@lru_cache(None)</code>; <code>RecursionError</code> —
   <strong>прогрев от цели</strong>: <code>for i in range(y, x - 1, -1): f(i, y)</code> (вкладка «Большие числа»).</li>
 <li><strong>«Поменяй местами» только для трёхзначных.</strong> Запись <code>s[0] + s[-1] + s[-2]</code> ошибок не выдаёт, но на
-  двузначных числах склеивает лишнюю цифру: на 80 → 141 получается 16 вместо 32. Срез <code>s[:-2] + s[-1] + s[-2]</code>
-  верен всегда.</li>
+  двузначных числах склеивает лишнюю цифру: на 80 → 141 получается 16 вместо 32. С <strong>убывающими</strong> командами
+  хуже: 75 превращается в 757, число снова растёт, и программа падает с <code>RecursionError</code> (две задачи Решу ЕГЭ,
+  57 → 13 и 43 → 13). Срез <code>s[:-2] + s[-1] + s[-2]</code> верен всегда.</li>
+<li><strong>«Вычти 1» среди увеличивающих команд.</strong> Проверка <code>x &gt; y</code> отсекает слишком рано: из y + 1 одна команда A
+  ещё приводит в цель. В задачах «нет двух A подряд» (−1, ×2, ×3; 3 → 20) получается 3 вместо 4, а в другой —
+  26 вместо 53. Нужна <code>x &gt; y + 1</code> — дальше вернуться нельзя: после A обязательно идёт команда, которая
+  увеличивает сильнее.</li>
+<li><strong>«Содержит 14 или 18».</strong> Это «хотя бы одно»: через 14 + через 18 − через оба. Без вычитания — 93 вместо 69.</li>
+<li><strong>«Подели на 2, нецелое — вверх».</strong> <code>x // 2</code> округляет вниз: 16 вместо 10. Вверх — <code>(x + 1) // 2</code>.</li>
+<li><strong>Команда, которая может не менять число</strong> («прибавь предыдущее» у 1: 1 + 0 = 1, «увеличь старшую цифру»
+  у 9…) — программ становится бесконечно много, и функция падает с <code>RecursionError</code>. В задачах ЕГЭ до таких
+  чисел не доходят, но старт с 1 у «прибавь предыдущее» уже ломает программу.</li>
 <li><strong>Однозначное число.</strong> У <code>str(5)</code> нет цифры <code>s[-2]</code> — <code>IndexError</code>. Если исходное число меньше 10, цифры
   берите арифметикой: десятки <code>x // 10 % 10</code>, единицы <code>x % 10</code>.</li>
 <li><strong>Порядок обязательных чисел.</strong> Для убывающих команд путь 40 → 18 → 5, а не 40 → 5 → 18: перепутанный порядок
@@ -1339,7 +1401,12 @@
 <a href="https://www.youtube.com/watch?v=7NQ2hpIXvvQ">Информатик Родя, «23-е за 60 минут (теперь №13)»</a>,
 <a href="https://www.youtube.com/watch?v=26M9zfTmQq8">Иванформатика</a>, <a href="https://www.youtube.com/watch?v=hmRT-Ryr7-8">Иван Викторович</a>,
 <a href="https://www.youtube.com/watch?v=Hz7d5DZFtTY">Алексей Ковальчук</a>; материалы Умскула (В. Ланская).
-Все ответы из видео перепроверены своим кодом и вторым способом на Python 3.11 и 3.12.</p>
+Все ответы из видео перепроверены своим кодом и вторым способом на Python 3.11 и 3.12.
+Каталог Решу ЕГЭ, тип 13: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=277">«…с обязательным этапом»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=217">«…с избегаемым этапом»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=183">«…с обязательным и избегаемым»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=260">«…по заданному числу»</a> — 96 задач (ЕГЭ 2013–2026,
+демоверсии, СтатГрад, пробники СПб). Все решены нашим шаблоном на Python 3.11 и 3.12, ответы совпали со всеми 96.</p>
 </details>
 <h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>Задачи №13 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №13</strong>.</p>

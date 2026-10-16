@@ -1129,6 +1129,58 @@
 <td>ответ — минимальная сумма</td>
 <td><code>min(s)</code></td>
 </tr>
+<tr>
+<td>четвёрки подряд</td>
+<td><code>range(len(a) - 3)</code>, <code>t = a[i:i + 4]</code></td>
+</tr>
+<tr>
+<td>«среднее арифметическое всех чётных элементов»</td>
+<td>до цикла: <code>ev = [x for x in a if x % 2 == 0]</code>, <code>sr = sum(ev) / len(ev)</code></td>
+</tr>
+<tr>
+<td>«один делится на 3, а другой меньше среднего»</td>
+<td>оба случая: <code>(x % 3 == 0 and y &lt; sr) or (y % 3 == 0 and x &lt; sr)</code></td>
+</tr>
+<tr>
+<td>«остаток от деления на 7 равен остатку максимального элемента»</td>
+<td><code>x % 7 == max(a) % 7</code> (<code>max(a)</code> — до цикла)</td>
+</tr>
+<tr>
+<td>«последняя цифра совпадает с последней цифрой минимального»; «нет таких чисел»</td>
+<td><code>x % 10 == mn % 10</code>; «нет» — <code>not any(…)</code></td>
+</tr>
+<tr>
+<td>«больше чисел, кратных 3, чем кратных 5»</td>
+<td>сравнить две суммы условий: <code>sum(x % 3 == 0 for x in t) &gt; sum(x % 5 == 0 for x in t)</code></td>
+</tr>
+<tr>
+<td>«сумма больше M, но меньше удвоенного M»</td>
+<td><code>m &lt; sum(t) &lt; 2 * m</code></td>
+</tr>
+<tr>
+<td>«запись <strong>меньшего</strong> элемента пары оканчивается на 5»</td>
+<td><code>abs(min(x, y)) % 10 == 5</code> — не «хотя бы одного»</td>
+</tr>
+<tr>
+<td>«последняя цифра одного равна предпоследней другого»; «две последние цифры одинаковы»</td>
+<td><code>abs(x) % 10 == abs(y) // 10 % 10</code> (и наоборот); <code>abs(x) // 10 % 10 == abs(x) % 10</code></td>
+</tr>
+<tr>
+<td>«сумма двух наибольших чисел тройки»</td>
+<td><code>sum(sorted(t)[1:])</code></td>
+</tr>
+<tr>
+<td>«старшие разряды чисел совпадают»</td>
+<td><code>len(set(str(abs(x))[0] for x in t)) == 1</code></td>
+</tr>
+<tr>
+<td>тройка — стороны остроугольного / прямоугольного треугольника</td>
+<td><code>p, q, r = sorted(t)</code>, <code>p + q &gt; r</code>, <code>p*p + q*q &gt; r*r</code> (<code>==</code>); нет таких — печатать <code>0 0</code></td>
+</tr>
+<tr>
+<td>пара — <strong>любые</strong> два различных элемента, порядок не важен (старый формат)</td>
+<td>два цикла <code>for i …: for j in range(i + 1, n)</code> — 50 млн пар, ≈ 15 с</td>
+</tr>
 </tbody>
 </table>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Тройки и отрицательные числа</label></div>
@@ -1177,6 +1229,15 @@
   числа пары меньше нуля), <code>maxi</code> так и останется 0. Список <code>s</code> и <code>max(s)</code> этой ошибки не дают.</li>
 <li><strong>«Упростили» квадраты.</strong> (a + b)² ≤ M² и a + b ≤ M — разные условия, когда сумма отрицательная: на нашем
   файле 4927 пар против 4943.</li>
+<li><strong><code>abs</code> нужен и в задачах сайта.</strong> Мы прогнали 85 задач Решу ЕГЭ. «k-значное» без <code>abs</code> в файлах с
+  отрицательными числами меняет ответ в 6 задачах из 9 (например, 204 тройки вместо 2627), «оканчивается на …»
+  без <code>abs</code> — в 3 из 12. Трёхзначное «начинается с цифры 5» — тоже по модулю: −555 подходит.</li>
+<li><strong>«Абсолютное значение максимальной суммы»</strong> — <code>abs(max(s))</code>. <code>max(abs(…))</code> на задаче сайта даёт 195 618
+  вместо 962.</li>
+<li><strong>Первая строка файла — количество чисел.</strong> Так устроены 10 файлов Решу ЕГЭ; ответы сайта получены чтением
+  файла целиком, как в шаблоне (в 9 задачах эта строка ни на что не влияет, в одной меняет ответ на 1).
+  На экзамене внимательно прочитайте условие: если сказано, что первое число — количество, пропустите его
+  (<code>a = a[1:]</code>).</li>
 </ul>
 </div>
 <ul>
@@ -1187,6 +1248,9 @@
 <li><strong><code>ValueError: invalid literal for int()</code></strong> — в конце файла пустая строка. Удалите её в файле или читайте
   <code>[int(x) for x in open('17.txt') if x.strip()]</code>.</li>
 <li><strong>«Положительный» — строго <code>&gt; 0</code></strong>: ноль не положительный и не «квадрат натурального числа».</li>
+<li><strong>«Если таких троек нет — выведите 0 0».</strong> <code>max([])</code> падает с <code>ValueError</code> — проверьте <code>if s:</code> перед <code>max</code>.</li>
+<li><strong>Файл в Блокноте — одной строкой.</strong> Некоторые файлы разделяют строки одним символом <code>\r</code>: Блокнот склеивает
+  числа, но Python читает такой файл как обычно.</li>
 <li><strong>Перепутали порядок в ответе</strong>: сначала количество, потом сумма — как в условии.</li>
 </ul>
 <details class="info">
@@ -1197,7 +1261,10 @@
 <a href="https://www.youtube.com/watch?v=dkFw9GJUSEc">«Этот код решает любое 17»</a>,
 <a href="https://www.youtube.com/watch?v=n3xzFlR_npA">Лёня Шастин, «Все №17 с реальных ЕГЭ»</a>,
 <a href="https://www.youtube.com/watch?v=jfekTsxEFt8">Алексей Ковальчук</a>; материалы Умскула (В. Ланская).
-Код перепроверен вторым способом на Python 3.11 и 3.12.</p>
+Код перепроверен вторым способом на Python 3.11 и 3.12.
+Каталог Решу ЕГЭ, тип 17: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=423">«Задания для подготовки»</a>
+— 85 задач с файлами (ЕГЭ 2022–2026, демоверсии, СтатГрад, пробники СПб). Все решены шаблоном на Python 3.11 и
+3.12, ответы совпали со всеми 85.</p>
 </details>
 <h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>Задачи №17 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №17</strong>.</p>
