@@ -152,6 +152,15 @@
 .fano-tree .free text { fill: var(--md-accent-fg-color); font-size: 15px; font-weight: 700; text-anchor: middle; }
 .fano-tree .code text { fill: var(--md-default-fg-color); font-size: 13px; text-anchor: middle; font-family: var(--md-code-font-family); }
 
+/* №1: схема дорог (граф). .name — буквы пунктов, .deg — число дорог, подписанное решающим */
+.graf-wrap { overflow-x: auto; margin: 1rem 0; }
+.graf { width: 100%; max-width: 26rem; height: auto; font-family: var(--md-text-font-family); }
+.graf.graf-small { max-width: 18rem; }
+.graf .edge line { stroke: var(--md-default-fg-color--light); stroke-width: 2; }
+.graf .node circle { fill: var(--md-primary-fg-color); }
+.graf .name text { fill: var(--md-default-fg-color); font-size: 17px; font-style: italic; text-anchor: middle; }
+.graf .deg text { fill: var(--md-accent-fg-color); font-size: 13px; font-weight: 700; text-anchor: middle; }
+
 /* Печать: без меню и кнопок, код не обрезается */
 @media print {
   .md-typeset pre > code { white-space: pre-wrap; }

@@ -1,0 +1,2302 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Шаблоны и разборы заданий 1–27 ЕГЭ по информатике (2027), основы Python и электронных таблиц">
+      
+      
+      
+        <link rel="canonical" href="https://sidorenkoai.github.io/ege-inf/tasks/task-1/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../task-2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/cmit-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>№1. Граф и таблица - Подготовка к успешной сдаче ЕГЭ по информатике</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no1" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+<header class="md-header brand-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a class="brand__logo" href="https://cmit22.ru" title="Бийский ЦМИТ Политех">
+      <img class="brand__logo-full" src="../../assets/cmit-logo.png" alt="Бийский ЦМИТ Политех">
+      <img class="brand__logo-icon" src="../../assets/cmit-icon.png" alt="Бийский ЦМИТ Политех">
+    </a>
+    <div class="brand__text">
+      <a class="brand__title" href="../..">Подготовка к успешной сдаче ЕГЭ по информатике</a>
+      <div class="brand__who">
+        <span>Сидоренко Антон Игоревич</span>
+        <a href="tel:+79237156628">8 923 715 6628</a>
+        <a href="https://cmit22.ru">Бийский ЦМИТ Политех</a>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <a class="brand__bot" href="https://t.me/egeSidorenkoBot" title="Тренироваться в боте @egeSidorenkoBot">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+      <span>Тренироваться в боте<br><small>@egeSidorenkoBot</small></span>
+    </a>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../base/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  База Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Номера 1–27
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cheatsheet/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шпаргалка
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Подготовка к успешной сдаче ЕГЭ по информатике" class="md-nav__button md-logo" aria-label="Подготовка к успешной сдаче ЕГЭ по информатике" data-md-component="logo">
+      
+  <img src="../../assets/cmit-icon.png" alt="logo">
+
+    </a>
+    Подготовка к успешной сдаче ЕГЭ по информатике
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    База Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Номера 1–27
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Номера 1–27
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №1. Граф и таблица
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №1. Граф и таблица
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №2. Таблица истинности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №4. Условие Фано
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №5. Алгоритм с двоичной записью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №6. Исполнитель Черепаха
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №7. Объём изображения и звука
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №8. Комбинаторика слов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №9. Таблица: условия по строкам
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №10. IP-адрес и маска
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №11. Объём данных, коды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №12. Машина Тьюринга
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №13. Число программ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №14. Системы счисления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №15. Логика: параметр A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №16. Рекурсивные функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №17. Последовательность из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №18. Робот в таблице
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-19-21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №19–21. Теория игр
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шпаргалка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no1">№1. Граф и таблица: дороги между пунктами<a class="headerlink" href="#no1" title="Permanent link">&para;</a></h1>
+<div class="task-meta">
+<p><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg></span> вручную (степени и соседи)</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> Python — только проверка</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"/></svg></span> ~3 мин</span>
+<span>1 балл</span>
+<span>без файла</span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Коротко</p>
+<p>Подписать у каждого пункта <strong>число дорог</strong>: на схеме — линии у буквы, в таблице — числа в строке. Пункт с
+особым числом дорог — сразу номер; остальные — <strong>по соседям</strong> (сколько дорог у соседей, связаны ли они между
+собой, общий сосед, «куда не ведёт»). Нужные буквы найдены — ответ на пересечении строки и столбца.
+Неразличимые (симметричные) пункты не различать: ответ от выбора не зависит.</p>
+</div>
+<h2 id="_1">Как узнать задачу<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>«На рисунке схема дорог N-ского района изображена в виде <strong>графа</strong>, в <strong>таблице</strong> — протяжённость дорог»
+  (или звёздочки — «дорога есть»).</li>
+<li>«Так как таблицу и схему рисовали <strong>независимо</strong>, нумерация пунктов в таблице не связана с буквами на графе».</li>
+<li>Спрашивают: длину дороги, <strong>сумму двух дорог</strong> (демо-2027, ЕГЭ-2024–2026), номера пунктов, буквы пунктов по
+  порядку.</li>
+</ul>
+<h2 id="_2">Шаблон<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Что сделать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Прочитать вопрос: <strong>какие буквы нужны</strong> (все искать не обязательно)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Подписать на схеме у каждой буквы число линий, в таблице справа от строки — число чисел (звёздочек) в ней. Наборы чисел должны совпасть — иначе пересчитать</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Буква с <strong>особым</strong> числом дорог (одна такая на схеме и в таблице) → её номер сразу</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Остальные — по соседям, приёмы ниже. Каждую найденную букву подписать номером прямо на рисунке</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Буквы неразличимы (рисунок симметричен) — <strong>взять любой вариант</strong>: спрашивают то, что от выбора не зависит. Если зависит — в условии есть подсказка («дорога АБ длиннее АВ»)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Ответ: дорога XY = число на пересечении строки «номер X» и столбца «номер Y». Проверить: соседи всех найденных букв сходятся с таблицей</td>
+</tr>
+</tbody>
+</table>
+<p>Как различать пункты с одинаковым числом дорог:</p>
+<table>
+<thead>
+<tr>
+<th>Приём</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>сколько дорог у соседей</strong></td>
+<td>«у В три дороги, у его соседей — 2, 2 и 7»; «двойка, оба соседа которой — тройки»</td>
+</tr>
+<tr>
+<td><strong>связаны ли соседи между собой</strong></td>
+<td>у А соседи Б и В соединены дорогой, у Е соседи — нет (в таблице: есть ли число на пересечении строки одного соседа и столбца другого)</td>
+</tr>
+<tr>
+<td><strong>общий сосед</strong> двух найденных</td>
+<td>Д — единственный, кто соединён и с Г, и с Е</td>
+</tr>
+<tr>
+<td><strong>куда не ведёт</strong> «почти всесвязный» пункт</td>
+<td>у В пять дорог из шести возможных — единственный пункт, куда В не ведёт, и есть К</td>
+</tr>
+<tr>
+<td><strong>сосед найденного</strong></td>
+<td>Е — единственный сосед К: Е = (номер соседа К в таблице)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">Пример с разбором<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>Задача</strong> (демоверсия ЕГЭ-2027, пересказ). Схема дорог — на рисунке, длины дорог — в таблице. Найдите сумму
+протяжённостей дорог из E в A и из B в C.</p>
+<div class="graf-wrap">
+<svg class="graf" viewBox="-20 -20 390 227" role="img" aria-label="Схема демоверсии: дороги CB, CF, FD, DB, DE, BE, FA, AE; у C и A по 2 дороги, у остальных по 3">
+  <g class="edge"><line x1="110" y1="25" x2="330" y2="40"/><line x1="110" y1="25" x2="40" y2="122"/><line x1="40" y1="122" x2="245" y2="78"/><line x1="245" y1="78" x2="330" y2="40"/><line x1="245" y1="78" x2="312" y2="125"/><line x1="330" y1="40" x2="312" y2="125"/><line x1="40" y1="122" x2="215" y2="172"/><line x1="215" y1="172" x2="312" y2="125"/></g>
+  <g class="node"><circle cx="110" cy="25" r="5"/><circle cx="330" cy="40" r="5"/><circle cx="245" cy="78" r="5"/><circle cx="40" cy="122" r="5"/><circle cx="312" cy="125" r="5"/><circle cx="215" cy="172" r="5"/></g>
+  <g class="name"><text x="98" y="19">C</text><text x="346" y="40">B</text><text x="261" y="79">D</text><text x="23" y="131">F</text><text x="329" y="134">E</text><text x="221" y="194">A</text></g>
+  <g class="deg"><text x="122" y="40">2</text><text x="319" y="50">3</text><text x="234" y="88">3</text><text x="56" y="125">3</text><text x="300" y="127">3</text><text x="212" y="164">2</text></g>
+</svg>
+</div>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>П1</th>
+<th>П2</th>
+<th>П3</th>
+<th>П4</th>
+<th>П5</th>
+<th>П6</th>
+<th>дорог</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>П1</strong></td>
+<td>■</td>
+<td>39</td>
+<td></td>
+<td></td>
+<td>53</td>
+<td>30</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>П2</strong></td>
+<td>39</td>
+<td>■</td>
+<td>21</td>
+<td></td>
+<td></td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>П3</strong></td>
+<td></td>
+<td>21</td>
+<td>■</td>
+<td>8</td>
+<td>3</td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>П4</strong></td>
+<td></td>
+<td></td>
+<td>8</td>
+<td>■</td>
+<td>13</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>П5</strong></td>
+<td>53</td>
+<td></td>
+<td>3</td>
+<td>13</td>
+<td>■</td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>П6</strong></td>
+<td>30</td>
+<td></td>
+<td></td>
+<td>5</td>
+<td></td>
+<td>■</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Решение.</strong> Мелкие цифры у букв и последний столбец — число дорог (подписываем сами).</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Рассуждение</th>
+<th>Итог</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Две дороги — у C и A на схеме, у П2 и П6 в таблице. Особых пунктов нет — смотрим соседей</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>F соединён <strong>с обеими</strong> двойками (C и A). В таблице с обеими двойками (П2 и П6) соединён только П1</td>
+<td>F = П1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Рисунок симметричен: C и A, B и E можно поменять местами. Спрашивают EA + BC — сумма не изменится. Берём любой вариант: C = П2</td>
+<td>C = П2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Второй сосед C — B; у П2 второй сосед — П3. Второй сосед A (= П6) — E; у П6 это П4</td>
+<td>B = П3, A = П6, E = П4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>EA = П4–П6 = <strong>5</strong>, BC = П3–П2 = <strong>21</strong></td>
+<td>5 + 21 = 26</td>
+</tr>
+</tbody>
+</table>
+<p>При другом выборе (C = П6) будет EA = 21, BC = 5 — та же сумма. <strong>Ответ: 26.</strong></p>
+<details class="tip">
+<summary>Проверка программой: перебор соответствий</summary>
+<p>Перебираем все способы раздать буквам номера пунктов и оставляем те, при которых <strong>каждая линия схемы есть в
+таблице</strong>. Программа печатает соответствие и ответ; два соответствия — это и есть симметрия, ответ у обоих один.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №1, демоверсия ЕГЭ-2027 — проверка перебором: какие номера таблицы у букв схемы; ответ — сумма дорог EA и BC.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Ответ: 8 8</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Ответ: {'A': 2, 'B': 4, 'C': 6, 'D': 5, 'E': 3, 'F': 1} 26</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Ответ: {'A': 6, 'B': 3, 'C': 2, 'D': 5, 'E': 4, 'F': 1} 26</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">permutations</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">dorogi</span> <span class="o">=</span> <span class="s1">'CB CF FD DB DE BE FA AE'</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>          <span class="c1"># схема: каждая линия — пара букв</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">tabl</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span>                   <span class="c1"># таблица: пункт → {сосед: длина дороги}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">21</span><span class="p">},</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="mi">3</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="mi">4</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="mi">5</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">13</span><span class="p">},</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="mi">6</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">5</span><span class="p">}}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">bukvy</span> <span class="o">=</span> <span class="s1">'ABCDEF'</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dorogi</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">tabl</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># дорог на схеме и в таблице — должно совпасть</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="n">tabl</span><span class="p">):</span>                        <span class="c1"># все способы раздать буквам номера 1…6</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">bukvy</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>                         <span class="c1"># n['E'] — номер пункта E в таблице</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="ow">in</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="n">a</span><span class="p">]]</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">dorogi</span><span class="p">):</span>  <span class="c1"># каждая линия схемы есть в таблице</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="s1">'E'</span><span class="p">]][</span><span class="n">n</span><span class="p">[</span><span class="s1">'A'</span><span class="p">]]</span> <span class="o">+</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="s1">'B'</span><span class="p">]][</span><span class="n">n</span><span class="p">[</span><span class="s1">'C'</span><span class="p">]])</span>
+</code></pre></div>
+<p>Что менять: <code>dorogi</code> — линии схемы парами букв; <code>tabl</code> — строки таблицы (пункт: {сосед: длина}), для звёздочек —
+списком <code>[2, 5, 6]</code>; <code>bukvy</code> — все буквы схемы; в <code>print</code> — что спрашивают. Первая строка вывода — <strong>контроль
+ввода</strong>: дорог на схеме и в таблице должно быть поровну. Ввод занимает 2–3 минуты, поэтому это проверка, а не
+основной способ.</p>
+</details>
+<h2 id="_4">Разновидности<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Как решать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>длина <strong>одной дороги</strong> XY</td>
+<td>шаблон; часто хватает 2–3 букв (вкладка «Одна дорога», схема-«ёлка», как в сборнике Крылова)</td>
+</tr>
+<tr>
+<td><strong>сумма двух дорог</strong> (демо-2027, ЕГЭ-2024–2026, сборник Крылова)</td>
+<td>пример выше; обе дороги часто между «двойниками» — их различать не нужно</td>
+</tr>
+<tr>
+<td>дорога между двумя неразличимыми пунктами</td>
+<td>номер пары ясен, а дорога между ними одна — читаем сразу</td>
+</tr>
+<tr>
+<td><strong>звёздочки</strong>: номера двух пунктов «в порядке возрастания»</td>
+<td>ответ — пара номеров, кто из двух какой — неважно (вкладка «Номера пунктов»)</td>
+</tr>
+<tr>
+<td>то же, но «сначала номер Б, потом В»</td>
+<td>порядок — как просят, не по возрастанию</td>
+</tr>
+<tr>
+<td>буквы всех пунктов по порядку П1…Пn (СтатГрад 2024, пробник СПб 2025)</td>
+<td>найти все буквы; в программе — <code>print(''.join(sorted(n, key=n.get)))</code></td>
+</tr>
+<tr>
+<td><strong>более длинная</strong> из двух дорог / <strong>сумма всех дорог</strong> из пункта</td>
+<td>найти дороги, взять большую / сложить строку пункта</td>
+</tr>
+<tr>
+<td>«Известно, что дорога АБ <strong>длиннее (короче)</strong> АВ» (СтатГрад, Решу ЕГЭ — 10 задач)</td>
+<td>без условия ответов 2–4; условие выбирает вариант (вкладка)</td>
+</tr>
+<tr>
+<td><strong>кратчайший путь</strong> / минимальное время из А в Д (ЕГЭ-2019, задачи 2024)</td>
+<td>путь — сумма нескольких дорог, прямая дорога может быть длиннее или её нет (вкладка)</td>
+</tr>
+<tr>
+<td>«кратчайший путь из А в К <strong>не превышает</strong> 30»</td>
+<td>это условие, а не ответ: отбрасывает расстановки, где путь длиннее</td>
+</tr>
+<tr>
+<td>на схеме <strong>пропущена дорога</strong> — найти её длину (СтатГрад)</td>
+<td>сравнить числа дорог: у кого в таблице на одну больше — концы пропущенной (вкладка)</td>
+</tr>
+<tr>
+<td>в таблице <strong>пропущена дорога</strong> — номера её пунктов</td>
+<td>наоборот: у кого на схеме дорог больше, чем в строке таблицы</td>
+</tr>
+<tr>
+<td>одна дорога в таблице записана <strong>не туда</strong> (верен один конец)</td>
+<td>у одного пункта в таблице дороги не хватает, у другого лишняя — находим оба по числу дорог, остальное как обычно</td>
+</tr>
+<tr>
+<td>пункт, соединённый <strong>почти со всеми</strong></td>
+<td>сам по себе ничего не даёт, зато единственный пункт, куда он <strong>не</strong> ведёт, находится сразу</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Одна дорога: «ёлка»</label><label for="__tabbed_1_2">Номера пунктов</label><label for="__tabbed_1_3">Условие «длиннее»</label><label for="__tabbed_1_4">Пропущенная дорога</label><label for="__tabbed_1_5">Кратчайший путь</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Схема — как в сборнике Крылова: у К одна дорога, у Г четыре. Найдите длину дороги ВД.</p>
+<p><div class="graf-wrap">
+<svg class="graf" viewBox="-20 -20 445 215" role="img" aria-label="Схема «ёлка»: АБ, АВ, АГ, БВ, БГ, ВД, ГД, ГЕ, ДЕ, ЕК">
+  <g class="edge"><line x1="120" y1="100" x2="30" y2="40"/><line x1="120" y1="100" x2="30" y2="160"/><line x1="120" y1="100" x2="210" y2="40"/><line x1="30" y1="40" x2="30" y2="160"/><line x1="30" y1="40" x2="210" y2="40"/><line x1="30" y1="160" x2="210" y2="160"/><line x1="210" y1="40" x2="210" y2="160"/><line x1="210" y1="40" x2="300" y2="100"/><line x1="210" y1="160" x2="300" y2="100"/><line x1="300" y1="100" x2="385" y2="100"/></g>
+  <g class="node"><circle cx="120" cy="100" r="5"/><circle cx="30" cy="40" r="5"/><circle cx="30" cy="160" r="5"/><circle cx="210" cy="40" r="5"/><circle cx="210" cy="160" r="5"/><circle cx="300" cy="100" r="5"/><circle cx="385" cy="100" r="5"/></g>
+  <g class="name"><text x="103" y="106">А</text><text x="14" y="41">Б</text><text x="14" y="171">В</text><text x="211" y="29">Г</text><text x="211" y="183">Д</text><text x="317" y="106">Е</text><text x="402" y="106">К</text></g>
+</svg>
+</div></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>П1</th>
+<th>П2</th>
+<th>П3</th>
+<th>П4</th>
+<th>П5</th>
+<th>П6</th>
+<th>П7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>П1</strong></td>
+<td>■</td>
+<td></td>
+<td>6</td>
+<td></td>
+<td>32</td>
+<td>36</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П2</strong></td>
+<td></td>
+<td>■</td>
+<td></td>
+<td></td>
+<td>5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П3</strong></td>
+<td>6</td>
+<td></td>
+<td>■</td>
+<td>29</td>
+<td>29</td>
+<td></td>
+<td>11</td>
+</tr>
+<tr>
+<td><strong>П4</strong></td>
+<td></td>
+<td></td>
+<td>29</td>
+<td>■</td>
+<td></td>
+<td>35</td>
+<td>33</td>
+</tr>
+<tr>
+<td><strong>П5</strong></td>
+<td>32</td>
+<td>5</td>
+<td>29</td>
+<td></td>
+<td>■</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П6</strong></td>
+<td>36</td>
+<td></td>
+<td></td>
+<td>35</td>
+<td></td>
+<td>■</td>
+<td>18</td>
+</tr>
+<tr>
+<td><strong>П7</strong></td>
+<td></td>
+<td></td>
+<td>11</td>
+<td>33</td>
+<td></td>
+<td>18</td>
+<td>■</td>
+</tr>
+</tbody>
+</table>
+<p>Одна дорога — К = П2; четыре — Г = П3. Е — единственный сосед К: Е = П5. Д — общий сосед Г и Е: у П3 и П5
+общий сосед П1 — Д = П1. В — третий сосед Д (кроме Г и Е): В = П6. ВД = П6–П1 = <strong>36</strong>. А и Б неразличимы, но
+они и не нужны.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №1, своя задача: схема «ёлка» (К — одна дорога, Г — четыре); длина дороги ВД.</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># Ответ: 10 10</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: {'А': 4, 'Б': 7, 'В': 6, 'Г': 3, 'Д': 1, 'Е': 5, 'К': 2} 36</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Ответ: {'А': 7, 'Б': 4, 'В': 6, 'Г': 3, 'Д': 1, 'Е': 5, 'К': 2} 36</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">permutations</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">dorogi</span> <span class="o">=</span> <span class="s1">'АБ АВ АГ БВ БГ ВД ГД ГЕ ДЕ ЕК'</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">tabl</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">36</span><span class="p">},</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">5</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="mi">3</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">11</span><span class="p">},</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="mi">4</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">33</span><span class="p">},</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="mi">5</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">29</span><span class="p">},</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="mi">6</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="mi">7</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">18</span><span class="p">}}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">bukvy</span> <span class="o">=</span> <span class="s1">'АБВГДЕК'</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dorogi</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">tabl</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="n">tabl</span><span class="p">):</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">bukvy</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="ow">in</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="n">a</span><span class="p">]]</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">dorogi</span><span class="p">):</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="s1">'В'</span><span class="p">]][</span><span class="n">n</span><span class="p">[</span><span class="s1">'Д'</span><span class="p">]])</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Таблица со звёздочками, схема «домик». Какие номера могут соответствовать Г и Д? Ответ — по возрастанию.</p>
+<p><div class="graf-wrap">
+<svg class="graf graf-small" viewBox="-20 -20 290 273" role="img" aria-label="Схема «домик»: АБ, АВ, БВ, БГ, ВД, ГД, ГЕ, ДЖ, ЕЖ">
+  <g class="edge"><line x1="150" y1="22" x2="70" y2="78"/><line x1="150" y1="22" x2="230" y2="78"/><line x1="70" y1="78" x2="230" y2="78"/><line x1="70" y1="78" x2="70" y2="158"/><line x1="230" y1="78" x2="230" y2="158"/><line x1="70" y1="158" x2="230" y2="158"/><line x1="70" y1="158" x2="110" y2="218"/><line x1="230" y1="158" x2="190" y2="218"/><line x1="110" y1="218" x2="190" y2="218"/></g>
+  <g class="node"><circle cx="150" cy="22" r="5"/><circle cx="70" cy="78" r="5"/><circle cx="230" cy="78" r="5"/><circle cx="70" cy="158" r="5"/><circle cx="230" cy="158" r="5"/><circle cx="110" cy="218" r="5"/><circle cx="190" cy="218" r="5"/></g>
+  <g class="name"><text x="150" y="11">А</text><text x="55" y="76">Б</text><text x="245" y="76">В</text><text x="55" y="171">Г</text><text x="245" y="171">Д</text><text x="104" y="240">Е</text><text x="196" y="240">Ж</text></g>
+</svg>
+</div></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>П1</th>
+<th>П2</th>
+<th>П3</th>
+<th>П4</th>
+<th>П5</th>
+<th>П6</th>
+<th>П7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>П1</strong></td>
+<td>■</td>
+<td>*</td>
+<td></td>
+<td>*</td>
+<td></td>
+<td></td>
+<td>*</td>
+</tr>
+<tr>
+<td><strong>П2</strong></td>
+<td>*</td>
+<td>■</td>
+<td>*</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П3</strong></td>
+<td></td>
+<td>*</td>
+<td>■</td>
+<td>*</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П4</strong></td>
+<td>*</td>
+<td></td>
+<td>*</td>
+<td>■</td>
+<td>*</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П5</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td>*</td>
+<td>■</td>
+<td>*</td>
+<td>*</td>
+</tr>
+<tr>
+<td><strong>П6</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>*</td>
+<td>■</td>
+<td>*</td>
+</tr>
+<tr>
+<td><strong>П7</strong></td>
+<td>*</td>
+<td></td>
+<td></td>
+<td></td>
+<td>*</td>
+<td>*</td>
+<td>■</td>
+</tr>
+</tbody>
+</table>
+<p>Две дороги — у А, Е, Ж (в таблице П2, П3, П6). У А соседи Б и В <strong>связаны</strong> между собой, у Е и Ж — нет. В
+таблице соседи П6 — П5 и П7, и звёздочка П5–П7 есть: А = П6, {Б, В} = {П5, П7}. Г и Д — вторые соседи-тройки
+Б и В: у П5 это П4, у П7 — П1. Какой из них Г — не различить (домик симметричен), поэтому и спрашивают «какие
+номера могут соответствовать». <strong>Ответ: 14.</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №1, своя задача: таблица со звёздочками, схема «домик» (симметрична); номера пунктов Г и Д по возрастанию.</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Ответ: 9 9</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Ответ: {'А': 6, 'Б': 5, 'В': 7, 'Г': 4, 'Д': 1, 'Е': 3, 'Ж': 2} [1, 4]</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Ответ: {'А': 6, 'Б': 7, 'В': 5, 'Г': 1, 'Д': 4, 'Е': 2, 'Ж': 3} [1, 4]</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">permutations</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">dorogi</span> <span class="o">=</span> <span class="s1">'АБ АВ БВ БГ ВД ГД ГЕ ДЖ ЕЖ'</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">tabl</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>                                <span class="c1"># звёздочки: пункт → в каких столбцах стоят</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="mi">6</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="mi">7</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]}</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">bukvy</span> <span class="o">=</span> <span class="s1">'АБВГДЕЖ'</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dorogi</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">tabl</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="n">tabl</span><span class="p">):</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">bukvy</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="ow">in</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="n">a</span><span class="p">]]</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">dorogi</span><span class="p">):</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">n</span><span class="p">[</span><span class="s1">'Г'</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="s1">'Д'</span><span class="p">]]))</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Та же схема-«домик», другая таблица. Известно, что дорога АБ длиннее дороги АВ. Найдите длину дороги ГЕ.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>П1</th>
+<th>П2</th>
+<th>П3</th>
+<th>П4</th>
+<th>П5</th>
+<th>П6</th>
+<th>П7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>П1</strong></td>
+<td>■</td>
+<td></td>
+<td>9</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П2</strong></td>
+<td></td>
+<td>■</td>
+<td></td>
+<td></td>
+<td>39</td>
+<td>35</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П3</strong></td>
+<td>9</td>
+<td></td>
+<td>■</td>
+<td>35</td>
+<td></td>
+<td></td>
+<td>21</td>
+</tr>
+<tr>
+<td><strong>П4</strong></td>
+<td>5</td>
+<td></td>
+<td>35</td>
+<td>■</td>
+<td></td>
+<td>40</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П5</strong></td>
+<td></td>
+<td>39</td>
+<td></td>
+<td></td>
+<td>■</td>
+<td></td>
+<td>17</td>
+</tr>
+<tr>
+<td><strong>П6</strong></td>
+<td></td>
+<td>35</td>
+<td></td>
+<td>40</td>
+<td></td>
+<td>■</td>
+<td>19</td>
+</tr>
+<tr>
+<td><strong>П7</strong></td>
+<td></td>
+<td></td>
+<td>21</td>
+<td></td>
+<td>17</td>
+<td>19</td>
+<td>■</td>
+</tr>
+</tbody>
+</table>
+<p>А — двойка, соседи которой связаны: П1 (соседи П3 и П4, между ними 35). По схеме Б и В неразличимы, но
+условие различает: АБ длиннее, значит Б = П3 (9), В = П4 (5). Г — третий сосед Б: П7; Д — третий сосед В: П6.
+У Г остался сосед П5 — это Е. ГЕ = П7–П5 = <strong>17</strong>. При обратном выборе (Б = П4) вышло бы 35 — поэтому условие и
+дано.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># №1, своя задача: схема «домик», дорога АБ длиннее дороги АВ; длина дороги ГЕ.</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Ответ: 9 9</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Ответ: {'А': 1, 'Б': 3, 'В': 4, 'Г': 7, 'Д': 6, 'Е': 5, 'Ж': 2} 17 True</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Ответ: {'А': 1, 'Б': 4, 'В': 3, 'Г': 6, 'Д': 7, 'Е': 2, 'Ж': 5} 35 False</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">permutations</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">dorogi</span> <span class="o">=</span> <span class="s1">'АБ АВ БВ БГ ВД ГД ГЕ ДЖ ЕЖ'</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">tabl</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">5</span><span class="p">:</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">35</span><span class="p">},</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="mi">3</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">21</span><span class="p">},</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="mi">4</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="mi">5</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">17</span><span class="p">},</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="mi">6</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">19</span><span class="p">},</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="mi">7</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">19</span><span class="p">}}</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">bukvy</span> <span class="o">=</span> <span class="s1">'АБВГДЕЖ'</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dorogi</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">tabl</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="n">tabl</span><span class="p">):</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">bukvy</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="ow">in</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="n">a</span><span class="p">]]</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">dorogi</span><span class="p">):</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        <span class="n">dlinnee</span> <span class="o">=</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="s1">'А'</span><span class="p">]][</span><span class="n">n</span><span class="p">[</span><span class="s1">'Б'</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="s1">'А'</span><span class="p">]][</span><span class="n">n</span><span class="p">[</span><span class="s1">'В'</span><span class="p">]]</span>     <span class="c1"># условие из задачи</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="s1">'Г'</span><span class="p">]][</span><span class="n">n</span><span class="p">[</span><span class="s1">'Е'</span><span class="p">]],</span> <span class="n">dlinnee</span><span class="p">)</span>
+</code></pre></div>
+<p>Программа печатает оба соответствия и <code>True</code> у того, где условие выполняется.</p>
+</div>
+<div class="tabbed-block">
+<p>При построении схемы одну дорогу случайно пропустили (таблица верна). Найдите длину пропущенной дороги.</p>
+<p><div class="graf-wrap">
+<svg class="graf graf-small" viewBox="-20 -20 320 260" role="img" aria-label="Схема: АБ, АГ, БВ, БД, ВЕ, ГД, ДЕ, ГЖ, ЕЖ">
+  <g class="edge"><line x1="40" y1="30" x2="150" y2="30"/><line x1="40" y1="30" x2="40" y2="120"/><line x1="150" y1="30" x2="260" y2="30"/><line x1="150" y1="30" x2="150" y2="120"/><line x1="260" y1="30" x2="260" y2="120"/><line x1="40" y1="120" x2="150" y2="120"/><line x1="150" y1="120" x2="260" y2="120"/><line x1="40" y1="120" x2="150" y2="205"/><line x1="260" y1="120" x2="150" y2="205"/></g>
+  <g class="node"><circle cx="40" cy="30" r="5"/><circle cx="150" cy="30" r="5"/><circle cx="260" cy="30" r="5"/><circle cx="40" cy="120" r="5"/><circle cx="150" cy="120" r="5"/><circle cx="260" cy="120" r="5"/><circle cx="150" cy="205" r="5"/></g>
+  <g class="name"><text x="27" y="25">А</text><text x="150" y="19">Б</text><text x="273" y="25">В</text><text x="23" y="126">Г</text><text x="150" y="143">Д</text><text x="277" y="126">Е</text><text x="150" y="228">Ж</text></g>
+</svg>
+</div></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>П1</th>
+<th>П2</th>
+<th>П3</th>
+<th>П4</th>
+<th>П5</th>
+<th>П6</th>
+<th>П7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>П1</strong></td>
+<td>■</td>
+<td></td>
+<td>36</td>
+<td></td>
+<td>6</td>
+<td></td>
+<td>18</td>
+</tr>
+<tr>
+<td><strong>П2</strong></td>
+<td></td>
+<td>■</td>
+<td>29</td>
+<td></td>
+<td>32</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П3</strong></td>
+<td>36</td>
+<td>29</td>
+<td>■</td>
+<td>35</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П4</strong></td>
+<td></td>
+<td></td>
+<td>35</td>
+<td>■</td>
+<td></td>
+<td></td>
+<td>33</td>
+</tr>
+<tr>
+<td><strong>П5</strong></td>
+<td>6</td>
+<td>32</td>
+<td></td>
+<td></td>
+<td>■</td>
+<td>11</td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>П6</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>11</td>
+<td>■</td>
+<td>29</td>
+</tr>
+<tr>
+<td><strong>П7</strong></td>
+<td>18</td>
+<td></td>
+<td></td>
+<td>33</td>
+<td>5</td>
+<td>29</td>
+<td>■</td>
+</tr>
+</tbody>
+</table>
+<p>Числа дорог: на схеме — 2, 2, 2 и четыре тройки (9 дорог), в таблице — три двойки, две тройки и <strong>две
+четвёрки</strong>, П5 и П7 (10 дорог). У каждого конца пропущенной дороги в таблице на одну дорогу больше, чем на
+схеме, а четвёрок на схеме нет — значит, пропущена дорога между П5 и П7: <strong>5</strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># №1, своя задача: при построении схемы одну дорогу пропустили; длина пропущенной дороги.</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Ответ: 9 10</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Ответ: {5}</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">permutations</span><span class="p">,</span> <span class="n">combinations</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">dorogi</span> <span class="o">=</span> <span class="s1">'АБ АГ БВ БД ВЕ ГД ДЕ ГЖ ЕЖ'</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">tabl</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">32</span><span class="p">},</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="mi">3</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">35</span><span class="p">},</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="mi">4</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">33</span><span class="p">},</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="mi">5</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        <span class="mi">6</span><span class="p">:</span> <span class="p">{</span><span class="mi">5</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">29</span><span class="p">},</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="mi">7</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">29</span><span class="p">}}</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="n">bukvy</span> <span class="o">=</span> <span class="s1">'АБВГДЕЖ'</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dorogi</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">tabl</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># на схеме на одну дорогу меньше</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="n">otvet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">combinations</span><span class="p">(</span><span class="n">bukvy</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>                 <span class="c1"># пробуем дорисовать каждую дорогу, которой нет на схеме</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">dorogi</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">dorogi</span><span class="p">:</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        <span class="k">continue</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="n">tabl</span><span class="p">):</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        <span class="n">n</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">bukvy</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="ow">in</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="n">a</span><span class="p">]]</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">dorogi</span> <span class="o">+</span> <span class="p">[</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">]):</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>            <span class="n">otvet</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="n">x</span><span class="p">]][</span><span class="n">n</span><span class="p">[</span><span class="n">y</span><span class="p">]])</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="nb">print</span><span class="p">(</span><span class="n">otvet</span><span class="p">)</span>
+</code></pre></div>
+<p>Программа дорисовывает на схеме по очереди каждую недостающую дорогу и печатает все подходящие длины.
+Если концы пропущенной дороги не находятся по числам дорог сразу (бывает, что у одного из них «двойник»),
+рассуждаем как в шаблоне: кто соединён с теми же пунктами.</p>
+</div>
+<div class="tabbed-block">
+<p>Схема — «ёлка» (как во вкладке «Одна дорога»), другая таблица. Найдите длину кратчайшего пути из К в В.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>П1</th>
+<th>П2</th>
+<th>П3</th>
+<th>П4</th>
+<th>П5</th>
+<th>П6</th>
+<th>П7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>П1</strong></td>
+<td>■</td>
+<td></td>
+<td></td>
+<td>26</td>
+<td>14</td>
+<td></td>
+<td>16</td>
+</tr>
+<tr>
+<td><strong>П2</strong></td>
+<td></td>
+<td>■</td>
+<td>28</td>
+<td></td>
+<td>28</td>
+<td></td>
+<td>18</td>
+</tr>
+<tr>
+<td><strong>П3</strong></td>
+<td></td>
+<td>28</td>
+<td>■</td>
+<td></td>
+<td>5</td>
+<td></td>
+<td>9</td>
+</tr>
+<tr>
+<td><strong>П4</strong></td>
+<td>26</td>
+<td></td>
+<td></td>
+<td>■</td>
+<td></td>
+<td>23</td>
+<td>17</td>
+</tr>
+<tr>
+<td><strong>П5</strong></td>
+<td>14</td>
+<td>28</td>
+<td>5</td>
+<td></td>
+<td>■</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П6</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td>23</td>
+<td></td>
+<td>■</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>П7</strong></td>
+<td>16</td>
+<td>18</td>
+<td>9</td>
+<td>17</td>
+<td></td>
+<td></td>
+<td>■</td>
+</tr>
+</tbody>
+</table>
+<p>К = П6 (одна дорога), Г = П7 (четыре), Е = П4 (сосед К), Д = П1 (общий сосед Г и Е), В = П5 (третий сосед Д),
+А и Б — П2 и П3. Прямой дороги К–В нет; пути: К–Е–Д–В = 23 + 26 + 14 = 63, К–Е–Г–Д–В = 70, через Г и П3 —
+23 + 17 + 9 + 5 = <strong>54</strong>, через Г и П2 — 86. Самый короткий — <strong>54</strong>, хотя в нём больше дорог.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># №1, своя задача: схема «ёлка», другая таблица; длина кратчайшего пути из К в В (прямой дороги нет).</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Ответ: {'А': 2, 'Б': 3, 'В': 5, 'Г': 7, 'Д': 1, 'Е': 4, 'К': 6} 54</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Ответ: {'А': 3, 'Б': 2, 'В': 5, 'Г': 7, 'Д': 1, 'Е': 4, 'К': 6} 54</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">permutations</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">dorogi</span> <span class="o">=</span> <span class="s1">'АБ АВ АГ БВ БГ ВД ГД ГЕ ДЕ ЕК'</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">tabl</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">4</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">16</span><span class="p">},</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">18</span><span class="p">},</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="mi">3</span><span class="p">:</span> <span class="p">{</span><span class="mi">2</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">9</span><span class="p">},</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="mi">4</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="mi">17</span><span class="p">},</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="mi">5</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="mi">6</span><span class="p">:</span> <span class="p">{</span><span class="mi">4</span><span class="p">:</span> <span class="mi">23</span><span class="p">},</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        <span class="mi">7</span><span class="p">:</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">17</span><span class="p">}}</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="n">bukvy</span> <span class="o">=</span> <span class="s1">'АБВГДЕК'</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="p">{</span><span class="n">j</span><span class="p">:</span> <span class="n">tabl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">tabl</span><span class="p">}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tabl</span><span class="p">}</span>   <span class="c1"># 1000 — дороги нет</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">tabl</span><span class="p">:</span>                                      <span class="c1"># путь i → j через k короче? (алгоритм Флойда)</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tabl</span><span class="p">:</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">tabl</span><span class="p">:</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>            <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">+</span> <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="n">tabl</span><span class="p">):</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">bukvy</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="ow">in</span> <span class="n">tabl</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="n">a</span><span class="p">]]</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">dorogi</span><span class="p">):</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">n</span><span class="p">[</span><span class="s1">'К'</span><span class="p">]][</span><span class="n">n</span><span class="p">[</span><span class="s1">'В'</span><span class="p">]])</span>
+</code></pre></div>
+<p>Здесь таблица превращается в таблицу кратчайших расстояний (тройной цикл — алгоритм Флойда), а перебор
+соответствий только находит номера К и В.</p>
+</div>
+</div>
+</div>
+<h2 id="_5">Типичные ошибки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Скрытые ловушки — проверены на 83 задачах Решу ЕГЭ</p>
+<ul>
+<li><strong>Одних степеней мало.</strong> В 41 задаче из 83 нет ни одного пункта с особым числом дорог — сразу нужны соседи.</li>
+<li><strong>Ищут «правильную» расстановку там, где её нет.</strong> В 50 задачах из 80 подходят 2–4 расстановки (симметрия),
+  а ответ у них один. Если два пункта неразличимы — выбрать любой и идти дальше.</li>
+<li><strong>Пропустили условие «дорога АБ длиннее…».</strong> Во всех 10 таких задачах без условия получается 2–4 разных
+  ответа, и только один верный.</li>
+<li><strong>Кратчайший путь ≠ дорога.</strong> В задаче 2024 года (Решу ЕГЭ 68234) прямой дороги А–Д нет вовсе, ответ 78 —
+  сумма трёх дорог.</li>
+<li><strong>Программа-проверка «не заметила» забытую линию.</strong> Проверка ищет линии схемы в таблице, а не наоборот: если
+  в <code>dorogi</code> забыть одну линию, на демоверсии в 5 случаях из 8 программа печатает лишние «ответы» (от 8 до 74),
+  в 3 — тот же ответ, но случайно. Поэтому первая строка вывода — контроль: дорог поровну.</li>
+</ul>
+</div>
+<ul>
+<li><strong>Ошиблись в подсчёте дорог</strong> — самая частая ошибка (её делают даже авторы разборов в видео). Подписывайте число
+  прямо на рисунке и сверяйте наборы: на схеме и в таблице они одинаковые.</li>
+<li><strong>Прочитали не ту клетку</strong>: взяли К–Е вместо D–E, соседнюю строку. Ведите пальцем: строка одного номера, столбец
+  другого.</li>
+<li><strong>Судят по рисунку</strong>: длинная линия — длинная дорога. Длины на схеме ничего не значат, только таблица.</li>
+<li><strong>Ответ не в том виде</strong>: «по возрастанию» против «сначала Б, потом В», номера против букв, сумма против одной
+  дороги.</li>
+<li><strong>Латинские и русские буквы.</strong> На Решу ЕГЭ встречается русская Н на латинской схеме (A…H); в программе такая буква
+  — другой символ (<code>KeyError</code>).</li>
+<li><strong>Опечатки в чужих сборниках на платформах</strong>: в разборах сборника Крылова на платформе у трёх вариантов вопрос
+  перенесён не тот (ответ не сошёлся со сборником). Не сходится с ответом — сначала перечитать вопрос.</li>
+</ul>
+<details class="info">
+<summary>Откуда разновидности</summary>
+<p>Демоверсия ФИПИ 2027; сборник Крылова (ЕГЭ-2025, 2026) — по разборам вариантов; видеоразборы
+<a href="https://www.youtube.com/watch?v=ayVxU_1SR9A">Умскул, «Все типы задания 1»</a> (ссылка преподавателя),
+<a href="https://www.youtube.com/watch?v=US7ov0J5x38">Умскул, «Все типы»</a> и <a href="https://www.youtube.com/watch?v=PqSgN2ntIjc">«с нуля»</a>,
+<a href="https://www.youtube.com/watch?v=M4oyrFVEBx8">Дядя Саша, «Все №1 2027»</a> и <a href="https://www.youtube.com/watch?v=ufiiuyjKy2Q">«Все прототипы»</a>,
+<a href="https://www.youtube.com/watch?v=LzHMevwtR_g">99 баллов, «Все №1 из сборника Крылова»</a>,
+<a href="https://www.youtube.com/watch?v=T36ZEJplkfU">Максим Попков, варианты сборника Крылова 2026</a>,
+<a href="https://www.youtube.com/watch?v=oaPgPDAJ7TU">Ирина Лысенко</a>, <a href="https://www.youtube.com/watch?v=BwavSAft7lU">Максим Костенко</a>,
+<a href="https://www.youtube.com/watch?v=1iqpDtIGcbM">Сеня Информатик</a>, <a href="https://www.youtube.com/watch?v=CgwntXi3X4c">Лёня Шастин</a>,
+<a href="https://www.youtube.com/watch?v=Tf4Q4aEJT14">Артём Flash</a>, <a href="https://www.youtube.com/watch?v=pDQSfbcYPUE">Школково</a>,
+<a href="https://www.youtube.com/watch?v=Ej-X76lxLDo">Информатика от блондинки</a>, <a href="https://www.youtube.com/watch?v=PMG_63X-FaQ">Вова Информатик</a>
+и другие (всего 36 видео); каталог Решу ЕГЭ, тип 1 — <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=357">однозначное</a>
+и <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=358">неоднозначное соотнесение</a> (83 задачи): все решены
+своей программой, ответы совпали.</p>
+</details>
+<h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Задачи №1 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №1</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Назад: Номера 1–27">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                Номера 1–27
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../task-2/" class="md-footer__link md-footer__link--next" aria-label="Вперед: №2. Таблица истинности">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                №2. Таблица истинности
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
