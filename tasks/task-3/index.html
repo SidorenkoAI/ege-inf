@@ -1,0 +1,1882 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Шаблоны и разборы заданий 1–27 ЕГЭ по информатике (2027), основы Python и электронных таблиц">
+      
+      
+      
+        <link rel="canonical" href="https://sidorenkoai.github.io/ege-inf/tasks/task-3/">
+      
+      
+        <link rel="prev" href="../task-2/">
+      
+      
+        <link rel="next" href="../task-4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/cmit-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>№3. База данных - Подготовка к успешной сдаче ЕГЭ по информатике</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no3" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+<header class="md-header brand-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a class="brand__logo" href="https://cmit22.ru" title="Бийский ЦМИТ Политех">
+      <img class="brand__logo-full" src="../../assets/cmit-logo.png" alt="Бийский ЦМИТ Политех">
+      <img class="brand__logo-icon" src="../../assets/cmit-icon.png" alt="Бийский ЦМИТ Политех">
+    </a>
+    <div class="brand__text">
+      <a class="brand__title" href="../..">Подготовка к успешной сдаче ЕГЭ по информатике</a>
+      <div class="brand__who">
+        <span>Сидоренко Антон Игоревич</span>
+        <a href="tel:+79237156628">8 923 715 6628</a>
+        <a href="https://cmit22.ru">Бийский ЦМИТ Политех</a>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <a class="brand__bot" href="https://t.me/egeSidorenkoBot" title="Тренироваться в боте @egeSidorenkoBot">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+      <span>Тренироваться в боте<br><small>@egeSidorenkoBot</small></span>
+    </a>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../base/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  База Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Номера 1–27
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cheatsheet/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шпаргалка
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Подготовка к успешной сдаче ЕГЭ по информатике" class="md-nav__button md-logo" aria-label="Подготовка к успешной сдаче ЕГЭ по информатике" data-md-component="logo">
+      
+  <img src="../../assets/cmit-icon.png" alt="logo">
+
+    </a>
+    Подготовка к успешной сдаче ЕГЭ по информатике
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    База Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Номера 1–27
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Номера 1–27
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №1. Граф и таблица
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №2. Таблица истинности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №3. База данных
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №3. База данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №4. Условие Фано
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №5. Алгоритм с двоичной записью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №6. Исполнитель Черепаха
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №7. Объём изображения и звука
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №8. Комбинаторика слов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №9. Таблица: условия по строкам
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №10. IP-адрес и маска
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №11. Объём данных, коды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №12. Машина Тьюринга
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №13. Число программ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №14. Системы счисления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №15. Логика: параметр A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №16. Рекурсивные функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №17. Последовательность из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №18. Робот в таблице
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-19-21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №19–21. Теория игр
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шпаргалка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no3">№3. База данных: три таблицы<a class="headerlink" href="#no3" title="Permanent link">&para;</a></h1>
+<div class="task-meta">
+<p><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2m0 4v4h6V8zm8 0v4h6V8zm-8 6v4h6v-4zm8 0v4h6v-4z"/></svg></span> таблицы (LibreOffice Calc)</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> можно Python</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"/></svg></span> ~3 мин</span>
+<span>1 балл</span>
+<span>файл .ods</span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Коротко</p>
+<p>На главном листе (где операции) справа — столбцы <strong><code>ВПР</code></strong>: подтянуть из справочников всё, что есть в вопросе
+(название, район или адрес, вес упаковки, цену), и столбец <strong>«что считаем»</strong> (<code>=E2*I2/1000</code>). Протянуть вниз.
+<strong>Данные → Автофильтр</strong> по условиям вопроса. Ответ — сумма <strong>видимых</strong> строк: <code>=ИТОГ(9;J2:J6481)</code> или строка
+состояния. <strong>Не <code>СУММ</code></strong> — она складывает и скрытые строки.</p>
+</div>
+<h2 id="_1">Как узнать задачу<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>«В файле приведён фрагмент базы данных „Продукты“ (Кондитерские изделия, Хозтовары…) … База данных состоит из
+  <strong>трёх таблиц</strong>»: «Движение товаров» (операции), «Товар» и «Магазин» (справочники); на рисунке — схема связей.</li>
+<li>Связи — по <strong>ID магазина</strong> и <strong>артикулу</strong>: в «Движении» только номера, а название, вес, цена, район и адрес — в
+  справочниках.</li>
+<li>Вопрос: <strong>сколько</strong> (кг, литров, рублей, упаковок) <strong>какого товара</strong>, <strong>где</strong> (район, улица), <strong>за какой период</strong>
+  и <strong>поступило или продано</strong>. Реже — «на сколько увеличилось», «какой магазин (район, день) — наибольший».</li>
+<li>Бывают и другие базы с тем же устройством: театр (билеты, тарифы, спектакли), мебель и ткани, ЖКХ, машины,
+  агротовары, электросамокаты (сборник Крылова) — решаются тем же шаблоном.</li>
+</ul>
+<h2 id="_2">Шаблон<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Файл открывается в LibreOffice Calc (на экзамене файл <code>.ods</code>; в Excel всё то же, отличия — в рамке ниже).</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Что сделать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Разобрать вопрос</strong>: что считаем (масса, стоимость, количество, изменение запаса), тип операции, период, какой товар, где. Выписать, какие поля нужны из справочников</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Столбцы <code>ВПР</code></strong> на главном листе, справа от данных. В G2: <code>=ВПР(D2;$Товар.$A$1:$F$61;3;0)</code> — по артикулу из D2 найти строку на листе «Товар» и взять 3-й столбец (название). Набирать удобно мышью: <code>=ВПР(</code>, щёлкнуть D2, <code>;</code>, перейти на лист «Товар» и выделить таблицу, <code>;3;0)</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Так же — <strong>район</strong> или <strong>адрес</strong> (<code>=ВПР(C2;$Магазин.$A$1:$C$19;2;0)</code> — район, <code>…;3;0)</code> — адрес), <strong>вес упаковки</strong> (5-й столбец «Товара»), <strong>цена</strong> (6-й)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>«Что считаем»</strong>: масса в кг <code>=E2*I2/1000</code> (упаковки × граммы ÷ 1000), стоимость <code>=E2*K2</code> (упаковки × цена), изменение запаса <code>=ЕСЛИ(F2="Продажа";-E2;E2)</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Выделить новые клетки строки 2 и <strong>протянуть вниз</strong> — двойной щелчок по маркеру в правом нижнем углу выделения</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Данные → Автофильтр</strong>. В стрелке каждого столбца: тип операции — галочка; товар — «Стандартный фильтр» → «Начинается с» / «Содержит» (или галочки); район — галочка; адрес — «Содержит» улицу; дата — галочки нужных дней или «Стандартный фильтр»: <code>≥</code> первой даты <strong>и</strong> <code>≤</code> последней</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Ответ</strong>: в свободной клетке <code>=ИТОГ(9;J2:J6481)</code> — сумма только видимых строк. Или выделить столбец — сумма видна в <strong>строке состояния</strong> внизу справа</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>В таблице</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>получено, поступило, поставлено, закуплено</td>
+<td>тип операции — «Поступление» (в листе «Торговля» — «Поставка»)</td>
+</tr>
+<tr>
+<td>продано, выручка, «на какую сумму продано»</td>
+<td>«Продажа»</td>
+</tr>
+<tr>
+<td>на сколько увеличилось количество, изменился запас</td>
+<td><strong>оба типа</strong>: столбец <code>=ЕСЛИ(F2="Продажа";-E2;E2)</code> (ответ бывает отрицательным)</td>
+</tr>
+<tr>
+<td>масса в кг, а в упаковке — граммы; объём в литрах, а в упаковке — мл</td>
+<td><code>=E2*I2/1000</code>; если в упаковке уже кг или литры — <code>=E2*I2</code></td>
+</tr>
+<tr>
+<td>стоимость, выручка, сумма в рублях</td>
+<td>упаковки × цена: цена в «Товаре» — <code>ВПР</code>, иногда цена — в самом «Движении»</td>
+</tr>
+<tr>
+<td>все виды зефира, все сорта кофе</td>
+<td>«Начинается с „Зефир“» — и <strong>«Зефир в шоколаде» тоже</strong> входит. Список подходящих товаров просмотреть глазами</td>
+</tr>
+<tr>
+<td>отдел «Бакалея», поставщик «Молокозавод №1»</td>
+<td><code>ВПР</code> 2-го столбца (отдел) или 6-го (поставщик) — и галочка</td>
+</tr>
+<tr>
+<td>район</td>
+<td><code>ВПР</code> 2-го столбца «Магазина», галочка</td>
+</tr>
+<tr>
+<td>на улице Металлургов, на проспекте Мира</td>
+<td><code>ВПР</code> 3-го столбца (адрес), «Содержит „Металлургов“»</td>
+</tr>
+<tr>
+<td>с 5 по 19 июня включительно</td>
+<td>обе границы входят; «первые 4 дня июня» — 1–4, «последние 4» — 27–30</td>
+</tr>
+<tr>
+<td>запишите целую часть</td>
+<td>отбросить дробную часть (<code>=ЦЕЛОЕ(…)</code>), не округлять</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">LibreOffice и Excel</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>LibreOffice Calc</th>
+<th>Excel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ссылка на другой лист</td>
+<td><code>$Товар.$A$1:$F$61</code></td>
+<td><code>Товар!$A$1:$F$61</code></td>
+</tr>
+<tr>
+<td>сумма видимых строк</td>
+<td><code>=ИТОГ(9;J2:J6481)</code></td>
+<td><code>=ПРОМЕЖУТОЧНЫЕ.ИТОГИ(9;J2:J6481)</code></td>
+</tr>
+<tr>
+<td>фильтр</td>
+<td>Данные → <strong>Автофильтр</strong> (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd>)</td>
+<td>Данные → Фильтр</td>
+</tr>
+<tr>
+<td>строка состояния</td>
+<td>если её нет — Вид → Строка состояния; правый щелчок по ней — выбрать «Сумма»</td>
+<td>внизу всегда</td>
+</tr>
+</tbody>
+</table>
+<p>Аргументы разделяются <code>;</code>. 4-й аргумент <code>ВПР</code> — <strong>всегда 0</strong> (точное совпадение).</p>
+</div>
+<h2 id="_3">Пример с разбором<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>Задача</strong> (демоверсия ЕГЭ-2027, пересказ). База «Кондитерские изделия»: «Движение товаров» (ID операции, Дата, ID
+магазина, Артикул, Количество упаковок, Тип операции), «Товар» (Артикул, Отдел, Наименование, Ед. изм., Количество в
+упаковке, Цена), «Магазин» (ID магазина, Район, Адрес). Определите общую массу (в кг) <strong>всех видов зефира</strong>,
+<strong>полученного</strong> магазинами на <strong>Прибрежной улице</strong> с <strong>5 по 19 июня</strong> включительно.</p>
+<p><strong>Решение.</strong> Данные на листе «Движение_товаров» — в A1:F6481.</p>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Что делаем</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>название товара — в «Товаре»</td>
+<td>G2: <code>=ВПР(D2;$Товар.$A$1:$F$61;3;0)</code></td>
+</tr>
+<tr>
+<td>улица — в адресе магазина</td>
+<td>H2: <code>=ВПР(C2;$Магазин.$A$1:$C$19;3;0)</code></td>
+</tr>
+<tr>
+<td>масса — граммы в упаковке</td>
+<td>I2: <code>=ВПР(D2;$Товар.$A$1:$F$61;5;0)</code></td>
+</tr>
+<tr>
+<td>в кг</td>
+<td>J2: <code>=E2*I2/1000</code>; G2:J2 протянуть до строки 6481</td>
+</tr>
+<tr>
+<td>полученного</td>
+<td>Тип операции — «Поступление»</td>
+</tr>
+<tr>
+<td>всех видов зефира</td>
+<td>Наименование — начинается с «Зефир» (4 товара, и «Зефир в шоколаде»)</td>
+</tr>
+<tr>
+<td>на Прибрежной улице</td>
+<td>Адрес — содержит «Прибрежная» (2 магазина)</td>
+</tr>
+<tr>
+<td>с 5 по 19 июня</td>
+<td>Дата — с 05.06.2025 по 19.06.2025</td>
+</tr>
+</tbody>
+</table>
+<p>Остаётся 17 строк; <code>=ИТОГ(9;J2:J6481)</code> → <strong>Ответ: 1630.</strong></p>
+<details class="tip">
+<summary>Проверка вторым способом</summary>
+<p>Программа (ниже, «Подробнее: Python») даёт тот же ответ — 1630. Проверка «на глаз»: после фильтра видно 17 строк,
+у всех — Прибрежная, 7 или 21, зефир и даты с 5 по 19 июня. А <code>=СУММ(J2:J6481)</code> при том же фильтре даёт
+<strong>456 889,7</strong> — она складывает и скрытые строки (проверено в LibreOffice 26.8).</p>
+</details>
+<h2 id="_4">Разновидности<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Как записать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>масса всех видов товара, полученного магазинами улицы (демо 2024, 2025, 2027)</td>
+<td>шаблон</td>
+</tr>
+<tr>
+<td>то же, проданного; «массой 500 г»; «целая часть»</td>
+<td>«Продажа»; ещё фильтр по столбцу «в упаковке» = 500; <code>ЦЕЛОЕ</code></td>
+</tr>
+<tr>
+<td>объём в литрах (в упаковке — мл)</td>
+<td><code>=E2*I2/1000</code>; «целая часть» — отбросить дробь</td>
+</tr>
+<tr>
+<td>стоимость, выручка одного товара или «всех видов»</td>
+<td>столбец <code>=E2*K2</code> (K — цена через <code>ВПР</code>, или цена в самом «Движении»)</td>
+</tr>
+<tr>
+<td>выручка отдела («Бакалея», «Молоко»), товары поставщика</td>
+<td><code>ВПР</code> отдела (2-й столбец) или поставщика (6-й), галочка</td>
+</tr>
+<tr>
+<td><strong>на сколько увеличилось</strong> количество, <strong>изменился запас</strong></td>
+<td>вкладка «Изменение запаса»</td>
+</tr>
+<tr>
+<td>сколько <strong>упаковок</strong> продано (например, шоколада массой 100 г)</td>
+<td>суммировать сам столбец «Количество упаковок»</td>
+</tr>
+<tr>
+<td><strong>прибыль</strong> = продажи − поставки</td>
+<td><code>=ЕСЛИ(E2="Продажа";1;-1)*F2*G2</code> — цены поставки и продажи разные, берутся из своих строк</td>
+</tr>
+<tr>
+<td><strong>какой магазин (район, день)</strong> получил наибольшую выручку; наименьшее по районам</td>
+<td>вкладка «Наибольшее по группам»</td>
+</tr>
+<tr>
+<td>сколько магазинов с выручкой больше 200 000</td>
+<td>та же вкладка, затем <code>=СЧЁТЕСЛИ(…;"&gt;200000")</code> по суммам — <strong>без</strong> строки «Итог»</td>
+</tr>
+<tr>
+<td>доля в процентах (выручка отдела от всей выручки)</td>
+<td>две суммы тем же способом, затем <code>=a/b*100</code></td>
+</tr>
+<tr>
+<td>другие базы: театр, мебель и ткани, ЖКХ, машины, агротовары, самокаты</td>
+<td>вкладка «Другие базы»</td>
+</tr>
+<tr>
+<td>сначала найти ID, потом галочки (без <code>ВПР</code>)</td>
+<td>годится, когда товар один и магазинов в районе мало; при «отделе», «всех видах», улице и 100 магазинах легко ошибиться (см. ловушки)</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Изменение запаса</label><label for="__tabbed_1_2">Наибольшее по группам</label><label for="__tabbed_1_3">Другие базы</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>«На сколько увеличилось количество упаковок, имеющихся в наличии» = <strong>поступило − продано</strong> за период. Знак — в
+отдельном столбце, тогда хватит одной суммы:</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Что сделать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>ВПР</code>: название (G), район (H)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>I2: <code>=ЕСЛИ(F2="Продажа";-E2;E2)</code> — продажа уменьшает запас; протянуть</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Автофильтр: товар, район, даты — <strong>тип операции не трогаем</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>=ИТОГ(9;I2:I6481)</code></td>
+</tr>
+</tbody>
+</table>
+<p>Своя задача на данных демо-2027: на сколько увеличилось количество упаковок <strong>всех видов пряников</strong> в магазинах
+<strong>Заречного района</strong> с 3 по 15 июня? Наименование — «Начинается с „Пряник“» (5 товаров), район — «Заречный», даты —
+3–15 июня. <strong>Ответ: 7302</strong> (проверено в LibreOffice и программой).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №3, своя задача на данных демо-2027: на сколько увеличилось количество упаковок всех видов пряников</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># в магазинах Заречного района с 3 по 15 июня включительно (поступление − продажа)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Ответ: 7302</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">chitat</span><span class="p">(</span><span class="n">imya</span><span class="p">):</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">imya</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">tovar</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">chitat</span><span class="p">(</span><span class="s1">'tovar.txt'</span><span class="p">)}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">magazin</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">chitat</span><span class="p">(</span><span class="s1">'magazin.txt'</span><span class="p">)}</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">zapas</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">for</span> <span class="n">id_op</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">mag</span><span class="p">,</span> <span class="n">art</span><span class="p">,</span> <span class="n">kol</span><span class="p">,</span> <span class="n">tip</span> <span class="ow">in</span> <span class="n">chitat</span><span class="p">(</span><span class="s1">'dvizhenie.txt'</span><span class="p">):</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="n">t</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">tovar</span><span class="p">[</span><span class="n">art</span><span class="p">],</span> <span class="n">magazin</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="n">den</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'Пряник'</span><span class="p">)</span> <span class="ow">and</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Заречный'</span> <span class="ow">and</span> <span class="mi">3</span> <span class="o">&lt;=</span> <span class="n">den</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">:</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        <span class="k">if</span> <span class="n">tip</span> <span class="o">==</span> <span class="s1">'Поступление'</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>            <span class="n">zapas</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">kol</span><span class="p">)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="k">else</span><span class="p">:</span>                                 <span class="c1"># продажа уменьшает запас</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>            <span class="n">zapas</span> <span class="o">-=</span> <span class="nb">int</span><span class="p">(</span><span class="n">kol</span><span class="p">)</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">zapas</span><span class="p">)</span>
+</code></pre></div>
+<p>Если в задаче объём или масса («на сколько литров увеличилось») — знак и единицы в одной формуле:
+<code>=ЕСЛИ(F2="Продажа";-1;1)*E2*I2/1000</code>.</p>
+</div>
+<div class="tabbed-block">
+<p>«Какой магазин получил наибольшую выручку…», «магазины какого района…», «в какой день…». Суммы нужны <strong>по
+каждой группе</strong> — их считает <strong>сводная таблица</strong>. Но сводная таблица <strong>не видит автофильтр</strong> и считает все
+строки — поэтому сначала копия видимых:</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Что сделать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>ВПР</code> и «что считаем» (выручка <code>=E2*K2</code>), автофильтр по условиям — как в шаблоне</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Выделить всю таблицу, <kbd>Ctrl</kbd>+<kbd>C</kbd>, на новом листе <kbd>Ctrl</kbd>+<kbd>V</kbd> — копируются <strong>только видимые</strong> строки</td>
+</tr>
+<tr>
+<td>3</td>
+<td>На новом листе: Данные → <strong>Сводная таблица</strong> → «Текущее выделение». Магазин (район, дату) — в «Поля строк», выручку — в «Поля данных» (Сумма)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Отсортировать суммы по убыванию (или <code>=МАКС(…)</code> по столбцу сумм <strong>без</strong> строки «Итог»). В ответ — то, что спрашивают: сумму, ID магазина или число месяца</td>
+</tr>
+</tbody>
+</table>
+<p>Своя задача на данных демо-2027: какой магазин получил наибольшую выручку от продажи товаров отдела «Печенье» с 9
+по 20 июня? <strong>Ответ: M16, 2 427 060</strong> (проверено в LibreOffice: сводная таблица по копии видимых строк).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №3, своя задача на данных демо-2027: какой магазин получил наибольшую выручку от продажи товаров</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># отдела «Печенье» с 9 по 20 июня включительно? Напечатать ID магазина и выручку</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: M16 2427060</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">chitat</span><span class="p">(</span><span class="n">imya</span><span class="p">):</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">imya</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">tovar</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">chitat</span><span class="p">(</span><span class="s1">'tovar.txt'</span><span class="p">)}</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">viruchka</span> <span class="o">=</span> <span class="p">{}</span>                                 <span class="c1"># ID магазина → выручка</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="k">for</span> <span class="n">id_op</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">mag</span><span class="p">,</span> <span class="n">art</span><span class="p">,</span> <span class="n">kol</span><span class="p">,</span> <span class="n">tip</span> <span class="ow">in</span> <span class="n">chitat</span><span class="p">(</span><span class="s1">'dvizhenie.txt'</span><span class="p">):</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="n">t</span> <span class="o">=</span> <span class="n">tovar</span><span class="p">[</span><span class="n">art</span><span class="p">]</span>                            <span class="c1"># t[1] — отдел, t[5] — цена за упаковку</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="n">den</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Печенье'</span> <span class="ow">and</span> <span class="n">tip</span> <span class="o">==</span> <span class="s1">'Продажа'</span> <span class="ow">and</span> <span class="mi">9</span> <span class="o">&lt;=</span> <span class="n">den</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="n">viruchka</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span> <span class="o">=</span> <span class="n">viruchka</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">mag</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">kol</span><span class="p">)</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">luchshij</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">viruchka</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">viruchka</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>    <span class="c1"># ключ с наибольшим значением</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">luchshij</span><span class="p">,</span> <span class="n">viruchka</span><span class="p">[</span><span class="n">luchshij</span><span class="p">])</span>
+</code></pre></div>
+<p>Без сводной таблицы: на копии видимых — список магазинов в столбце и рядом <code>=СУММЕСЛИ(C:C;L2;J:J)</code>.</p>
+</div>
+<div class="tabbed-block">
+<p>Устройство то же: главный лист с операциями + два справочника. <code>ВПР</code> подтягивает на главный лист всё, что есть в
+вопросе, дальше — автофильтр и <code>ИТОГ</code>.</p>
+<table>
+<thead>
+<tr>
+<th>База</th>
+<th>Особенность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Театр</strong> (Продажа билетов, Цены, Спектакли)</td>
+<td>цена зависит от <strong>тарифа и категории</strong> билета: <code>ВПР</code> тарифа — столбец нужной цены (детский — 5-й), выручка = количество <strong>детских</strong> билетов × эта цена; галочки нужных тарифов («утренний летний», «вечерний летний»)</td>
+</tr>
+<tr>
+<td><strong>Мебель, ткани</strong> (Готовый товар, Продукция, Материал/Ткани)</td>
+<td>стоимость = цена × количество на складе; <code>ВПР</code> — название изделия и материал/город (два справочника по разным ID); «плотность» и «ширина» ткани — разные столбцы</td>
+</tr>
+<tr>
+<td><strong>ЖКХ</strong> (Начисления/оплаты, Лицевые счета, Компании)</td>
+<td>задолженность = начислено − оплачено <strong>до момента</strong> (дата и время!): столбец со знаком, фильтр по дате-времени</td>
+</tr>
+<tr>
+<td><strong>Машины</strong> (Наличие, Марки, Дилеры)</td>
+<td>«прирост наличия на 01.01.2022 по сравнению с 01.01.2021» — операции 2021 года: поступило «+», отдано покупателю «−»</td>
+</tr>
+<tr>
+<td><strong>Агротовары</strong> (Наличие, Продукты, Производственные базы)</td>
+<td>категория («ягоды», «пряные травы») и область — через <code>ВПР</code>; «Поступило с производства» / «Выдано покупателю»</td>
+</tr>
+<tr>
+<td><strong>Электросамокаты</strong> (сборник Крылова 2026: Аренда, Электросамокаты, Клиенты)</td>
+<td>клиент → ID (или <code>ВПР</code> ФИО), фирма → <code>ВПР</code> производителя; сумма аренды <strong>или минуты</strong> аренды</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<details class="info">
+<summary>Подробнее: решение на Python</summary>
+<p>Программа заменяет <code>ВПР</code> словарями. Каждый лист: <kbd>Ctrl</kbd>+<kbd>A</kbd>, <kbd>Ctrl</kbd>+<kbd>C</kbd> →
+Блокнот → сохранить рядом с программой (<code>dvizhenie.txt</code>, <code>tovar.txt</code>, <code>magazin.txt</code>). Клетки в строке разделены
+табуляцией, даты — как на экране (<code>05.06.2025</code>).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №3, демо ЕГЭ-2027: масса (кг) всех видов зефира, полученного магазинами на Прибрежной улице, 5–19 июня</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Ответ: 1630.0</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Три листа скопированы в Блокнот (Ctrl+A, Ctrl+C → Ctrl+V): dvizhenie.txt, tovar.txt, magazin.txt</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">chitat</span><span class="p">(</span><span class="n">imya</span><span class="p">):</span>                 <span class="c1"># лист → список строк, строка → список клеток (без заголовка)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">imya</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="k">return</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">][</span><span class="mi">1</span><span class="p">:]</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">tovar</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">chitat</span><span class="p">(</span><span class="s1">'tovar.txt'</span><span class="p">)}</span>       <span class="c1"># артикул → строка листа «Товар»</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">magazin</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">chitat</span><span class="p">(</span><span class="s1">'magazin.txt'</span><span class="p">)}</span>   <span class="c1"># ID магазина → строка листа «Магазин»</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">massa</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">for</span> <span class="n">id_op</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">mag</span><span class="p">,</span> <span class="n">art</span><span class="p">,</span> <span class="n">kol</span><span class="p">,</span> <span class="n">tip</span> <span class="ow">in</span> <span class="n">chitat</span><span class="p">(</span><span class="s1">'dvizhenie.txt'</span><span class="p">):</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="n">t</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="n">tovar</span><span class="p">[</span><span class="n">art</span><span class="p">],</span> <span class="n">magazin</span><span class="p">[</span><span class="n">mag</span><span class="p">]</span>       <span class="c1"># как два ВПР: t[2] — наименование, t[4] — граммов в упаковке</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="n">den</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>                   <span class="c1"># «05.06.2025» → 5</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'Зефир'</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">'Прибрежная'</span> <span class="ow">in</span> <span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="ow">and</span> <span class="n">tip</span> <span class="o">==</span> <span class="s1">'Поступление'</span> <span class="ow">and</span> <span class="mi">5</span> <span class="o">&lt;=</span> <span class="n">den</span> <span class="o">&lt;=</span> <span class="mi">19</span><span class="p">:</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        <span class="n">massa</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">kol</span><span class="p">)</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">massa</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li><code>{s[0]: s for s in …}</code> — словарь «первый столбец → вся строка»: <code>tovar[art]</code> — то же, что <code>ВПР</code> по артикулу.
+  Ключи — <strong>строки</strong> (<code>'42'</code>, <code>'M1'</code>), в цикле артикул тоже строка — совпадают.</li>
+<li>Делим строку по <code>'\t'</code>, а не <code>split()</code>: в названиях есть пробелы.</li>
+<li>Числа с запятой (<code>0,5</code> кг в упаковке) — <code>float(x.replace(',', '.'))</code>; <code>int('0,5')</code> — ошибка.</li>
+<li>Проверено на демо-2027 (1630) и на всех 63 задачах Решу ЕГЭ (Python 3.11 и 3.12).</li>
+</ul>
+<p>Таблицей быстрее, когда шагов мало; программа удобна, если условий много или нужно «по группам» (словарь
+сумм, <code>max(d, key=d.get)</code>).</p>
+</details>
+<h2 id="_5">Типичные ошибки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Скрытые ловушки — проверены в LibreOffice 26.8</p>
+<ul>
+<li><strong><code>СУММ</code> по отфильтрованному столбцу</strong> складывает и скрытые строки: в демо-2027 — 456 889,7 вместо 1630. Только
+  <code>ИТОГ(9;…)</code>, строка состояния или копия видимых строк на новый лист.</li>
+<li><strong><code>ВПР</code> без 0 в конце</strong> ищет «приблизительно» и молча ошибается: на листе «Магазин» ID идут M1, M2, …, M10 — не
+  по порядку как текст, и в демо-2027 половина адресов (3240 из 6480) неверна, ответ 765 вместо 1630.</li>
+<li><strong><code>*</code> в условиях формул</strong> (<code>СУММЕСЛИМН(…;"Зефир*")</code>) в файлах ФИПИ <strong>не работает</strong>: там включены регулярные
+  выражения, формула молча даёт 0 (в демо-2027 — 0 вместо 1630; так в демо 2026 и 2027, СтатГраде 2025). В других
+  файлах работает именно <code>*</code>. Автофильтр от этой настройки не зависит — поэтому в шаблоне фильтр.</li>
+<li><strong>Поиск в списке автофильтра</strong> — по подстроке: «M1» отмечает и M10…M18, «P1» — P14, P15 (в разборе сборника
+  Крылова из-за этого 248 вместо 130), «рис» — «ириску». Проверяйте отмеченное или фильтруйте по району/адресу
+  через <code>ВПР</code>. В одном файле ЕГЭ-2024 даже формула <code>СУММЕСЛИ(C:C;"M1";…)</code> захватывает M10–M17.</li>
+<li><strong>Сводная таблица не учитывает автофильтр</strong> — считает все строки (30 168 362 вместо 813 425). Сначала копия
+  видимых строк на новый лист.</li>
+</ul>
+</div>
+<ul>
+<li><strong>Тип операции:</strong> «получено» — поступление, «продано», «выручка» — продажа; «на сколько увеличилось» — оба со знаком.
+  Забыть фильтр по типу — ответ больше примерно вдвое.</li>
+<li><strong>«Все виды»:</strong> «Зефир в шоколаде» — тоже зефир (без него в демо 1480 вместо 1630); но «кукурузные хлопья с
+  сахаром» — не сахар, «ополаскиватель для волос» — не для белья, «кофе растворимый» ≠ «молотый». Смотрите список.</li>
+<li><strong>Единицы:</strong> упаковки ≠ килограммы: масса = упаковки × вес упаковки; граммы и мл — <code>/1000</code>. У разных товаров вес
+  упаковки разный — поэтому столбец <code>ВПР</code>, а не одно число на всех.</li>
+<li><strong>Даты:</strong> обе границы включительно; проверьте, что в фильтре не осталось лишних дней (самая частая ошибка у авторов
+  разборов).</li>
+<li><strong><code>ВПР</code> по отфильтрованной таблице:</strong> сначала формулы и протягивание, потом фильтр.</li>
+<li><strong>Цена:</strong> бывает в «Товаре», бывает в «Движении» (тогда у поставки и продажи она разная) — читайте заголовки.</li>
+<li><strong>Целая часть</strong> — отбросить дробь, не округлять.</li>
+</ul>
+<details class="info">
+<summary>Откуда разновидности</summary>
+<p>Демоверсии ФИПИ 2023–2027; ЕГЭ 2022–2026 (досрочные и основные волны); СтатГрад; сборник С. С. Крылова 2022, 2025,
+2026 (базы «Электросамокаты», «Агротовары», «Лекарства», «Ткани», «ЖКХ»). Видеоразборы:
+<a href="https://www.youtube.com/watch?v=s0CJHGcoAUc">Умскул, «Задание 3: все типы»</a> (ссылка преподавателя),
+<a href="https://www.youtube.com/watch?v=tCqu_k38Y38">«Все типы 2027»</a> и
+<a href="https://www.youtube.com/watch?v=Ezg7FWcX6qA">«Полный разбор»</a>;
+<a href="https://www.youtube.com/watch?v=70N-XROWphY">Дядя Саша, «Все прототипы №3 2027»</a> и
+<a href="https://www.youtube.com/watch?v=5yRWVEhQXn0">«Все задания 3 2027»</a>;
+<a href="https://www.youtube.com/watch?v=kGdkmzUC5Go">Вова Информатик, «Все прототипы и способы №3»</a>;
+<a href="https://www.youtube.com/watch?v=dzebHcmZCGI">Натали Солдаева</a>;
+<a href="https://www.youtube.com/watch?v=QRBZrQscImI">Артём Flash, летняя школа</a>;
+демо-2027 — <a href="https://www.youtube.com/watch?v=ksQZcdULBSs">Иван Викторович</a>,
+<a href="https://www.youtube.com/watch?v=eu2yIRG1k0o">Иванформатика</a>, <a href="https://www.youtube.com/watch?v=YwjuNyLav74">return100</a>;
+<a href="https://www.youtube.com/watch?v=w5oIGMO4-Uk">Арсений, «ВПР в LibreOffice»</a>;
+<a href="https://www.youtube.com/watch?v=k1DH_O0DsSo">ЕГОР, «Excel и LibreOffice»</a>;
+<a href="https://www.youtube.com/watch?v=mJaUQRxtcvk">Михаил Марков, «LibreOffice Calc за 45 минут»</a>;
+сборник Крылова 2026 — разборы вариантов Максима Попкова (например,
+<a href="https://www.youtube.com/watch?v=T36ZEJplkfU&amp;t=612">вариант 1</a>), Умскула, Дяди Саши, Лёни Шастина, Александра Павлова.
+Каталог Решу ЕГЭ, тип 3: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=424">«Задания для подготовки»</a> —
+64 задачи с файлами; 63 решены шагами справочника (в LibreOffice и программой) — ответы совпали; у 64-й на сайте
+приложен файл другой задачи.</p>
+</details>
+<h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Задачи №3 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №3</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../task-2/" class="md-footer__link md-footer__link--prev" aria-label="Назад: №2. Таблица истинности">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                №2. Таблица истинности
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../task-4/" class="md-footer__link md-footer__link--next" aria-label="Вперед: №4. Условие Фано">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                №4. Условие Фано
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
