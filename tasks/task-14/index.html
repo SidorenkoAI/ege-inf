@@ -1,0 +1,1821 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Шаблоны и разборы заданий 1–27 ЕГЭ по информатике (2027), основы Python и электронных таблиц">
+      
+      
+      
+        <link rel="canonical" href="https://sidorenkoai.github.io/ege-inf/tasks/task-14/">
+      
+      
+        <link rel="prev" href="../task-13/">
+      
+      
+        <link rel="next" href="../task-15/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/cmit-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>№14. Системы счисления - Подготовка к успешной сдаче ЕГЭ по информатике</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no14" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+<header class="md-header brand-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a class="brand__logo" href="https://cmit22.ru" title="Бийский ЦМИТ Политех">
+      <img class="brand__logo-full" src="../../assets/cmit-logo.png" alt="Бийский ЦМИТ Политех">
+      <img class="brand__logo-icon" src="../../assets/cmit-icon.png" alt="Бийский ЦМИТ Политех">
+    </a>
+    <div class="brand__text">
+      <a class="brand__title" href="../..">Подготовка к успешной сдаче ЕГЭ по информатике</a>
+      <div class="brand__who">
+        <span>Сидоренко Антон Игоревич</span>
+        <a href="tel:+79237156628">8 923 715 6628</a>
+        <a href="https://cmit22.ru">Бийский ЦМИТ Политех</a>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <a class="brand__bot" href="https://t.me/egeSidorenkoBot" title="Тренироваться в боте @egeSidorenkoBot">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+      <span>Тренироваться в боте<br><small>@egeSidorenkoBot</small></span>
+    </a>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../base/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  База Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Номера 1–27
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cheatsheet/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шпаргалка
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Подготовка к успешной сдаче ЕГЭ по информатике" class="md-nav__button md-logo" aria-label="Подготовка к успешной сдаче ЕГЭ по информатике" data-md-component="logo">
+      
+  <img src="../../assets/cmit-icon.png" alt="logo">
+
+    </a>
+    Подготовка к успешной сдаче ЕГЭ по информатике
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    База Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Номера 1–27
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Номера 1–27
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №2. Таблица истинности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №4. Условие Фано
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №5. Алгоритм с двоичной записью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №6. Исполнитель Черепаха
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №7. Объём изображения и звука
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №8. Комбинаторика слов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №9. Таблица: условия по строкам
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №10. IP-адрес и маска
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №11. Объём данных, коды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №12. Машина Тьюринга
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №13. Число программ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №14. Системы счисления
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №14. Системы счисления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №15. Логика: параметр A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №16. Рекурсивные функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №17. Последовательность из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №18. Робот в таблице
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-19-21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №19–21. Теория игр
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шпаргалка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no14">№14. Системы счисления<a class="headerlink" href="#no14" title="Permanent link">&para;</a></h1>
+<div class="task-meta">
+<p><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> Python</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"/></svg></span> ~3 мин</span>
+<span>1 балл</span>
+<span>без файла</span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Коротко</p>
+<p>Две функции на все случаи: <code>cifry(n, b)</code> — число → <strong>список цифр-чисел</strong> в системе <code>b</code> (цифра 24 — это одно число
+24, а не «2» и «4»); <code>chislo([2, 7, x, 9], b)</code> — список цифр → число. Считаем цифры — <code>c.count(0)</code>,
+<code>sum([d for d in c if d &gt; 9])</code>. Неизвестное (<code>x</code>, <code>y</code>, основание <code>p</code>) — перебор: наименьшее — первое и <code>break</code>,
+наибольшее — последнее. Работает при <strong>любом</strong> основании, даже больше 36.</p>
+</div>
+<h2 id="_1">Как узнать задачу<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>«Значение арифметического выражения 3·3125⁸ + 2·625⁷ − … записали в системе счисления с основанием 25. Сколько
+  значащих нулей…» — посчитать цифры записи.</li>
+<li>«Операнды записаны в системе с основанием 22: 27x98876₂₂ + 26x51₂₂ + …; x — неизвестная цифра. Наименьшее x, при
+  котором значение кратно 21; в ответ — частное».</li>
+<li>«7¹⁷⁰ + 7¹⁰⁰ − x, где x — целое положительное, не больше 2030… наибольшее x, при котором в записи ровно 71 нуль».</li>
+<li>В демоверсии 2027 — все три примера; на экзамене будет <strong>один</strong> из них. Бывают и неизвестное основание p
+  («в системе с основанием p верно равенство…»), и две системы в одном выражении.</li>
+</ul>
+<h2 id="_2">Шаблон<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №14 (демоверсия ЕГЭ-2027, пример 2): значение выражения 3·3125⁸ + 2·625⁷ − 4·625⁶ + 3·125⁵ − 2·25⁴ − 2025</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># записали в системе счисления с основанием 25. Сколько значащих нулей в этой записи?</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Ответ: 10</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">cifry</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                        <span class="c1"># число n → список его цифр в системе с основанием b</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>                 <span class="c1"># остаток — младшая цифра (числом: 10, 24…)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">return</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                      <span class="c1"># старшая цифра — первой</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">chislo</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                       <span class="c1"># список цифр в системе b → число</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span>                   <span class="c1"># приписать цифру справа</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="k">return</span> <span class="n">n</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">3125</span><span class="o">**</span><span class="mi">8</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">625</span><span class="o">**</span><span class="mi">7</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">625</span><span class="o">**</span><span class="mi">6</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">125</span><span class="o">**</span><span class="mi">5</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">25</span><span class="o">**</span><span class="mi">4</span> <span class="o">-</span> <span class="mi">2025</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="n">c</span> <span class="o">=</span> <span class="n">cifry</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>                        <span class="c1"># список цифр-чисел</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>                       <span class="c1"># нули записи (ведущих нулей у числа не бывает)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>В шаблоне</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>значение выражения 3·3125⁸ − 2025</td>
+<td><code>3 * 3125**8 - 2025</code> — Python считает огромные числа точно</td>
+</tr>
+<tr>
+<td>записали в системе с основанием <code>b</code></td>
+<td><code>c = cifry(n, b)</code></td>
+</tr>
+<tr>
+<td>сколько цифр 6; (значащих) нулей; единиц в двоичной</td>
+<td><code>c.count(6)</code>; <code>c.count(0)</code>; <code>c.count(1)</code></td>
+</tr>
+<tr>
+<td>сколько цифр больше 9 / не больше 17 / с чётным значением</td>
+<td><code>len([d for d in c if d &gt; 9])</code>, <code>d &lt;= 17</code>, <code>d % 2 == 0</code></td>
+</tr>
+<tr>
+<td>сумма цифр; сумма цифр больше 9</td>
+<td><code>sum(c)</code>; <code>sum([d for d in c if d &gt; 9])</code></td>
+</tr>
+<tr>
+<td>сколько <strong>различных</strong> цифр; какая цифра встречается чаще всего</td>
+<td><code>len(set(c))</code>; <code>max(range(b), key=c.count)</code></td>
+</tr>
+<tr>
+<td>число <code>27x98876</code> в системе 22 (x — цифра)</td>
+<td><code>chislo([2, 7, x, 9, 8, 8, 7, 6], 22)</code></td>
+</tr>
+<tr>
+<td>буквы-цифры A, B, …, F, …</td>
+<td>числами: A = 10, B = 11, C = 12, D = 13, E = 14, F = 15, G = 16, H = 17</td>
+</tr>
+<tr>
+<td>x — цифра системы <code>b</code></td>
+<td><code>for x in range(b):</code> (<code>range(1, b)</code> — если x стоит первой)</td>
+</tr>
+<tr>
+<td>кратно 21; частное</td>
+<td><code>n % 21 == 0</code>; <code>n // 21</code> — только <code>//</code></td>
+</tr>
+<tr>
+<td>x — целое положительное, не больше 2030 / меньше 2000</td>
+<td><code>range(1, 2031)</code> / <code>range(1, 2000)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">Пример с разбором<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>Задача</strong> (демоверсия ЕГЭ-2027, пример 1, пересказ). Операнды записаны в системе с основанием 22:
+27x98876₂₂ + 26x51₂₂ + 711x5₂₂, x — неизвестная цифра. Найдите наименьшее x, при котором значение выражения кратно 21,
+и для него — частное от деления значения на 21 (в десятичной системе).</p>
+<p><strong>Решение.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Код</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x — цифра 22-ричной системы</td>
+<td><code>for x in range(22):</code></td>
+</tr>
+<tr>
+<td>три числа с цифрой x</td>
+<td><code>chislo([2, 7, x, 9, 8, 8, 7, 6], 22) + …</code></td>
+</tr>
+<tr>
+<td>кратно 21</td>
+<td><code>if n % 21 == 0:</code></td>
+</tr>
+<tr>
+<td>частное; наименьшее x — первое</td>
+<td><code>print(x, n // 21)</code>, <code>break</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №14 (демоверсия ЕГЭ-2027, пример 1): 27x98876₂₂ + 26x51₂₂ + 711x5₂₂, x — неизвестная цифра 22-ричной системы.</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># Наименьшее x, при котором значение кратно 21; в ответ — частное от деления значения на 21.</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: 3 276296118</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">cifry</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                        <span class="c1"># число n → список его цифр в системе с основанием b</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>                 <span class="c1"># остаток — младшая цифра (числом: 10, 24…)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">return</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                      <span class="c1"># старшая цифра — первой</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">chislo</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                       <span class="c1"># список цифр в системе b → число</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span>                   <span class="c1"># приписать цифру справа</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="k">return</span> <span class="n">n</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">22</span><span class="p">):</span>                     <span class="c1"># x — цифра: 0…21</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="n">n</span> <span class="o">=</span> <span class="n">chislo</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">22</span><span class="p">)</span> <span class="o">+</span> <span class="n">chislo</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">22</span><span class="p">)</span> <span class="o">+</span> <span class="n">chislo</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">22</span><span class="p">)</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">21</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">21</span><span class="p">)</span>               <span class="c1"># x — для себя, в ответ — частное</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        <span class="k">break</span>                           <span class="c1"># наименьшее — первое</span>
+</code></pre></div>
+<p>Программа печатает <code>3 276296118</code>: x = 3, в ответ — частное. <strong>Ответ: 276296118.</strong></p>
+<details class="tip">
+<summary>Проверка: другим способом</summary>
+<p>Для оснований до 36 работает и встроенный <code>int(строка, b)</code> — но цифру x нужно подставлять <strong>символом</strong> алфавита:
+<code>D = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'</code>, <code>int(f'27{D[x]}98876', 22)</code>. Получается то же: подходят x = 3, A (10)
+и H (17), наименьшее — 3, частное 276296118.</p>
+</details>
+<h2 id="_4">Разновидности<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Как записать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>цифры записи значения выражения (сколько нулей, цифр 6, единиц)</td>
+<td>шаблон: <code>cifry(n, b).count(…)</code></td>
+</tr>
+<tr>
+<td>сумма цифр, цифры больше 9 / не больше 17, чётные цифры (основание 25, 31, 36)</td>
+<td>условие на число <code>d</code> (вкладка «Цифры больше 9»)</td>
+</tr>
+<tr>
+<td>сколько различных цифр; какая цифра чаще</td>
+<td><code>len(set(c))</code>; <code>max(range(b), key=c.count)</code></td>
+</tr>
+<tr>
+<td><strong>неизвестная цифра x</strong> в числах одной системы, кратность, частное (демо, пример 1)</td>
+<td><code>chislo([…, x, …], b)</code> — пример с разбором</td>
+</tr>
+<tr>
+<td>кратность проверяем на 18, а частное — от деления на 9</td>
+<td>читайте внимательно: <code>n % 18 == 0</code>, <code>n // 9</code></td>
+</tr>
+<tr>
+<td>x — ненулевая цифра; в ответ — само значение, а не частное</td>
+<td><code>range(1, b)</code>; <code>print(n)</code></td>
+</tr>
+<tr>
+<td>произведение двух чисел с цифрой x кратно 36; в ответ — значение числа 1x2₃₇</td>
+<td><code>a * b % 36 == 0</code>, <code>chislo([1, x, 2], 37)</code></td>
+</tr>
+<tr>
+<td><strong>две системы</strong>: 4x3B₁₄ + x29x₁₁, x — цифра обеих</td>
+<td><code>range(min(14, 11))</code> (вкладка «Две системы»)</td>
+</tr>
+<tr>
+<td><strong>две неизвестные x, y</strong>; наименьшее значение, кратное k</td>
+<td>список значений и <code>min</code> (вкладка «x и y»)</td>
+</tr>
+<tr>
+<td>в числе 12x643y7₃₇ кратно 36, число yx₃₇ — наибольшее / полный квадрат</td>
+<td>перебор x, y; <code>max</code>; квадрат — <code>round(v ** 0.5) ** 2 == v</code></td>
+</tr>
+<tr>
+<td><strong>основание больше 36</strong> (37, 39, 40, 47, 150)</td>
+<td><code>int(…, 40)</code> не работает — только <code>chislo</code> (вкладка «Основание &gt; 36»)</td>
+</tr>
+<tr>
+<td><strong>x в выражении</strong> <code>7¹⁷⁰ + 7¹⁰⁰ − x</code>: ровно 71 нуль, наибольшее x (демо, пример 3)</td>
+<td>перебор x, последнее (вкладка «x в выражении»)</td>
+</tr>
+<tr>
+<td>нечётное количество нулей; ровно 177 цифр 18 (наименьшее x, без верхней границы)</td>
+<td><code>count(0) % 2 == 1</code>; <code>while … != 177: x += 1</code></td>
+</tr>
+<tr>
+<td><strong>наибольшее количество нулей</strong> по всем x; наименьшее x с таким количеством</td>
+<td>два прохода: <code>max</code>, потом первое x (вкладка «Больше всего нулей»)</td>
+</tr>
+<tr>
+<td>шестёрок больше, чем нулей — наименьшее x (ответ — десятки миллионов)</td>
+<td>перебор <code>while</code>, программа работает около минуты — ждём</td>
+</tr>
+<tr>
+<td><strong>неизвестное основание p</strong>: 3x5 + xy4 = 1y0x</td>
+<td>перебор p, x, y; старшая цифра — не 0 (вкладка «Основание p»)</td>
+</tr>
+<tr>
+<td>при каком наименьшем p сумма AB267D1ₚ + F024A89ₚ делится на p − 1</td>
+<td><code>for p in range(16, …)</code> — p больше наибольшей цифры F = 15</td>
+</tr>
+<tr>
+<td>наименьшее натуральное A, при котором M + A кратно N (M, N с цифрой x)</td>
+<td><code>A = (N - M % N) % N</code>, если 0 — то <code>N</code>; <code>min</code> по x</td>
+</tr>
+<tr>
+<td>огромный x (перебор невозможен), «ровно 45 троек»</td>
+<td>только вручную — запись степеней (см. «Подробнее»)</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:7"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Цифры больше 9</label><label for="__tabbed_1_2">x в выражении</label><label for="__tabbed_1_3">Больше всего нулей</label><label for="__tabbed_1_4">Две системы</label><label for="__tabbed_1_5">x и y</label><label for="__tabbed_1_6">Основание &gt; 36</label><label for="__tabbed_1_7">Основание p</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №14 (своя): значение 5·36¹²⁰ + 35·6¹⁰⁰ − 6²⁵ + 2026 записали в 36-ричной системе.</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Чему равна сумма цифр, числовое значение которых больше 9?</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Ответ: 1389</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">cifry</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                        <span class="c1"># число n → список его цифр в системе с основанием b</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>                 <span class="c1"># остаток — младшая цифра (числом: 10, 24…)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="k">return</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                      <span class="c1"># старшая цифра — первой</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">chislo</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                       <span class="c1"># список цифр в системе b → число</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span>                   <span class="c1"># приписать цифру справа</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="k">return</span> <span class="n">n</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">36</span><span class="o">**</span><span class="mi">120</span> <span class="o">+</span> <span class="mi">35</span> <span class="o">*</span> <span class="mi">6</span><span class="o">**</span><span class="mi">100</span> <span class="o">-</span> <span class="mi">6</span><span class="o">**</span><span class="mi">25</span> <span class="o">+</span> <span class="mi">2026</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="n">c</span> <span class="o">=</span> <span class="n">cifry</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">36</span><span class="p">)</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">c</span> <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">]))</span>     <span class="c1"># цифра — число: «Z» — это 35</span>
+</code></pre></div>
+<p>Цифра 36-ричной системы — число от 0 до 35. С числами условие пишется прямо: <code>d &gt; 9</code>. Строкой так не выйдет
+(<code>str(n % 36)</code> склеит «35» из двух символов).</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># №14 (демоверсия ЕГЭ-2027, пример 3): значение 7¹⁷⁰ + 7¹⁰⁰ − x, x — целое положительное, не больше 2030, записали</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># в 7-ричной системе. Наибольшее x, при котором в записи ровно 71 нуль?</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Ответ: 2029</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">cifry</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                        <span class="c1"># число n → список его цифр в системе с основанием b</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>                 <span class="c1"># остаток — младшая цифра (числом: 10, 24…)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="k">return</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                      <span class="c1"># старшая цифра — первой</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">chislo</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                       <span class="c1"># список цифр в системе b → число</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span>                   <span class="c1"># приписать цифру справа</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="k">return</span> <span class="n">n</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2031</span><span class="p">):</span>                <span class="c1"># «положительное, не больше 2030» — 1…2030</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="k">if</span> <span class="n">cifry</span><span class="p">(</span><span class="mi">7</span><span class="o">**</span><span class="mi">170</span> <span class="o">+</span> <span class="mi">7</span><span class="o">**</span><span class="mi">100</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">71</span><span class="p">:</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>        <span class="n">otvet</span> <span class="o">=</span> <span class="n">x</span>                       <span class="c1"># наибольшее — последнее подходящее</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">otvet</span><span class="p">)</span>
+</code></pre></div>
+<p>Демоверсия, пример 3. «Целое положительное, не превышающее 2030» — <code>range(1, 2031)</code>. Наибольшее — последнее
+подходящее (или перебор <code>range(2030, 0, -1)</code> и <code>break</code> на первом).</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># №14 (своя): значение 6²⁰⁰ + 6¹²⁰ − x, x — целое от 1 до 3000, записали в 6-ричной системе. Найдите наименьшее x,</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># при котором количество нулей в записи наибольшее.</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Ответ: 1296</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">cifry</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                        <span class="c1"># число n → список его цифр в системе с основанием b</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>                 <span class="c1"># остаток — младшая цифра (числом: 10, 24…)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="k">return</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                      <span class="c1"># старшая цифра — первой</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">chislo</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                       <span class="c1"># список цифр в системе b → число</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span>                   <span class="c1"># приписать цифру справа</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="k">return</span> <span class="n">n</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="n">nuli</span> <span class="o">=</span> <span class="p">{}</span>                               <span class="c1"># x → сколько нулей</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3001</span><span class="p">):</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    <span class="n">nuli</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">cifry</span><span class="p">(</span><span class="mi">6</span><span class="o">**</span><span class="mi">200</span> <span class="o">+</span> <span class="mi">6</span><span class="o">**</span><span class="mi">120</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="n">m</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">nuli</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>                  <span class="c1"># проход 1: наибольшее количество нулей</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3001</span><span class="p">):</span>                <span class="c1"># проход 2: первое x с таким количеством</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    <span class="k">if</span> <span class="n">nuli</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">==</span> <span class="n">m</span><span class="p">:</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>        <span class="k">break</span>
+</code></pre></div>
+<p>Наибольшее количество нулей (84) бывает при x = 1296 и 2592. Пока не перебраны все x, максимум неизвестен —
+поэтому два прохода: сначала <code>max</code>, потом первое x с ним.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># №14 (своя): операнды записаны в системах с основаниями 14 и 11: 4x3B₁₄ + x29x₁₁; x — цифра, допустимая в обеих</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># системах. Наименьшее x, при котором значение кратно 17; в ответ — частное от деления на 17.</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Ответ: 7 1298</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">cifry</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                        <span class="c1"># число n → список его цифр в системе с основанием b</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>                 <span class="c1"># остаток — младшая цифра (числом: 10, 24…)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="k">return</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                      <span class="c1"># старшая цифра — первой</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">chislo</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                       <span class="c1"># список цифр в системе b → число</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span>                   <span class="c1"># приписать цифру справа</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="k">return</span> <span class="n">n</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>                     <span class="c1"># цифра обеих систем — меньше 11</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="n">n</span> <span class="o">=</span> <span class="n">chislo</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">14</span><span class="p">)</span> <span class="o">+</span> <span class="n">chislo</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="mi">11</span><span class="p">)</span>    <span class="c1"># B = 11</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">17</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">17</span><span class="p">)</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        <span class="k">break</span>
+</code></pre></div>
+<p>x стоит в обоих числах — значит, это цифра и 14-ричной, и 11-ричной системы: от 0 до 10. Каждое число — в своей
+системе, складываем уже обычные числа.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># №14 (своя): 7xy5₁₃ + 2yx₉; x и y — цифры, допустимые в обеих системах. Найдите x и y, при которых значение</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># наименьшее и кратно 13; в ответ — частное от деления этого значения на 13.</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Ответ: 1206</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">cifry</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                        <span class="c1"># число n → список его цифр в системе с основанием b</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>                 <span class="c1"># остаток — младшая цифра (числом: 10, 24…)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="k">return</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                      <span class="c1"># старшая цифра — первой</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">chislo</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                       <span class="c1"># список цифр в системе b → число</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span>                   <span class="c1"># приписать цифру справа</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="k">return</span> <span class="n">n</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="n">vse</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>                      <span class="c1"># цифры обеих систем — меньше 9</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">chislo</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">13</span><span class="p">)</span> <span class="o">+</span> <span class="n">chislo</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="mi">9</span><span class="p">)</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">13</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>            <span class="n">vse</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">vse</span><span class="p">)</span> <span class="o">//</span> <span class="mi">13</span><span class="p">)</span>
+</code></pre></div>
+<p>«Значение наименьшее и кратно 13» — собираем все кратные значения и берём <code>min</code>; в ответ — частное.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># №14 (своя): операнды записаны в системе с основанием 40: 5x2A₄₀ + x38₄₀ (A — цифра 10, x — цифра 40-ричной системы).</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># Наибольшее x, при котором значение кратно 13; в ответ — частное от деления на 13.</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Ответ: 33986</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">cifry</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                        <span class="c1"># число n → список его цифр в системе с основанием b</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>                 <span class="c1"># остаток — младшая цифра (числом: 10, 24…)</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="k">return</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                      <span class="c1"># старшая цифра — первой</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">chislo</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                       <span class="c1"># список цифр в системе b → число</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span>                   <span class="c1"># приписать цифру справа</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    <span class="k">return</span> <span class="n">n</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">40</span><span class="p">):</span>                  <span class="c1"># x стоит первой в x38 — не ноль</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>    <span class="n">n</span> <span class="o">=</span> <span class="n">chislo</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">40</span><span class="p">)</span> <span class="o">+</span> <span class="n">chislo</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">40</span><span class="p">)</span>       <span class="c1"># int(…, 40) не работает: основание &gt; 36</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">13</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>        <span class="n">otvet</span> <span class="o">=</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">13</span>                 <span class="c1"># наибольшее — последнее подходящее</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">otvet</span><span class="p">)</span>
+</code></pre></div>
+<p><code>int('5x2A', 40)</code> — ошибка <code>ValueError: int() base must be &gt;= 2 and &lt;= 36</code>. Список цифр работает при любом
+основании. x стоит первой в x38 — значит, не ноль.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># №14 (своя): в системе счисления с основанием p верно равенство 3x5 + xy4 = 1y0x (x, y — цифры этой системы).</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># Найдите значение числа xy в системе с основанием p и запишите его в десятичной системе.</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Ответ: 11 9 2 101</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">cifry</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                        <span class="c1"># число n → список его цифр в системе с основанием b</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>                 <span class="c1"># остаток — младшая цифра (числом: 10, 24…)</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        <span class="n">n</span> <span class="o">//=</span> <span class="n">b</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="k">return</span> <span class="n">c</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>                      <span class="c1"># старшая цифра — первой</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">chislo</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>                       <span class="c1"># список цифр в системе b → число</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span>                   <span class="c1"># приписать цифру справа</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="k">return</span> <span class="n">n</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">37</span><span class="p">):</span>                  <span class="c1"># в записи есть цифра 5 — значит p ≥ 6</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>               <span class="c1"># x стоит первой в xy4 — не ноль</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>            <span class="k">if</span> <span class="n">chislo</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="n">chislo</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">p</span><span class="p">)</span> <span class="o">==</span> <span class="n">chislo</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="n">p</span><span class="p">):</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>                <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">chislo</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">p</span><span class="p">))</span>
+</code></pre></div>
+<p>Основание больше наибольшей цифры записи (5) — перебор с 6. Программа печатает <code>11 9 2 101</code>: p = 11, x = 9, y = 2,
+ответ — <strong>101</strong>. Первая цифра числа не бывает нулём — без <code>range(1, p)</code> для таких букв находятся лишние решения
+(Решу 76682: с z = 0 — 39 решений вместо одного).</p>
+</div>
+</div>
+</div>
+<details class="info">
+<summary>Подробнее: вручную — запись степеней</summary>
+<p>Так решают задачи, где перебор невозможен (огромный x), и так проверяют ответ программы.</p>
+<ol>
+<li>bⁿ в системе b — единица и n нулей: 7¹⁷⁰ = 1 0…0 (170 нулей).</li>
+<li>Сумма степеней — единицы на своих местах: 7¹⁷⁰ + 7¹⁰⁰ — единица, 69 нулей, единица, 100 нулей.</li>
+<li>Разность bⁿ − bᵐ — (n − m) цифр «b − 1», потом m нулей: 5³⁶ − 5²⁴ = 12 четвёрок и 24 нуля.</li>
+<li>Коэффициент — сначала перевести в систему b: 16 · 5⁵⁰ — это «31» и 50 нулей (16 = 31₅).</li>
+<li>Вычитание маленького числа (−2025) меняет только младшие цифры: перевести 2025 и вычесть «столбиком» с заёмом.</li>
+<li>Основание — степень другого: 4²⁰ = 16¹⁰, 2 · 4²³ = 8 · 16¹¹ — сразу видно цифры 16-ричной записи.</li>
+</ol>
+<p>Для оснований до 36 есть и встроенный способ: <code>int(строка, b)</code> и алфавит <code>D[x]</code> (см. «Проверка» в примере).</p>
+</details>
+<h2 id="_5">Типичные ошибки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Скрытые ловушки — проверены запуском</p>
+<ul>
+<li><strong>x в f-строке числом.</strong> <code>int(f'98{x}79641', 19)</code> при x = 10 вставляет две цифры «1» и «0» — число молча
+  другое. На задачах Решу ЕГЭ с цифрой x так ошибаются <strong>6 из 14</strong> (все «наибольшее x»: 59692, 70078,
+  84708, 81816, 84676, 92191). Цифра — символом <code>D[x]</code> или списком <code>chislo</code>.</li>
+<li><strong>Цифры строкой <code>str(n % b)</code> при b &gt; 10.</strong> Цифра 10 становится «10» — лишний «0»; на случайных 20-значных
+  25-ричных числах <code>count('0')</code> ошибается в 822 случаях из 1000. На задачах Решу (25 и 16) случайно угадывает — тем
+  опаснее.</li>
+<li><strong><code>int(s, b)</code> — только до 36.</strong> На Решу есть основания 37, 39, 40, 47 — <code>ValueError</code>.</li>
+<li><strong><code>bin(n).count('0')</code> — на 1 больше:</strong> ноль из префикса <code>0b</code> (Решу 92256: 72 вместо 71). То же <code>hex</code>, <code>oct</code>.</li>
+<li><strong><code>print(n)</code> и <code>str(n)</code> огромного числа — ошибка в Python 3.11+</strong>: больше 4300 десятичных цифр (5 · 7776²⁰¹³ —
+  около 7800) — <code>ValueError: Exceeds the limit (4300 digits)</code>. В версиях до осени 2022 года ограничения не было.
+  Функция <code>cifry</code> строк не строит — ей ограничение не мешает.</li>
+<li><strong>Первая цифра — не ноль.</strong> В уравнениях с основанием p (Решу 76682, 76711) с нулём в старшем разряде находятся
+  десятки «решений»; число yx в 63030 с y = 0 — «квадрат» 0.</li>
+</ul>
+</div>
+<ul>
+<li><strong><code>/</code> вместо <code>//</code></strong> при частном: на больших числах — потеря цифр или <code>OverflowError</code>.</li>
+<li><strong>Не тот диапазон x</strong>: «положительное» — с 1; «не превышает 2030» — <code>range(1, 2031)</code>; цифра системы b —
+  <code>range(b)</code>, а не <code>range(b + 1)</code>; в двух системах — до меньшего основания.</li>
+<li><strong>Наименьшее — <code>break</code> на первом; наибольшее — последнее</strong> (или перебор сверху вниз и <code>break</code>).</li>
+<li><strong>В ответ — частное (или значение), а не x.</strong> Программа печатает x для себя.</li>
+<li><strong>Опечатка при переписывании выражения</strong> (<code>6**10</code> вместо <code>6**100</code>) — ошибки нет, ответ неверный. Перепишите
+  выражение второй раз и сравните.</li>
+<li><strong>Буквы-цифры:</strong> E = 14, а не I; G = 16, H = 17.</li>
+<li><strong>Счётчик внутри перебора</strong> — заново для каждого x (<code>cifry(…).count(…)</code> делает это сам).</li>
+</ul>
+<details class="info">
+<summary>Откуда разновидности</summary>
+<p>Демоверсии ФИПИ 2022–2027, задачи ЕГЭ 2023–2025, СтатГрад, сборник С. С. Крылова. Видеоразборы:
+<a href="https://www.youtube.com/watch?v=aSGyYZ5gVXc">Умскул, «Все типы задания 14»</a> (ссылка преподавателя);
+<a href="https://www.youtube.com/watch?v=2hE0KBixgmQ">Дядя Саша, «Все прототипы 14 2027»</a>;
+<a href="https://www.youtube.com/watch?v=WgxlMX4TbTk">Иванформатика, демо 2027</a>;
+<a href="https://www.youtube.com/watch?v=ZnQE0Ja19rI">Информатик Родя, «№14 за 106 секунд»</a> и
+<a href="https://www.youtube.com/watch?v=UGxqQS-u9IA">«Все типы №14»</a>;
+<a href="https://www.youtube.com/watch?v=CpDSBV_E1Is">Алексей Ковальчук</a>;
+<a href="https://www.youtube.com/watch?v=ZStQq65Z3Ko">Иван Викторович, демо 2027</a> и
+<a href="https://www.youtube.com/watch?v=PbKhkDl3SFs">«№14 на Python»</a>;
+<a href="https://www.youtube.com/watch?v=xMjceiCzCAg">Тимофей Хирьянов</a>;
+<a href="https://www.youtube.com/watch?v=AG2b3OdNqqc">Вова Информатик, «Все типы №14»</a>;
+<a href="https://www.youtube.com/watch?v=XDmAkb9cYmo">Сеня Информатик</a>;
+<a href="https://www.youtube.com/watch?v=JLnbPRQ6Eo4">Информатик БУ, «№14 вручную»</a>;
+<a href="https://www.youtube.com/watch?v=u1Vu0Xmei2Y">Артём Флэш, «Все типы за 1 вебинар»</a>.
+Ответы из видео перепроверены своим кодом (Python 3.11, 3.12).
+Каталог Решу ЕГЭ, тип 14: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=247">«Прямое сложение в СС»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=220">«Операции в одной СС»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=239">«Операции в разных СС с одной переменной»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=274">«… с двумя переменными»</a> — 111 задач; все решены
+функциями <code>cifry</code> и <code>chislo</code>, ответы совпали со всеми 111.</p>
+</details>
+<h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Задачи №14 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №14</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../task-13/" class="md-footer__link md-footer__link--prev" aria-label="Назад: №13. Число программ">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                №13. Число программ
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../task-15/" class="md-footer__link md-footer__link--next" aria-label="Вперед: №15. Логика: параметр A">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                №15. Логика: параметр A
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
