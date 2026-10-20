@@ -1,0 +1,1959 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Шаблоны и разборы заданий 1–27 ЕГЭ по информатике (2027), основы Python и электронных таблиц">
+      
+      
+      
+        <link rel="canonical" href="https://sidorenkoai.github.io/ege-inf/tasks/task-22/">
+      
+      
+        <link rel="prev" href="../task-19-21/">
+      
+      
+        <link rel="next" href="../task-23/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/cmit-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>№22. Параллельные процессы - Подготовка к успешной сдаче ЕГЭ по информатике</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no22" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+<header class="md-header brand-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a class="brand__logo" href="https://cmit22.ru" title="Бийский ЦМИТ Политех">
+      <img class="brand__logo-full" src="../../assets/cmit-logo.png" alt="Бийский ЦМИТ Политех">
+      <img class="brand__logo-icon" src="../../assets/cmit-icon.png" alt="Бийский ЦМИТ Политех">
+    </a>
+    <div class="brand__text">
+      <a class="brand__title" href="../..">Подготовка к успешной сдаче ЕГЭ по информатике</a>
+      <div class="brand__who">
+        <span>Сидоренко Антон Игоревич</span>
+        <a href="tel:+79237156628">8 923 715 6628</a>
+        <a href="https://cmit22.ru">Бийский ЦМИТ Политех</a>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <a class="brand__bot" href="https://t.me/egeSidorenkoBot" title="Тренироваться в боте @egeSidorenkoBot">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+      <span>Тренироваться в боте<br><small>@egeSidorenkoBot</small></span>
+    </a>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../base/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  База Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Номера 1–27
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cheatsheet/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шпаргалка
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Подготовка к успешной сдаче ЕГЭ по информатике" class="md-nav__button md-logo" aria-label="Подготовка к успешной сдаче ЕГЭ по информатике" data-md-component="logo">
+      
+  <img src="../../assets/cmit-icon.png" alt="logo">
+
+    </a>
+    Подготовка к успешной сдаче ЕГЭ по информатике
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    База Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Номера 1–27
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Номера 1–27
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №1. Граф и таблица
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №2. Таблица истинности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №3. База данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №4. Условие Фано
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №5. Алгоритм с двоичной записью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №6. Исполнитель Черепаха
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №7. Объём изображения и звука
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №8. Комбинаторика слов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №9. Таблица: условия по строкам
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №10. IP-адрес и маска
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №11. Объём данных, коды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №12. Машина Тьюринга
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №13. Число программ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №14. Системы счисления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №15. Логика: параметр A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №16. Рекурсивные функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №17. Последовательность из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №18. Робот в таблице
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-19-21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №19–21. Теория игр
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №22. Параллельные процессы
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №22. Параллельные процессы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №23. Графы: пути
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шпаргалка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no22">№22. Параллельные процессы<a class="headerlink" href="#no22" title="Permanent link">&para;</a></h1>
+<div class="task-meta">
+<p><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2m0 4v4h6V8zm8 0v4h6V8zm-8 6v4h6v-4zm8 0v4h6v-4z"/></svg></span> таблицы (LibreOffice Calc)</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> можно Python</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"/></svg></span> ~7 мин</span>
+<span>1 балл</span>
+<span>файл .ods</span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Коротко</p>
+<p><strong>Текст по столбцам</strong> по «;» → пустые клетки → 0 → строка «процесс 0» с концом 0. Столбец <strong>конец</strong>
+<code>=МАКС(ВПР(C2;$A:$F;6;0);ВПР(D2;$A:$F;6;0);ВПР(E2;$A:$F;6;0))+B2</code>, столбец <strong>начало</strong> <code>=F2-B2+1</code>, протянуть.
+Начало и конец — номера первой и последней миллисекунды, обе <strong>включительно</strong>. Ответ — одной формулой:
+<code>МАКС</code>, <code>СЧЁТЕСЛИ</code>, <code>СЧЁТЕСЛИМН</code>, <code>НАИМЕНЬШИЙ</code>. Если можно сдвигать процессы — диаграмма Ганта.</p>
+</div>
+<h2 id="_1">Как узнать задачу<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>«В файле содержится информация о совокупности N <strong>вычислительных процессов</strong>, которые могут выполняться
+  параллельно или последовательно… процесс B <strong>зависит</strong> от процесса A».</li>
+<li>Таблица: <strong>ID</strong> процесса, <strong>время</strong> выполнения (мс), <strong>ID процессов, от которых он зависит</strong>, через «;» (0 — ни от
+  кого). ID бывают не по порядку и не подряд (101, 102…; 10017…).</li>
+<li>Вопрос — в конце, он и решает всё: минимальное время всех; сколько процессов идут <strong>на k-й мс</strong>; сколько
+  <strong>завершены за первые T мс</strong>; за какое время завершатся k процессов; бывает «максимальная продолжительность
+  отрезка, в течение которого возможно одновременное выполнение четырёх процессов» — это сдвиги.</li>
+</ul>
+<p>Смысл: процесс начинается сразу, как только завершились <strong>все</strong> процессы, от которых он зависит, — то есть после
+самого позднего из них. Поэтому «конец» = МАКС(концы поставщиков) + своё время.</p>
+<h2 id="_2">Шаблон<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Файл открывается в LibreOffice Calc. Данные — в A:C, первая строка — заголовки.</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Что сделать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Выделить столбец C → <strong>Данные → Текст по столбцам</strong>, разделитель «точка с запятой» → ОК. Зависимости встанут по одной в клетку: C, D, E (у кого больше трёх — дальше, F…)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Выделить клетки зависимостей (C2:E26) → <strong>Правка → Найти и заменить</strong>: найти <code>^$</code>, заменить <code>0</code>, в «Других параметрах» — флажки «Только выбранное» и «Регулярные выражения» → <strong>Заменить все</strong>. Пустые станут нулями</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Под таблицей строка <strong>процесса 0</strong>: в столбце A — <code>0</code>, в столбце «конец» — <code>0</code>. Числами, <strong>не формулой</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>F2 «конец»: <code>=МАКС(ВПР(C2;$A:$F;6;0);ВПР(D2;$A:$F;6;0);ВПР(E2;$A:$F;6;0))+B2</code> — по ID каждого поставщика <code>ВПР</code> находит его строку и берёт 6-й столбец (F — его конец); G2 «начало»: <code>=F2-B2+1</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Выделить F2:G2 и <strong>протянуть</strong> до последнего процесса (двойной щелчок по маркеру) — но <strong>не на строку процесса 0</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Проверка на примере из условия:</strong> «процесс 3 начинается на 8-й мс, заканчивается на 9-й» — у вас должно получиться так же</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Ответ — формулой по вопросу (таблица ниже) в свободной клетке. Диапазоны — только строки процессов (F2:F26), <strong>без строки процесса 0</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>Формула (данные в строках 2–26)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>минимальное время, через которое завершится вся совокупность</td>
+<td><code>=МАКС(F2:F26)</code></td>
+</tr>
+<tr>
+<td>сколько процессов <strong>выполняются на k-й мс</strong> (параллельно, активны)</td>
+<td><code>=СЧЁТЕСЛИМН(G2:G26;"&lt;="&amp;7;F2:F26;"&gt;="&amp;7)</code> — начало ≤ k ≤ конец</td>
+</tr>
+<tr>
+<td>сколько могут быть <strong>завершены за первые T мс</strong></td>
+<td><code>=СЧЁТЕСЛИ(F2:F26;"&lt;="&amp;17)</code> — конец ≤ T</td>
+</tr>
+<tr>
+<td>за какое минимальное время <strong>завершатся k процессов</strong></td>
+<td><code>=НАИМЕНЬШИЙ(F2:F26;14)</code> — k-й по величине конец</td>
+</tr>
+<tr>
+<td>сколько <strong>начнутся не ранее k-й мс</strong></td>
+<td><code>=СЧЁТЕСЛИ(G2:G26;"&gt;="&amp;8)</code></td>
+</tr>
+<tr>
+<td>начнутся не ранее a-й <strong>и</strong> завершатся не позднее b-й мс</td>
+<td><code>=СЧЁТЕСЛИМН(G2:G26;"&gt;="&amp;5;F2:F26;"&lt;="&amp;16)</code></td>
+</tr>
+<tr>
+<td>сумма ID: <strong>запустятся, но не успеют завершиться</strong> за первые T мс</td>
+<td><code>=СУММЕСЛИМН(A2:A26;G2:G26;"&lt;="&amp;41;F2:F26;"&gt;"&amp;41)</code></td>
+</tr>
+<tr>
+<td>когда завершится процесс X</td>
+<td><code>=ВПР(X;$A:$F;6;0)</code></td>
+</tr>
+<tr>
+<td>сколько начнутся <strong>после завершения</strong> процесса X</td>
+<td>начало &gt; конец X: <code>=СЧЁТЕСЛИ(G2:G26;"&gt;"&amp;18)</code> (18 — конец X)</td>
+</tr>
+<tr>
+<td>«не ранее чем <strong>через</strong> 80 мс после запуска первого»</td>
+<td>это момент 80 — первая мс процесса 81-я или позже: <code>"&gt;="&amp;81</code></td>
+</tr>
+<tr>
+<td>«в состоянии ожидания на 151-й мс» (ещё не начался)</td>
+<td>начало &gt; 151: <code>"&gt;"&amp;151</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Как считать миллисекунды</p>
+<p>Миллисекунды нумеруются с 1. Процесс без поставщиков длиной 4 мс идёт в 1-ю, 2-ю, 3-ю и 4-ю мс: начало 1,
+конец 4. Зависимый начинается в следующую мс после конца последнего поставщика. Поэтому <strong>начало = конец − время
++ 1</strong>, и «идёт в k-ю мс» — это <code>начало ≤ k ≤ конец</code>, оба знака нестрогие.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">LibreOffice и Excel</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>LibreOffice Calc</th>
+<th>Excel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>текст по столбцам</td>
+<td>Данные → Текст по столбцам</td>
+<td>Данные → Текст по столбцам</td>
+</tr>
+<tr>
+<td>несколько условий</td>
+<td><code>СЧЁТЕСЛИМН</code>, <code>СУММЕСЛИМН</code></td>
+<td>то же</td>
+</tr>
+<tr>
+<td>пустая клетка в <code>ВПР</code></td>
+<td><code>#Н/Д</code> — поэтому нули</td>
+<td>не проверяли</td>
+</tr>
+</tbody>
+</table>
+<p>Аргументы разделяются <code>;</code>. 4-й аргумент <code>ВПР</code> — всегда 0 (точное совпадение).</p>
+</div>
+<h2 id="_3">Пример с разбором<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>Задача</strong> (демоверсия ЕГЭ-2027, пересказ). В файле 25 процессов: ID, время (мс), ID процессов, от которых зависит
+(через «;», 0 — независимый). Определите максимальное количество процессов, которые параллельно выполняются <strong>на 7-й
+мс</strong>, если каждый процесс начинается в самое раннее допустимое время. Миллисекунды нумеруются с 1.</p>
+<p><strong>Решение.</strong> Данные в A1:C26, у процессов до трёх поставщиков.</p>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Что делаем</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>зависимости через «;»</td>
+<td>C → Текст по столбцам → зависимости в C, D, E; пустые C2:E26 → 0</td>
+</tr>
+<tr>
+<td>«0» — независимый</td>
+<td>строка 27: A27 = 0, F27 = 0</td>
+</tr>
+<tr>
+<td>самое раннее время</td>
+<td>F2: <code>=МАКС(ВПР(C2;$A:$F;6;0);ВПР(D2;$A:$F;6;0);ВПР(E2;$A:$F;6;0))+B2</code>, G2: <code>=F2-B2+1</code>, протянуть до 26-й строки</td>
+</tr>
+<tr>
+<td>на 7-й мс</td>
+<td><code>=СЧЁТЕСЛИМН(G2:G26;"&lt;="&amp;7;F2:F26;"&gt;="&amp;7)</code></td>
+</tr>
+</tbody>
+</table>
+<p>Процесс 1 (4 мс) ждёт процессы 3 (конец 9) и 25 (конец 5) — начало 10, конец 13. На 7-й мс идут 8 процессов.
+<strong>Ответ: 8.</strong></p>
+<details class="tip">
+<summary>Проверка вторым способом</summary>
+<p>Программа (ниже, «Подробнее: Python») даёт тот же ответ — 8. Её же ответы: все завершатся на 17-й мс; за первые
+17 мс завершатся все 25.</p>
+</details>
+<h2 id="_4">Разновидности<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Как записать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>минимальное время всей совокупности (демо-2023, ЕГЭ-2023, ЕГКР 2025–2026, Крылов)</td>
+<td><code>=МАКС(F2:F26)</code></td>
+</tr>
+<tr>
+<td>на k-й мс (демо-2027, ЕГЭ-2025, ЕГЭ-2026 — 6-я и 26-я мс)</td>
+<td><code>СЧЁТЕСЛИМН</code>: начало ≤ k, конец ≥ k</td>
+</tr>
+<tr>
+<td>завершены за первые T мс (демо-2026, ЕГЭ-2026 — 21 мс)</td>
+<td><code>СЧЁТЕСЛИ</code>: конец ≤ T</td>
+</tr>
+<tr>
+<td>за какое время завершатся k процессов (ЕГЭ-2025)</td>
+<td><code>НАИМЕНЬШИЙ(конец;k)</code> — или отсортировать концы</td>
+</tr>
+<tr>
+<td>начнутся не ранее a-й и завершатся не позднее b-й мс (пересдача ЕГЭ-2026)</td>
+<td><code>СЧЁТЕСЛИМН</code>: начало ≥ a, конец ≤ b</td>
+</tr>
+<tr>
+<td>сумма ID «запустятся, но не завершатся» (СтатГрад)</td>
+<td><code>СУММЕСЛИМН</code>: начало ≤ T, конец &gt; T</td>
+</tr>
+<tr>
+<td>сколько процессов идут одновременно с процессом X</td>
+<td>начало ≤ конец X и конец ≥ начало X, минус сам X</td>
+</tr>
+<tr>
+<td>время одного процесса неизвестно — t; наибольшее t, при котором всё завершится за T мс (Крылов-2023)</td>
+<td>в клетку t пишем числа и смотрим <code>МАКС</code> — подбор (вкладка «Неизвестное и задержка»)</td>
+</tr>
+<tr>
+<td>процесс B может начаться не раньше чем через d мс после поставщика</td>
+<td>у процесса 0 конец −d, в формуле <code>…)+d+B2</code> (вкладка «Неизвестное и задержка»)</td>
+</tr>
+<tr>
+<td>потеряна зависимость процесса X, общее время известно</td>
+<td>подставлять в клетку зависимости ID по очереди, пока <code>МАКС</code> не станет нужным; цикл (<code>Err:522</code>) — не подходит</td>
+</tr>
+<tr>
+<td>«отрезок, когда одновременно 4 (5) процессов», «максимального количества процессов» (демо 2024–2025, ЕГЭ-2024, апробации, Крылов)</td>
+<td>диаграмма Ганта и сдвиги — вкладка «Сдвиги»</td>
+</tr>
+<tr>
+<td>«время завершения <strong>каждого</strong> процесса минимально» / «начинается в самое раннее время»</td>
+<td>двигать <strong>нельзя</strong> — шаблон</td>
+</tr>
+<tr>
+<td>«время окончания <strong>всех</strong> процессов минимально»</td>
+<td>двигать можно, но общее время не увеличивать</td>
+</tr>
+<tr>
+<td>позже всех может начаться процесс; сколько начнутся не ранее k-й мс при минимальном общем времени</td>
+<td>сдвиги в пределах общего времени — вкладка «Сдвиги»</td>
+</tr>
+<tr>
+<td>одновременно не более K процессов (очередь)</td>
+<td>моделирование — вкладка «Не более K процессов»</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Сдвиги</label><label for="__tabbed_1_2">Не более K процессов</label><label for="__tabbed_1_3">Неизвестное и задержка</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>«Максимальная продолжительность отрезка, в течение которого возможно одновременное выполнение четырёх
+процессов». Здесь процессы <strong>можно начинать позже</strong> — и подобрать сдвиги так, чтобы четыре шли вместе как можно
+дольше. Помогает <strong>диаграмма Ганта</strong> в той же таблице — готовый файл с демоверсией ЕГЭ-2024:
+<a href="../../files/22-gant.ods">22-gant.ods</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Что сделать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Шаблон, но перед «концом» — столбец <strong>«Сдвиг»</strong> (E, сначала везде 0): F2 <code>=МАКС(ВПР(C2;$A:$F;6;0);ВПР(D2;$A:$F;6;0))+B2+E2</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>В I1, J1, … — номера мс 1, 2, 3…; I2: <code>=ЕСЛИ(И($G2&lt;=I$1;$F2&gt;=I$1);1;"")</code> — протянуть вправо и вниз. Под таблицей — <code>=СУММ(I2:I13)</code>: сколько процессов идут в эту мс</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Формат → Условное форматирование: клетки с 1 — заливка; в строке сумм — подсветка нужного числа</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Найти <strong>независимые группы</strong> (никто из одной группы не зависит от другой) и в каждой — самый длинный участок, где идут нужные 2 процесса</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Сдвигом <strong>первых процессов группы</strong> совместить эти участки. Пишите сдвиг в столбец E — зависимые процессы едут сами</td>
+</tr>
+</tbody>
+</table>
+<p>Демо ЕГЭ-2024 (12 процессов): группа 1–8 и группа 9–12. В группе 1–8 два процесса идут вместе дольше всего с 10-й
+по 16-ю мс (процесс 4 и процессы 5, 6) — 7 мс. В группе 9–12 две цепочки 9→11 и 10→12 идут вместе 13 мс подряд.
+Сдвиг 9 → процессам 9 и 10 (они начнутся на 10-й мс) — и с 10-й по 16-ю мс идут 4 процесса. <strong>Ответ: 7</strong> (без
+сдвигов — 4; проверено в LibreOffice и перебором всех расстановок).</p>
+<ul>
+<li>Двигать можно только <strong>позже</strong>; вместе с процессом едут все, кто от него зависит.</li>
+<li>«Каждого минимально», «в самое раннее время» — <strong>не двигать</strong>: считать по диаграмме как есть.</li>
+<li>«Всех минимально» — двигать, но конец всех — не позже <code>МАКС</code> без сдвигов.</li>
+<li>«Максимального количества» — сначала найти, сколько процессов вообще могут идти вместе: максимум в каждой группе
+  сложить.</li>
+<li>Процесс, который ждёт двух поставщиков, разрывает участок: до него и после него — разные участки.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>«Одновременно может выполняться не более 3 процессов… из готовых запускается тот, у которого меньше ID. За какое
+время будут выполнены все процессы?» Формулой не посчитать — <strong>моделирование</strong>: в каждый момент закончившиеся
+освобождают места, на свободные места запускаются готовые (все поставщики завершены). Вручную — диаграммой Ганта,
+надёжнее программой (лист — в Блокнот, как в «Подробнее: Python»):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №22, свои данные (moi.txt): одновременно может выполняться не более 3 процессов; из готовых к запуску</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># запускается процесс с наименьшим ID. За какое время будут выполнены все процессы?</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Ответ: 37</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">vremya</span><span class="p">,</span> <span class="n">zavisit</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'moi.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="k">continue</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">vremya</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">zav</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="s1">'0'</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">zavisit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">zav</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">';'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">)]</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">K</span> <span class="o">=</span> <span class="mi">3</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">konec</span> <span class="o">=</span> <span class="p">{}</span>                                       <span class="c1"># завершённые: ID → момент завершения</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">idet</span> <span class="o">=</span> <span class="p">{}</span>                                        <span class="c1"># идут сейчас: ID → момент, когда закончится</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>                                            <span class="c1"># момент времени (мс от старта)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">konec</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">vremya</span><span class="p">):</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">idet</span><span class="p">):</span>                         <span class="c1"># кто закончился ровно сейчас — освобождает место</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="k">if</span> <span class="n">idet</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">t</span><span class="p">:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>            <span class="n">konec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>            <span class="k">del</span> <span class="n">idet</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="n">gotovy</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vremya</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">konec</span> <span class="ow">and</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">idet</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>                    <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">j</span> <span class="ow">in</span> <span class="n">konec</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">zavisit</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>   <span class="c1"># все поставщики уже завершены</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">gotovy</span><span class="p">:</span>                             <span class="c1"># по возрастанию ID, пока есть свободные места</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idet</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">K</span><span class="p">:</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>            <span class="n">idet</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">vremya</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    <span class="n">t</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">konec</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</code></pre></div>
+<p>Если в условии <strong>очередь</strong> («в момент готовности процесс ставится в очередь, запускается первый из очереди»),
+выбирать надо не наименьший ID, а того, кто дольше ждёт. На тех же данных — 38 вместо 37:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №22, свои данные (moi.txt): не более 3 процессов одновременно; готовый к запуску процесс ставится в очередь</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># (готовые в один момент — по возрастанию ID), запускается первый из очереди. За какое время выполнятся все?</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: 38</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">vremya</span><span class="p">,</span> <span class="n">zavisit</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'moi.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="k">continue</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">vremya</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">zav</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="s1">'0'</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">zavisit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">zav</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">';'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">)]</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">K</span> <span class="o">=</span> <span class="mi">3</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">konec</span> <span class="o">=</span> <span class="p">{}</span>                                       <span class="c1"># завершённые: ID → момент завершения</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">idet</span> <span class="o">=</span> <span class="p">{}</span>                                        <span class="c1"># идут сейчас: ID → момент, когда закончится</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">ochered</span> <span class="o">=</span> <span class="p">[]</span>                                     <span class="c1"># очередь готовых к запуску</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>                                            <span class="c1"># момент времени (мс от старта)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">konec</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">vremya</span><span class="p">):</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">idet</span><span class="p">):</span>                         <span class="c1"># кто закончился ровно сейчас — освобождает место</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="k">if</span> <span class="n">idet</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">t</span><span class="p">:</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>            <span class="n">konec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>            <span class="k">del</span> <span class="n">idet</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="n">ochered</span> <span class="o">+=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vremya</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">konec</span> <span class="ow">and</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">idet</span> <span class="ow">and</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ochered</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>                      <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="n">j</span> <span class="ow">in</span> <span class="n">konec</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">zavisit</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>  <span class="c1"># новые готовые — в конец очереди</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="k">while</span> <span class="n">ochered</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">idet</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">K</span><span class="p">:</span>             <span class="c1"># запускаем первых из очереди, пока есть места</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        <span class="n">i</span> <span class="o">=</span> <span class="n">ochered</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>        <span class="n">idet</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">vremya</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    <span class="n">t</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">konec</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</code></pre></div>
+<p>Бывает «задача требует n процессов»: задача стартует, только если помещаются все её процессы; не помещается —
+может стартовать следующая по ID, которой места хватает (так получаются ответы Решу ЕГЭ).</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Неизвестное время t.</strong> «Определите максимально возможное целочисленное t, при котором вся совокупность
+завершится не более чем за 16 мс». Буква t ломает формулы — в её клетку пишем число и смотрим <code>=МАКС(F2:F13)</code>:
+t = 0, 1, 2, … Ответ — последнее t, при котором <code>МАКС ≤ 16</code> (от t итог только растёт).</p>
+<p><strong>Задержка.</strong> «Процесс B может начать выполнение не раньше чем через 3 мс после завершения процесса A». В формулу
+конца — <code>+3</code>: <code>=МАКС(ВПР(…);…)+3+B2</code>, а у <strong>процесса 0</strong> конец <strong>−3</strong> — тогда у независимых задержки не будет.</p>
+<p><strong>Потерянная зависимость.</strong> «Известно, что вся совокупность завершилась за 25 мс; определите ID процесса, после
+которого начался процесс 12». В клетку зависимости процесса 12 по очереди пишем ID и смотрим <code>МАКС</code>; <code>Err:522</code>
+(циклическая ссылка) — такой ID не подходит.</p>
+</div>
+</div>
+</div>
+<details class="info">
+<summary>Подробнее: решение на Python</summary>
+<p>Лист в Блокнот: Ctrl+A, Ctrl+C → Блокнот → Ctrl+V → сохранить <code>22.txt</code> рядом с программой. Клетки в строке
+разделены табуляцией; зависимости — текстом <code>3;25</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №22, демоверсия ЕГЭ-2027 (лист скопирован в 22.txt): сколько процессов выполняются на 7-й мс,</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># если каждый начинается в самое раннее допустимое время (миллисекунды нумеруются с 1).</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Ответ: 8</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">vremya</span><span class="p">,</span> <span class="n">zavisit</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'22.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>               <span class="c1"># клетки строки разделены табуляцией</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>                       <span class="c1"># строка заголовка</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="k">continue</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">vremya</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">zav</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="s1">'0'</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">zavisit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">zav</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">';'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">)</span>   <span class="c1"># разделитель «;» (бывает «,»)</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>                  <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">)]</span>                    <span class="c1"># «0» и пустое — ни от кого</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">konec</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vremya</span><span class="p">}</span>                   <span class="c1"># последняя мс процесса</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="k">for</span> <span class="n">povtor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vremya</span><span class="p">)):</span>                <span class="c1"># как в №23: повторить столько раз, сколько процессов</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vremya</span><span class="p">:</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="n">konec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">konec</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">zavisit</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">vremya</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">nachalo</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">konec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">vremya</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vremya</span><span class="p">}</span>   <span class="c1"># первая мс процесса</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vremya</span> <span class="k">if</span> <span class="n">nachalo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">7</span> <span class="o">&lt;=</span> <span class="n">konec</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</code></pre></div>
+<ul>
+<li>Конец считается, как в таблице: МАКС(концы поставщиков) + время. Но процессы в файле идут вперемешку: когда
+  считаем процесс 1, конец его поставщика 25 может быть ещё не найден. Поэтому, как в №23, <strong>повторяем столько
+  раз, сколько процессов</strong> — каждый проход достраивает цепочки хотя бы на один процесс.</li>
+<li><code>max([…], default=0)</code> — у независимого процесса список поставщиков пуст, конец = время.</li>
+<li><code>if x.strip() not in ('', '0')</code> — пропускает «0», пустые клетки и пробелы («109; 112»).</li>
+</ul>
+<p>Все остальные вопросы — та же программа, другая последняя строка (свои данные, 18 процессов):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># №22, свои данные (moi.txt, 18 процессов): все разновидности вопроса «без сдвигов» — одна программа,</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># меняется только последняя строка. Каждый процесс начинается в самое раннее время, мс нумеруются с 1.</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Ответ: 26</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Ответ: 6</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Ответ: 9</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># Ответ: 14</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Ответ: 8</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Ответ: 6</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># Ответ: 22</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># Ответ: 9</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># Ответ: 4</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">vremya</span><span class="p">,</span> <span class="n">zavisit</span> <span class="o">=</span> <span class="p">{},</span> <span class="p">{}</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'moi.txt'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">):</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\t</span><span class="s1">'</span><span class="p">)</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        <span class="k">continue</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="n">vremya</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="n">zav</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="s1">'0'</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="n">zavisit</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">zav</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">';'</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="s1">'0'</span><span class="p">)]</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="n">konec</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vremya</span><span class="p">}</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="k">for</span> <span class="n">povtor</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vremya</span><span class="p">)):</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vremya</span><span class="p">:</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>        <span class="n">konec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">konec</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">zavisit</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">vremya</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="n">nachalo</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">konec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">vremya</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">vremya</span><span class="p">}</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="n">P</span> <span class="o">=</span> <span class="n">vremya</span>                                                          <span class="c1"># все ID</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">konec</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>                                          <span class="c1"># все завершатся</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">P</span> <span class="k">if</span> <span class="n">nachalo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">9</span> <span class="o">&lt;=</span> <span class="n">konec</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>             <span class="c1"># идут в 9-ю мс</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">P</span> <span class="k">if</span> <span class="n">konec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">12</span><span class="p">))</span>                          <span class="c1"># завершены за первые 12 мс</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">konec</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">10</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>                               <span class="c1"># за сколько мс завершатся 10 процессов</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">P</span> <span class="k">if</span> <span class="n">nachalo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">))</span>                        <span class="c1"># начнутся не ранее 10-й мс</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">P</span> <span class="k">if</span> <span class="n">nachalo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span> <span class="ow">and</span> <span class="n">konec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">))</span>      <span class="c1"># начнутся не ранее 4-й и завершатся не позднее 15-й</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">P</span> <span class="k">if</span> <span class="n">nachalo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">12</span> <span class="o">&lt;</span> <span class="n">konec</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>             <span class="c1"># сумма ID: запустятся, но не завершатся за 12 мс</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="nb">print</span><span class="p">(</span><span class="n">konec</span><span class="p">[</span><span class="mi">16</span><span class="p">])</span>                                                    <span class="c1"># когда завершится процесс 16</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">P</span> <span class="k">if</span> <span class="n">nachalo</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">konec</span><span class="p">[</span><span class="mi">9</span><span class="p">]))</span>                   <span class="c1"># начнутся после завершения процесса 9</span>
+</code></pre></div>
+</details>
+<h2 id="_5">Типичные ошибки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Скрытые ловушки — проверены в LibreOffice 26.8</p>
+<ul>
+<li><strong>Без строки процесса 0</strong> или <strong>с пустыми клетками</strong> зависимостей <code>ВПР</code> даёт <code>#Н/Д</code> — в демо все 25 концов с
+  ошибкой. Нужны и нули, и строка 0.</li>
+<li><strong>Строку процесса 0 протянули формулами</strong> — она ищет сама себя: циклическая ссылка <code>Err:522</code> во всех строках.
+  У процесса 0 — просто числа 0.</li>
+<li><strong>Строка процесса 0 в диапазоне ответа:</strong> <code>=СЧЁТЕСЛИ(F:F;"&lt;="&amp;17)</code> на демо — 26 вместо 25 (её конец 0 тоже
+  «≤ 17»). Диапазон — только строки процессов.</li>
+<li><strong>ID записаны текстом</strong> (бывает в файлах — числа прижаты влево): <code>ВПР</code> числа по ним даёт <code>#Н/Д</code>, а <code>СУММ</code> и <code>МАКС</code>
+  по такому столбцу — 0. Лечение — «Текст по столбцам» по столбцам A и B (Решу ЕГЭ 89205).</li>
+<li>После «Найти и заменить» нули в пустых клетках — <strong>текстовые</strong>, но <code>ВПР</code> их находит (демо — 8, ошибок нет):
+  второй раз заменять не нужно.</li>
+<li>«Пробел после ;» («109; 112») «Текст по столбцам» превращает в число — ничего делать не надо.</li>
+</ul>
+</div>
+<ul>
+<li><strong>Граница на единицу:</strong> «на 14-й мс» — <code>начало ≤ 14 ≤ конец</code> с началом = <strong>первой мс</strong>. Если «начало» —
+  <code>МАКС(концов поставщиков)</code> (момент, после которого процесс стартует), то условие <code>начало &lt; 14</code>. Перепутаешь — 2
+  вместо 3 (Решу ЕГЭ 81488). Проверяйте на примере из условия: процесс 3 — с 8-й по 9-ю мс.</li>
+<li><strong>«Через 80 мс после запуска»</strong> — это момент 80, первая мс процесса — 81-я или позже; <strong>«не ранее 8-й мс»</strong> — первая
+  мс 8-я или позже. Разница в единицу.</li>
+<li><strong>«За первые 17 мс»</strong> — конец ≤ 17 (успел и тот, кто закончил на 17-й); «не успеют завершиться» — конец &gt; T.</li>
+<li><strong>Минимум, а считаем МАКС:</strong> «минимальное время всех» — когда завершится последний, то есть максимум концов.</li>
+<li><strong>МАКС, а не сумма</strong> концов поставщиков: процесс ждёт самого позднего, а не всех по очереди.</li>
+<li><strong>Сдвиги:</strong> «каждого минимально» и «всех минимально» — разные задачи (без сдвигов демо ЕГЭ-2024 дало бы 4 вместо 7,
+  Решу 76125 — 10 вместо 4). И наоборот: «при минимальном общем времени» сколько процессов <strong>могут</strong> начаться не ранее
+  15-й мс — с учётом сдвигов 8, по самому раннему началу 7 (ЕГЭ-2026, Решу 92199).</li>
+<li><strong>Очередь ≠ наименьший ID:</strong> по «очереди готовых» и по «наименьшему ID» ответы разные (свои данные: 38 и 37). На
+  Решу ЕГЭ 75286 ответ сайта 42 посчитан по наименьшему ID, а в условии — очередь: верно 40.</li>
+<li><strong>ВПР без 0 в конце</strong> или без <code>$</code> в диапазоне — ищет не то или «уезжает» при протягивании.</li>
+</ul>
+<details class="info">
+<summary>Откуда разновидности</summary>
+<p>Демоверсии ФИПИ 2023–2027; ЕГЭ 2023–2026 (досрочные, основные волны, резерв, пересдачи); ЕГКР, апробации, открытые
+варианты; СтатГрад; сборник С. С. Крылова 2023–2026 (2023 — минимальное время и неизвестное t; 2024 — «4 процесса»
+со сдвигами; 2025 — «максимальное количество»; 2026 — 20 вариантов: k-я мс, завершены за T, k процессов,
+минимальное время, отрезки); задачи К. Ю. Полякова (задержка, потерянная зависимость). Видеоразборы:
+<a href="https://www.youtube.com/watch?v=MO9zyczTApM">Умскул, «Все типы задания 22»</a> (ссылка преподавателя) и
+<a href="https://www.youtube.com/watch?v=jSRlG_XRvpk">«Разбор задания 22»</a>;
+<a href="https://www.youtube.com/watch?v=wRdDAsraTh4">Дядя Саша, «Все прототипы 22 2027»</a>;
+Сеня Информатик — <a href="https://www.youtube.com/watch?v=7C6sTo2-9RI">«Все типы 2027»</a> и
+<a href="https://www.youtube.com/watch?v=U1__l4kvsl0">«Все типы + сдвиги»</a>;
+<a href="https://www.youtube.com/watch?v=GcNvnW_h9Jg">Вова Информатик</a>;
+<a href="https://www.youtube.com/watch?v=TkvkRcfVNzI">Натали Солдаева</a>;
+Информатик Родя — <a href="https://www.youtube.com/watch?v=ngiwABB9CBY">«Халява»</a> и
+<a href="https://www.youtube.com/watch?v=ZvasvTyoiyA">«Отрезки и сдвиги»</a>;
+<a href="https://www.youtube.com/watch?v=DhOHPvmuY74">Артём Флэш</a>; <a href="https://www.youtube.com/watch?v=i4B97ZSBQd0">Алексей Кабанов</a>;
+<a href="https://www.youtube.com/watch?v=2kslqX2gShs">Максим Костенко</a>; <a href="https://www.youtube.com/watch?v=Y_8JEDwg20E">«ЕГЭ с АР»</a>;
+демо-2027 — <a href="https://www.youtube.com/watch?v=VGxiCzRtPFE">Иван Викторович</a>,
+<a href="https://www.youtube.com/watch?v=K7stY5S5qI4">Иванформатика</a>, <a href="https://www.youtube.com/watch?v=DEXyDEvE2Dk">Алексей Ковальчук</a>;
+демо-2026 — <a href="https://www.youtube.com/watch?v=788LwzkROuQ">Информатик БУ</a>, <a href="https://www.youtube.com/watch?v=ONxuBVgTjg8">Максим Попков</a>;
+<a href="https://www.youtube.com/watch?v=fkPWgAgQlhk">Яндекс Учебник</a>;
+сборник Крылова — <a href="https://www.youtube.com/watch?v=i2EWRevJP1g">2023</a>, <a href="https://www.youtube.com/watch?v=aYQCaEBUcqU">2024</a>,
+<a href="https://www.youtube.com/watch?v=hgdMXnmG4dQ">2025</a>, 2026 — все 20 вариантов у Максима Попкова (например,
+<a href="https://www.youtube.com/watch?v=T36ZEJplkfU&amp;t=4335">вариант 1</a>), разборы Умскула, Дяди Саши, Лёни Шастина,
+Александра Павлова; задачи Полякова — <a href="https://www.youtube.com/watch?v=NvfnPtFwhu4">PRO100 ЕГЭ</a>.
+Каталог Решу ЕГЭ, тип 22: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=215">«Задания для подготовки»</a> —
+83 задачи с файлами, все решены своей программой (64 — ещё и шагами справочника в LibreOffice): совпали 82, у одной
+(75286) ответ сайта посчитан не по условию. КомпЕГЭ — 59 задач с пометкой экзамена или источника, все совпали.</p>
+</details>
+<h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Задачи №22 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №22</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../task-19-21/" class="md-footer__link md-footer__link--prev" aria-label="Назад: №19–21. Теория игр">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                №19–21. Теория игр
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../task-23/" class="md-footer__link md-footer__link--next" aria-label="Вперед: №23. Графы: пути">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                №23. Графы: пути
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
