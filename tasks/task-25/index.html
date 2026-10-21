@@ -1,0 +1,2429 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Шаблоны и разборы заданий 1–27 ЕГЭ по информатике (2027), основы Python и электронных таблиц">
+      
+      
+      
+        <link rel="canonical" href="https://sidorenkoai.github.io/ege-inf/tasks/task-25/">
+      
+      
+        <link rel="prev" href="../task-24/">
+      
+      
+        <link rel="next" href="../../cheatsheet/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/cmit-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>№25. Маски, делители - Подготовка к успешной сдаче ЕГЭ по информатике</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no25" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+<header class="md-header brand-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a class="brand__logo" href="https://cmit22.ru" title="Бийский ЦМИТ Политех">
+      <img class="brand__logo-full" src="../../assets/cmit-logo.png" alt="Бийский ЦМИТ Политех">
+      <img class="brand__logo-icon" src="../../assets/cmit-icon.png" alt="Бийский ЦМИТ Политех">
+    </a>
+    <div class="brand__text">
+      <a class="brand__title" href="../..">Подготовка к успешной сдаче ЕГЭ по информатике</a>
+      <div class="brand__who">
+        <span>Сидоренко Антон Игоревич</span>
+        <a href="tel:+79237156628">8 923 715 6628</a>
+        <a href="https://cmit22.ru">Бийский ЦМИТ Политех</a>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <a class="brand__bot" href="https://t.me/egeSidorenkoBot" title="Тренироваться в боте @egeSidorenkoBot">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+      <span>Тренироваться в боте<br><small>@egeSidorenkoBot</small></span>
+    </a>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../base/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  База Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Номера 1–27
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cheatsheet/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шпаргалка
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Подготовка к успешной сдаче ЕГЭ по информатике" class="md-nav__button md-logo" aria-label="Подготовка к успешной сдаче ЕГЭ по информатике" data-md-component="logo">
+      
+  <img src="../../assets/cmit-icon.png" alt="logo">
+
+    </a>
+    Подготовка к успешной сдаче ЕГЭ по информатике
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    База Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Номера 1–27
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Номера 1–27
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №1. Граф и таблица
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №2. Таблица истинности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №3. База данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №4. Условие Фано
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №5. Алгоритм с двоичной записью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №6. Исполнитель Черепаха
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №7. Объём изображения и звука
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №8. Комбинаторика слов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №9. Таблица: условия по строкам
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №10. IP-адрес и маска
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №11. Объём данных, коды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №12. Машина Тьюринга
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №13. Число программ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №14. Системы счисления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №15. Логика: параметр A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №16. Рекурсивные функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №17. Последовательность из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №18. Робот в таблице
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-19-21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №19–21. Теория игр
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №22. Параллельные процессы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №23. Графы: пути
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №24. Строки из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №25. Маски, делители
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №25. Маски, делители
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаблон">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        А. Маска
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Б. Делители и простые множители
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шпаргалка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Шаблон">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        А. Маска
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Б. Делители и простые множители
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no25">№25. Маски чисел, делители, простые множители<a class="headerlink" href="#no25" title="Permanent link">&para;</a></h1>
+<div class="task-meta">
+<p><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> Python</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"/></svg></span> ~20 мин</span>
+<span>1 балл</span>
+<span>без файла</span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Коротко</p>
+<p>Сначала понять, <strong>что спрашивают</strong>: от этого зависит шаблон.</p>
+<ul>
+<li><strong>А. Маска</strong> («соответствуют маске <code>3?12?14*5</code> и делятся на 1917»): перебирать только кратные —
+  <code>for x in range(K, N + 1, K)</code>, проверка <code>fnmatch(str(x), маска)</code>, вывод <code>print(x, x // K)</code>.</li>
+<li><strong>Б. Делители и простые множители</strong> («сумма наименьшего и наибольшего делителей», «произведение ровно двух
+  простых множителей»): две функции — <code>deliteli(n)</code> (все делители, до корня парами) и <code>prostye(n)</code> (простые
+  множители с повторами). Дальше — условие задачи дословно, <code>while count &lt; 5: n += 1</code>.</li>
+</ul>
+</div>
+<h2 id="_1">Как узнать задачу<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>«Назовём <strong>маской числа</strong> последовательность цифр… символ «?» означает ровно одну цифру, «*» — любую
+  последовательность цифр»: это шаблон А.</li>
+<li>«Напишите программу, которая <strong>перебирает целые числа, большие</strong> 800 000, и ищет среди них такие, у которых…
+  <strong>делитель</strong>…», «<strong>простых множителей</strong>», «первые пять найденных чисел»: шаблон Б.</li>
+<li>Файла нет, ответ — <strong>таблица</strong>: в первом столбце числа, во втором — частное, делитель, множитель или значение M.
+  Строк в бланке «избыточно»: записывайте столько, сколько вывела программа.</li>
+</ul>
+<p>В демоверсии 2027 даны оба вида (на экзамене будет один):</p>
+<table>
+<thead>
+<tr>
+<th>Вид</th>
+<th>Как звучит</th>
+<th>Шаблон</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>маска + делимость</td>
+<td>«не превышающих 10¹⁰, соответствуют маске 3?12?14*5, делятся на 1917»</td>
+<td><strong>А</strong></td>
+</tr>
+<tr>
+<td>делители</td>
+<td>«M — сумма наименьшего и наибольшего делителей, не считая 1 и самого числа», «есть делитель, оканчивающийся на 7»</td>
+<td><strong>Б</strong>, <code>deliteli</code></td>
+</tr>
+<tr>
+<td>простые множители</td>
+<td>«произведение <strong>ровно двух простых множителей</strong>, не обязательно различных, каждый содержит 16 ровно один раз»</td>
+<td><strong>Б</strong>, <code>prostye</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">Шаблон<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">А. Маска<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №25, демоверсия ЕГЭ-2027 (пример 2): числа не больше 10^10 по маске 3?12?14*5, делящиеся на 1917; вывести число и частное</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Ответ: 351261495 183235</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Ответ: 3212614035 1675855</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Ответ: 3412614645 1780185</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Ответ: 3712414275 1936575</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Ответ: 3912414885 2040905</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fnmatch</span><span class="w"> </span><span class="kn">import</span> <span class="n">fnmatch</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">K</span> <span class="o">=</span> <span class="mi">1917</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>      <span class="c1"># только кратные K: K, 2K, 3K, …</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">if</span> <span class="n">fnmatch</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">'3?12?14*5'</span><span class="p">):</span>   <span class="c1"># «?» — одна цифра, «*» — любые цифры, в том числе ни одной</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">//</span> <span class="n">K</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Как это работает.</strong> Все числа до 10¹⁰ перебирать нельзя: это 10 миллиардов проверок. Нужные числа делятся на K,
+поэтому идём <strong>шагом K, начиная с K</strong>: K, 2K, 3K… — это 5 миллионов чисел, около 5 секунд. <code>fnmatch</code> сравнивает
+строку с маской: <code>?</code> — ровно один символ, <code>*</code> — любые символы, в том числе ни одного. Маска в условии и в
+<code>fnmatch</code> записывается одинаково, переписывайте её посимвольно.</p>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>В шаблоне</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>«не превышающих 10¹⁰»</td>
+<td>граница <code>10**10 + 1</code> (<code>range</code> не включает правый край)</td>
+</tr>
+<tr>
+<td>«делятся на 1917»</td>
+<td><code>K = 1917</code>, <code>range(K, …, K)</code>; начинать с K, а не с 0 (0 — не натуральное)</td>
+</tr>
+<tr>
+<td>«во втором столбце — результат деления»</td>
+<td><code>print(x, x // K)</code> — именно <code>//</code>, иначе выйдет <code>183235.0</code></td>
+</tr>
+<tr>
+<td>«в ответе запишите все найденные числа»</td>
+<td><code>print(x)</code></td>
+</tr>
+<tr>
+<td>«?» — <strong>чётная</strong> цифра («нечётная»)</td>
+<td>в маске <code>[02468]</code> (<code>[13579]</code>) — одна цифра из перечисленных</td>
+</tr>
+<tr>
+<td>«делятся на 31 и на 2031»</td>
+<td>шаг — наименьшее общее кратное: <code>31 * 2031</code> (общих делителей нет); для 4 и 6 — 12, а не 24</td>
+</tr>
+<tr>
+<td>дополнительно «ровно три делителя», «простые», «полный квадрат»</td>
+<td>ещё одно условие в <code>if</code>: <code>len(deliteli(x)) == 3</code>, <code>== 2</code>, <code>isqrt(x) ** 2 == x</code></td>
+</tr>
+<tr>
+<td>делимости нет («простые числа по маске 3?1111*»)</td>
+<td><code>range(1, N + 1)</code>, но сначала маска, потом простота: маска быстрее</td>
+</tr>
+<tr>
+<td>K маленький (13, 23), а граница 10¹⁰</td>
+<td>кратных — сотни миллионов, <code>fnmatch</code> не дождаться: «Подробнее: перебор чисел маски»</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">Б. Делители и простые множители<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №25, своя задача: M — сумма наименьшего и наибольшего делителей числа, не считая 1 и самого числа (нет таких — M = 0).</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># Первые 5 чисел больше 654 321, у которых M оканчивается на 6; вывести число и M</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: 654328 327166</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Ответ: 654329 50346</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Ответ: 654339 218116</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Ответ: 654348 327176</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Ответ: 654353 93486</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">isqrt</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">deliteli</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                 <span class="c1"># все делители n по возрастанию</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">d</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">isqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>           <span class="c1"># нашли делитель i — у него есть пара n // i</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>            <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>            <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">654321</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="n">d</span> <span class="o">=</span> <span class="n">deliteli</span><span class="p">(</span><span class="n">n</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>        <span class="c1"># без 1 и самого числа</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="n">M</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">d</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">d</span> <span class="k">else</span> <span class="mi">0</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="k">if</span> <span class="n">M</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+<p><strong>Как это работает.</strong> Делители идут <strong>парами</strong>: нашли делитель <code>i</code> — второй в паре <code>n // i</code>. Меньший в паре не
+больше корня, поэтому <code>i</code> перебираем до <code>isqrt(n)</code> (целая часть корня) <strong>включительно</strong>. Пары складываем в
+<strong>множество</strong>: у квадрата <code>i == n // i</code>, и в списке корень оказался бы дважды. <code>sorted</code> даёт список по
+возрастанию: <code>d[0]</code> — наименьший, <code>d[-1]</code> — наибольший.</p>
+<p>Если в условии слово <strong>«простые»</strong> (простые множители, простые делители), нужна вторая функция:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №25, демоверсия ЕГЭ-2027 (пример 1): первые 5 чисел больше 1 103 285 717 — произведения ровно двух простых</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># множителей, каждый из которых ровно один раз содержит «16»; вывести число и наименьший множитель</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Ответ: 1103299319 1693</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Ответ: 1103309477 1693</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Ответ: 1103322107 16187</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># Ответ: 1103323021 1693</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Ответ: 1103328547 3169</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">prostye</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                  <span class="c1"># простые множители n с повторами: 12 → [2, 2, 3]</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">p</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="k">while</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>        <span class="c1"># пока делится — множитель i</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>            <span class="n">n</span> <span class="o">//=</span> <span class="n">i</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>                    <span class="c1"># остался последний большой простой множитель</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="k">return</span> <span class="n">p</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">1103285717</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>                       <span class="c1"># «большие» — со следующего числа</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">prostye</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'16'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'16'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>           <span class="c1"># множители идут по возрастанию: наименьший — p[0]</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+<p><code>prostye</code> делит число на 2, 3, 4… пока делится, и записывает делитель. Составные (4, 6…) в список не попадут: их
+двойки и тройки уже «вынуты». Цикл идёт, пока <code>i * i &lt;= n</code>, и <code>n</code> при этом уменьшается. Что осталось после цикла
+(если больше 1) — последний, самый большой простой множитель. Множители выходят <strong>по возрастанию и с повторами</strong>:
+<code>prostye(12)</code> = <code>[2, 2, 3]</code>, <code>prostye(13)</code> = <code>[13]</code>. Для чисел около миллиарда это в разы быстрее, чем искать все
+делители и проверять каждый на простоту.</p>
+<p><strong>Что менять под задачу:</strong></p>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>В шаблоне</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>«не считая единицы и самого числа»</td>
+<td><code>deliteli(n)[1:-1]</code></td>
+</tr>
+<tr>
+<td>«если таких делителей нет, M = 0»</td>
+<td><code>M = d[0] + d[-1] if d else 0</code> — у простого числа список пуст</td>
+</tr>
+<tr>
+<td>«M оканчивается на 4», «на 18»</td>
+<td><code>M % 10 == 4</code>, <code>M % 100 == 18</code></td>
+</tr>
+<tr>
+<td>«M при делении на 7 даёт остаток 3»</td>
+<td><code>M % 7 == 3</code></td>
+</tr>
+<tr>
+<td>«есть делитель, оканчивающийся на 7, не равный 7 и самому числу»</td>
+<td><code>d = [x for x in deliteli(n) if x % 10 == 7 and x != 7 and x != n]</code>, <code>if d:</code>, наименьший — <code>d[0]</code></td>
+</tr>
+<tr>
+<td>R — «сумма всех делителей» / «не считая 1 и числа»</td>
+<td><code>sum(deliteli(n))</code> / <code>sum(deliteli(n)[1:-1])</code> — читайте, что сказано</td>
+</tr>
+<tr>
+<td>«целая часть среднего арифметического»</td>
+<td><code>sum(d) // len(d) if d else 0</code></td>
+</tr>
+<tr>
+<td>«два наибольших», «пятый по величине», «5 наименьших»</td>
+<td><code>d[-1] + d[-2]</code>, <code>d[-5]</code>, <code>d[:5]</code> (сначала проверить <code>len(d)</code>)</td>
+</tr>
+<tr>
+<td>«ровно 4 делителя», «ровно 4 чётных»</td>
+<td><code>len(d) == 4</code>; чётные — <code>[x for x in deliteli(n) if x % 2 == 0]</code></td>
+</tr>
+<tr>
+<td>«простое число»</td>
+<td><code>len(deliteli(n)) == 2</code> или <code>prostye(n) == [n]</code></td>
+</tr>
+<tr>
+<td>«<strong>ровно двух простых множителей</strong>, не обязательно различных»</td>
+<td><code>p = prostye(n)</code>, <code>len(p) == 2</code> (с повторами: <code>49 = 7 · 7</code> подходит)</td>
+</tr>
+<tr>
+<td>«ровно трёх», «пяти» множителей</td>
+<td><code>len(p) == 3</code>, <code>len(p) == 5</code>; «трёх <strong>различных</strong>» — ещё <code>len(set(p)) == 3</code></td>
+</tr>
+<tr>
+<td>«каждый содержит 16 ровно один раз», «ровно одну цифру 5»</td>
+<td><code>all(str(q).count('16') == 1 for q in p)</code>; «хотя бы одну 2 или 3» — <code>'2' in str(q) or '3' in str(q)</code></td>
+</tr>
+<tr>
+<td>«наибольший простой делитель, не считая самого числа»</td>
+<td><code>p = prostye(n)</code>, <code>M = p[-1] if len(p) &gt; 1 else 0</code> — у простого n единственный множитель — само n</td>
+</tr>
+<tr>
+<td>«сумма различных простых делителей»</td>
+<td><code>sum(set(p))</code></td>
+</tr>
+<tr>
+<td>«перебирает числа, <strong>большие</strong> 800 000»</td>
+<td><code>n = 800000</code>, в цикле сначала <code>n += 1</code> — первым проверяется 800 001</td>
+</tr>
+<tr>
+<td>«<strong>меньшие</strong> 800 000, в порядке убывания»</td>
+<td><code>n = 800000</code>, <code>n -= 1</code></td>
+</tr>
+<tr>
+<td>«на отрезке [a; b]»</td>
+<td><code>for n in range(a, b + 1):</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">Пример с разбором<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><strong>Задача</strong> (демоверсия ЕГЭ-2027, пример 1). Перебирая целые числа, большие 1 103 285 717, найдите первые пять
+чисел, которые являются произведением ровно двух простых множителей, не обязательно различных, и каждый множитель
+ровно один раз содержит в записи 16. Для каждого запишите число и наименьший множитель.</p>
+<p><strong>Решение — шаблон Б, <code>prostye</code></strong> (программа — выше):</p>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Код</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>числа, <strong>большие</strong> 1 103 285 717</td>
+<td><code>n = 1103285717</code>, в цикле сначала <code>n += 1</code></td>
+</tr>
+<tr>
+<td>первые пять</td>
+<td><code>count = 0</code>, <code>while count &lt; 5:</code>, при находке <code>count += 1</code></td>
+</tr>
+<tr>
+<td>произведение ровно двух простых, «не обязательно различных»</td>
+<td><code>p = prostye(n)</code>, <code>len(p) == 2</code> — повторы в списке остаются</td>
+</tr>
+<tr>
+<td>каждый содержит 16 <strong>ровно один раз</strong></td>
+<td><code>str(p[0]).count('16') == 1 and str(p[1]).count('16') == 1</code> (не <code>'16' in</code> — это «хотя бы раз»)</td>
+</tr>
+<tr>
+<td>наименьший множитель</td>
+<td><code>p[0]</code>: множители идут по возрастанию</td>
+</tr>
+</tbody>
+</table>
+<p>Программа печатает пять строк за 10–15 секунд — числа около миллиарда, подождать можно.</p>
+<p><strong>Ответ:</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1103299319</td>
+<td>1693</td>
+</tr>
+<tr>
+<td>1103309477</td>
+<td>1693</td>
+</tr>
+<tr>
+<td>1103322107</td>
+<td>16187</td>
+</tr>
+<tr>
+<td>1103323021</td>
+<td>1693</td>
+</tr>
+<tr>
+<td>1103328547</td>
+<td>3169</td>
+</tr>
+</tbody>
+</table>
+<p>Пример 2 демоверсии (маска <code>3?12?14*5</code>, делятся на 1917, не больше 10¹⁰) — шаблон А, программа в начале «Шаблона»:
+<strong>351261495 183235, 3212614035 1675855, 3412614645 1780185, 3712414275 1936575, 3912414885 2040905</strong>.</p>
+<details class="tip">
+<summary>Проверка вручную</summary>
+<p>1103299319 = 1693 · 651683: 1693 и 651683 — простые (проверьте <code>len(deliteli(…)) == 2</code>), «16» в каждом ровно
+один раз. Для маски: 351261495 = 3<strong>5</strong>12<strong>6</strong>14<strong>95</strong> — <code>?</code> = 5, <code>?</code> = 6, <code>*</code> = «9», последняя 5; 351261495 / 1917 =
+183235 без остатка.</p>
+</details>
+<h2 id="_6">Разновидности<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>Как записать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>маска, делится на K, «не превышающих 10⁸…10¹²» (ЕГЭ 2022–2023, демо 2023–2027, Крылов-2026 в9–в16)</td>
+<td>шаблон А</td>
+</tr>
+<tr>
+<td>«?» — чётная / нечётная цифра (СтатГрад 2025)</td>
+<td><code>[02468]</code>, <code>[13579]</code> — вкладка «Чётная цифра»</td>
+</tr>
+<tr>
+<td>маска + «делится на 31 и на 2031» + «количество делителей — степень двойки» (ЕГЭ 2023)</td>
+<td>шаг <code>31 * 2031</code>; <code>len(deliteli(x)) in [2 ** i for i in range(40)]</code></td>
+</tr>
+<tr>
+<td>маска + «ровно три делителя» на отрезке [10⁸; 2 · 10⁸]</td>
+<td>три делителя — только у p², перебираем p — вкладка «Ровно три делителя»</td>
+</tr>
+<tr>
+<td>маска + «простые» (без делимости), маска + «полный квадрат»</td>
+<td><code>range(1, N + 1)</code>, сначала маска; <code>isqrt(x) ** 2 == x</code></td>
+</tr>
+<tr>
+<td>маска, а кратных сотни миллионов (K = 13…50 при 10¹⁰, граница 10¹²)</td>
+<td>«Подробнее: перебор чисел маски»</td>
+</tr>
+<tr>
+<td>отрезок, «ровно 4 делителя» / «ровно 2 делителя, не считая 1 и числа» / «ровно 4 чётных» — вывести их (демо 2021)</td>
+<td><code>d = deliteli(n)</code>, <code>len(d) == 4</code>, <code>print(*d)</code> — вкладка «Ровно k делителей»</td>
+</tr>
+<tr>
+<td>отрезок, число с <strong>наибольшим</strong> количеством делителей, из равных — наименьшее</td>
+<td><code>c &gt; best</code> (строго): при равенстве остаётся первое</td>
+</tr>
+<tr>
+<td>простые числа отрезка с номером</td>
+<td><code>k += 1</code>, <code>print(k, n)</code></td>
+</tr>
+<tr>
+<td>M = min + max (или max − min) делителей без 1 и числа, «оканчивается на 4», «M mod 7 = 3» (демо 2022, 2025, 2026, ЕГЭ 2024, Крылов)</td>
+<td>шаблон Б, как в программе выше</td>
+</tr>
+<tr>
+<td>есть делитель, оканчивающийся на 7 (8, 9, 11), не равный ему и числу; наименьший такой (ЕГЭ 2021, 2024, досрок 2025, 2026)</td>
+<td>вкладка «Делитель на 7»</td>
+</tr>
+<tr>
+<td>R — сумма делителей, F — среднее, S = min² + max² простое, произведение 5 наименьших, два наибольших, пятый по величине</td>
+<td>таблица «Что менять» выше</td>
+</tr>
+<tr>
+<td>наибольший простой делитель ≤ 15 000 и оканчивается на 7</td>
+<td>вкладка «Простые делители»</td>
+</tr>
+<tr>
+<td>сумма min и max простых делителей — <strong>палиндром</strong>, больше 60 000 (ЕГЭ 2025)</td>
+<td><code>str(M) == str(M)[::-1]</code></td>
+</tr>
+<tr>
+<td>M — <strong>простое</strong>, больше 80 000, содержит «567» ровно раз (ЕГЭ 2026); разность max − min простых — простое с ≥ 4 цифрами 1</td>
+<td>вкладка «M — простое»</td>
+</tr>
+<tr>
+<td>сумма различных простых делителей, числа меньше X <strong>по убыванию</strong></td>
+<td>вкладка «По убыванию»</td>
+</tr>
+<tr>
+<td>произведение <strong>ровно двух</strong> простых: «ровно одна цифра 5» (ЕГЭ 2025), «ровно две 3», «67» / «16» ровно раз (ЕГЭ 2026, демо 2027), «1 или 3» (Крылов)</td>
+<td>шаблон Б, как в примере</td>
+</tr>
+<tr>
+<td>произведение <strong>ровно трёх</strong> простых, каждый с одной цифрой 1 (ЕГЭ 2025), с 2 или 3</td>
+<td><code>len(p) == 3 and all(…)</code> — вкладка «Три множителя»</td>
+</tr>
+<tr>
+<td>«три <strong>различных</strong> простых множителя»</td>
+<td><code>len(p) == 3 and len(set(p)) == 3</code>: <code>set</code> до проверки длины превратит 60 = 2·2·3·5 в «три»</td>
+</tr>
+<tr>
+<td>N = 2^m · 3^n, m чётное, n нечётное, на отрезке</td>
+<td>делители не нужны — перебор степеней — вкладка «Степени»</td>
+</tr>
+<tr>
+<td><strong>шестизначные без цифры 1 = нечётное кратное 103 + 3^p</strong> (Крылов-2026 в1, в2), «чётное кратное 197 + 5^n» (СтатГрад)</td>
+<td>вкладка «Сумма со степенью»</td>
+</tr>
+<tr>
+<td>девятизначные N = (число делителей) + кратное 23, пять наибольших; N = S + K + m, m оканчивается на 23</td>
+<td><code>x = n - len(deliteli(n))</code>, <code>x &gt; 0 and x % 23 == 0</code>; перебор сверху</td>
+</tr>
+<tr>
+<td>«ровно 3 нетривиальных делителя» на отрезке в 100 млн; «ровно 3 чётных делителя»</td>
+<td>5 делителей — только p⁴; три чётных — только 2 · p²: перебираем простые p (как во вкладке «Ровно три делителя»)</td>
+</tr>
+<tr>
+<td>«множество разностей сомножителей содержит не меньше трёх чисел ≤ 100»</td>
+<td>пары <code>(d, n // d)</code> от корня вниз, <code>break</code>, когда разность &gt; 100</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:10"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><input id="__tabbed_1_9" name="__tabbed_1" type="radio" /><input id="__tabbed_1_10" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Чётная цифра</label><label for="__tabbed_1_2">Ровно три делителя</label><label for="__tabbed_1_3">Ровно k делителей</label><label for="__tabbed_1_4">Делитель на 7</label><label for="__tabbed_1_5">Простые делители</label><label for="__tabbed_1_6">M — простое</label><label for="__tabbed_1_7">По убыванию</label><label for="__tabbed_1_8">Три множителя</label><label for="__tabbed_1_9">Степени</label><label for="__tabbed_1_10">Сумма со степенью</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># №25, своя задача: «?» — ровно одна чётная цифра, «*» — любые цифры. Числа не больше 10^9 по маске 4?7*9?1,</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># делящиеся на 3131; вывести число и частное</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Ответ: 46748961 14931</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Ответ: 407314921 130091</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Ответ: 427415941 136511</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># Ответ: 427916901 136671</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Ответ: 447516961 142931</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Ответ: 467617981 149351</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># Ответ: 487405901 155671</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fnmatch</span><span class="w"> </span><span class="kn">import</span> <span class="n">fnmatch</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">K</span> <span class="o">=</span> <span class="mi">3131</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">K</span><span class="p">):</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="k">if</span> <span class="n">fnmatch</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">'4[02468]7*9[02468]1'</span><span class="p">):</span>     <span class="c1"># [02468] — одна цифра из перечисленных</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">//</span> <span class="n">K</span><span class="p">)</span>
+</code></pre></div>
+В <code>fnmatch</code> квадратные скобки — «один символ из перечисленных». Если оставить обычный <code>?</code>, подойдут и нечётные
+цифры: на задаче СтатГрада так выходит 12 чисел вместо 5. <code>*</code> при этом остаётся любой. Если «любая
+последовательность чётных цифр» — это уже не fnmatch: регулярка <code>[02468]*</code> (<code>re.fullmatch</code>).</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># №25, своя задача: числа отрезка [10^7; 3 · 10^7] по маске 1*44*1, у которых ровно 3 делителя; вывести числа</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Ответ: 10426441</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Ответ: 10699441</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Ответ: 16168441</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># Ответ: 16394401</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># Ответ: 17884441</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Ответ: 18241441</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fnmatch</span><span class="w"> </span><span class="kn">import</span> <span class="n">fnmatch</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">isqrt</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">deliteli</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">d</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">isqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>            <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>            <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="c1"># ровно три делителя (1, p, p²) — только у квадратов простых: перебираем p, а не все 20 миллионов чисел</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">isqrt</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">7</span><span class="p">),</span> <span class="n">isqrt</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">7</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>    <span class="n">n</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">p</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    <span class="k">if</span> <span class="mi">10</span><span class="o">**</span><span class="mi">7</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">7</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">deliteli</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">fnmatch</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s1">'1*44*1'</span><span class="p">):</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</code></pre></div>
+Делители идут парами, без пары только корень. Поэтому нечётное число делителей бывает только у квадрата, а ровно
+три (1, p, p²) — только у <strong>квадрата простого</strong>. Перебираем не 20 миллионов чисел, а p — от корня из начала до
+корня из конца отрезка, это 2 тысячи чисел. Так же: «ровно 3 нетривиальных» (5 делителей) — только p⁴;
+«ровно 3 чётных делителя» — только 2 · p².</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># №25, своя задача: числа отрезка [123 456; 123 470], у которых ровно 4 делителя; вывести делители по возрастанию</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Ответ: 1 2 61729 123458</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Ответ: 1 13 9497 123461</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Ответ: 1 331 373 123463</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Ответ: 1 311 397 123467</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">isqrt</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">deliteli</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                 <span class="c1"># все делители n по возрастанию</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">d</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">isqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>            <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">123456</span><span class="p">,</span> <span class="mi">123470</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="n">d</span> <span class="o">=</span> <span class="n">deliteli</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>        <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
+</code></pre></div>
+Короткий отрезок — перебираем каждое число. «Не считая 1 и самого числа» — <code>deliteli(n)[1:-1]</code>; «чётные» —
+<code>[x for x in deliteli(n) if x % 2 == 0]</code>. <code>print(*d)</code> печатает список через пробел, без скобок.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># №25, своя задача: первые 5 чисел больше 912 345, у которых есть делитель, оканчивающийся на 3, не равный 3 и</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># самому числу; вывести число и наименьший такой делитель</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Ответ: 912346 456173</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Ответ: 912347 263</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Ответ: 912348 25343</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># Ответ: 912351 33</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Ответ: 912352 4073</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">isqrt</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">deliteli</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">d</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">isqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>            <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>            <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">912345</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">deliteli</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">n</span><span class="p">]</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="k">if</span> <span class="n">d</span><span class="p">:</span>                        <span class="c1"># такой делитель есть</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>           <span class="c1"># список по возрастанию — наименьший первый</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+Фильтруем список делителей, функцию не меняем. «Не равный самому числу» — <code>x != n</code>: число тоже может
+оканчиваться на 3. Если подходящих нет, список пуст и <code>if d</code> не пропустит число. Список по возрастанию,
+поэтому наименьший — <code>d[0]</code>.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># №25, своя задача: M — наибольший простой делитель числа, не считая самого числа (нет — M = 0). Первые 5 чисел</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># больше 2 000 000, у которых M не больше 20 000 и оканчивается на 1; вывести числа</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Ответ: 2000002</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Ответ: 2000020</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># Ответ: 2000024</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># Ответ: 2000034</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Ответ: 2000040</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">prostye</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                  <span class="c1"># простые множители с повторами, по возрастанию</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">p</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        <span class="k">while</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>            <span class="n">n</span> <span class="o">//=</span> <span class="n">i</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="k">return</span> <span class="n">p</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">2000000</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">prostye</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>    <span class="n">M</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span>     <span class="c1"># у простого n единственный множитель — само число: не считаем</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">M</span> <span class="o">&lt;=</span> <span class="mi">20000</span> <span class="ow">and</span> <span class="n">M</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+«Не считая самого числа»: у простого <code>n</code> единственный множитель — само <code>n</code>, поэтому <code>len(p) &gt; 1</code>, иначе M = 0.
+Наибольший — <code>p[-1]</code>, наименьший — <code>p[0]</code>, различные — <code>set(p)</code>.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># №25, своя задача: M — сумма наименьшего и наибольшего простых делителей числа, не считая самого числа (нет — M = 0).</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># Первые 5 чисел больше 50 000 000, у которых M больше 5000, простое и ровно один раз содержит «13»; вывести число и M</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Ответ: 50000684 18913</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Ответ: 50000774 1470613</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># Ответ: 50001074 7213</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># Ответ: 50001110 5000113</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Ответ: 50001128 47713</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">prostye</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">p</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>        <span class="k">while</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>            <span class="n">n</span> <span class="o">//=</span> <span class="n">i</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    <span class="k">return</span> <span class="n">p</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">50000000</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">prostye</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>    <span class="n">M</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>    <span class="k">if</span> <span class="n">M</span> <span class="o">&gt;</span> <span class="mi">5000</span> <span class="ow">and</span> <span class="nb">str</span><span class="p">(</span><span class="n">M</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'13'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">prostye</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="n">M</span><span class="p">]:</span>     <span class="c1"># простое: единственный множитель — само M</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+Простота M — <code>prostye(M) == [M]</code>: у простого числа единственный множитель — оно само. Порядок условий важен:
+<code>and</code> проверяет слева направо и останавливается на первом <code>False</code>. Быстрые проверки (<code>M &gt; 5000</code>,
+<code>count('13')</code>) — первыми, разложение M — последним. На ЕГЭ-2026 (числа около 8 · 10⁹) программа работает около
+минуты; первое число находится за 19 с, а с простотой M первой в условии — за 26 с.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># №25, своя задача: S — сумма различных простых делителей числа, не считая самого числа (нет — S = 0). Перебирая</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># числа меньше 1 000 000 по убыванию, найти первые 5, у которых S не равно 0, не больше 10 000 и кратно 7</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Ответ: 999990</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Ответ: 999957</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># Ответ: 999951</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1"># Ответ: 999949</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1"># Ответ: 999941</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">prostye</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="n">p</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>        <span class="k">while</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>            <span class="n">n</span> <span class="o">//=</span> <span class="n">i</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    <span class="k">return</span> <span class="n">p</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">1000000</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    <span class="n">n</span> <span class="o">-=</span> <span class="mi">1</span>                             <span class="c1"># по убыванию</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">prostye</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>    <span class="n">S</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span>   <span class="c1"># set — различные; у простого n S = 0</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>    <span class="k">if</span> <span class="n">S</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">S</span> <span class="o">&lt;=</span> <span class="mi">10000</span> <span class="ow">and</span> <span class="n">S</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+«Меньшие 1 000 000 в порядке убывания» — <code>n -= 1</code>, первым проверяется 999 999. Ответ записывают в том же порядке,
+в каком нашли.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># №25, своя задача: первые 5 чисел больше 3 000 000 — произведения ровно трёх простых множителей (не обязательно</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1"># различных), каждый из которых содержит в записи ровно одну цифру 7; вывести число и наибольший множитель</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Ответ: 3000113 197</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Ответ: 3000193 6397</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1"># Ответ: 3000389 6037</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># Ответ: 3001033 11587</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># Ответ: 3001243 4007</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">prostye</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">p</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">:</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>        <span class="k">while</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>            <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>            <span class="n">n</span> <span class="o">//=</span> <span class="n">i</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>        <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    <span class="k">return</span> <span class="n">p</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">3000000</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>    <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">prostye</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'7'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">p</span><span class="p">):</span>   <span class="c1"># all — для каждого множителя</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>
+«Не обязательно различных» — повторы остаются: <code>prostye</code> их и не убирает. <code>all(…)</code> — условие для <strong>каждого</strong>
+множителя; «хотя бы один» — <code>any(…)</code>.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># №25, своя задача: числа отрезка [10^8; 5 · 10^8] вида N = 2^m · 5^k, m — нечётное, k — чётное; по возрастанию</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1"># Ответ: 128000000</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># Ответ: 134217728</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># Ответ: 200000000</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># Ответ: 209715200</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="c1"># Ответ: 312500000</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Ответ: 327680000</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1"># Ответ: 488281250</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>                  <span class="c1"># 2^29 уже больше 5 · 10^8</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>              <span class="c1"># 5^13 тоже</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>        <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">m</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">**</span> <span class="n">k</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>        <span class="k">if</span> <span class="mi">10</span><span class="o">**</span><span class="mi">8</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**</span><span class="mi">8</span><span class="p">:</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">res</span><span class="p">):</span>                      <span class="c1"># набираются не по порядку</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div>
+Если число — степень (или произведение степеней), перебираем <strong>показатели</strong>, а не числа. Границы показателей —
+с запасом (2²⁹ уже больше 5 · 10⁸). Числа получаются не по порядку — <code>sorted</code> перед выводом.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># №25, своя задача (как в сборнике Крылова 2026): первые 5 шестизначных чисел без цифры 5, которые можно представить</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1"># суммой нечётного натурального числа, кратного 101, и натуральной степени тройки; вывести число и показатель степени</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># Ответ: 100012 6</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Ответ: 100094 1</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1"># Ответ: 100100 2</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1"># Ответ: 100118 3</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># Ответ: 100132 5</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">):</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    <span class="k">if</span> <span class="s1">'5'</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>        <span class="k">continue</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>                 <span class="c1"># 3^13 уже больше миллиона</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>        <span class="n">a</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">**</span> <span class="n">p</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>        <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">101</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>            <span class="k">break</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>        <span class="k">break</span>
+</code></pre></div>
+Так устроены варианты 1 и 2 сборника Крылова 2026 (там без цифры 1 и кратное 103, без цифры 0 и кратное 113).
+Перебираем числа по порядку, а для каждого — показатель p. Без <code>a &gt; 0</code> при <code>3 ** p &gt; x</code> получится отрицательное
+«кратное»: на этом ошибался даже автор разбора. Можно наоборот — перебирать кратные 101 и степени, но тогда числа
+идут не по порядку: собрать в список и <code>sorted</code>.</p>
+</div>
+</div>
+</div>
+<details class="info">
+<summary>Подробнее: перебор чисел маски — когда делитель маленький</summary>
+<p>Кратных 13 до 10¹⁰ — 770 миллионов, <code>fnmatch</code> будет считать минут десять. Тогда наоборот: перебираем <strong>числа маски</strong>.
+На месте каждого <code>?</code> — любая цифра, на месте <code>*</code> — от 0 до L цифр, где L = (цифр в границе) − (цифр в маске без
+<code>*</code>). Числа маски — их всего около миллиона — проверяем на делимость:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># №25, своя задача: сколько чисел не больше 10^10 соответствуют маске 5?1*7?3 и делятся на 13; наибольшее из них.</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1"># Делитель маленький: кратных 13 до 10^10 — 770 миллионов, fnmatch не дождаться. Перебираем числа маски.</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># Ответ: 85470 5919998773</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>                      <span class="c1"># «*» — от 0 до 4 цифр: без «*» в маске 6 цифр, всего не больше 10</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">product</span><span class="p">(</span><span class="s1">'0123456789'</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span> <span class="o">+</span> <span class="n">L</span><span class="p">):</span>          <span class="c1"># две «?» и L цифр на месте «*»</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>        <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s1">'5'</span> <span class="o">+</span> <span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'1'</span> <span class="o">+</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span> <span class="o">+</span> <span class="s1">'7'</span> <span class="o">+</span> <span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'3'</span><span class="p">)</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">10</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">13</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">res</span><span class="p">))</span>
+</code></pre></div>
+<code>product('0123456789', repeat=k)</code> перебирает все наборы из k цифр. Если в маске две <code>*</code>, числа выходят не по
+порядку: соберите в список и выведите <code>sorted</code>. Ориентир: кратных до 10 миллионов — шаблон А, ждём секунды;
+больше 100 миллионов — этот способ.</p>
+</details>
+<h2 id="_7">Типичные ошибки<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Скрытые ловушки — проверены запуском</p>
+<ul>
+<li><strong>Делители — в множество, а не в список.</strong> У квадрата <code>i == n // i</code>, и в списке корень окажется дважды: на
+  отрезке [10 200; 10 210] «ровно 4 делителя» имеют 10202 и 10207, а со списком в ответ попадёт ещё 10201 =
+  101² (у него 3 делителя):
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># №25, ловушка: делители в список вместо множества. Числа отрезка [10 200; 10 210] ровно с 4 делителями:</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1"># у квадрата 101² = 10201 корень 101 попадает в список дважды — и 3 делителя «превращаются» в 4</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1"># Ответ: множество: [10202, 10207]</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># Ответ: список: [10201, 10202, 10207]</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">isqrt</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">deliteli</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>                 <span class="c1"># верно: множество</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="n">d</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">isqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>            <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>            <span class="n">d</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="k">def</span><span class="w"> </span><span class="nf">deliteli_spisok</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>          <span class="c1"># ошибка: список — при i == n // i корень добавится два раза</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    <span class="n">d</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">isqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>            <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>            <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'множество:'</span><span class="p">,</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10200</span><span class="p">,</span> <span class="mi">10211</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">deliteli</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">==</span> <span class="mi">4</span><span class="p">])</span>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'список:'</span><span class="p">,</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10200</span><span class="p">,</span> <span class="mi">10211</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">deliteli_spisok</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">==</span> <span class="mi">4</span><span class="p">])</span>
+</code></pre></div></li>
+<li><strong>Корень — включительно.</strong> <code>range(1, round(n ** 0.5))</code> (так в разборе на Решу ЕГЭ) у квадратов теряет корень:
+  «ровно 3 делителя» до 200 — верно 4, 9, 25, 49, 121, 169, так — ни одного. Пишите <code>range(1, isqrt(n) + 1)</code>.</li>
+<li><strong>В <code>prostye</code> — последний множитель после цикла.</strong> Без <code>if n &gt; 1: p.append(n)</code> у числа 1103294351 = 163 · 167 ·
+  40531 «останется» два множителя, оба с 16, — и оно встанет первым в ответ демоверсии вместо 1103299319.</li>
+<li><strong><code>len(d) &gt; 1</code> вместо «список не пуст».</strong> У p² один нетривиальный делитель p, и M = p + p = 2p. Проверка
+  «больше одного делителя» такие числа выбрасывает: 822649 = 907², M = 1814 оканчивается на 4, а в ответ не
+  попадёт. Пишите <code>if d</code>.</li>
+<li><strong>«Ровно один раз» — <code>count(...) == 1</code></strong>, а <code>'16' in str(q)</code> — «хотя бы раз». На демоверсии ответ случайно
+  тот же, на другом числе — нет.</li>
+<li><strong><code>set</code> от множителей — только когда сказано «различные».</strong> «Не обязательно различных»: 49 = 7 · 7 — это
+  два множителя, а <code>set</code> оставит один. «Три различных» — <code>len(p) == 3 and len(set(p)) == 3</code>.</li>
+<li><strong>Простые множители — через <code>prostye</code>, а не через все делители.</strong> Для чисел около миллиарда список делителей
+  каждого числа — 30 тысяч шагов: на демоверсии только первое число ищется 16 секунд, а все пять через
+  <code>prostye</code> — 10–12.</li>
+<li><strong>Шаг маски — с K, а не с 0.</strong> <code>range(0, …, K)</code> проверит и 0: маске <code>*0</code> он соответствует, а натуральным не
+  является.</li>
+<li><strong>«Не превышающих» — включительно</strong>: <code>range(K, 10**10 + 1, K)</code>. Обычно 10¹⁰ под маску не подходит, но с маской
+  <code>1*0</code> и K = 10⁹ без <code>+ 1</code> потеряется само 10¹⁰.</li>
+<li><strong>Маленький K — fnmatch не дождаться.</strong> Шаг 1917 до 10¹⁰ — 5 миллионов чисел, 4 с; шаг 23 до 10⁹ — 43 миллиона,
+  37 с (можно подождать); шаг 13 до 10¹⁰ — 770 миллионов — «Подробнее: перебор чисел маски» (0,5 с).</li>
+<li><strong>«Не считая самого числа» у простых делителей.</strong> У простого <code>n</code> разложение — <code>[n]</code>; если взять <code>p[-1]</code>, M
+  окажется самим числом. Пишите <code>if len(p) &gt; 1</code>.</li>
+<li><strong>Шаг для двух делителей — НОК, а не произведение и не «простые без повторов».</strong> Для 31 и 2031 НОК = 31 · 2031,
+  для 6 и 10 — 30, для 4 и 6 — 12.</li>
+</ul>
+</div>
+<ul>
+<li><strong>«Большие 800 000» — первым проверяется 800 001</strong>: в цикле <code>n += 1</code> перед проверкой. «Не меньше» — с самого
+  числа.</li>
+<li><strong><code>/</code> вместо <code>//</code></strong> — в ответе <code>183235.0</code>.</li>
+<li><strong><code>max()</code> и <code>min()</code> от пустого списка</strong> — ошибка <code>ValueError</code> у простых чисел; <code>sum([])</code> = 0, а <code>sum(d) // len(d)</code>
+  — деление на ноль. Сначала <code>if d</code>.</li>
+<li><strong>В <code>fnmatch</code> — строка</strong>: <code>fnmatch(str(x), …)</code>; маску переписывайте посимвольно, лишний или пропущенный <code>?</code> —
+  ни одного числа.</li>
+<li><strong>«Сумма всех делителей»</strong> — с единицей и самим числом, если не сказано «не считая»; это частая потеря балла.</li>
+<li><strong>Перебор «с запасом»</strong> (<code>for n in range(800001, 801000)</code>, взять первые пять из вывода) тоже годится, но если
+  пяти не набралось — увеличьте диапазон, а не берите меньше.</li>
+<li><strong>Проверьте функции на маленьких числах</strong> перед задачей: <code>deliteli(16)</code> = <code>[1, 2, 4, 8, 16]</code>,
+  <code>prostye(12)</code> = <code>[2, 2, 3]</code>, <code>prostye(13)</code> = <code>[13]</code>.</li>
+</ul>
+<details class="info">
+<summary>Откуда разновидности</summary>
+<p>Демоверсии ФИПИ 2021–2027 (в 2027 — два примера). Видео:
+<a href="https://www.youtube.com/watch?v=j6ihrfxrdOA">Лёня Шастин, «Все задания №25 с реальных ЕГЭ»</a> и
+<a href="https://www.youtube.com/watch?v=3HBGAp2zmm4">«Новое задание №25 от ФИПИ»</a>;
+<a href="https://www.youtube.com/watch?v=H0YzPl-Zq9M">Дядя Саша, «Все задания 25 ЕГЭ 2026»</a> и
+<a href="https://www.youtube.com/watch?v=EzAqVMFf6Gs">«Все типы 25 за 3 часа»</a>;
+<a href="https://www.youtube.com/watch?v=Wz8npWoTKnM">Алексей Кабанов: делители и множители</a>,
+<a href="https://www.youtube.com/watch?v=s2KcoXcwM0s">маски</a>;
+<a href="https://www.youtube.com/watch?v=Vk1HURMg4vg">Вова Информатик, все типы</a> и
+<a href="https://www.youtube.com/watch?v=C3NAxuZpY6k">маски и делители</a>;
+<a href="https://www.youtube.com/watch?v=-xoX7UTKuMQ">Информатик Родя</a>;
+Умскул — <a href="https://www.youtube.com/watch?v=mdjK_g_eNsA">полный разбор</a>,
+<a href="https://www.youtube.com/watch?v=qwuQOcthMGA">делители</a>,
+<a href="https://www.youtube.com/watch?v=VFIwL7cs1fw">«Это 25 будет на ЕГЭ 2026»</a>;
+<a href="https://www.youtube.com/watch?v=1zbaXXFetRg">Алексей Ковальчук, все типы</a>;
+<a href="https://www.youtube.com/watch?v=347LltThiHk">Иван Викторович</a>;
+<a href="https://www.youtube.com/watch?v=Rras7alIFY8">Виктор Лашин, разложение на множители</a>;
+<a href="https://www.youtube.com/watch?v=6FDXrep9gUo">Натали Солдаева, ЕГЭ-2026</a>;
+<a href="https://www.youtube.com/watch?v=4Bw7O3w2OIo">Информатик БУ</a>;
+<a href="https://www.youtube.com/watch?v=xyptG8UDguI">Иванформатика</a>;
+<a href="https://www.youtube.com/watch?v=ImPVhx6u_ZM">Коля Касперский</a>;
+<a href="https://www.youtube.com/watch?v=2hPs_8JL308">Артём Зинкин, сложные маски</a>;
+разборы демоверсии 2027 — <a href="https://www.youtube.com/watch?v=ZbpWcP0eQs4">Иван Викторович</a>,
+<a href="https://www.youtube.com/watch?v=WXjZXLkl3ds&amp;t=3250">Лёня Шастин</a>,
+<a href="https://www.youtube.com/watch?v=bQ1aUh5LxJM&amp;t=6540">Умскул</a>,
+<a href="https://www.youtube.com/watch?v=zw2zvbb8mLY&amp;t=3880">Вова Информатик</a>.
+<strong>Сборник С. С. Крылова 2026</strong> — все 20 вариантов у
+<a href="https://www.youtube.com/watch?v=T36ZEJplkfU&amp;t=5005">Максима Попкова</a> (вариант 1; остальные — в его плейлисте),
+а также <a href="https://www.youtube.com/watch?v=sq3QAiDCl7o">ЕГЭ PRO100</a>, Дядя Саша, Лёня Шастин, Александр Павлов,
+Умскул: «нечётное кратное 103 (113) + степень тройки, без цифры 1 (0)» (в1, в2), два простых множителя с цифрой
+«1 или 3» / «1 или 2» (в3, в4), делитель на 7 (в5), M = min + max и R (в6–в8), маски (в9–в16), M = max − min
+(в17–в20). Ответы сборника перерешаны своим кодом.
+Каталог Решу ЕГЭ, тип 25: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=246">«Маска числа»</a> и
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=414">«Нахождение делителей»</a> — 65 задач (ЕГЭ 2022–2026,
+демоверсии, СтатГрад, пробники). Решены способами справочника на Python 3.11 и 3.12: совпали все, в 92275 (ЕГЭ-2026)
+на сайте опечатка в ответе — потеряна цифра.
+<a href="https://kompege.ru/task">КомпЕГЭ</a>, задание 25 — 65 задач с пометкой экзамена или источника (ЕГЭ 2021–2026,
+апробации, ЕГКР, СтатГрад): решены своим кодом, совпали все.</p>
+</details>
+<h2 id="_8">Потренируйся<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>Задачи №25 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №25</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../task-24/" class="md-footer__link md-footer__link--prev" aria-label="Назад: №24. Строки из файла">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                №24. Строки из файла
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../cheatsheet/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Шпаргалка">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Шпаргалка
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
