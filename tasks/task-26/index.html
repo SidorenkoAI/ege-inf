@@ -1,0 +1,2334 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Шаблоны и разборы заданий 1–27 ЕГЭ по информатике (2027), основы Python и электронных таблиц">
+      
+      
+      
+        <link rel="canonical" href="https://sidorenkoai.github.io/ege-inf/tasks/task-26/">
+      
+      
+        <link rel="prev" href="../task-25/">
+      
+      
+        <link rel="next" href="../../cheatsheet/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/cmit-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>№26. Сортировка, журнал - Подготовка к успешной сдаче ЕГЭ по информатике</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no26" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+<header class="md-header brand-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a class="brand__logo" href="https://cmit22.ru" title="Бийский ЦМИТ Политех">
+      <img class="brand__logo-full" src="../../assets/cmit-logo.png" alt="Бийский ЦМИТ Политех">
+      <img class="brand__logo-icon" src="../../assets/cmit-icon.png" alt="Бийский ЦМИТ Политех">
+    </a>
+    <div class="brand__text">
+      <a class="brand__title" href="../..">Подготовка к успешной сдаче ЕГЭ по информатике</a>
+      <div class="brand__who">
+        <span>Сидоренко Антон Игоревич</span>
+        <a href="tel:+79237156628">8 923 715 6628</a>
+        <a href="https://cmit22.ru">Бийский ЦМИТ Политех</a>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <a class="brand__bot" href="https://t.me/egeSidorenkoBot" title="Тренироваться в боте @egeSidorenkoBot">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+      <span>Тренироваться в боте<br><small>@egeSidorenkoBot</small></span>
+    </a>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../base/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  База Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Номера 1–27
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cheatsheet/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шпаргалка
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Подготовка к успешной сдаче ЕГЭ по информатике" class="md-nav__button md-logo" aria-label="Подготовка к успешной сдаче ЕГЭ по информатике" data-md-component="logo">
+      
+  <img src="../../assets/cmit-icon.png" alt="logo">
+
+    </a>
+    Подготовка к успешной сдаче ЕГЭ по информатике
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    База Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Номера 1–27
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Номера 1–27
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №1. Граф и таблица
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №2. Таблица истинности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №3. База данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №4. Условие Фано
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №5. Алгоритм с двоичной записью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №6. Исполнитель Черепаха
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №7. Объём изображения и звука
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №8. Комбинаторика слов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №9. Таблица: условия по строкам
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №10. IP-адрес и маска
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №11. Объём данных, коды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №12. Машина Тьюринга
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №13. Число программ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №14. Системы счисления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №15. Логика: параметр A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №16. Рекурсивные функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №17. Последовательность из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №18. Робот в таблице
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-19-21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №19–21. Теория игр
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №22. Параллельные процессы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №23. Графы: пути
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №24. Строки из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../task-25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №25. Маски, делители
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №26. Сортировка, журнал
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №26. Сортировка, журнал
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шпаргалка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Как узнать задачу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Шаблон
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример с разбором
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разновидности
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Потренируйся
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no26">№26. Обработка файла: сортировка, жадный выбор, журнал<a class="headerlink" href="#no26" title="Permanent link">&para;</a></h1>
+<div class="task-meta">
+<p><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> Python</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"/></svg></span> ~35 мин</span>
+<span>2 балла</span>
+<span>файл .txt</span></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Коротко</p>
+<p>Сюжеты у №26 разные (журнал сервера, коробки, места в зале, камера хранения, рейтинг), а порядок решения один:</p>
+<ol>
+<li><strong>первая строка — отдельно</strong> (<code>f.readline()</code>): в ней количества и ограничения;</li>
+<li><strong>остальные строки — в список</strong>;</li>
+<li><strong>отсортировать</strong> в нужном порядке (<code>sort</code>, <code>key=</code>); журнал (демо-2027) уже идёт по времени — не сортируем;</li>
+<li><strong>один проход</strong> по списку, в переменных — «состояние»: сколько взяли, что занято, последний взятый;</li>
+<li><strong>второй вопрос</strong> чаще всего — переделать последний шаг (заменить последний взятый, выбрать последнее мероприятие).</li>
+</ol>
+</div>
+<h2 id="_1">Как узнать задачу<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>К заданию приложен файл <code>.txt</code>: в первой строке — количества (N, иногда ещё K, S, M), дальше строки с числами, иногда с
+  буквами или временем <code>ЧЧ:ММ:СС</code>.</li>
+<li>Длинный сюжет и <strong>ответ из двух чисел</strong>; второе почти всегда спрашивают «при условии, что первое наибольшее» или «для
+  найденного…».</li>
+<li>По сюжету сразу видно, что сортировать (и какая вкладка «Разновидностей» нужна):</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Сюжет</th>
+<th>Что сортировать</th>
+<th>Где в карточке</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>журнал сервера, резервные копии (ЕГЭ-2026, <strong>демо-2027</strong>)</td>
+<td>ничего: строки уже по времени</td>
+<td>«Пример с разбором»</td>
+</tr>
+<tr>
+<td>архив, контейнеры на судне, посылки, закупка</td>
+<td>по возрастанию: берём самые маленькие</td>
+<td>«Шаблон»</td>
+</tr>
+<tr>
+<td>коробки-матрёшки, коржи, кольца, цилиндры</td>
+<td>по убыванию: от самой большой</td>
+<td>«Матрёшка»</td>
+</tr>
+<tr>
+<td>места в рядах, сосны, частицы на экране, пиксели</td>
+<td>пары (ряд, место)</td>
+<td>«Ряды и места»</td>
+</tr>
+<tr>
+<td>концертный зал «перед местом всё свободно», морской бой</td>
+<td>для каждого места — первый занятый ряд</td>
+<td>«Перед местом свободно»</td>
+</tr>
+<tr>
+<td>камера хранения, МФЦ, парковка, окна банка</td>
+<td>по времени прихода</td>
+<td>«Очередь к ячейкам»</td>
+</tr>
+<tr>
+<td>конференц-зал, мероприятия, уборка снега</td>
+<td>по времени <strong>окончания</strong></td>
+<td>«Расписание»</td>
+</tr>
+<tr>
+<td>студенты, викторина, абитуриенты, лидер продаж</td>
+<td>по ключу-кортежу</td>
+<td>«Рейтинг»</td>
+</tr>
+<tr>
+<td>офис, магазин, процессы: сколько людей в каждый момент</td>
+<td>не сортируем: массив изменений +1/−1</td>
+<td>«Отрезки времени»</td>
+</tr>
+<tr>
+<td>«каждый третий товар бесплатно», «четвёртый за полцены»</td>
+<td>цены по убыванию</td>
+<td>«Акции»</td>
+</tr>
+<tr>
+<td>шлифовка и покраска деталей, рейтинг продуктов</td>
+<td>все 2N чисел вместе</td>
+<td>«Конвейер»</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">Шаблон<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №26, «Как можно больше» (свои данные): на диск объёмом S сохранить файлы как можно большего числа пользователей,</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># затем — самый большой файл, который может быть сохранён при таком количестве</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Ответ: 266 67</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'arhiv.txt'</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">s</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>      <span class="c1"># 1. первая строка — отдельно</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">a</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="p">)</span>              <span class="c1"># 2. остальные — в список и отсортировать</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">summa</span> <span class="o">=</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>                                <span class="c1"># 3. один проход: маленькие, пока влезают</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">if</span> <span class="n">summa</span> <span class="o">+</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">s</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="k">break</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">summa</span> <span class="o">+=</span> <span class="n">x</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">zapas</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-</span> <span class="p">(</span><span class="n">summa</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>             <span class="c1"># 4. второй вопрос: место, если убрать последний взятый</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">zapas</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>Как это работает.</strong> Задача «на диск объёмом S сохранить файлы как можно большего числа пользователей». Чтобы
+<strong>файлов было больше всего, берём самые маленькие</strong>: сортируем по возрастанию и складываем, пока помещается. Второй
+вопрос — «самый большой файл при таком количестве»: количество уже не увеличить, но последний взятый файл можно
+<strong>заменить</strong> на больший. Убираем последний (освобождается <code>zapas</code> места) и берём самый большой файл, который влезет
+на его место.</p>
+<p>Эти четыре шага — общий порядок для любого №26: меняются сюжет, ключ сортировки и то, что делаем в проходе.</p>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>В программе</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>первая строка «S N»</td>
+<td><code>s, n = map(int, f.readline().split())</code> — до того, как читать остальное</td>
+</tr>
+<tr>
+<td>K и N в двух разных строках</td>
+<td><code>k = int(f.readline())</code>, <code>n = int(f.readline())</code></td>
+</tr>
+<tr>
+<td>в строке «время клиент объём», «цена буква»</td>
+<td><code>t, c, v = s.split()</code>, числа — через <code>int</code></td>
+</tr>
+<tr>
+<td>по возрастанию / по убыванию</td>
+<td><code>sorted(a)</code> / <code>sorted(a, reverse=True)</code>; у списка — <code>a.sort()</code></td>
+</tr>
+<tr>
+<td>сортировать по второму числу пары</td>
+<td><code>sorted(z, key=lambda p: p[1])</code></td>
+</tr>
+<tr>
+<td>«по убыванию суммы, при равенстве — по возрастанию ID»</td>
+<td><code>key=lambda p: (-p[0], p[1])</code> — минус переворачивает порядок</td>
+</tr>
+<tr>
+<td>одна точка (место) записана в файле дважды</td>
+<td><code>set(...)</code> до сортировки</td>
+</tr>
+<tr>
+<td>в файле есть пустые строки</td>
+<td><code>for s in f if s.strip()</code></td>
+</tr>
+<tr>
+<td>«номер ячейки», «номер окна»</td>
+<td>в списке номера с 0, в ответе — <code>i + 1</code></td>
+</tr>
+<tr>
+<td>«если вариантов несколько — с наибольшим…»</td>
+<td>сравнивать кортежи: <code>max(otvet, (k, last))</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">Пример с разбором<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>Задача</strong> (демоверсия ЕГЭ-2027; такая же задача была на ЕГЭ-2026). Сервер выполняет запросы; в журнале — время
+регистрации, идентификатор клиента и объём данных. Данные копятся в разделе памяти вместимостью K. Каждый раз, когда
+свободной памяти <strong>недостаточно</strong> для очередного запроса, сервер делает резервную копию всего накопленного, освобождает
+раздел и продолжает работу. Найдите клиента, передавшего наибольший общий объём, и сумму двух наибольших резервных
+копий, созданных не позднее 11:59:59. Первая строка файла — N и K, дальше строки вида <code>05:05:05 101 90000</code>.</p>
+<p><strong>Решение.</strong> Журнал уже идёт по времени — сортировать не нужно, идём по строкам по порядку:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №26, демоверсия ЕГЭ-2027: журнал сервера — клиент с наибольшим объёмом и сумма двух наибольших резервных копий,</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># созданных не позднее 11:59:59</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: 7040 52204</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'26.txt'</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">vsego</span> <span class="o">=</span> <span class="p">{}</span>                                 <span class="c1"># клиент → сколько всего передал</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">pamyat</span> <span class="o">=</span> <span class="mi">0</span>                                 <span class="c1"># сколько занято в разделе</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">kopii</span> <span class="o">=</span> <span class="p">[]</span>                                 <span class="c1"># (время, объём) резервных копий</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">t</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">c</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">vsego</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">vsego</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="k">if</span> <span class="n">pamyat</span> <span class="o">+</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="n">k</span><span class="p">:</span>                     <span class="c1"># новый запрос не помещается —</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="n">kopii</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">t</span><span class="p">,</span> <span class="n">pamyat</span><span class="p">))</span>          <span class="c1"># копия всего накопленного,</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="n">pamyat</span> <span class="o">=</span> <span class="mi">0</span>                         <span class="c1"># раздел свободен</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="n">pamyat</span> <span class="o">+=</span> <span class="n">v</span>                            <span class="c1"># запрос записан</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">mx</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">vsego</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">klient</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">vsego</span> <span class="k">if</span> <span class="n">vsego</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">==</span> <span class="n">mx</span><span class="p">]</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">utro</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kopii</span> <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="s1">'11:59:59'</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">klient</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">utro</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">utro</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Условие</th>
+<th>Код</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>первая строка — N и K</td>
+<td><code>n, k = map(int, f.readline().split())</code></td>
+</tr>
+<tr>
+<td>строка «время клиент объём»</td>
+<td><code>t, c, v = s.split()</code>; время оставляем строкой</td>
+</tr>
+<tr>
+<td>общий объём каждого клиента</td>
+<td>словарь: <code>vsego[c] = vsego.get(c, 0) + v</code></td>
+</tr>
+<tr>
+<td>«памяти недостаточно»</td>
+<td><code>pamyat + v &gt; k</code> — запрос не помещается (ровно K помещается)</td>
+</tr>
+<tr>
+<td>копия всего накопленного, раздел свободен</td>
+<td><code>kopii.append((t, pamyat))</code>, <code>pamyat = 0</code></td>
+</tr>
+<tr>
+<td>…и продолжает работу</td>
+<td>запрос записывается всегда: <code>pamyat += v</code> после <code>if</code></td>
+</tr>
+<tr>
+<td>«не позднее 11:59:59»</td>
+<td><code>t &lt;= '11:59:59'</code>: время <code>ЧЧ:ММ:СС</code> с ведущими нулями сравнивается как строка</td>
+</tr>
+<tr>
+<td>две наибольшие копии</td>
+<td>отсортировать по убыванию, <code>utro[0] + utro[1]</code></td>
+</tr>
+</tbody>
+</table>
+<p>Время копии — время запроса, который <strong>не поместился</strong>: копию сервер делает в этот момент. То, что осталось в разделе в
+конце журнала, копией не считается.</p>
+<p><strong>Ответ:</strong> 7040 52204.</p>
+<details class="tip">
+<summary>Проверка вручную — на примере из условия</summary>
+<p>K = 140 000. 20 000 + 110 000 = 130 000 помещается; запрос 90 000 в 05:05:05 уже не помещается — копия <strong>130 000</strong>,
+в разделе 90 000. В 07:07:07 запрос 62 000 не помещается — копия <strong>90 000</strong>. Дальше 62 000 + 48 000 + 12 000 = 122 000,
+в 21:21:21 копия 122 000, в 23:23:23 — 120 000. До полудня копии 130 000 и 90 000: сумма 220 000. Клиент 303
+передал 62 000 + 120 000 = 182 000 — больше всех. Ответ примера: <strong>303 220000</strong>.</p>
+<p>На файле демоверсии две наибольшие утренние копии одинаковые — по 26 102, поэтому их нельзя «схлопывать» через <code>set</code>.</p>
+</details>
+<h2 id="_4">Разновидности<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>В условии</th>
+<th>Как записать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>журнал сервера</strong> (демо-2027, ЕГЭ 18.06, 22.06, 08.07.2026) — другие вопросы: объём клиента только до полудня; два наибольших объёма клиентов; объём ≤ 150 000; два клиента с наименьшим объёмом; <strong>последняя</strong> копия до полудня / <strong>две последние</strong></td>
+<td>вкладка «Журнал: другие вопросы»</td>
+</tr>
+<tr>
+<td>строки журнала идут <strong>не по времени</strong> (авторские задачи)</td>
+<td>сначала <code>zapisi = sorted(s.split() for s in f)</code> — время-строка сортируется правильно</td>
+</tr>
+<tr>
+<td>архив, контейнеры на судне, посылки (демо 2021–2022, ЕГЭ-2021, апробации, ЕГКР 2023–2024)</td>
+<td>шаблон</td>
+</tr>
+<tr>
+<td>сколько контейнеров <strong>останется</strong> и их наибольшая масса (апробация 2026)</td>
+<td><code>n - k</code> и <code>sum(a) - sum(a[:k])</code>: увезли самые лёгкие</td>
+</tr>
+<tr>
+<td>грузы одной группы (200–210 кг) — в первую очередь, потом как можно больше остальных</td>
+<td>вычесть первую группу из S, дальше шаблон</td>
+</tr>
+<tr>
+<td>закупка A и B: сначала все A (самые дешёвые партии), на остаток — B</td>
+<td>два прохода по <code>sorted(a)</code>, из партии <code>min(kol, m // cena)</code> штук</td>
+</tr>
+<tr>
+<td>«как можно больше изделий, из них как можно больше A, потом дешевле»</td>
+<td>k — по шаблону; потом <code>ka</code> от наибольшего вниз: <code>sum(a[:ka]) + sum(b[:k - ka]) &lt;= m</code></td>
+</tr>
+<tr>
+<td>команды и самолёты, грузы и контейнеры, экипажи и санки (ЕГЭ 2023, 2025, Крылов-2026 в1–в4): одна в один, наибольшее количество и самая большая из отправленных</td>
+<td>оба списка по убыванию; в самый большой контейнер — самый тяжёлый груз, который влезет — вкладка «Один в один»</td>
+</tr>
+<tr>
+<td>то же, но «вместимость не меньше чем вдвое больше команды»</td>
+<td>вместимость заменить на <code>c // 2</code></td>
+</tr>
+<tr>
+<td><strong>коробки-матрёшки</strong>, коржи, кольца, цилиндры, передатчики (ЕГЭ 2022–2025, демо 2023, Крылов-2026 в13, в14)</td>
+<td>вкладка «Матрёшка»</td>
+</tr>
+<tr>
+<td>коробки двух цветов, цвета чередуются (Крылов в16)</td>
+<td>вкладка «Два цвета»</td>
+</tr>
+<tr>
+<td>в матрёшке только коробки, к которым есть замочек (Крылов в15)</td>
+<td>сначала отобрать: <code>[x for x in korob if x in zamki]</code></td>
+</tr>
+<tr>
+<td>коробки вкладываются, если меньше на <strong>K + номер</strong> вкладываемой</td>
+<td>цепочка снизу вверх, от самой маленькой: <code>x - last &gt;= k + 2000</code>, k — сколько уже взяли</td>
+</tr>
+<tr>
+<td>блоки контейнеров: наименьшее число ячеек склада</td>
+<td>контейнеры по возрастанию надевать на любой блок, где сверху меньше на 5; не на что — новый блок</td>
+</tr>
+<tr>
+<td><strong>ряд с наибольшим номером, где ровно 2 (13, 11) свободных</strong> места между занятыми (ЕГЭ 2021, 2022, апробация 2022)</td>
+<td>вкладка «Ряды и места»: разность соседних занятых = свободных + 1</td>
+</tr>
+<tr>
+<td>наибольшее число свободных мест подряд</td>
+<td><code>m2 - m1 - 1</code>, максимум по кортежу <code>(свободных, ряд)</code></td>
+</tr>
+<tr>
+<td>самая длинная группа светлых точек подряд (частицы на экране)</td>
+<td><code>set</code>, счётчик серии: следующая точка того же ряда на 1 дальше → <code>dl += 1</code>, иначе <code>dl = 1</code></td>
+</tr>
+<tr>
+<td>«линия» с ≤ 7 тёмными точками подряд; линии из ≥ 3 точек; изолированные точки (дальше 500 от соседей)</td>
+<td>соседи в отсортированном списке: <code>m - a[i - 1][1]</code>, <code>a[i + 1][1] - m</code></td>
+</tr>
+<tr>
+<td>пиксели: ровно 2 (3) белых между чёрными, ряд наибольший / наименьший (Крылов в17–в20)</td>
+<td>как «2 свободных»: разность 3 (4)</td>
+</tr>
+<tr>
+<td>студент с наибольшим числом задач подряд / через одну (ЕГКР 2024, 2025); спортсмены подряд у одной точки (ЕГЭ 2025)</td>
+<td>пары (студент, задача) или (точка, спортсмен), <code>set</code>, счётчик серии с шагом 1 (2)</td>
+</tr>
+<tr>
+<td><strong>два соседних места, перед которыми всё свободно</strong>, ряд как можно дальше (ЕГЭ 2024, апробация 2025)</td>
+<td>вкладка «Перед местом свободно»</td>
+</tr>
+<tr>
+<td>место, перед которым больше всего свободных кресел подряд (ЕГЭ 2024, ДВ)</td>
+<td>пары (место, ряд): свободных перед рядом r — <code>r - pred - 2</code></td>
+</tr>
+<tr>
+<td>«Морской бой»: корабль из 2 (3) клеток как можно ниже, над ним свободно (Крылов в5–в8)</td>
+<td>первый занятый ряд по столбцам, <code>min(perv[c:c + L]) - 1</code></td>
+</tr>
+<tr>
+<td><strong>камера хранения</strong> (ЕГЭ-2023), <strong>МФЦ</strong> (ЕГЭ 2025, 2026): свободная ячейка с наименьшим номером</td>
+<td>вкладка «Очередь к ячейкам»</td>
+</tr>
+<tr>
+<td>ячейки разной цены: самая дешёвая, при равенстве — с меньшим номером</td>
+<td><code>min(svob, key=lambda i: (cena[i], i))</code></td>
+</tr>
+<tr>
+<td>парковка: легковой может встать на место микроавтобуса</td>
+<td>сначала свои места, потом чужие: <code>if … elif …</code></td>
+</tr>
+<tr>
+<td>окна банка с очередью ≤ 12 человек; уходит, если ждал больше 40 минут</td>
+<td>у окна — список «когда закончат», начало <code>max(t, svobodno)</code></td>
+</tr>
+<tr>
+<td>приёмщики винограда: A — нечётные номера, B — чётные, перерыв 5 минут (ЕГЭ 19.06.2026)</td>
+<td><code>range(1, k + 1, 2)</code> / <code>range(2, k + 1, 2)</code>, свободен с <code>t2 + 5</code></td>
+</tr>
+<tr>
+<td><strong>конференц-зал</strong>: наибольшее число мероприятий (ЕГЭ-2023, демо-2024)</td>
+<td>вкладка «Расписание»</td>
+</tr>
+<tr>
+<td>…и самое позднее окончание последнего; перерыв ≥ 15 минут; уборка снега — неубранный конец дороги (ЕГКР 2026)</td>
+<td>последнее — из начинающихся после конца предпоследнего; <code>s &gt;= konec + 15</code>; <code>10000 - max(конец)</code></td>
+</tr>
+<tr>
+<td>в файле начало и длительность (Крылов в9, в10)</td>
+<td><code>(s, s + d)</code>; в файлах Крылова нет первой строки с N</td>
+</tr>
+<tr>
+<td>квадраты (прямоугольники) на прямой y = x (Крылов в11, в12)</td>
+<td>отрезки <code>[x, x + сторона]</code> (у прямоугольника — меньшая сторона)</td>
+</tr>
+<tr>
+<td><strong>рейтинг</strong>: студенты и стипендия (демо-2025), викторина (СтатГрад 2024), абитуриенты и полупроходной балл (ЕГЭ-2024), космонавты (апробация 2025)</td>
+<td>вкладка «Рейтинг»</td>
+</tr>
+<tr>
+<td>лидер продаж: среди дорогих — больше продано, при равенстве дороже, потом меньше осталось (ЕГЭ 2024, досрок 2026)</td>
+<td><code>max(dorogie, key=lambda x: (prod[x], cena[x], -ost[x]))</code>; «дороже средней» — <code>cena * n &gt; сумма</code></td>
+</tr>
+<tr>
+<td>место детали в рейтинге качества (ЕГЭ 19.06.2026)</td>
+<td>место = 1 + сколько баллов больше; сортировать не нужно</td>
+</tr>
+<tr>
+<td><strong>офис</strong>, <strong>магазин</strong>: сколько людей в каждую минуту, отрезки без изменений, пики (ЕГЭ-2023)</td>
+<td>вкладка «Отрезки времени»</td>
+</tr>
+<tr>
+<td>процессы за неделю (UNIX-время), запросы с 8:00 до 14:00; сканирования — склеить отрезки (СтатГрад 2025)</td>
+<td>словарь «момент → изменение»; склейка: по началу, <code>s &lt;= конец</code> — продлеваем</td>
+</tr>
+<tr>
+<td><strong>«каждый третий бесплатно»</strong>, «каждый четвёртый (шестой) за полцены», «каждый девятый» (ЕГЭ 2022–2024)</td>
+<td>вкладка «Акции»</td>
+</tr>
+<tr>
+<td><strong>шлифовка и покраска</strong> (ЕГЭ 2023, 2025), рейтинг продуктов (демо-2026), смартфонов (ЕГКР 2025)</td>
+<td>вкладка «Конвейер»</td>
+</tr>
+<tr>
+<td>для каждого участка — самая дешёвая подходящая модель снегоуборщика (ЕГЭ 2025, пересдача)</td>
+<td>для каждой мощности один раз <code>min((цена, -мощность) …)</code>, потом только складывать</td>
+</tr>
+<tr>
+<td>пары чисел, сумма (среднее) которых тоже есть в файле (СтатГрад 2021)</td>
+<td>двойной цикл по парам, проверка <code>in set(a)</code></td>
+</tr>
+<tr>
+<td>маршрут вниз по лагерям: перепад ≤ 48, не больше 10 раз ≤ 75</td>
+<td>по убыванию; «окно» подряд идущих — два указателя</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:12"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><input id="__tabbed_1_9" name="__tabbed_1" type="radio" /><input id="__tabbed_1_10" name="__tabbed_1" type="radio" /><input id="__tabbed_1_11" name="__tabbed_1" type="radio" /><input id="__tabbed_1_12" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Журнал: другие вопросы</label><label for="__tabbed_1_2">Один в один</label><label for="__tabbed_1_3">Матрёшка</label><label for="__tabbed_1_4">Два цвета</label><label for="__tabbed_1_5">Ряды и места</label><label for="__tabbed_1_6">Перед местом свободно</label><label for="__tabbed_1_7">Очередь к ячейкам</label><label for="__tabbed_1_8">Расписание</label><label for="__tabbed_1_9">Рейтинг</label><label for="__tabbed_1_10">Отрезки времени</label><label for="__tabbed_1_11">Акции</label><label for="__tabbed_1_12">Конвейер</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №26, журнал сервера (свои данные, как на пересдаче ЕГЭ 08.07.2026): сумма идентификаторов двух клиентов с наименьшим</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># общим объёмом и сумма объёмов двух последних по времени копий, созданных не позднее 11:59:59</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Ответ: 1532 38767</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'zhurnal.txt'</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">vsego</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">pamyat</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">kopii</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">t</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">c</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">vsego</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">vsego</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">v</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="k">if</span> <span class="n">pamyat</span> <span class="o">+</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="n">k</span><span class="p">:</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="n">kopii</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">t</span><span class="p">,</span> <span class="n">pamyat</span><span class="p">))</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="n">pamyat</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="n">pamyat</span> <span class="o">+=</span> <span class="n">v</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">mal</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">vsego</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">c</span><span class="p">:</span> <span class="n">vsego</span><span class="p">[</span><span class="n">c</span><span class="p">])</span>          <span class="c1"># клиенты по возрастанию объёма</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">utro</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kopii</span> <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="s1">'11:59:59'</span><span class="p">]</span>      <span class="c1"># копии идут по времени: последние — в конце</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">mal</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">mal</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">utro</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">utro</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div>
+Проход по журналу тот же, меняется только печать. Копии записываются по времени, поэтому <strong>последние</strong> до полудня —
+в конце списка <code>utro</code>: <code>utro[-1] + utro[-2]</code>. Клиентов «по объёму» сортирует <code>sorted(vsego, key=lambda c: vsego[c])</code>:
+получаются идентификаторы. Другие вопросы ЕГЭ-2026:</p>
+<table>
+<thead>
+<tr>
+<th>Вопрос</th>
+<th>Как записать</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>объём клиента <strong>не позднее 11:59:59</strong>, копии — за весь день</td>
+<td>прибавлять к <code>vsego</code> только при <code>t &lt;= '11:59:59'</code></td>
+</tr>
+<tr>
+<td>наибольший суммарный объём с двух устройств</td>
+<td><code>v = sorted(vsego.values(), reverse=True)</code>, <code>v[0] + v[1]</code></td>
+</tr>
+<tr>
+<td>наибольший объём клиента, не превышающий 150 000</td>
+<td><code>max(x for x in vsego.values() if x &lt;= 150000)</code></td>
+</tr>
+<tr>
+<td>последняя копия до полудня</td>
+<td><code>utro[-1]</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># №26, «Один в один» (свои данные, как ЕГЭ-2025 и сборник Крылова 2026): в контейнер — один груз, не тяжелее его</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># грузоподъёмности; наибольшее число отправленных грузов и масса самого тяжёлого из них</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Ответ: 651 3990</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'gruzy.txt'</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">gruz</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># сначала N масс грузов</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">kont</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># потом M грузоподъёмностей</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">vzyali</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">kont</span><span class="p">:</span>                             <span class="c1"># контейнеры от самого большого</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">gruz</span><span class="p">)</span> <span class="ow">and</span> <span class="n">gruz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">k</span><span class="p">:</span>   <span class="c1"># не влезет ни сюда, ни в следующие (они меньше)</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">gruz</span><span class="p">):</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="k">break</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="n">vzyali</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gruz</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>                 <span class="c1"># самый тяжёлый, который влезает</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vzyali</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">vzyali</span><span class="p">))</span>
+</code></pre></div>
+Каждому контейнеру — один груз. Идём по контейнерам от самого большого и кладём в него <strong>самый тяжёлый груз,
+который влезет</strong>. Груз, который не влез в текущий контейнер, не влезет и в следующие (они меньше), — его пропускаем
+навсегда. Так отправляем больше всего грузов, и самый тяжёлый из возможных в их числе.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># №26, «Матрёшка» (свои данные): коробку можно вложить в другую, если её сторона меньше хотя бы на 5; наибольшее число</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># коробок в одной матрёшке и наибольшая возможная сторона самой маленькой из них</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Ответ: 1114 2</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'korobki.txt'</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">a</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># от самой большой к самой маленькой</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">k</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                          <span class="c1"># самую большую берём всегда</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="k">if</span> <span class="n">last</span> <span class="o">-</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>                      <span class="c1"># помещается в последнюю взятую</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="n">last</span> <span class="o">=</span> <span class="n">x</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
+</code></pre></div>
+Сортируем <strong>по убыванию</strong> и берём каждую коробку, которая меньше последней взятой хотя бы на 5. Так коробок больше
+всего, а самая маленькая — наибольшая из возможных: на каждом шаге берётся самая большая подходящая. Если идти снизу
+вверх, количество выйдет то же, а самая маленькая — меньше (на демоверсии 2023: 50 вместо 51).</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># №26, «Матрёшка» с двумя цветами (свои данные): цвета вложенных коробок чередуются, сторона меньше хотя бы на 5;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># наибольшее число коробок и наибольшая возможная сторона самой маленькой</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Ответ: 658 26</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'cveta.txt'</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">c</span><span class="p">))</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">a</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>                       <span class="c1"># от больших к маленьким</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">best</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="k">for</span> <span class="n">start</span> <span class="ow">in</span> <span class="s1">'AB'</span><span class="p">:</span>                         <span class="c1"># цвет первой (самой большой) коробки — пробуем оба</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">k</span><span class="p">,</span> <span class="n">last</span><span class="p">,</span> <span class="n">cvet</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="p">,</span> <span class="n">start</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="n">cvet</span> <span class="ow">and</span> <span class="n">last</span> <span class="o">-</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>            <span class="n">last</span> <span class="o">=</span> <span class="n">x</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>            <span class="n">cvet</span> <span class="o">=</span> <span class="s1">'B'</span> <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">'A'</span> <span class="k">else</span> <span class="s1">'A'</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="n">best</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">best</span><span class="p">,</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">last</span><span class="p">))</span>            <span class="c1"># больше коробок, при равенстве — больше самая маленькая</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">best</span><span class="p">)</span>
+</code></pre></div>
+Цвета чередуются, поэтому цепочку строим дважды — начиная с цвета A и с цвета B — и берём лучшую: больше коробок,
+при равенстве — больше самая маленькая (сравнение кортежей <code>(k, last)</code>). В вариантах, где в файле две колонки
+(красные и синие через табуляцию), из строки берут одно или два числа: <code>x = s.split()</code>, <code>len(x) &gt; 1</code>.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># №26, «Ряды и места» (свои данные): ряд с наибольшим номером, где есть ровно 2 соседних свободных места, слева и</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># справа от которых места заняты; в ответе — ряд и наименьший номер такого свободного места</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Ответ: 300 2</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'mesta.txt'</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">a</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">))</span>   <span class="c1"># (ряд, место): по рядам, в ряду по местам; set — без повторов</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">otvet</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">r1</span><span class="p">,</span> <span class="n">m1</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">r2</span><span class="p">,</span> <span class="n">m2</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="k">if</span> <span class="n">r1</span> <span class="o">==</span> <span class="n">r2</span> <span class="ow">and</span> <span class="n">m2</span> <span class="o">-</span> <span class="n">m1</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>          <span class="c1"># занято, свободно, свободно, занято</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        <span class="k">if</span> <span class="n">r1</span> <span class="o">&gt;</span> <span class="n">otvet</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>                  <span class="c1"># в ряду первая найденная пара — с меньшим местом</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>            <span class="n">otvet</span> <span class="o">=</span> <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">m1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">otvet</span><span class="p">)</span>
+</code></pre></div>
+После сортировки пары идут по рядам, в ряду — по местам. Соседние строки списка из одного ряда — соседние <strong>занятые</strong>
+места; между ними свободно <code>m2 - m1 - 1</code>. «Ровно 2 свободных» — разность 3, «13 свободных» — разность 14. В ответ
+идёт <strong>свободное</strong> место <code>m1 + 1</code>, а не занятое.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># №26, концертный зал (свои данные, как на ЕГЭ-2024): два соседних места в одном ряду, перед которыми все кресла с</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># теми же номерами свободны; ряд как можно дальше от сцены, из пар — с наибольшими номерами; ответ — ряд и больший номер</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Ответ: 460 152</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'zal.txt'</span><span class="p">)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">perv</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>                   <span class="c1"># для каждого места — первый (ближайший к сцене) занятый ряд</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">r</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">perv</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">perv</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">r</span><span class="p">)</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">otvet</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>                      <span class="c1"># пара мест p и p + 1</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="n">r</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">perv</span><span class="p">[</span><span class="n">p</span><span class="p">],</span> <span class="n">perv</span><span class="p">[</span><span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span>      <span class="c1"># самый дальний ряд, где оба места и всё перед ними свободно</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="n">otvet</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">otvet</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>         <span class="c1"># при равном ряде — пара с большими номерами</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">otvet</span><span class="p">)</span>
+</code></pre></div>
+Зал огромный (до 100 000 × 100 000), матрицу не построить. Для каждого номера места запоминаем <strong>первый занятый ряд</strong>:
+место свободно «вместе со всем, что перед ним» во всех рядах до него. Пара мест годится до <code>min(perv[p], perv[p + 1]) - 1</code>.
+Начальное значение <code>m + 1</code> («занят ряд за последним»): место, свободное во всём зале, даёт ряд m.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># №26, «Очередь к ячейкам» (свои данные, как камера хранения ЕГЭ-2023): багаж — в свободную ячейку с наименьшим</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># номером, после выдачи ячейка свободна со следующей минуты; сколько пассажиров сдадут багаж и номер ячейки последнего</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Ответ: 322 16</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'bagazh.txt'</span><span class="p">)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="n">z</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">)</span>   <span class="c1"># (сдача, выдача) — по времени сдачи</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">zanyata</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">k</span>                          <span class="c1"># до какой минуты занята каждая ячейка</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="n">cnt</span> <span class="o">=</span> <span class="n">last</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="k">for</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="ow">in</span> <span class="n">z</span><span class="p">:</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>                     <span class="c1"># ячейки по порядку номеров</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>        <span class="k">if</span> <span class="n">zanyata</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">t1</span><span class="p">:</span>                <span class="c1"># освободилась раньше — свободна</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>            <span class="n">zanyata</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t2</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>            <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>            <span class="n">last</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>                   <span class="c1"># номера ячеек — с единицы</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>            <span class="k">break</span>                          <span class="c1"># одна ячейка на пассажира</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span> <span class="n">last</span><span class="p">)</span>
+</code></pre></div>
+Для каждой ячейки храним, <strong>до какой минуты она занята</strong>. Заявки — по времени прихода, ячейки перебираем по номерам и
+занимаем первую свободную (<code>break</code>, иначе пассажир займёт все). «Свободна со следующей минуты после выдачи» —
+строго <code>zanyata[i] &lt; t1</code>; если в условии «освобождается сразу» — <code>&lt;=</code>. Если время в файле может быть 0, начальное
+значение — <code>-1</code>.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># №26, «Расписание» (свои данные, как ЕГЭ-2023 и демо-2024): наибольшее число мероприятий без пересечений (конец одного</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># может совпадать с началом другого) и наибольший возможный перерыв между двумя последними</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Ответ: 25 10</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'zayavki.txt'</span><span class="p">)</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">z</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">((</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>   <span class="c1"># по времени окончания</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">k</span> <span class="o">=</span> <span class="n">konec</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">koncy</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">z</span><span class="p">:</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="k">if</span> <span class="n">s</span> <span class="o">&gt;=</span> <span class="n">konec</span><span class="p">:</span>                         <span class="c1"># начинается не раньше конца последнего взятого</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>        <span class="n">konec</span> <span class="o">=</span> <span class="n">e</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>        <span class="n">koncy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="n">pred</span> <span class="o">=</span> <span class="n">koncy</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>                           <span class="c1"># конец предпоследнего — раньше не бывает</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">z</span> <span class="k">if</span> <span class="n">s</span> <span class="o">&gt;=</span> <span class="n">pred</span><span class="p">)</span> <span class="o">-</span> <span class="n">pred</span><span class="p">)</span>   <span class="c1"># последним — то, что начинается позже всех</span>
+</code></pre></div>
+Чтобы мероприятий было больше всего, берём то, которое <strong>раньше всех заканчивается</strong>: сортировка по концу. Конец
+одного может совпадать с началом другого — поэтому <code>s &gt;= konec</code>. Второй вопрос — про последнее мероприятие: жадный
+выбор даёт самый ранний конец <strong>предпоследнего</strong>, а последним можно поставить любое, что начинается не раньше.
+«Самое позднее окончание последнего» — <code>max(e for s, e in z if s &gt;= pred)</code>.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># №26, «Рейтинг» (свои данные, как демо-2025): стипендию получают первые 25 % списка (без двоек, по среднему баллу</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1"># по убыванию, при равенстве — по ID); ID последнего стипендиата и ID первого в рейтинге студента с тремя и более двойками</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Ответ: 57106 49</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'studenty.txt'</span><span class="p">)</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">st</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">st</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span>               <span class="c1"># (ID, четыре оценки)</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="n">sdali</span> <span class="o">=</span> <span class="p">[(</span><span class="nb">sum</span><span class="p">(</span><span class="n">o</span><span class="p">),</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">st</span> <span class="k">if</span> <span class="mi">2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">o</span><span class="p">]</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">sdali</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>    <span class="c1"># сумма по убыванию (средний — то же), ID по возрастанию</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="n">dvoyki</span> <span class="o">=</span> <span class="nb">min</span><span class="p">((</span><span class="n">o</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">st</span> <span class="k">if</span> <span class="n">o</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># меньше двоек — выше, потом меньший ID</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">sdali</span><span class="p">[</span><span class="n">n</span> <span class="o">//</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">dvoyki</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div>
+Порядок из условия записываем ключом-кортежем: «средний по убыванию, при равенстве ID по возрастанию» — <code>(-сумма,
+ID)</code>. Средний из четырёх оценок сравниваем по сумме — порядок тот же, а дробей нет. Место в списке считаем с единицы:
+25 % из n мест — это <code>sdali[n // 4 - 1]</code>. «Более двух двоек» — три или четыре.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># №26, «Отрезки времени» (свои данные, как Решу ЕГЭ 78051): в минуты входа и выхода сотрудник в офисе; минута, когда</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1"># число сотрудников поменялось в предпоследний раз, и самый длинный отрезок, когда оно не менялось</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># Ответ: 1422 24</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'ofis.txt'</span><span class="p">)</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1442</span>                             <span class="c1"># изменение числа сотрудников по минутам</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="n">d</span><span class="p">[</span><span class="n">t1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>                             <span class="c1"># пришёл в минуту t1</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="n">d</span><span class="p">[</span><span class="n">t2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>                         <span class="c1"># в минуту t2 ещё в офисе — ушёл со следующей</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="n">cnt</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="n">cur</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1440</span><span class="p">):</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>    <span class="n">cur</span> <span class="o">+=</span> <span class="n">d</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>    <span class="n">cnt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span>                        <span class="c1"># сколько людей в минуту t</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="n">smena</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1440</span><span class="p">)</span> <span class="k">if</span> <span class="n">cnt</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">!=</span> <span class="n">cnt</span><span class="p">[</span><span class="n">t</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]]</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="n">otrezki</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">smena</span><span class="p">,</span> <span class="n">smena</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1440</span><span class="p">])]</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">smena</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="nb">max</span><span class="p">(</span><span class="n">otrezki</span><span class="p">))</span>
+</code></pre></div>
+Сортировать не нужно: заводим массив изменений на сутки. Пришёл — <code>+1</code> в минуту прихода, ушёл — <code>-1</code>. Сколько людей в
+минуту t — сумма изменений с начала. Если в минуту выхода человек ещё на месте, <code>-1</code> ставим в <strong>следующую</strong> минуту
+(<code>t2 + 1</code>). Как считать минуту выхода — проверьте по примеру к условию: от этого меняется ответ.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># №26, «Акции» (свои данные, как ЕГЭ-2023): «каждый третий товар бесплатно»; покупатель рассчитывал, что бесплатным в</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1"># тройке будет самый дорогой, а касса делает бесплатным самый дешёвый; сколько он планировал заплатить и сколько заплатит</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># Ответ: 2145457 3264881</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'tovary.txt'</span><span class="p">)</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="n">a</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># от дорогих к дешёвым</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="n">plan</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">[:</span><span class="n">n</span> <span class="o">//</span> <span class="mi">3</span><span class="p">])</span>            <span class="c1"># бесплатными могли бы быть n // 3 самых дорогих</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="n">fakt</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">::</span><span class="mi">3</span><span class="p">])</span>               <span class="c1"># тройки из соседних по цене: бесплатен 3-й, 6-й, 9-й…</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">plan</span><span class="p">,</span> <span class="n">fakt</span><span class="p">)</span>
+</code></pre></div>
+Покупатель надеялся, что бесплатными будут самые дорогие (<code>n // 3</code> штук). Касса в каждой тройке делает бесплатным
+самый <strong>дешёвый</strong>, и выгоднее всего тройки из соседних по цене товаров: бесплатны 3-й, 6-й, 9-й… — срез <code>a[2::3]</code>.
+«Каждый четвёртый за полцены, один чек» — за полцены <code>n // 4</code> самых дешёвых: <code>sum(a[-(n // 4):]) / 2</code>.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># №26, «Конвейер» (свои данные, как ЕГЭ-2023 и демо-2026): все 2N чисел по возрастанию; минимальное — время шлифовки:</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1"># деталь на первое свободное место с начала ленты, покраски — с конца; номер последней поставленной детали и сколько</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># деталей стоит на ленте перед ней</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Ответ: 296 232</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'detali.txt'</span><span class="p">)</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="n">v</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    <span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s1">'шлиф'</span><span class="p">))</span>               <span class="c1"># (время, номер детали, вид)</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    <span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">b</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s1">'покр'</span><span class="p">))</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="n">v</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="n">uzhe</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>                               <span class="c1"># детали, которые уже стоят</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="n">nach</span> <span class="o">=</span> <span class="mi">0</span>                                   <span class="c1"># сколько поставлено с начала ленты</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">uzhe</span><span class="p">:</span>                      <span class="c1"># второе время детали пропускаем</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>        <span class="n">uzhe</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>        <span class="n">last</span><span class="p">,</span> <span class="n">kak</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>        <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s1">'шлиф'</span><span class="p">:</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>            <span class="n">nach</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="k">if</span> <span class="n">kak</span> <span class="o">==</span> <span class="s1">'шлиф'</span><span class="p">:</span>                          <span class="c1"># сама последняя — не «перед ней»</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>    <span class="n">nach</span> <span class="o">-=</span> <span class="mi">1</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">last</span><span class="p">,</span> <span class="n">nach</span><span class="p">)</span>
+</code></pre></div>
+Все 2N чисел — в один список с пометками (время, номер детали, вид) и сортировка. У каждой детали срабатывает только
+<strong>меньшее</strong> из двух её чисел, второе пропускаем (<code>uzhe</code>). Последняя деталь занимает последнее свободное место: перед
+ней стоят все, поставленные с начала (кроме неё самой). В рейтинге продуктов «места ниже» — поставленные с конца.</p>
+</div>
+</div>
+</div>
+<details class="info">
+<summary>Подробнее: когда жадного выбора мало — динамика</summary>
+<p>Жадный выбор («самое раннее окончание», «самая большая подходящая коробка») верен, когда нужно <strong>наибольшее
+количество</strong>. Если же спрашивают наибольшее <strong>время</strong> занятости зала, наибольшую сумму или цвета коробок чередуются
+из трёх, нужна динамика: для каждого элемента — лучший результат набора, который им заканчивается.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># №26, «Подробнее: динамика» (свои данные): мероприятия без пересечений (конец одного может совпадать с началом другого)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="c1"># выбрать так, чтобы зал был занят как можно дольше; сколько минут он будет занят и сколько при этом мероприятий</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1"># Ответ: 1415 11</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'zayavki.txt'</span><span class="p">)</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">())</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">z</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">((</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>   <span class="c1"># по времени окончания</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="n">best</span> <span class="o">=</span> <span class="p">[]</span>                                  <span class="c1"># best[i] — (минут, мероприятий) лучшего набора, где i-е — последнее</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)):</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="n">s</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>    <span class="n">pred</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="n">best</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">if</span> <span class="n">z</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">s</span><span class="p">],</span> <span class="n">default</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>   <span class="c1"># лучший набор, который кончился до s</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>    <span class="n">best</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">e</span> <span class="o">-</span> <span class="n">s</span><span class="p">,</span> <span class="n">pred</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="n">best</span><span class="p">))</span>
+</code></pre></div>
+На этих данных жадный выбор по окончанию даёт 25 мероприятий, но всего 971 минуту, а лучший набор — 11 мероприятий
+и 1415 минут. Двойной цикл при N ≈ 1000 работает секунды — в №26 это допустимо.</p>
+</details>
+<h2 id="_5">Типичные ошибки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Скрытые ловушки — проверены запуском</p>
+<ul>
+<li><strong>Не отсортировали заявки по времени.</strong> Камера хранения (Решу ЕГЭ 57433): без сортировки — 338 и 200 вместо
+  344 и 53. В файлах заявки идут вперемешку.</li>
+<li><strong><code>&lt;=</code> вместо <code>&lt;</code> в «свободна со следующей минуты»</strong> — 354 и 168 вместо 344 и 53; без <code>break</code> — 420 и 210.</li>
+<li><strong>Матрёшка снизу вверх.</strong> Количество то же, а самая маленькая коробка меньше: демоверсия 2023 — 2767 и 50 вместо
+  2767 и 51.</li>
+<li><strong>Второе число «архива» — не наибольший из взятых.</strong> Нужно заменить последний взятый на самый большой, который
+  влезет: в задаче Решу ЕГЭ 27881 наибольший из взятых — 9, а ответ 17.</li>
+<li><strong>Последнее мероприятие — не из жадной цепочки.</strong> ЕГЭ 19.06.2023: перерыв по жадной цепочке 33, а верно 35 —
+  последнее берут самое позднее из начинающихся после предпоследнего. Сортировка по <strong>началу</strong> вместо конца — 3
+  мероприятия вместо 17.</li>
+<li><strong>Повторы в файле.</strong> Частицы на экране (Решу ЕГЭ 46984): 77 точек записаны дважды, без <code>set</code> самая длинная группа —
+  7 вместо 10.</li>
+<li><strong>Начальное значение «первого занятого ряда» — <code>m</code>, а не <code>m + 1</code>:</strong> ЕГЭ-2024 — ряд 99 998 вместо 99 999.</li>
+<li><strong>Две наибольшие копии через <code>set</code>.</strong> На демоверсии обе копии по 26 102 — <code>set</code> оставит одну: 52 202 вместо 52 204.</li>
+<li><strong>Журнал не по времени.</strong> В авторской задаче Решу ЕГЭ 92230 строки перемешаны: по времени — 99 961, по порядку
+  строк — 99 967 (а ответ сайта 99 996 получается, только если после копии не записывать новый запрос — ошибка сайта).</li>
+<li><strong>Минута выхода.</strong> «В момент выхода сотрудник в офисе» — <code>-1</code> в минуту <code>t2 + 1</code> (Решу ЕГЭ 78051: 1432 и 15); с <code>-1</code> в
+  минуту <code>t2</code> — 1431 и 13.</li>
+<li><strong>Пустая строка в файле</strong> (файл ЕГЭ-2021 на КомпЕГЭ) — <code>ValueError</code> при распаковке; читайте <code>for s in f if s.strip()</code>.</li>
+</ul>
+</div>
+<ul>
+<li><strong>Первая строка — не данные.</strong> Прочитать её до списка: иначе N попадёт в числа. А в файлах сборника Крылова (в9, в10)
+  и в некоторых задачах Решу ЕГЭ первой строки с N <strong>нет</strong> — посмотрите файл перед решением.</li>
+<li><strong>Пример к условию</strong> часто с другим параметром: «разница 3» в примере, 4 — в задаче; 3 свободных места в примере, 13 — в
+  задаче. Подставляйте число из условия.</li>
+<li><strong>Номера с единицы</strong>: ячейка, окно, место в рейтинге — <code>i + 1</code>; 1500-е место — <code>a[1499]</code>.</li>
+<li><strong>Порядок чисел в ответе</strong> — как в вопросе: «сначала количество пиков, потом число посетителей».</li>
+<li><strong>Сортировка списка пар</strong> — сразу по первому числу, при равенстве по второму, оба по возрастанию. Другой порядок —
+  только через <code>key</code>.</li>
+<li><strong><code>/</code> вместо <code>//</code></strong> — дробь в ответе; «целая часть 25 %» — <code>n // 4</code>.</li>
+</ul>
+<details class="info">
+<summary>Откуда разновидности</summary>
+<p>Демоверсии ФИПИ 2021–2027 (в 2027 — журнал сервера, он же был на ЕГЭ 18.06, 22.06 и 08.07.2026). Видео:
+<a href="https://www.youtube.com/watch?v=rR0UHxQ8WPk">Дядя Саша, «Все задания 26 ЕГЭ 2026»</a>,
+<a href="https://www.youtube.com/watch?v=JF_LLiw8ZW8">«Эти 26 будут на ЕГЭ»</a> и
+<a href="https://www.youtube.com/watch?v=BR50wdm_pAQ">«26 таблицами»</a>;
+<a href="https://www.youtube.com/watch?v=cw2W6lyrmHM">Алексей Ковальчук, все типы</a>;
+<a href="https://www.youtube.com/watch?v=czdisEvEx9c">Коля Касперский, все типы</a>;
+Информатик Родя — <a href="https://www.youtube.com/watch?v=ZheSPT0_QLM">«Как думать в №26»</a>,
+<a href="https://www.youtube.com/watch?v=qCLRrZlZz14">«26 меня удивило»</a>,
+<a href="https://www.youtube.com/watch?v=KO1RAzAyl1U">ЕГКР апреля</a>;
+Умскул — <a href="https://www.youtube.com/watch?v=g6V94A2r6nM">все 26 с прошлых лет</a>,
+<a href="https://www.youtube.com/watch?v=iRRGtL2xF3Q">все 26 с официальных ЕГЭ</a>,
+<a href="https://www.youtube.com/watch?v=QiUpU0otXh4">таблицами</a>;
+Алексей Кабанов — <a href="https://www.youtube.com/watch?v=XfyJoeOB2d0">сортировка и динамика</a>,
+<a href="https://www.youtube.com/watch?v=T71dkr15eXs">26 в таблицах</a>,
+<a href="https://www.youtube.com/watch?v=Udh6ifOU6cQ">жадные алгоритмы</a>;
+<a href="https://www.youtube.com/watch?v=0KYLyvu885s">Игорь Линьков, «самые лютые 26»</a>;
+Информатик БУ — <a href="https://www.youtube.com/watch?v=rMv2XEoOAPc">«Уничтожение 26»</a>,
+<a href="https://www.youtube.com/watch?v=7cx_awYUgRs">большая нарешка</a>;
+<a href="https://www.youtube.com/watch?v=vafHimzlubc">Лёня Шастин, все 26 с реальных ЕГЭ</a>;
+<a href="https://www.youtube.com/watch?v=SZES8RD04yk">Артём Флэш, 26 в Excel</a>;
+<a href="https://www.youtube.com/watch?v=rTNj3xQK9l8">PRO100 ЕГЭ, 26 в Excel</a>;
+<a href="https://www.youtube.com/watch?v=GyK71TBBAWY">Натали Солдаева, все 26 и 27 ЕГЭ-2026</a>;
+<a href="https://www.youtube.com/watch?v=oREOCOr6XTo">Максим Попков, «токсичные 26 и 27»</a>;
+разборы демоверсии 2027 — <a href="https://www.youtube.com/watch?v=eBJAhsKFO6I">Иван Викторович</a>,
+<a href="https://www.youtube.com/watch?v=WXjZXLkl3ds&amp;t=3461">Лёня Шастин</a>,
+<a href="https://www.youtube.com/watch?v=bQ1aUh5LxJM&amp;t=7024">Умскул</a>,
+<a href="https://www.youtube.com/watch?v=zw2zvbb8mLY&amp;t=4238">Вова Информатик</a>,
+<a href="https://www.youtube.com/watch?v=1XAm1qqldqw&amp;t=6337">Казаков</a>;
+ЕГЭ-2026 — <a href="https://www.youtube.com/watch?v=hVm04VIfbmU">Казаков, 18.06</a>,
+<a href="https://www.youtube.com/watch?v=TqeMipyu4mk&amp;t=5436">Информатик Ваня, 19.06</a>,
+<a href="https://www.youtube.com/watch?v=jb4oWqZ_dcY&amp;t=5185">Умскул, Дальний Восток</a>.
+<strong>Сборник С. С. Крылова 2026</strong> — все 20 вариантов у
+<a href="https://www.youtube.com/watch?v=T36ZEJplkfU&amp;t=5308">Максима Попкова</a> (вариант 1; остальные — в его плейлисте),
+а также Александр Павлов, Лёня Шастин, Алексей Кабанов: команды и самолёты (в1–в4), «Морской бой» (в5–в8),
+мероприятия директора (в9, в10), квадраты и прямоугольники на прямой y = x (в11, в12), цилиндры, передатчики,
+коробки с замочками и двух цветов (в13–в16), пиксели (в17–в20). Все 20 решены своим кодом по файлам сборника;
+в в11 и в12 второе число в ответах сборника (49 и 50) отсчитано от правого края предпоследнего квадрата, а спрашивают разность абсцисс левых углов — 69 и 70.
+Каталог Решу ЕГЭ, тип 26: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=415">«Задания для подготовки»</a> —
+79 задач (ЕГЭ 2021–2026, демоверсии, СтатГрад, пробники). Решены способами справочника на Python 3.11 и 3.12: совпали
+все, в 92230 на сайте неверный ответ; 59852 и 60967 (восстановлены по памяти) противоречат своим примерам.
+<a href="https://kompege.ru/task">КомпЕГЭ</a>, задание 26 — 63 задачи с пометкой экзамена или источника (ЕГЭ 2021–2026,
+апробации, ЕГКР, СтатГрад): решены своим кодом, совпали все, кроме одной со спорным ключом (магазин, 27.06.2023).</p>
+</details>
+<h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>Задачи №26 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №26</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../task-25/" class="md-footer__link md-footer__link--prev" aria-label="Назад: №25. Маски, делители">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                №25. Маски, делители
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../cheatsheet/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Шпаргалка">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Шпаргалка
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
