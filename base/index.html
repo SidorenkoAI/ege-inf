@@ -16,7 +16,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../tasks/">
+        <link rel="next" href="01-chisla/">
       
       
         
@@ -219,17 +219,20 @@
     
   
   
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
   
   
     
   
   База Python
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -341,16 +344,37 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+        
+          
+        
       
         
       
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
         
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
   
   
   <span class="md-ellipsis">
@@ -364,7 +388,86 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    База Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01-chisla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Числа и арифметика
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04-stroki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Строки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1209,6 +1312,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разделы
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1225,26 +1347,91 @@
 
 
 <h1 id="python">База Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Раздел в работе</p>
-<p>Здесь будут основы Python для ЕГЭ. У каждой темы — выжимка «в двух строках» сверху (для повторения)
-и подробности ниже (для тех, кто начинает с нуля).</p>
+<p>Основы Python, которые нужны на ЕГЭ по информатике. Подойдёт и тем, кто начинает с нуля, и для повторения:</p>
+<ul>
+<li>в начале каждого раздела — рамка <strong>«Коротко»</strong>: главное в двух-трёх строках, чтобы быстро вспомнить;</li>
+<li>ниже — подробности с примерами для тех, кто разбирается впервые;</li>
+<li>в конце — <strong>типичные ошибки</strong> (всё проверено запуском) и ссылки на номера ЕГЭ, где это встречается.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Как пробовать примеры</p>
+<p>Примеры со строками <code>&gt;&gt;&gt;</code> — это диалог с Python. Откройте <strong>IDLE</strong> (окно <strong>IDLE Shell</strong>), наберите то, что
+после <code>&gt;&gt;&gt;</code>, и нажмите Enter — Python ответит следующей строкой, как на странице. Строка с <code>...</code> — продолжение
+(тело цикла или условия): наберите её с отступом, а в конце нажмите Enter ещё раз на пустой строке.
+Все примеры проверены запуском на Python 3.11 и 3.12.</p>
 </div>
-<p>Планируемые темы:</p>
-<ol>
-<li>Как пользоваться справкой; среда (IDLE, PyCharm, Wing), запуск, файл данных рядом с программой.</li>
-<li>Числа и арифметика: <code>//</code>, <code>%</code>, <code>**</code>, <code>/</code>, большие числа, <code>abs</code>, <code>min</code>, <code>max</code>, <code>sum</code>.</li>
-<li>Условия и логика: <code>if/elif/else</code>, <code>and</code>, <code>or</code>, <code>not</code>, импликация <code>&lt;=</code>, <code>any</code>, <code>all</code>.</li>
-<li>Циклы: <code>for … in range</code>, границы, <code>while</code>, <code>break</code>, вложенные циклы.</li>
-<li>Строки: индексы, срезы, <code>in</code>, <code>count</code>, <code>replace</code>, <code>find</code>, <code>split</code>, <code>join</code>.</li>
-<li>Списки, множества, словари; списковые выражения.</li>
-<li>Функции и рекурсия: <code>def</code>, <code>return</code>, <code>lru_cache</code>.</li>
-<li>Системы счисления и биты: <code>bin</code>, <code>int(s, b)</code>, своя функция перевода, <code>&amp;</code>, <code>|</code>, <code>&gt;&gt;</code>.</li>
-<li>Файлы: <code>open</code>, чтение чисел и строк.</li>
-<li>Модули-помощники: <code>itertools</code>, <code>math</code>, <code>fnmatch</code>, <code>ipaddress</code>, <code>turtle</code>.</li>
-<li>Электронные таблицы: ссылки с <code>$</code>, <code>ЕСЛИ</code>, <code>И</code>, <code>СЧЁТЕСЛИ</code>, <code>ВПР</code>, <code>МАКС</code>, фильтр.</li>
-<li>Ловушки и отладка.</li>
-</ol>
+<h2 id="_1">Разделы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Раздел</th>
+<th>Что внутри</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Как пользоваться справкой, среда</td>
+<td>IDLE, PyCharm, Wing; запуск программы; файл данных рядом с программой — <em>скоро</em></td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="01-chisla/">Числа и арифметика</a></td>
+<td><code>//</code>, <code>%</code>, <code>**</code>, <code>/</code>, большие и дробные числа, округление, <code>abs</code>, <code>min</code>, <code>max</code>, <code>sum</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Условия и логика</td>
+<td><code>if/elif/else</code>, <code>and</code>, <code>or</code>, <code>not</code>, импликация <code>&lt;=</code>, <code>any</code>, <code>all</code> — <em>скоро</em></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Циклы</td>
+<td><code>for … in range</code>, границы, <code>while</code>, <code>break</code>, вложенные циклы — <em>скоро</em></td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="04-stroki/">Строки</a></td>
+<td>индексы, срезы, <code>in</code>, <code>count</code>, <code>replace</code>, <code>find</code>, <code>split</code>, <code>join</code>, регулярные выражения</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Списки, множества, словари</td>
+<td><code>append</code>, <code>sorted</code>, <code>sort(key=…)</code>, <code>set</code>, <code>dict</code>, списковые выражения — <em>скоро</em></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Функции и рекурсия</td>
+<td><code>def</code>, <code>return</code>, рекурсия, <code>lru_cache</code> — <em>скоро</em></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Системы счисления и биты</td>
+<td><code>bin</code>, <code>int(s, b)</code>, своя функция перевода, <code>&amp;</code>, <code>|</code>, <code>&gt;&gt;</code> — <em>скоро</em></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Файлы</td>
+<td><code>open</code>, чтение чисел и строк, первая строка отдельно — <em>скоро</em></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Модули-помощники</td>
+<td><code>itertools</code>, <code>math</code>, <code>fnmatch</code>, <code>ipaddress</code>, <code>turtle</code> — <em>скоро</em></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Электронные таблицы</td>
+<td>ссылки с <code>$</code>, <code>ЕСЛИ</code>, <code>СЧЁТЕСЛИ</code>, <code>ВПР</code>, <code>МАКС</code>, фильтр — <em>скоро</em></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Ловушки и отладка</td>
+<td>граница <code>range</code>, <code>/</code> и <code>//</code>, пустая строка в файле, проверка на примере из условия — <em>скоро</em></td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -1297,13 +1484,13 @@
         
         
           
-          <a href="../tasks/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Номера 1–27">
+          <a href="01-chisla/" class="md-footer__link md-footer__link--next" aria-label="Вперед: 1. Числа и арифметика">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Номера 1–27
+                1. Числа и арифметика
               </div>
             </div>
             <div class="md-footer__button md-icon">

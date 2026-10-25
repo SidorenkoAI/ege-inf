@@ -1,0 +1,2208 @@
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Шаблоны и разборы заданий 1–27 ЕГЭ по информатике (2027), основы Python и электронных таблиц">
+      
+      
+      
+        <link rel="canonical" href="https://sidorenkoai.github.io/ege-inf/base/04-stroki/">
+      
+      
+        <link rel="prev" href="../01-chisla/">
+      
+      
+        <link rel="next" href="../../tasks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/cmit-icon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>4. Строки - Подготовка к успешной сдаче ЕГЭ по информатике</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+<header class="md-header brand-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <a class="brand__logo" href="https://cmit22.ru" title="Бийский ЦМИТ Политех">
+      <img class="brand__logo-full" src="../../assets/cmit-logo.png" alt="Бийский ЦМИТ Политех">
+      <img class="brand__logo-icon" src="../../assets/cmit-icon.png" alt="Бийский ЦМИТ Политех">
+    </a>
+    <div class="brand__text">
+      <a class="brand__title" href="../..">Подготовка к успешной сдаче ЕГЭ по информатике</a>
+      <div class="brand__who">
+        <span>Сидоренко Антон Игоревич</span>
+        <a href="tel:+79237156628">8 923 715 6628</a>
+        <a href="https://cmit22.ru">Бийский ЦМИТ Политех</a>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <a class="brand__bot" href="https://t.me/egeSidorenkoBot" title="Тренироваться в боте @egeSidorenkoBot">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 8a248 248 0 1 0 0 496 248 248 0 1 0 0-496m115 168.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7.2-.7.3-3.1-1.2-4.4s-3.6-.8-5.1-.5c-2.2.5-37.1 23.5-104.6 69.1-9.9 6.8-18.9 10.1-26.9 9.9-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3.6-4.5 6.7-9 18.4-13.7 72.3-31.5 120.5-52.3 144.6-62.3 68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6.5 9.6 2.9 2 1.7 3.2 4.1 3.5 6.7.5 3.2.6 6.5.4 9.8z"/></svg>
+      <span>Тренироваться в боте<br><small>@egeSidorenkoBot</small></span>
+    </a>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  База Python
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tasks/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Номера 1–27
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cheatsheet/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Шпаргалка
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Подготовка к успешной сдаче ЕГЭ по информатике" class="md-nav__button md-logo" aria-label="Подготовка к успешной сдаче ЕГЭ по информатике" data-md-component="logo">
+      
+  <img src="../../assets/cmit-icon.png" alt="logo">
+
+    </a>
+    Подготовка к успешной сдаче ЕГЭ по информатике
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    База Python
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    База Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-chisla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Числа и арифметика
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Строки
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Строки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Строка и её символы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Срезы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Склеить, повторить, сравнить
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Числа и строки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Поиск в строке
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Замена
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Изменить символ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Перебор символов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split-join-strip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разбить и собрать: split, join, strip
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Буквы: латиница и Ё
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f-строки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Где встречается
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tasks/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Номера 1–27
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Номера 1–27
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №1. Граф и таблица
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №2. Таблица истинности
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №3. База данных
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №4. Условие Фано
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №5. Алгоритм с двоичной записью
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №6. Исполнитель Черепаха
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №7. Объём изображения и звука
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №8. Комбинаторика слов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №9. Таблица: условия по строкам
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №10. IP-адрес и маска
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №11. Объём данных, коды
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №12. Машина Тьюринга
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-13/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №13. Число программ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №14. Системы счисления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-15/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №15. Логика: параметр A
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-16/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №16. Рекурсивные функции
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-17/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №17. Последовательность из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-18/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №18. Робот в таблице
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-19-21/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №19–21. Теория игр
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-22/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №22. Параллельные процессы
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-23/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №23. Графы: пути
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-24/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №24. Строки из файла
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №25. Маски, делители
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tasks/task-26/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    №26. Сортировка, журнал
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cheatsheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Шпаргалка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Строка и её символы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Срезы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Склеить, повторить, сравнить
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Числа и строки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Поиск в строке
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Замена
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Изменить символ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Перебор символов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#split-join-strip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Разбить и собрать: split, join, strip
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Буквы: латиница и Ё
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f-строки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Типичные ошибки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Где встречается
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="4">4. Строки<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Коротко</p>
+<p>Символы строки нумеруются с 0, <code>s[-1]</code> — последний; срез <code>s[a:b]</code> — с a до b, <strong>b не включается</strong>; <code>s[::-1]</code> — задом наперёд.
+Строку не изменить — только собрать новую: <code>s = s.replace(…)</code>, <code>'10' + s[2:]</code>. Число ↔ строка — <code>str(x)</code> и <code>int(s)</code>.
+<code>count</code> и <code>replace</code> не видят наложений: <code>'АААА'.count('АА')</code> = 2.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Как пробовать примеры</p>
+<p>Строки с <code>&gt;&gt;&gt;</code> набирайте в окне <strong>IDLE Shell</strong> и нажимайте Enter — следующей строкой Python напишет ответ.
+Каждый пример на странице проверен запуском (Python 3.11 и 3.12).</p>
+</div>
+<h2 id="_1">Строка и её символы<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Строка — текст в кавычках: <code>'ЕГЭ'</code> или <code>"ЕГЭ"</code> (одинаково). <code>len(s)</code> — длина. Каждый символ имеет номер (индекс)
+<strong>с нуля</strong>; отрицательные номера считают с конца:</p>
+<table>
+<thead>
+<tr>
+<th><code>s = 'ПИТОН'</code></th>
+<th><code>П</code></th>
+<th><code>И</code></th>
+<th><code>Т</code></th>
+<th><code>О</code></th>
+<th><code>Н</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>индекс</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>с конца</td>
+<td>−5</td>
+<td>−4</td>
+<td>−3</td>
+<td>−2</td>
+<td>−1</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">'ПИТОН'</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">(5, 'П', 'Н', 'Т')</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="gt">Traceback (most recent call last):</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="c">...</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="gr">IndexError</span>: <span class="n">string index out of range</span>
+</code></pre></div>
+<p>Последний символ — <code>s[len(s) - 1]</code> или проще <code>s[-1]</code>; <code>s[len(s)]</code> — уже ошибка.</p>
+<h2 id="_2">Срезы<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>s[a:b]</code> — кусок с индекса <code>a</code> до <code>b</code>, <strong>не включая <code>b</code></strong> (как в <code>range</code>). Пропущенное начало — с самого начала,
+пропущенный конец — до конца:</p>
+<table>
+<thead>
+<tr>
+<th>Нужно</th>
+<th>Срез</th>
+<th><code>s = '1100101'</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>первые k символов</td>
+<td><code>s[:k]</code></td>
+<td><code>s[:3]</code> → <code>'110'</code></td>
+</tr>
+<tr>
+<td>последние k символов</td>
+<td><code>s[-k:]</code></td>
+<td><code>s[-2:]</code> → <code>'01'</code></td>
+</tr>
+<tr>
+<td>всё, кроме первых двух</td>
+<td><code>s[2:]</code></td>
+<td><code>'00101'</code></td>
+</tr>
+<tr>
+<td>всё, кроме последних двух</td>
+<td><code>s[:-2]</code></td>
+<td><code>'11001'</code></td>
+</tr>
+<tr>
+<td>задом наперёд</td>
+<td><code>s[::-1]</code></td>
+<td><code>'1010011'</code></td>
+</tr>
+<tr>
+<td>первая половина</td>
+<td><code>s[:len(s) // 2]</code></td>
+<td><code>'110'</code></td>
+</tr>
+<tr>
+<td>два символа с позиции i</td>
+<td><code>s[i:i + 2]</code></td>
+<td>при <code>i = 1</code> → <code>'10'</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">'1100101'</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[:</span><span class="mi">3</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:],</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go">('110', '01', '00101', '11001', '1010011')</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="go">'110'</span>
+</code></pre></div>
+<p>Срез никогда не выдаёт ошибку: если строка короче, он просто берёт, что есть (<code>'12'[:5]</code> → <code>'12'</code>, <code>'12'[5:]</code> → <code>''</code>).
+А обращение к одному символу за концом строки — ошибка. Поэтому «всё, кроме двух последних цифр» надёжнее срезом
+<code>s[:-2]</code>, чем перечислением <code>s[0] + s[1]…</code>, рассчитанным на трёхзначные числа (№13).</p>
+<p><strong>Палиндром</strong> (читается одинаково в обе стороны): <code>s == s[::-1]</code> (№25).</p>
+<h2 id="_3">Склеить, повторить, сравнить<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'ЕГЭ'</span> <span class="o">+</span> <span class="s1">'-'</span> <span class="o">+</span> <span class="s1">'2027'</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">'ЕГЭ-2027'</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'0'</span> <span class="o">*</span> <span class="mi">5</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">'00000'</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'1'</span> <span class="o">+</span> <span class="mi">5</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="gt">Traceback (most recent call last):</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="c">...</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="gr">TypeError</span>: <span class="n">can only concatenate str (not "int") to str</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'1'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="go">'15'</span>
+</code></pre></div>
+<p>Строку и число не сложить — число сначала в строку: <code>str(x)</code>. Это частая ошибка в №5: дописать остаток к двоичной записи —
+<code>s = s + str(s.count('1') % 2)</code>.</p>
+<p><strong>Строки сравниваются по символам слева направо</strong>, а не как числа:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'9'</span> <span class="o">&lt;</span> <span class="s1">'10'</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">False</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="mi">9</span> <span class="o">&lt;</span> <span class="mi">10</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="go">True</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'АРБУЗ'</span> <span class="o">&lt;</span> <span class="s1">'АРКА'</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="go">True</span>
+</code></pre></div>
+<p>Сравнивать строками можно только отдельные цифры (<code>'0' &lt;= c &lt;= '9'</code>) или слова «по алфавиту». Числа — сравнивать числами.</p>
+<h2 id="_4">Числа и строки<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Нужно</th>
+<th>Код</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>число → строка</td>
+<td><code>str(x)</code></td>
+<td><code>str(2027)</code> → <code>'2027'</code></td>
+</tr>
+<tr>
+<td>строка → число</td>
+<td><code>int(s)</code></td>
+<td><code>int('0012')</code> → <code>12</code></td>
+</tr>
+<tr>
+<td>строка с дробным → число</td>
+<td><code>float(s)</code></td>
+<td><code>float('4582.0')</code> → <code>4582.0</code></td>
+</tr>
+<tr>
+<td>количество цифр</td>
+<td><code>len(str(abs(x)))</code></td>
+<td><code>len(str(-512))</code> = 4, с <code>abs</code> — 3</td>
+</tr>
+<tr>
+<td>сумма цифр</td>
+<td><code>sum(int(c) for c in str(x))</code></td>
+<td>для 2027 — <code>11</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="s1">'0012'</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="s1">' 12</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">(12, 12)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="s1">'4582.0'</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="gt">Traceback (most recent call last):</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="c">...</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="gr">ValueError</span>: <span class="n">invalid literal for int() with base 10: '4582.0'</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">'4582.0'</span><span class="p">))</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="go">4582</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="gt">Traceback (most recent call last):</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="c">...</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="gr">ValueError</span>: <span class="n">invalid literal for int() with base 10: ''</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="o">-</span><span class="mi">512</span><span class="p">)),</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">512</span><span class="p">)))</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="go">(4, 3)</span>
+</code></pre></div>
+<p><code>int</code> сам убирает пробелы и перевод строки по краям, но не понимает точку и пустую строку. <code>int('')</code> чаще всего
+означает пустую строку в конце файла (см. «Файлы»). Строка в другой системе счисления — <code>int(s, 2)</code>, <code>int(s, 16)</code>
+(раздел «Системы счисления», №14).</p>
+<h2 id="_5">Поиск в строке<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Нужно</th>
+<th>Код</th>
+<th>Результат для <code>s = 'ABBA'</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>есть ли кусок</td>
+<td><code>'BB' in s</code></td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td>сколько раз (без наложений)</td>
+<td><code>s.count('B')</code></td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td>где первое вхождение</td>
+<td><code>s.find('B')</code></td>
+<td><code>1</code> (нет — <code>-1</code>)</td>
+</tr>
+<tr>
+<td>начинается / кончается на</td>
+<td><code>s.startswith('AB')</code>, <code>s.endswith('A')</code></td>
+<td><code>True</code>, <code>True</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">'ABBA'</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'BB'</span> <span class="ow">in</span> <span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'B'</span><span class="p">),</span> <span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'B'</span><span class="p">),</span> <span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'Z'</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">(True, 2, 1, -1)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">'Z'</span><span class="p">)]</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="go">'A'</span>
+</code></pre></div>
+<p>Последняя строка — ловушка: <code>find</code> вернул −1 («не нашёл»), а <code>s[-1]</code> — это последний символ, ошибки нет. Перед тем как брать
+символ по <code>find</code>, проверьте <code>if 'Z' in s</code>.</p>
+<p><strong><code>count</code> не считает наложения.</strong> В «TTTT» пар «TT» три (позиции 0, 1, 2), а <code>count</code> находит две — после найденного
+куска ищет дальше с его конца. Пересекающиеся — перебором позиций со срезом:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'TTTT'</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'TT'</span><span class="p">),</span> <span class="s1">'000'</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'00'</span><span class="p">)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">(2, 1)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">'TTTT'</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'TT'</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="go">3</span>
+</code></pre></div>
+<p>(<code>True</code> при сложении считается за 1, поэтому <code>sum</code> условий — это «сколько раз выполнилось».)</p>
+<p><strong>«Ровно один раз» ≠ «есть»:</strong> <code>str(x).count('16') == 1</code> — ровно одно вхождение, <code>'16' in str(x)</code> — хотя бы одно (№25).</p>
+<p><strong>Префикс</strong> — <code>startswith</code>: условие Фано для двух кодов — <code>not a.startswith(b) and not b.startswith(a)</code> (№4).</p>
+<h2 id="_6">Замена<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p><code>replace</code> заменяет <strong>все</strong> вхождения и возвращает <strong>новую</strong> строку — старая не меняется:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">'1101'</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">)</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="go">'2202'</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="go">'1101'</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="go">'2101'</span>
+</code></pre></div>
+<ul>
+<li>Третье число — сколько замен сделать: <code>replace('1', '2', 1)</code> — только первое вхождение (№12, №13).</li>
+<li>Результат надо <strong>присвоить</strong>: <code>s = s.replace(…)</code>. Просто <code>s.replace(…)</code> отдельной строкой ничего не делает.</li>
+<li>Замены за один проход не перекрываются: <code>'000'.replace('00', '0 0')</code> даёт <code>'0 00'</code> — пара нулей осталась. Повторять, пока
+  есть что заменять: <code>while '00' in s: s = s.replace('00', '0 0')</code> (№24).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'000'</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'00'</span><span class="p">,</span> <span class="s1">'0 0'</span><span class="p">)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">'0 00'</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">'000'</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="s1">'00'</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="gp">... </span>    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'00'</span><span class="p">,</span> <span class="s1">'0 0'</span><span class="p">)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="gp">...</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="go">'0 0 0'</span>
+</code></pre></div>
+<h2 id="_7">Изменить символ<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>Строку нельзя менять по месту — <code>s[0] = '1'</code> даёт ошибку. Два выхода:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">'0011'</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1'</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="gt">Traceback (most recent call last):</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="c">...</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="gr">TypeError</span>: <span class="n">'str' object does not support item assignment</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'10'</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="go">'1011'</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">lenta</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">lenta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1'</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lenta</span><span class="p">)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="go">'1011'</span>
+</code></pre></div>
+<ul>
+<li><strong>Собрать новую строку из срезов</strong>: «заменить два левых разряда на 10» — <code>'10' + s[2:]</code>, а не <code>replace</code> (тот заменит
+  все вхождения, а не первые два символа; №5).</li>
+<li><strong>Список символов</strong>: если строку правят много раз по одному символу (лента машины Тьюринга, №12) — <code>list(s)</code>, правка
+  <code>lenta[i] = …</code>, обратно в строку — <code>''.join(lenta)</code>.</li>
+</ul>
+<h2 id="_8">Перебор символов<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">'ЕГЭ27'</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="gp">... </span>    <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="s1">'0123456789'</span><span class="p">:</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="gp">... </span>        <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="gp">...</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="go">2</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="go">7</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="gp">...</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="go">ЕГ</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="go">ГЭ</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="go">Э2</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="go">27</span>
+</code></pre></div>
+<ul>
+<li><code>for c in s</code> — по самим символам; <code>for i in range(len(s))</code> — по номерам, когда нужен сосед (<code>s[i + 1]</code>) или пара.
+  Для пар — <code>range(len(s) - 1)</code>, иначе <code>s[i + 1]</code> выйдет за конец.</li>
+<li>«Символ — цифра» — <code>c in '0123456789'</code> или <code>c.isdigit()</code>; «гласная» — <code>c in 'АЕЁИОУЫЭЮЯ'</code>.</li>
+</ul>
+<h2 id="split-join-strip">Разбить и собрать: split, join, strip<a class="headerlink" href="#split-join-strip" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'655 861 4582'</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="go">['655', '861', '4582']</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'655   861'</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="go">['655', '', '', '861']</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'3;7;12'</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">)</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="go">['3', '7', '12']</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'-'</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">'1'</span><span class="p">,</span> <span class="s1">'2'</span><span class="p">,</span> <span class="s1">'3'</span><span class="p">])</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="go">'1-2-3'</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'__101__'</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">'_'</span><span class="p">),</span> <span class="s1">'  12 </span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="go">('101', '12')</span>
+</code></pre></div>
+<ul>
+<li><code>split()</code> <strong>без аргумента</strong> режет по любым пробелам и табуляциям и не даёт пустых кусков — так и читать строки файла
+  (№23, №26). <code>split(' ')</code> на нескольких пробелах подряд даёт пустые строки, и <code>a, b, c = …</code> падает.</li>
+<li><code>join</code> склеивает только строки: числа сначала <code>str</code> — <code>''.join(str(d) for d in цифры)</code>.</li>
+<li><code>strip</code> убирает символы <strong>только по краям</strong>: <code>strip()</code> — пробелы и <code>\n</code>, <code>strip('_')</code> — подчёркивания (№12).</li>
+</ul>
+<h2 id="_9">Буквы: латиница и Ё<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'О'</span> <span class="o">==</span> <span class="s1">'O'</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="go">False</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">ord</span><span class="p">(</span><span class="s1">'О'</span><span class="p">),</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">'O'</span><span class="p">)</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="go">(1054, 79)</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">([</span><span class="s1">'ЕЛЬ'</span><span class="p">,</span> <span class="s1">'ЁЖ'</span><span class="p">,</span> <span class="s1">'АРБУЗ'</span><span class="p">])</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="go">['ЁЖ', 'АРБУЗ', 'ЕЛЬ']</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="s1">'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="s1">'ЛЁКА'</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="go">['А', 'Ё', 'К', 'Л']</span>
+</code></pre></div>
+<ul>
+<li>Русская «О» и латинская «O» выглядят одинаково, но это разные символы (в первой строке примера слева — русская, справа —
+  латинская). На сайтах с задачами в условиях бывает латиница; буквы для программы <strong>набирайте сами</strong>, не копируйте (№8).</li>
+<li><code>sorted</code> упорядочивает по кодам символов (<code>ord</code>), и у заглавной Ё код меньше, чем у А, — она встаёт первой. Нужен порядок
+  алфавита — <code>key=a.index</code> со своей строкой алфавита (№8).</li>
+</ul>
+<h2 id="f-">f-строки<a class="headerlink" href="#f-" title="Permanent link">&para;</a></h2>
+<p><code>f'…'</code> подставляет значения в фигурных скобках; после двоеточия — формат (подробно — «Системы счисления»):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">13</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="sa">f</span><span class="s1">'x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">, двоичная </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">b</span><span class="si">}</span><span class="s1">, восемь разрядов </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">08b</span><span class="si">}</span><span class="s1">'</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="go">'x = 13, двоичная 1101, восемь разрядов 00001101'</span>
+</code></pre></div>
+<details class="info">
+<summary>Подробнее: регулярные выражения (№24)</summary>
+<p>Модуль <code>re</code> ищет в строке куски по образцу. Для №24 хватает нескольких приёмов (полностью — в <a href="../../tasks/task-24/">карточке
+№24</a>):</p>
+<table>
+<thead>
+<tr>
+<th>Образец</th>
+<th>Что значит</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[0-9]</code>, <code>[AEIOU]</code></td>
+<td>один символ из перечисленных</td>
+</tr>
+<tr>
+<td><code>[0-9]+</code>, <code>[0-9]*</code></td>
+<td>один и больше / сколько угодно (и ни одного)</td>
+</tr>
+<tr>
+<td><code>A|B</code></td>
+<td>A или B — <strong>берётся первый подошедший</strong>, не самый длинный</td>
+</tr>
+<tr>
+<td><code>0|[1-9][0-9]*</code></td>
+<td>число без ведущих нулей (ноль — отдельной веткой)</td>
+</tr>
+<tr>
+<td><code>(?=(…))</code></td>
+<td>искать с каждой позиции, в том числе внутри уже найденного</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">'X12+007*30Y'</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s1">'[0-9]+'</span><span class="p">,</span> <span class="n">s</span><span class="p">)]</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="go">['12', '007', '30']</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s1">'0|[1-9][0-9]*'</span><span class="p">,</span> <span class="n">s</span><span class="p">)]</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="go">['12', '0', '0', '7', '30']</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'[0-9]+([+*])'</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="go">['+', '*']</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">'[1-9]|[1-9][0-9]*'</span><span class="p">,</span> <span class="s1">'345'</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(),</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">'[1-9][0-9]*|[1-9]'</span><span class="p">,</span> <span class="s1">'345'</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="go">('3', '345')</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s1">'[0-9][*][0-9]'</span><span class="p">,</span> <span class="s1">'2*3*4'</span><span class="p">)]</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="go">['2*3']</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s1">'(?=([0-9][*][0-9]))'</span><span class="p">,</span> <span class="s1">'2*3*4'</span><span class="p">)]</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="go">['2*3', '3*4']</span>
+</code></pre></div>
+<ul>
+<li><code>finditer</code> + <code>m.group()</code> — найденные куски; <code>findall</code> при скобках в образце возвращает <strong>содержимое скобок</strong>, а не
+  весь кусок.</li>
+<li>Длинный вариант в <code>|</code> — <strong>первым</strong>, иначе поиск остановится на коротком.</li>
+<li><code>finditer</code> продолжает поиск после конца найденного: «3<em>4» внутри «2</em>3*4» он пропустит. Искать с каждой позиции —
+  <code>(?=(…))</code> и <code>m.group(1)</code>.</li>
+</ul>
+</details>
+<h2 id="_10">Типичные ошибки<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Скрытые ловушки — проверены запуском</p>
+<ul>
+<li><strong><code>s.replace(…)</code> без <code>s =</code></strong> — строка не изменилась (№5).</li>
+<li><strong><code>replace</code> меняет все вхождения</strong>: «заменить два левых разряда» — <code>'10' + s[2:]</code>; только первое — <code>replace(a, b, 1)</code> (№5, №13).</li>
+<li><strong><code>count</code> без наложений</strong>: <code>'TTTT'.count('TT')</code> = 2, а пар три (№8, №24).</li>
+<li><strong>Одна замена <code>replace('00', '0 0')</code> не рвёт «000»</strong> — <code>while '00' in s</code> (№24).</li>
+<li><strong><code>len(str(x))</code> считает минус</strong>: <code>len(str(-512))</code> = 4 — <code>len(str(abs(x)))</code> (№17).</li>
+<li><strong><code>'9' &lt; '10'</code> — <code>False</code></strong>: числа сравнивать числами (№13).</li>
+<li><strong>Строка + число</strong> — <code>TypeError</code>: <code>'1' + str(5)</code>; в строке ищут строку: <code>s.count('1')</code>, не <code>s.count(1)</code> (№5).</li>
+<li><strong><code>s[i] = …</code></strong> — <code>TypeError</code>: собрать новую строку срезами или работать со списком <code>list(s)</code> (№12).</li>
+<li><strong><code>s[s.find(x)]</code></strong>, когда <code>x</code> нет, молча берёт последний символ (<code>find</code> вернул −1).</li>
+<li><strong><code>split(' ')</code></strong> на нескольких пробелах даёт пустые куски — <code>split()</code> без аргумента (№23).</li>
+<li><strong><code>int('4582.0')</code></strong> — <code>ValueError</code>: дробное из строки — <code>float</code>, потом <code>int</code> (№23).</li>
+<li><strong>Латиница вместо русских букв</strong> (О/O, А/A, Е/E) — <code>'О' == 'O'</code> даёт <code>False</code>; буквы набирать самим (№8).</li>
+<li><strong><code>sorted</code> ставит Ё перед А</strong> — <code>key=алфавит.index</code> (№8).</li>
+<li><strong>Пары символов — <code>range(len(s) - 1)</code></strong>, иначе <code>s[i + 1]</code> выйдет за конец строки.</li>
+<li><strong>Регулярки (№24):</strong> <code>finditer</code> без <code>(?=(…))</code> пропускает перекрывающиеся куски, в <code>|</code> короткий вариант первым
+  обрывает длинный, число без ведущих нулей — <code>0|[1-9][0-9]*</code>.</li>
+</ul>
+</div>
+<h2 id="_11">Где встречается<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p><a href="../../tasks/task-4/">№4</a> (<code>startswith</code>), <a href="../../tasks/task-5/">№5</a> (двоичная запись строкой, срезы, <code>count</code>),
+<a href="../../tasks/task-8/">№8</a> (буквы, <code>sorted</code>, <code>count</code>), <a href="../../tasks/task-12/">№12</a> (лента — список символов),
+<a href="../../tasks/task-13/">№13</a> (цифры числа срезами, <code>replace</code>), <a href="../../tasks/task-14/">№14</a> (цифры в строке),
+<a href="../../tasks/task-17/">№17</a> (<code>len(str(x))</code>), <a href="../../tasks/task-23/">№23</a> и <a href="../../tasks/task-26/">№26</a> (<code>split</code>),
+<a href="../../tasks/task-24/">№24</a> (всё о строках, регулярные выражения), <a href="../../tasks/task-25/">№25</a> (<code>count</code>, палиндром, маски).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
+        
+          
+          <a href="../01-chisla/" class="md-footer__link md-footer__link--prev" aria-label="Назад: 1. Числа и арифметика">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Назад
+              </span>
+              <div class="md-ellipsis">
+                1. Числа и арифметика
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../tasks/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Номера 1–27">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Вперед
+              </span>
+              <div class="md-ellipsis">
+                Номера 1–27
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

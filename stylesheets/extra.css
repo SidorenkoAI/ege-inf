@@ -165,3 +165,6 @@
 @media print {
   .md-typeset pre > code { white-space: pre-wrap; }
 }
+
+/* База: примеры с >>> набирают в IDLE Shell сами — кнопка «копировать» скопировала бы и подсказки >>> */
+.highlight:has(.gp) .md-code__button[data-md-type="copy"] { display: none; }
