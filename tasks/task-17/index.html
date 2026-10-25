@@ -1631,6 +1631,26 @@
 <td>пара — <strong>любые</strong> два различных элемента, порядок не важен (старый формат)</td>
 <td>два цикла <code>for i …: for j in range(i + 1, n)</code> — 50 млн пар, ≈ 15 с</td>
 </tr>
+<tr>
+<td>«сумма минимального и максимального двузначных элементов» (есть отрицательные)</td>
+<td><code>kz = [x for x in a if 10 &lt;= abs(x) &lt;= 99]</code>, <code>m = min(kz) + max(kz)</code> — минимальный двузначный здесь отрицательный (−99)</td>
+</tr>
+<tr>
+<td>«хотя бы одно — полный квадрат натурального числа»</td>
+<td><code>x &gt; 0 and int(x ** 0.5) ** 2 == x</code> — сначала <code>x &gt; 0</code>: <code>(-9) ** 0.5</code> — комплексное число, <code>int</code> упадёт</td>
+</tr>
+<tr>
+<td>«сумма пары равна максимальному (чётному) элементу»</td>
+<td><code>a[i] + a[i + 1] == m</code>, <code>m</code> — до цикла</td>
+</tr>
+<tr>
+<td>«нет чётных чисел», «ни один не оканчивается на 3»</td>
+<td><code>all(x % 2 != 0 for x in t)</code>, <code>not any(x % 10 == 3 for x in t)</code></td>
+</tr>
+<tr>
+<td>вторым числом — «модуль разности», «модуль разности квадратов», «сумма квадратов»</td>
+<td>в список кладём именно это: <code>abs(x - y)</code>, <code>abs(x * x - y * y)</code>, <code>x * x + y * y</code></td>
+</tr>
 </tbody>
 </table>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Тройки и отрицательные числа</label></div>
@@ -1714,7 +1734,11 @@
 Код перепроверен вторым способом на Python 3.11 и 3.12.
 Каталог Решу ЕГЭ, тип 17: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=423">«Задания для подготовки»</a>
 — 85 задач с файлами (ЕГЭ 2022–2026, демоверсии, СтатГрад, пробники СПб). Все решены шаблоном на Python 3.11 и
-3.12, ответы совпали со всеми 85.</p>
+3.12, ответы совпали со всеми 85.
+<a href="https://kompege.ru/task">КомпЕГЭ</a>, задание 17 — 54 задачи с пометкой экзамена (ЕГЭ 2022–2026, демоверсии, ЕГКР,
+апробации, OpenFIPI): все 54 решены шаблоном на Python 3.11 и 3.12, ответы совпали с ключами сайта.
+Сборник С. С. Крылова, Т. Е. Чуркиной (ЕГЭ-2026), все 20 вариантов — на файлах из банка
+<a href="https://bank-kege.ru">bank-kege.ru</a> (М. Попков), решены шаблоном и вторым способом.</p>
 </details>
 <h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>Задачи №17 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №17</strong>.</p>
