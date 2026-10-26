@@ -1803,12 +1803,20 @@
 <td>два прохода: <code>max</code>, потом первое x (вкладка «Больше всего нулей»)</td>
 </tr>
 <tr>
+<td><strong>наименьшее количество нулей</strong> по всем x (спрашивают количество, а не x)</td>
+<td><code>nuli.append(…)</code>, <code>print(min(nuli))</code></td>
+</tr>
+<tr>
 <td>шестёрок больше, чем нулей — наименьшее x (ответ — десятки миллионов)</td>
 <td>перебор <code>while</code>, программа работает около минуты — ждём</td>
 </tr>
 <tr>
 <td><strong>неизвестное основание p</strong>: 3x5 + xy4 = 1y0x</td>
 <td>перебор p, x, y; старшая цифра — не 0 (вкладка «Основание p»)</td>
+</tr>
+<tr>
+<td>три основания подряд: 4646_N + 387_(N+2) = 3746_(N+1)</td>
+<td>перебор N; <code>chislo(…, N + 2)</code>; N ≥ 7 — каждая цифра меньше своего основания</td>
 </tr>
 <tr>
 <td>при каком наименьшем p сумма AB267D1ₚ + F024A89ₚ делится на p − 1</td>
@@ -2090,7 +2098,10 @@
 <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=220">«Операции в одной СС»</a>,
 <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=239">«Операции в разных СС с одной переменной»</a>,
 <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=274">«… с двумя переменными»</a> — 111 задач; все решены
-функциями <code>cifry</code> и <code>chislo</code>, ответы совпали со всеми 111.</p>
+функциями <code>cifry</code> и <code>chislo</code>, ответы совпали со всеми 111.
+<a href="https://kompege.ru/task">КомпЕГЭ</a> — 72 задачи №14 с реальных ЕГЭ, демоверсий, апробаций и СтатГрад: все решены
+шаблоном, ответы совпали с ключом. Сборник С. С. Крылова и Т. Е. Чуркиной (ЕГЭ-2026) — все 20 вариантов решены и
+сверены вторым способом (цифры больше 8 / не больше 9 в 27- и 32-ричной записи, x в выражении, x несколько раз в числе).</p>
 </details>
 <h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>Задачи №14 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №14</strong>.</p>
