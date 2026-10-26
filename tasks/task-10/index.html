@@ -1779,12 +1779,20 @@
 <td>перебор <code>p</code>, <code>f'{net[-2]:b}'.count('1')</code></td>
 </tr>
 <tr>
-<td>маска <code>255.255.A.0</code> неизвестна, условие «для всех адресов сети»</td>
-<td>перебор <code>A</code> по 9 возможным байтам маски: 0, 128, 192, 224, 240, 248, 252, 254, 255</td>
+<td>единиц в <strong>левых двух байтах</strong> меньше / не менее, чем в правых; в правых «более чем вдвое» больше (сборник Крылова 2026)</td>
+<td><code>b[:16].count('1')</code> и <code>b[16:].count('1')</code> — <code>b</code> ровно 32 цифры, половины по 16</td>
+</tr>
+<tr>
+<td>маска <code>255.255.A.0</code> неизвестна, условие «для <strong>всех</strong> адресов сети»; наименьшее <code>A</code></td>
+<td>перебор <code>A</code> по 9 возможным байтам маски: 0, 128, 192, 224, 240, 248, 252, 254, 255; «все» — счётчик равен <code>net.num_addresses</code> (вкладка «Для всех адресов»)</td>
+</tr>
+<tr>
+<td>неизвестен байт <strong>адреса</strong> (<code>32.0.A.5</code>), условие «для всех адресов» (Крылов)</td>
+<td>то же, но <code>for A in range(256):</code> — байт адреса может быть любым</td>
 </tr>
 </tbody>
 </table>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Адреса узлов</label><label for="__tabbed_1_2">Маска неизвестна</label><label for="__tabbed_1_3">Два узла</label><label for="__tabbed_1_4">Адреса с условием</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Адреса узлов</label><label for="__tabbed_1_2">Маска неизвестна</label><label for="__tabbed_1_3">Два узла</label><label for="__tabbed_1_4">Адреса с условием</label><label for="__tabbed_1_5">Для всех адресов</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №10 (своя): сеть задана узлом 172.31.203.77 и маской 255.255.248.0. Найдите широковещательный адрес, наибольший</span>
@@ -1869,6 +1877,27 @@
 <p><code>f'{a:b}'</code> — двоичная запись адреса, ровно 32 цифры с ведущими нулями (Python 3.9 и новее). Цикл идёт по <strong>всем</strong>
 адресам сети; если спрашивают про адреса компьютеров — <code>net.hosts()</code>.</p>
 </div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># №10 (своя): сеть задана IP-адресом 251.239.162.7 и маской 255.255.A.0, где A — допустимое для маски число. Найдите</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># наименьшее A, при котором у ВСЕХ адресов сети единиц в левых двух байтах двоичной записи не меньше, чем в правых двух.</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Ответ: 240</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ipaddress</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">for</span> <span class="n">A</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">192</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">248</span><span class="p">,</span> <span class="mi">252</span><span class="p">,</span> <span class="mi">254</span><span class="p">,</span> <span class="mi">255</span><span class="p">):</span>   <span class="c1"># байт маски — только эти 9 значений</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">net</span> <span class="o">=</span> <span class="n">ip_network</span><span class="p">(</span><span class="sa">f</span><span class="s1">'251.239.162.7/255.255.</span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s1">.0'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">net</span><span class="p">:</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        <span class="n">b</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s1">b</span><span class="si">}</span><span class="s1">'</span>                           <span class="c1"># 32 двоичные цифры: b[:16] — левые два байта, b[16:] — правые</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        <span class="k">if</span> <span class="n">b</span><span class="p">[:</span><span class="mi">16</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'1'</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">[</span><span class="mi">16</span><span class="p">:]</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'1'</span><span class="p">):</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">net</span><span class="o">.</span><span class="n">num_addresses</span><span class="p">:</span>                 <span class="c1"># подошли все адреса сети</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="k">break</span>
+</code></pre></div>
+<p>«Для всех адресов сети» — тот же счётчик, что во вкладке «Адреса с условием»: если подошли все, <code>k</code> равен числу
+адресов сети. Байты маски — по возрастанию, поэтому первый подходящий <code>A</code> — наименьший (<code>break</code>). Ничего не
+напечаталось — не подошло ни одно <code>A</code>: перечитайте условие и знак сравнения.</p>
+</div>
 </div>
 </div>
 <details class="info">
@@ -1909,6 +1938,8 @@
 <ul>
 <li><strong>Без <code>0</code> (<code>strict=False</code>)</strong> — <code>ValueError: … has host bits set</code>: модуль ждёт адрес сети, а дан адрес узла.</li>
 <li><strong><code>range(32)</code> вместо <code>range(33)</code></strong> — теряется маска /32 (33 варианта: от 0 до 32 единиц).</li>
+<li><strong>Байт маски <code>A</code> перебирать <code>range(256)</code> нельзя:</strong> уже при <code>A = 1</code> маска 255.255.1.0 недопустима — <code>ValueError … does
+  not appear to be an IPv4 or IPv6 network</code>. Только 9 значений: 0, 128, 192, …, 255. Байт <strong>адреса</strong> — любой, <code>range(256)</code>.</li>
 <li><strong>«Наибольший адрес сети» ≠ «наибольший адрес компьютера»</strong> (<code>net[-1]</code> и <code>net[-2]</code>), «наименьший» — <code>net[0]</code> и
   <code>net[1]</code>. «Минус 2» в числе адресов — только если так сказано в условии.</li>
 <li><strong><code>str(net)</code> — это <code>192.168.156.0/22</code></strong> с маской; для суммы октетов берите <code>net.network_address</code>.</li>
@@ -1935,7 +1966,11 @@
 Каталог Решу ЕГЭ, тип 10: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=253">«Определение адреса сети»</a>,
 <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=254">«Определение маски»</a>,
 <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=348">«Подсчёт количества адресов в сети»</a> — 87 задач; все
-решены своим кодом, ответы совпали со всеми 87.</p>
+решены своим кодом, ответы совпали со всеми 87.
+<a href="https://kompege.ru/task">КомпЕГЭ, задание 10</a>: 35 задач с пометкой экзамена (волны ЕГЭ 2024–2026, ЕГКР,
+апробации, демо 2024–2027) — шаблоном, совпали все 28 новых (7 — повторы Решу ЕГЭ). Сборник С. С. Крылова 2026 — все
+20 вариантов: наибольший адрес компьютера, адреса с условием на единицы, левые и правые два байта, «для всех адресов»
+с неизвестным байтом маски или адреса.</p>
 </details>
 <h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>Задачи №10 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №10</strong>.</p>
