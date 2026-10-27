@@ -1836,6 +1836,14 @@
 <td><code>replace</code>, <code>s[::-1]</code>, срезы (таблица выше)</td>
 </tr>
 <tr>
+<td>инвертировать цифры (0 ↔ 1), дописать бит чётности (пробник ИМЦ СПб)</td>
+<td><code>s.replace('0', '*').replace('1', '0').replace('*', '1')</code> — через временный знак</td>
+</tr>
+<tr>
+<td>шаги над самим числом: «кратно 2 — разделить на 2, иначе вычесть 1…», «сколько N дают R» (СтатГрад 2021)</td>
+<td><code>x = x // 2</code> / <code>x = x - 1</code> в <code>if … else</code> на каждый шаг, счётчик <code>k += 1</code></td>
+</tr>
+<tr>
 <td>ответ — чётное R, нечётное N</td>
 <td>добавить в <code>if</code>: <code>r % 2 == 0</code>, <code>n % 2 == 1</code></td>
 </tr>
@@ -1987,6 +1995,9 @@
 </div>
 <ul>
 <li><strong>Не переприсвоили строку.</strong> <code>s.replace('1', '11')</code> сам <code>s</code> не меняет — нужно <code>s = s.replace('1', '11')</code>.</li>
+<li><strong>Инверсия двумя <code>replace</code> подряд.</strong> <code>s.replace('0', '1').replace('1', '0')</code> превращает все цифры в нули: второй
+  <code>replace</code> меняет и только что поставленные единицы. Нужен временный знак: <code>replace('0', '*').replace('1', '0').replace('*', '1')</code>.
+  В пробнике ИМЦ СПб («инвертировать, слева 1, справа бит чётности; наименьшее N, R &gt; 180») так выходит 64 вместо 32.</li>
 <li><strong><code>s.count(1)</code> и <code>s + n % 2</code></strong> — <code>TypeError</code>: в строке ищем и дописываем <strong>строки</strong>: <code>s.count('1')</code>, <code>s + str(n % 2)</code>.</li>
 <li><strong>Забыли <code>[2:]</code></strong> у <code>bin</code> — в запись попадёт <code>0b</code>, и <code>int(s, 2)</code> выдаст ошибку или чужое число.</li>
 <li><strong>«Два левых разряда» через <code>replace</code></strong> — заменятся все такие пары в записи, а не первые две цифры.</li>
@@ -2002,7 +2013,10 @@
 <a href="https://www.youtube.com/watch?v=WO4urh-bdTk">Вова Информатик, «Полный разбор №5»</a>, <a href="https://www.youtube.com/watch?v=g_k9ght6AZo">Алексей Ковальчук</a>,
 <a href="https://www.youtube.com/watch?v=zuV2zDsOjpE">Иванформатика</a>, <a href="https://www.youtube.com/watch?v=95xReHOp_z8">Иван Викторович</a>;
 каталог <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=362">Решу ЕГЭ, тип 5</a> (69 задач). Все 28 ответов
-из видео и 22 задачи Решу ЕГЭ (в том числе ЕГЭ-2026) перепроверены своим кодом на Python 3.11 и 3.12.</p>
+из видео и 22 задачи Решу ЕГЭ (в том числе ЕГЭ-2026) перепроверены своим кодом на Python 3.11 и 3.12.
+<a href="https://kompege.ru/task">КомпЕГЭ, задание 5</a> — 64 задачи с пометкой экзамена (ЕГЭ 2021–2026, демо, апробации, ЕГКР,
+СтатГрад, OpenFIPI): все ответы совпали с ключом и со вторым способом. Сборник С. С. Крылова 2026 (20 вариантов, банк
+М. Попкова <a href="https://bank-kege.ru">bank-kege.ru</a>): все решены шаблоном и сверены вторым способом, 7 ответов — и с задачами из видео.</p>
 </details>
 <h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>Задачи №5 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №5</strong>.</p>
