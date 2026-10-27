@@ -1851,6 +1851,18 @@
 <td>дуги окружностей («Дуга r, a, b, α» — сборники)</td>
 <td>точка внутри круга: <code>(x - a) ** 2 + (y - b) ** 2 &lt; r * r</code></td>
 </tr>
+<tr>
+<td>хвост в начале поднят, потом переход и наклонная фигура (сборник Крылова: квадрат под 30° в (100; 100))</td>
+<td><code>penup()</code> первой строкой, <code>begin_poly()</code> — сразу после <code>pendown()</code>: переход в вершины не записывать</td>
+</tr>
+<tr>
+<td>периметр / площадь фигур из прямоугольных частей («лесенка», три квадрата — сборник Крылова)</td>
+<td>клетки 1 × 1: площадь — число клеток, граница — стороны клеток, за которыми клетки области нет</td>
+</tr>
+<tr>
+<td>«Панда» в пространстве: команда <code>Наверх t</code> — сдвиг по оси z; сколько точек со следом (КомпЕГЭ, авторская)</td>
+<td>идти по одному шагу и складывать точки <code>(x, y, z)</code> в множество</td>
+</tr>
 </tbody>
 </table>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Объединение</label><label for="__tabbed_1_2">Площадь и периметр</label><label for="__tabbed_1_3">Наклонные стороны</label><label for="__tabbed_1_4">Площадь ромба</label><label for="__tabbed_1_5">Параметр x</label></div>
@@ -2036,7 +2048,9 @@
 <a href="https://www.youtube.com/watch?v=RLuH89eXYQ4">Leviafan</a>.
 Ответы из видео перепроверены своим кодом на Python 3.11 и 3.12.
 Каталог Решу ЕГЭ, тип 6: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=316">«Задания для подготовки»</a> —
-54 задачи (ЕГЭ 2023–2026, демоверсии, СтатГрад, пробники); все решены своим кодом, ответы совпали со всеми 54.</p>
+54 задачи (ЕГЭ 2023–2026, демоверсии, СтатГрад, пробники); все решены своим кодом, ответы совпали со всеми 54.
+<a href="https://kompege.ru/task">КомпЕГЭ</a>, №6 — 49 задач с пометкой экзамена (демоверсии, волны ЕГЭ, ЕГКР, апробации): все решены
+своим кодом, совпали с ключами. Сборник Крылова 2026 — все 20 вариантов решены своим кодом и вторым способом.</p>
 </details>
 <h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>Задачи №6 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №6</strong>.</p>
