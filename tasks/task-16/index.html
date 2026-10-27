@@ -1771,6 +1771,10 @@
 <td>числа слишком велики даже с кэшем (F(320 726), F(247 563))</td>
 <td>сократить вручную, как в «Проверке вручную»; формулу проверить на малых n</td>
 </tr>
+<tr>
+<td>деление на степень: (F(2025) − F(2023) − 1) / 3²⁰²²</td>
+<td><code>// 3 ** 2022</code> — <code>**</code> выполняется раньше <code>//</code>, скобки не нужны</td>
+</tr>
 </tbody>
 </table>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ветвление</label><label for="__tabbed_2_2">Две функции</label><label for="__tabbed_2_3">Рекурсия вверх</label><label for="__tabbed_2_4">Целая часть [x]</label><label for="__tabbed_2_5">Огромный интервал</label></div>
@@ -1920,6 +1924,9 @@ F — сумма цифр (F(n) &gt; F(n + 1) ⇔ n оканчивается н�
   Точно — <code>Fraction(n, 4)</code> (обычное <code>/</code> тут случайно сработало, но с дробями вроде 1/6 может ошибиться).</li>
 <li><strong>Сумма «до n − 1», записанная до n.</strong> <code>sum(F(i) for i in range(1, n + 1))</code> вызывает F(n) внутри F(n) —
   бесконечная рекурсия и <code>RecursionError</code>.</li>
+<li><strong>Кэш на «факториалах» ест память.</strong> Шаблон хранит все F(1)…F(N): в задаче ЕГЭ-2026 с F(42 038) он верен и
+  считает за секунду, но занимает <strong>1,5 ГБ</strong> (F(32 028) — 0,85 ГБ). При n ≈ 250 000 (досрочная волна и открытый
+  вариант 2026) нужно было бы 13–20 ГБ — такие задачи только сокращать вручную. <code>MemoryError</code> — сократите.</li>
 <li><strong>Граница интервала тоже считается.</strong> «4 · 10⁷ ≤ n ≤ 9 · 10⁷»: само 90 000 000 подходит, без него —
   559 872 вместо 559 873.</li>
 </ul>
@@ -1946,7 +1953,10 @@ F — сумма цифр (F(n) &gt; F(n + 1) ⇔ n оканчивается н�
 <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=209">«…одно предыдущее значение»</a> — 104 задачи (ЕГЭ
 2013–2026, демоверсии, СтатГрад, пробники СПб). Все решены нашими программами на Python 3.11 и 3.12, ответы
 совпали со всеми 104. Без прогрева задачи с n от 2000 падают (<code>RecursionError</code>; на 3.11 с <code>setrecursionlimit</code> —
-молча закрываются), «кэш + прогрев» решает все.</p>
+молча закрываются), «кэш + прогрев» решает все.
+<a href="https://kompege.ru/task">КомпЕГЭ</a> — 63 задачи №16 с реальных ЕГЭ 2021–2026, демоверсий, ЕГКР, апробаций и СтатГрад:
+все решены шаблоном (две — сокращением вручную), ответы совпали с ключом. Сборник С. С. Крылова и Т. Е. Чуркиной
+(ЕГЭ-2026) — все 20 вариантов решены и сверены вторым способом. Задачи — в боте.</p>
 </details>
 <h2 id="_7">Потренируйся<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>Задачи №16 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №16</strong>.</p>
