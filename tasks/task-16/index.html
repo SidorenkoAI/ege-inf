@@ -1768,8 +1768,12 @@
 <td>понять, что считает F (сумма цифр, число единиц, НОД, a · b), проверить догадку перебором на малых и считать без перебора (вкладка)</td>
 </tr>
 <tr>
+<td>сколько чисел до 2⁶³ (3⁴⁰) с суммой (произведением) цифр …, «только из цифр 0, 1, 3, 5, 7, 9»</td>
+<td>счёт по разрядам границы: таблица «сколько строк из k цифр с суммой t» (вкладка)</td>
+</tr>
+<tr>
 <td>числа слишком велики даже с кэшем (F(320 726), F(247 563))</td>
-<td>сократить вручную, как в «Проверке вручную»; формулу проверить на малых n</td>
+<td>сократить вручную, как в «Проверке вручную», или программой: меньшее F взять за 1 (вкладка «Огромные числа»)</td>
 </tr>
 <tr>
 <td>деление на степень: (F(2025) − F(2023) − 1) / 3²⁰²²</td>
@@ -1777,7 +1781,7 @@
 </tr>
 </tbody>
 </table>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:5"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ветвление</label><label for="__tabbed_2_2">Две функции</label><label for="__tabbed_2_3">Рекурсия вверх</label><label for="__tabbed_2_4">Целая часть [x]</label><label for="__tabbed_2_5">Огромный интервал</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:7"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ветвление</label><label for="__tabbed_2_2">Две функции</label><label for="__tabbed_2_3">Рекурсия вверх</label><label for="__tabbed_2_4">Целая часть [x]</label><label for="__tabbed_2_5">Огромный интервал</label><label for="__tabbed_2_6">Счёт по разрядам</label><label for="__tabbed_2_7">Огромные числа</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №16, ветвление: F(n) = n при n &lt; 3;</span>
@@ -1903,7 +1907,78 @@
 F — сумма цифр (F(n) &gt; F(n + 1) ⇔ n оканчивается на 9), число единиц в двоичной записи (перебирать только
 <code>2 ** i + 2 ** j</code>), сумма чётных цифр (= 0, когда цифры только 0, 1, 3, 5, 7, 9), НОД (вычитание по 14 —
 зависит от остатка n по модулю 14), F(a, b) = a · b. Для «сумма цифр равна 159 среди чисел меньше 2⁶³» нужен
-счёт по разрядам — это уже за рамками шаблона.</p>
+счёт по разрядам — следующая вкладка.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># №16, счёт по разрядам: F(n) = n при n &lt; 10;  F(n) = F(n mod 10) + F(n div 10) при n ≥ 10.</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># Сколько существует чисел n, не превышающих 2⁵⁰, для которых F(n) = 80?</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Ответ: 20701821755977</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nd">@lru_cache</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">F</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        <span class="k">return</span> <span class="n">n</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="k">return</span> <span class="n">F</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">F</span><span class="p">(</span><span class="n">n</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span>    <span class="c1"># mod -&gt; %, div -&gt; //</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="c1"># 1. Что считает F? Сумму цифр. Проверяем догадку перебором на маленьких числах:</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="k">if</span> <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))):</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="nb">print</span><span class="p">(</span><span class="s1">'догадка неверна:'</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="c1"># 2. Чисел до 2⁵⁰ ≈ 10¹⁵ — перебор не дождаться. Считаем по разрядам границы.</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="c1">#    ways[k][t] — сколько строк из k цифр (0–9) с суммой цифр t</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="n">S</span> <span class="o">=</span> <span class="mi">80</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="n">L</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="n">ways</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">S</span><span class="p">]</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">L</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="n">ways</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="nb">sum</span><span class="p">(</span><span class="n">ways</span><span class="p">[</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">t</span> <span class="o">-</span> <span class="n">d</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)])</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="n">pref</span> <span class="o">=</span> <span class="mi">0</span>                             <span class="c1"># сумма цифр начала, которое совпало с границей</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>                   <span class="c1"># на место i ставим цифру меньше, чем у границы,</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>       <span class="c1"># а дальше — любые L − i − 1 цифр</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>        <span class="k">if</span> <span class="n">pref</span> <span class="o">+</span> <span class="n">d</span> <span class="o">&lt;=</span> <span class="n">S</span><span class="p">:</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>            <span class="n">cnt</span> <span class="o">+=</span> <span class="n">ways</span><span class="p">[</span><span class="n">L</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">S</span> <span class="o">-</span> <span class="n">pref</span> <span class="o">-</span> <span class="n">d</span><span class="p">]</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>    <span class="n">pref</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="k">if</span> <span class="n">pref</span> <span class="o">==</span> <span class="n">S</span><span class="p">:</span>                        <span class="c1"># сама граница</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>    <span class="n">cnt</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="nb">print</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
+</code></pre></div>
+<p>Когда чисел 10¹⁵ и больше, не помогает и «перебрать только подходящие»: их самих слишком много. Тогда считаем
+<strong>по разрядам границы</strong>. Таблица <code>ways[k][t]</code> — сколько строк из k цифр с суммой t (каждая строка таблицы
+складывается из предыдущей). Идём по цифрам границы слева направо: если на место i поставить цифру меньше,
+чем у границы, остальные цифры уже любые — их число берём из таблицы. В конце проверяем саму границу.
+Короткие числа считаются сами — как строки с ведущими нулями.</p>
+<p>Тот же ход годится и для других «свойств цифр»: <strong>числа только из цифр 0, 1, 3, 5, 7, 9</strong> (F — сумма чётных
+цифр, F(n) = 0) — на каждом месте 6 вариантов, <code>6 ** k</code> вместо таблицы; <strong>произведение цифр</strong>
+(F(n mod 15) · F(n div 15) — 15-ричные цифры) — таблица по произведению вместо суммы, цифра 0 сразу не годится.
+Способ стоит проверить на малой границе перебором — расхождение сразу видно.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># №16, огромные числа: F(n) = 2 при n &lt; 10;  F(n) = (n + 3) · F(n − 4) при n ≥ 10.</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># Чему равно значение выражения (F(400 010) / 9 − 2 · F(400 006)) / F(400 002)?</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># В ответе запишите целую часть полученного числа.</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Ответ: 17777955550</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fractions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fraction</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># F(400 010) — число из миллиона цифр, кэш на 100 тысяч таких чисел не влезет в память.</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c1"># F(400 006) и F(400 010) — это F(400 002), умноженное на числа: F(n) = (n + 3) · F(n − 4).</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1"># Всё выражение делится на F(400 002), поэтому берём F(400 002) = 1 и умножаем дальше по условию.</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">f</span> <span class="o">=</span> <span class="p">{</span><span class="mi">400002</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">400006</span><span class="p">,</span> <span class="mi">400011</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>   <span class="c1"># шаг рекурсии — 4</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="n">f</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">4</span><span class="p">]</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Fraction</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">400010</span><span class="p">],</span> <span class="mi">9</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">f</span><span class="p">[</span><span class="mi">400006</span><span class="p">]))</span>    <span class="c1"># «/ 9» — точная дробь; [ ] -&gt; int( )</span>
+</code></pre></div>
+<p>Это то же «сократить вручную» (см. «Проверка вручную» выше), только умножения делает программа. Всё выражение
+делится на самое маленькое F в нём, поэтому его можно взять за 1, а большие F получить по формуле из условия.
+Деление внутри — точной дробью <code>Fraction</code>, целая часть — <code>int( … )</code> от всего выражения. Если в задаче две
+функции (F(n) / G(m)), ищем на малых n, во сколько раз F больше G — обычно это n · c с постоянным c, — и
+проверяем догадку <code>assert</code> на сотне значений.</p>
 </div>
 </div>
 </div>
