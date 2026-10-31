@@ -166,5 +166,14 @@
   .md-typeset pre > code { white-space: pre-wrap; }
 }
 
+/* Шпаргалка (метка .shpora-page на странице): при печати — мельче, заголовок не отрывается от раздела, код не рвётся */
+.shpora-page { display: none; }
+@media print {
+  .md-content:has(.shpora-page) .md-typeset { font-size: .6rem; }
+  .md-content:has(.shpora-page) .md-typeset h2 { margin: 1.2em 0 .4em; break-after: avoid; }
+  .md-content:has(.shpora-page) .md-typeset .highlight { break-inside: avoid; }
+  .md-content:has(.shpora-page) .md-typeset .admonition { break-inside: avoid; }
+}
+
 /* База: примеры с >>> набирают в IDLE Shell сами — кнопка «копировать» скопировала бы и подсказки >>> */
 .highlight:has(.gp) .md-code__button[data-md-type="copy"] { display: none; }
