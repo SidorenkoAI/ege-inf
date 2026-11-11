@@ -177,3 +177,27 @@
 
 /* База: примеры с >>> набирают в IDLE Shell сами — кнопка «копировать» скопировала бы и подсказки >>> */
 .highlight:has(.gp) .md-code__button[data-md-type="copy"] { display: none; }
+
+/* №22: рисунок «как ВПР ищет» — лист с подсветкой клеток (цвета — свои для светлой и тёмной темы) */
+.vpr { width: 100%; max-width: 32rem; height: auto; font-family: var(--md-text-font-family); font-size: 13px;
+  --vpr-1: #1e6fd9; --vpr-2: #e06c00; --vpr-3: #8e24aa; --vpr-ok: #2e7d32; }
+[data-md-color-scheme="slate"] .vpr { --vpr-1: #64b5f6; --vpr-2: #ffb74d; --vpr-3: #ce93d8; --vpr-ok: #81c784; }
+.vpr text { fill: var(--md-default-fg-color); text-anchor: middle; dominant-baseline: central; }
+.vpr .grid rect { fill: none; stroke: var(--md-default-fg-color--lighter); stroke-width: 1; }
+.vpr .head rect { fill: var(--md-default-fg-color--lightest); stroke: var(--md-default-fg-color--lighter); }
+.vpr .num text, .vpr text.rn, .vpr text.muted { fill: var(--md-default-fg-color--light); font-size: 11px; }
+.vpr text.hd { font-size: 11px; font-weight: 700; }
+.vpr text.b { font-weight: 700; }
+.vpr text.no { fill: var(--md-default-fg-color--light); font-size: 10px; text-anchor: end; }
+.vpr .band { fill: var(--vpr-1); fill-opacity: .07; }
+.vpr .c1, .vpr .k1 { fill: var(--vpr-1); stroke: var(--vpr-1); }
+.vpr .c2, .vpr .k2 { fill: var(--vpr-2); stroke: var(--vpr-2); }
+.vpr .c3, .vpr .k3 { fill: var(--vpr-3); stroke: var(--vpr-3); }
+.vpr .c1, .vpr .c2, .vpr .c3 { fill-opacity: .22; stroke-width: 1.5; }
+.vpr .k1, .vpr .k2, .vpr .k3 { fill-opacity: 0; stroke-width: 2; }
+.vpr .res { fill: var(--vpr-ok); fill-opacity: .15; stroke: var(--vpr-ok); stroke-width: 2; }
+.vpr .line1 { fill: none; stroke: var(--vpr-1); stroke-width: 2; }
+.vpr .ar1, .vpr .bdg { fill: var(--vpr-1); }
+.vpr text.bdgt { fill: #fff; font-size: 11px; font-weight: 700; }
+.vpr .brace { fill: none; stroke: var(--vpr-1); stroke-width: 1.5; }
+.vpr text.lab1 { fill: var(--vpr-1); font-size: 12px; font-weight: 700; }
