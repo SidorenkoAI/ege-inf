@@ -2040,6 +2040,64 @@ LibreOffice.</p>
 <p>Недоступная зона C4:E4 (у C4 стены сверху и слева) ничего не портит: из A1 туда не попасть, и сумма в A11 её
 не учитывает.</p>
 <p><strong>Ответ: 619 290.</strong></p>
+<p><strong>По шагам, с картинками</strong> (LibreOffice 26.8, файл <code>18-primer.ods</code>).</p>
+<p><strong>1. Формула и протягивание.</strong> В <strong>A11</strong> набрать <code>=A1+МАКС(B11;A12)</code>, <kbd>Enter</kbd>. Выделить A11 и потянуть
+маркер (квадратик в правом нижнем углу выделения) вправо до <strong>H11</strong>, затем, не снимая выделения A11:H11, — вниз до
+строки <strong>18</strong>. Строка 19 и столбец I пустые, поэтому в H18 получится <code>=H8+МАКС(I18;H19)</code> — только монета.</p>
+<figure>
+  <img alt="Поле A1:H8 со стенами — толстыми линиями; ниже копия A11:H18 с числами; в строке формул для A11 =A1+МАКС(B11;A12)" loading="lazy" src="../../assets/task18/formula.png" />
+<br />
+<figcaption>Во всех 64 клетках копии — одна и та же формула. Число в A11 — ещё не ответ: стены пока не учтены</figcaption>
+</figure>
+<p><strong>2. Стены — на копию.</strong> Выделить поле <strong>A1:H8</strong>, нажать кисть <strong>«Копировать формат»</strong> на панели инструментов и
+провести мышью по <strong>A11:H18</strong>.</p>
+<figure>
+  <img alt="Выделено поле A1:H8, на панели инструментов нажата кнопка с кисточкой «Копировать формат»" loading="lazy" src="../../assets/task18/kist.png" />
+<br />
+<figcaption>Поле выделено, кисть нажата — осталось провести ею по копии</figcaption>
+</figure>
+<p>Рамки перенеслись, формулы копии остались. Теперь видно, где формула ведёт сквозь стену: у <strong>B13</strong> (копия B3) стена
+<strong>снизу</strong>, а в формуле ещё <code>МАКС(C13;B14)</code> — B14 за стеной.</p>
+<figure>
+  <img alt="Копия A11:H18 с такими же толстыми линиями, как у поля; выделена B13, в строке формул =B3+МАКС(C13;B14), в клетке 456" loading="lazy" src="../../assets/task18/steny-kopiya.png" />
+<br />
+<figcaption>Стены на копии. В B13 пока 456 — путь «прошёл» вниз сквозь стену</figcaption>
+</figure>
+<p><strong>3. Правки у стен.</strong> Стена снизу — «только справа»: в <strong>B13</strong> <code>=B3+C13</code>, протянуть до <strong>E13</strong>. Стена справа —
+«только снизу»: в <strong>B14</strong> <code>=B4+B15</code>, в <strong>F15</strong> <code>=F5+F16</code>, протянуть до <strong>F17</strong>. Протягивать — только по клеткам с той
+же стеной.</p>
+<figure>
+  <img alt="Выделена B13, в строке формул =B3+C13, в клетке 431; числа выше и левее тоже уменьшились" loading="lazy" src="../../assets/task18/stena-snizu.png" />
+<br />
+<figcaption>B13 после правки: 431 вместо 456 (на снимке уже сделаны все правки шагов 3 и 4)</figcaption>
+</figure>
+<p><strong>4. Конечная клетка.</strong> У <strong>D7</strong> стены справа и снизу — в <strong>D17</strong> <code>=D7</code>, только монета. В <strong>A11</strong> — <strong>619</strong>, это
+максимум.</p>
+<figure>
+  <img alt="Выделена D17, в строке формул =D7, в клетке 30; в A11 — 619" loading="lazy" src="../../assets/task18/konec.png" />
+<br />
+<figcaption>D17 — только монета (30). Все правки сделаны: в A11 максимум — <b>619</b></figcaption>
+</figure>
+<p><strong>5. <code>МАКС</code> → <code>МИН</code>.</strong> Выделить копию <strong>A11:H18</strong>, <kbd>Ctrl</kbd>+<kbd>H</kbd>. «Найти» — <code>МАКС</code>, «Заменить» — <code>МИН</code>.
+Галочка <strong>«Только выбранное»</strong> стоит сама (выделен диапазон), «Искать в» — <strong>«Формулы»</strong> (так по умолчанию).
+<strong>«Заменить все»</strong>.</p>
+<figure>
+  <img alt="Окно «Найти и заменить»: Найти — МАКС, Заменить — МИН; в «Других параметрах» отмечено «Только выбранное», «Искать в: Формулы»" loading="lazy" src="../../assets/task18/zamena.png" />
+<br />
+<figcaption>«Только выбранное» — замена только в копии; «Искать в: Формулы» — ищет в тексте формул, а не в числах</figcaption>
+</figure>
+<p>Откроется окно «Результаты поиска» — сколько клеток изменено. Его можно закрыть.</p>
+<figure>
+  <img alt="Окно «Результаты поиска»: лист Робот, клетки $A$11, $A$12…, в A11 — 290; внизу «Найдено: 55»" loading="lazy" src="../../assets/task18/rezultaty-poiska.png" />
+<br />
+<figcaption>«Найдено: 55» — 64 клетки копии без 9 исправленных у стен (в них нет <code>МАКС</code>)</figcaption>
+</figure>
+<p><strong>6. Минимум.</strong> В <strong>A11</strong> теперь <code>=A1+МИН(B11;A12)</code> — <strong>290</strong>.</p>
+<figure>
+  <img alt="Выделена A11, в строке формул =A1+МИН(B11;A12), в клетке 290; стены и правки на месте" loading="lazy" src="../../assets/task18/min.png" />
+<br />
+<figcaption>После замены в A11 — минимум <b>290</b>. Правки у стен (B13, D17…) замена не тронула</figcaption>
+</figure>
 <div class="admonition warning">
 <p class="admonition-title">Что будет, если ошибиться — проверено на этом поле в LibreOffice</p>
 <table>
