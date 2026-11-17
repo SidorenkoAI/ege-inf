@@ -1267,7 +1267,7 @@
   <span class="md-ellipsis">
     
   
-    №10. IP-адрес и маска
+    №10. Поиск в тексте
   
 
     
@@ -1351,7 +1351,7 @@
   <span class="md-ellipsis">
     
   
-    №13. Число программ
+    №13. IP-адрес и маска
   
 
     
@@ -1575,7 +1575,7 @@
   <span class="md-ellipsis">
     
   
-    №23. Графы: пути
+    №23. Число программ
   
 
     
@@ -2049,7 +2049,7 @@ H = 17 … Z = 35. Строка всех цифр по порядку — ном
 <li><strong><code>^</code> — не степень!</strong> <code>2 ^ 10</code> = 8 («исключающее или»), степень — <code>2 ** 10</code>.</li>
 <li>В №15 <code>x &amp; A</code> — «поразрядная конъюнкция» из условия; <code>&amp;</code> сильнее сравнений: <code>x &amp; 5 != 0</code> = <code>(x &amp; 5) != 0</code> (§2).</li>
 </ul>
-<p><strong>Ведущие нули.</strong> <code>bin</code> записывает число без ведущих нулей. В №10 октет IP-адреса — ровно 8 цифр, адрес — 32: нужен
+<p><strong>Ведущие нули.</strong> <code>bin</code> записывает число без ведущих нулей. В №13 октет IP-адреса — ровно 8 цифр, адрес — 32: нужен
 формат с шириной <code>f'{x:08b}'</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">bin</span><span class="p">(</span><span class="mi">5</span><span class="p">)[</span><span class="mi">2</span><span class="p">:],</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="mi">5</span><span class="si">:</span><span class="s1">b</span><span class="si">}</span><span class="s1">'</span><span class="p">,</span> <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="mi">5</span><span class="si">:</span><span class="s1">08b</span><span class="si">}</span><span class="s1">'</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">('101', '101', '00000101')</span>
@@ -2063,7 +2063,7 @@ H = 17 … Z = 35. Строка всех цифр по порядку — ном
 неверно; единицы считает верно. Адрес из модуля <code>ipaddress</code> форматируется так же: <code>f'{адрес:b}'</code> — 32 цифры (§9).</p>
 <p><strong><code>~</code> в Python — отрицательное число:</strong> <code>~5</code> = −6, а не «инверсия 32 бит». Перевернуть 32 бита маски —
 <code>~mask &amp; 0xFFFFFFFF</code> (<code>0xFFFFFFFF</code> — 32 единицы); широковещательный адрес — <code>ip | (~mask &amp; 0xFFFFFFFF)</code>. Проще — модуль
-<code>ipaddress</code> (§9, карточка <a href="../../tasks/task-10/">№10</a>).</p>
+<code>ipaddress</code> (§9, карточка <a href="../../tasks/task-13/">№13</a>).</p>
 <h2 id="_3">Типичные ошибки<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Скрытые ловушки — проверены запуском</p>
@@ -2075,8 +2075,8 @@ H = 17 … Z = 35. Строка всех цифр по порядку — ном
   символом <code>D[x]</code> или списком.</li>
 <li><strong><code>int(s, b)</code> — только до 36</strong> — <code>ValueError</code>; при больших основаниях — <code>chislo(список, b)</code> (№14).</li>
 <li><strong>Первая цифра — не ноль</strong> при переборе неизвестной старшей цифры (Решу ЕГЭ 76682: 39 решений вместо 1).</li>
-<li><strong><code>bin</code> теряет ведущие нули</strong> — 32 цифры адреса: <code>f'{ip:032b}'</code>, октет: <code>f'{x:08b}'</code> (№10).</li>
-<li><strong><code>^</code> — не степень</strong>, <code>~x</code> — отрицательное число; 32 бита — <code>~mask &amp; 0xFFFFFFFF</code> (№10).</li>
+<li><strong><code>bin</code> теряет ведущие нули</strong> — 32 цифры адреса: <code>f'{ip:032b}'</code>, октет: <code>f'{x:08b}'</code> (№13).</li>
+<li><strong><code>^</code> — не степень</strong>, <code>~x</code> — отрицательное число; 32 бита — <code>~mask &amp; 0xFFFFFFFF</code> (№13).</li>
 <li><strong><code>int('1_0', 2)</code> = 2</strong> — подчёркивание между цифрами <code>int</code> пропускает (лента №12).</li>
 <li><strong>Буквы</strong>: A = 10 … F = 15, G = 16, H = 17 — по строке <code>D</code>, не в уме (№14).</li>
 <li><strong>Исходное число — без ведущих нулей</strong>, а запись после изменений — может с ними: «получилось 240 — наименьшее
@@ -2084,7 +2084,7 @@ H = 17 … Z = 35. Строка всех цифр по порядку — ном
 </ul>
 </div>
 <h2 id="_4">Где встречается<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><a href="../../tasks/task-5/">№5</a> (<code>bin</code>, <code>int(s, 2)</code>, своя <code>to_base</code>), <a href="../../tasks/task-10/">№10</a> (октеты, 32 бита,
+<p><a href="../../tasks/task-5/">№5</a> (<code>bin</code>, <code>int(s, 2)</code>, своя <code>to_base</code>), <a href="../../tasks/task-13/">№13</a> (октеты, 32 бита,
 <code>&amp;</code>, <code>|</code>), <a href="../../tasks/task-12/">№12</a> (лента в число), <a href="../../tasks/task-14/">№14</a> (<code>cifry</code>, <code>chislo</code>, цифра x, основание
 больше 36), <a href="../../tasks/task-15/">№15</a> (поразрядная конъюнкция <code>&amp;</code>).</p>
 

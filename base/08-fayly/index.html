@@ -1278,7 +1278,7 @@
   <span class="md-ellipsis">
     
   
-    №10. IP-адрес и маска
+    №10. Поиск в тексте
   
 
     
@@ -1362,7 +1362,7 @@
   <span class="md-ellipsis">
     
   
-    №13. Число программ
+    №13. IP-адрес и маска
   
 
     
@@ -1586,7 +1586,7 @@
   <span class="md-ellipsis">
     
   
-    №23. Графы: пути
+    №23. Число программ
   
 
     
@@ -2001,7 +2001,7 @@
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="go">('XYZZYX', 6)</span>
 </code></pre></div>
 <h2 id="_3">Дробные числа и текст<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p><strong>Дробные</strong> — <code>float</code>. <code>int('4582.0')</code> — ошибка (№23: вес ребра в файле записан как <code>4582.0</code>):</p>
+<p><strong>Дробные</strong> — <code>float</code>. <code>int('4582.0')</code> — ошибка (вес ребра графа в файле записан как <code>4582.0</code>):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="s1">'4582.0'</span><span class="p">)</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="gt">Traceback (most recent call last):</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="c">...</span>
@@ -2071,11 +2071,11 @@ UTF-8 превращается в <code>РџСЂРёРІРµС‚</code>; в Lin
 <p class="admonition-title">Скрытые ловушки — проверены запуском</p>
 <ul>
 <li><strong>Пустая строка в конце файла</strong> — <code>int('\n')</code>: <code>ValueError</code>; с двумя числами — <code>not enough values to unpack</code> (№17,
-  №23, №26). Читать <code>if s.strip()</code>.</li>
+  №26). Читать <code>if s.strip()</code>.</li>
 <li><strong>Первая строка с количеством</strong> — читать до цикла <code>f.readline()</code>; но в некоторых файлах её нет, а где-то её нужно
   считать элементом (№17: Решу ЕГЭ 59784, 2453 вместо 2452) — смотреть файл и условие.</li>
 <li><strong><code>\n</code> в строке №24</strong> — <code>readline()</code> без <code>strip()</code>: на символ длиннее, <code>\n</code> попадает в подсчёты.</li>
-<li><strong><code>int('4582.0')</code></strong> — <code>ValueError</code>; дробные — <code>float</code> (№23). <strong><code>float('0,5')</code></strong> — запятая из таблицы: <code>replace(',', '.')</code> (№3, №9).</li>
+<li><strong><code>int('4582.0')</code></strong> — <code>ValueError</code>; дробные — <code>float</code>. <strong><code>float('0,5')</code></strong> — запятая из таблицы: <code>replace(',', '.')</code> (№3, №9).</li>
 <li><strong><code>split(' ')</code> на табуляции</strong> — не режет; числа — <code>split()</code> без аргумента; текст с пробелами — <code>split('\t')</code> (№3, №9).</li>
 <li><strong>Без <code>encoding='utf-8'</code></strong> русский текст в Windows — <code>РџСЂРёРІРµС‚</code>, в Linux — <code>UnicodeDecodeError</code> (§0).</li>
 <li><strong><code>FileNotFoundError</code></strong> — файл не в папке программы, скрытое расширение <code>17.txt.txt</code>, в Linux — регистр букв (§0).</li>
@@ -2086,7 +2086,7 @@ UTF-8 превращается в <code>РџСЂРёРІРµС‚</code>; в Lin
 <h2 id="_5">Где встречается<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p><a href="../../tasks/task-3/">№3</a> (лист таблицы через Блокнот, запятая в дробях), <a href="../../tasks/task-9/">№9</a> (таблица чисел
 через табуляцию), <a href="../../tasks/task-17/">№17</a> (число в строке, первая строка), <a href="../../tasks/task-18/">№18</a> (таблица
-клеток), <a href="../../tasks/task-22/">№22</a> (зависимости), <a href="../../tasks/task-23/">№23</a> (рёбра с дробным весом),
+клеток), <a href="../../tasks/task-22/">№22</a> (зависимости),
 <a href="../../tasks/task-24/">№24</a> (одна длинная строка), <a href="../../tasks/task-26/">№26</a> (первая строка N и K, время строкой),
 <a href="../../tasks/task-27/">№27</a> (точки с дробными координатами).</p>
 

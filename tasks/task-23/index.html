@@ -27,7 +27,7 @@
     
     
       
-        <title>№23. Графы: пути - Подготовка к успешной сдаче ЕГЭ по информатике</title>
+        <title>№23. Число программ - Подготовка к успешной сдаче ЕГЭ по информатике</title>
       
     
     
@@ -1154,7 +1154,7 @@
   <span class="md-ellipsis">
     
   
-    №10. IP-адрес и маска
+    №10. Поиск в тексте
   
 
     
@@ -1238,7 +1238,7 @@
   <span class="md-ellipsis">
     
   
-    №13. Число программ
+    №13. IP-адрес и маска
   
 
     
@@ -1471,7 +1471,7 @@
   <span class="md-ellipsis">
     
   
-    №23. Графы: пути
+    №23. Число программ
   
 
     
@@ -1489,7 +1489,7 @@
   <span class="md-ellipsis">
     
   
-    №23. Графы: пути
+    №23. Число программ
   
 
     
@@ -1844,57 +1844,43 @@
 
 
 
-<h1 id="no23">№23. Графы: кратчайший путь и число путей<a class="headerlink" href="#no23" title="Permanent link">&para;</a></h1>
+<h1 id="no23">№23. Число программ исполнителя<a class="headerlink" href="#no23" title="Permanent link">&para;</a></h1>
 <div class="task-meta">
 <p><span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 7.5A2.86 2.86 0 0 1 22 10.36v3.78A2.86 2.86 0 0 1 19.14 17H12c0 .39.32.96.71.96H17v1.68a2.86 2.86 0 0 1-2.86 2.86H9.86A2.86 2.86 0 0 1 7 19.64v-3.75a2.85 2.85 0 0 1 2.86-2.85h5.25a2.85 2.85 0 0 0 2.85-2.86V7.5zm-4.28 11.79c-.4 0-.72.3-.72.89s.32.71.72.71a.71.71 0 0 0 .71-.71c0-.59-.32-.89-.71-.89m-10-1.79A2.86 2.86 0 0 1 2 14.64v-3.78A2.86 2.86 0 0 1 4.86 8H12c0-.39-.32-.96-.71-.96H7V5.36A2.86 2.86 0 0 1 9.86 2.5h4.28A2.86 2.86 0 0 1 17 5.36v3.75a2.85 2.85 0 0 1-2.86 2.85H8.89a2.85 2.85 0 0 0-2.85 2.86v2.68zM9.14 5.71c.4 0 .72-.3.72-.89s-.32-.71-.72-.71c-.39 0-.71.12-.71.71s.32.89.71.89"/></svg></span> Python</span>
-<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"/></svg></span> ~12 мин</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg></span> можно вручную</span>
+<span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L17.62 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0-9 9 9 9 0 0 0 9 9c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M11 14h2V8h-2m4-7H9v2h6z"/></svg></span> ~7 мин</span>
 <span>1 балл</span>
-<span>файл .txt</span></p>
+<span>без файла</span></p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Коротко</p>
-<p>Рёбра из файла — в список <code>(a, b, w)</code>. Таблица <code>d = [10**10] * 1001</code>, у старта <code>d[1] = 0</code>. Столько раз,
-сколько рёбер, проходим по всем рёбрам: <code>d[b] = min(d[b], d[a] + w)</code>. Ответ — <code>int(round(d[100], 6))</code>.
-Самый длинный путь — <code>max</code> и <code>-10**10</code>; через вершину — сумма двух путей; <strong>число путей</strong> — рекурсия с кэшем,
-как в №13.</p>
+<p>Функция <code>f(x, y)</code> — сколько программ переводят x в y: <strong>перелетели → 0, пришли → 1, иначе — сумма
+<code>f</code> по всем командам</strong>. «Содержит число m» — <code>f(x, m) * f(m, y)</code>; «не содержит» — <code>or x == m</code> в первой
+проверке.</p>
 </div>
 <h2 id="_1">Как узнать задачу<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>«В текстовом файле содержится описание <strong>ациклического ориентированного взвешенного графа</strong>». В каждой строке
-  три числа <code>L M W</code>: ребро ведёт из вершины L в вершину M и имеет вес (длину) W.</li>
-<li>Вопрос — в конце: «целая часть длины <strong>кратчайшего пути</strong> из вершины 1 в вершину 100». Бывает самый длинный путь,
-  путь через вершину или в обход неё, число рёбер, <strong>количество различных путей</strong>.</li>
-<li>В условии прямо сказано: «следует написать программу». Строк в файле до 200, номера вершин до 1000 и идут
-  <strong>не подряд</strong>, числа разделены «произвольным количеством пробелов и/или табуляций».</li>
+<li>«Исполнитель преобразует число на экране. У исполнителя есть команды: A. Прибавь 1, B. …».</li>
+<li>«Сколько существует программ, для которых при исходном числе … результатом является число …?»</li>
+<li>Часто добавляют: «траектория вычислений <strong>содержит</strong> число …» и/или «<strong>не содержит</strong> число …».</li>
 </ul>
-<p>Слова условия: <strong>ориентированный</strong> — по ребру идём только из L в M; <strong>ациклический</strong> — по стрелкам нельзя вернуться
-в вершину, где уже были (поэтому путей конечное число); <strong>взвешенный</strong> — у каждого ребра своя длина.</p>
-<p>Задание новое в ЕГЭ-2027. До 2027 года №23 было про число программ исполнителя — теперь это
-<a href="../task-13/">№13</a>. Видео «задание 23» 2025–2026 годов — про старый номер.</p>
+<p>Номер тот же, что в ЕГЭ-2026, — разборы «23-го номера» прошлых лет подходят целиком. В проекте демоверсии 2027
+(осень 2026) задание стояло под №13 — видео «№13, 2027» тех месяцев тоже про него; финальная демоверсия
+(17.11.2026) вернула номер 23.</p>
 <h2 id="_2">Шаблон<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №23, демоверсия ЕГЭ-2027 (файл 23.txt): целая часть длины кратчайшего пути</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># из вершины 1 в вершину 100 ациклического ориентированного взвешенного графа.</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Ответ: 10971</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>                                    <span class="c1"># все рёбра: (откуда, куда, вес)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'23.txt'</span><span class="p">):</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>                       <span class="c1"># split() съест любые пробелы и табуляции</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>  <span class="c1"># номера — int, вес дробный — float</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="o">**</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1001</span>                           <span class="c1"># d[v] — длина лучшего пути из 1 в v; 10**10 — «пока не дошли»</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                                      <span class="c1"># старт: до самой себя — 0</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)):</span>                   <span class="c1"># проходов — сколько рёбер (с запасом)</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span>            <span class="c1"># в b короче через ребро a → b?</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="mi">6</span><span class="p">)))</span>                  <span class="c1"># целая часть; round — от погрешности float</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №23: команды A: прибавь 1, B: прибавь 2, C: умножь на 3.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Сколько существует программ, которые число 2 преобразуют в число 23?</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Ответ: 21361</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>                     <span class="c1"># сколько программ переводят x в y</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>                    <span class="c1"># перелетели: команды только увеличивают число</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>                   <span class="c1"># пришли: нашлась одна программа</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>    <span class="c1"># сумма по всем командам</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>
 </code></pre></div>
-<p><strong>Как это работает.</strong> <code>d[v]</code> — длина лучшего пути из 1 в v, который <strong>уже нашли</strong>. Сначала нашли только путь из 1
-в саму себя (0), до остальных вершин «пока не дошли» — <code>10**10</code>, больше любого настоящего пути (максимум
-200 · 10 000 = 2 000 000). Ребро a → b предлагает путь в b через a: <code>d[a] + w</code>; если он короче записанного —
-запоминаем. Рёбра в файле идут <strong>вперемешку</strong>, поэтому одного прохода мало: на файле демоверсии после 1 прохода
-до 100 ещё не дошли, после 3 — 11782, верное 10971 — только с 5-го. Проходов «сколько рёбер» хватит всегда:
-каждый проход продлевает найденные пути хотя бы на одно ребро, а в пути не больше рёбер, чем всего в файле.
-(Это алгоритм Беллмана — Форда; 200 × 200 = 40 000 шагов — мгновенно.)</p>
 <p><strong>Что менять под задачу:</strong></p>
 <table>
 <thead>
@@ -1905,168 +1891,265 @@
 </thead>
 <tbody>
 <tr>
-<td>«из вершины с номером 1»</td>
-<td><code>d[1] = 0</code> (другая вершина — её номер)</td>
+<td>команды «прибавь 2», «умножь на 3», …</td>
+<td>слагаемые в <code>return</code>: <code>f(x + 2, y)</code>, <code>f(x * 3, y)</code> — по одному на команду</td>
 </tr>
 <tr>
-<td>«в вершину с номером 100»</td>
-<td><code>d[100]</code> в ответе</td>
+<td>команды уменьшают число («вычти», «раздели»)</td>
+<td>первая проверка наоборот: <code>if x &lt; y: return 0</code></td>
 </tr>
 <tr>
-<td>«кратчайшего пути»</td>
-<td><code>min</code> и «пока не дошли» <code>10**10</code></td>
+<td>«раздели нацело», «найди целую часть от деления»</td>
+<td><code>x // 2</code> (не <code>/</code>)</td>
 </tr>
 <tr>
-<td>«самого длинного пути», «пути наибольшей длины»</td>
-<td><code>max</code> и <code>-10**10</code> (вкладка «Самый длинный»)</td>
+<td>исходное число и результат</td>
+<td>вызов <code>f(старт, цель)</code></td>
 </tr>
 <tr>
-<td>«L ≤ 1000, M ≤ 1000»</td>
-<td>список на <code>1001</code> элемент — чтобы был <code>d[1000]</code></td>
+<td>«траектория содержит число m»</td>
+<td><code>f(старт, m) * f(m, цель)</code> — <strong>умножить</strong></td>
 </tr>
 <tr>
-<td>«W — положительное вещественное число»</td>
-<td><code>float(w)</code>; номера — <code>int</code></td>
+<td>«траектория не содержит число m»</td>
+<td><code>if x &gt; y or x == m: return 0</code></td>
 </tr>
 <tr>
-<td>«произвольное количество пробелов и/или табуляций»</td>
-<td><code>s.split()</code> — без аргумента</td>
-</tr>
-<tr>
-<td>«запишите целую часть»</td>
-<td><code>int(round(…, 6))</code> — см. «Типичные ошибки»</td>
+<td>команда применяется не всегда («только к чётным», «если …»)</td>
+<td>слагаемые собирать в <code>k</code> с <code>if</code> — как в примере ниже</td>
 </tr>
 </tbody>
 </table>
 <h2 id="_3">Пример с разбором<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p><strong>Задача</strong> (типовой пример из условия демоверсии ЕГЭ-2027). В файле <code>primer.txt</code> 8 строк — 8 рёбер:</p>
+<p><strong>Задача</strong> (демоверсия ЕГЭ-2027 — и проект, и финальная от 17.11.2026, пересказ). Команды: A. Прибавь 1; B. Поменяй местами — применяется, только
+если цифра десятков <strong>меньше</strong> цифры единиц, и меняет местами две последние цифры (13 → 31). Сколько существует
+программ, которые число 100 преобразуют в 141?</p>
+<p><strong>Решение.</strong> Обе команды не уменьшают число (B применяется, только когда десятки меньше единиц, — число растёт),
+поэтому база шаблона та же. Команда B — с условием, поэтому слагаемые собираем по одному:</p>
 <table>
 <thead>
 <tr>
-<th>Строка файла</th>
-<th>Ребро</th>
+<th>Условие</th>
+<th>Код</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>100 12 1.0</code></td>
-<td>100 → 12, длина 1</td>
+<td>A — всегда</td>
+<td><code>k = f(x + 1, y)</code></td>
 </tr>
 <tr>
-<td><code>6 7 7.0</code></td>
-<td>6 → 7, длина 7</td>
+<td>B — только если десятки &lt; единиц</td>
+<td><code>if s[-2] &lt; s[-1]:</code> — сравнивать можно сами цифры-символы</td>
 </tr>
 <tr>
-<td><code>6 1 1.0</code></td>
-<td>6 → 1, длина 1</td>
-</tr>
-<tr>
-<td><code>1 7 5.5</code></td>
-<td>1 → 7, длина 5,5</td>
-</tr>
-<tr>
-<td><code>7 100 2.0</code></td>
-<td>7 → 100, длина 2</td>
-</tr>
-<tr>
-<td><code>4 100 8.0</code></td>
-<td>4 → 100, длина 8</td>
-</tr>
-<tr>
-<td><code>1 100 12.0</code></td>
-<td>1 → 100, длина 12</td>
-</tr>
-<tr>
-<td><code>1 4 2.5</code></td>
-<td>1 → 4, длина 2,5</td>
+<td>B меняет две последние цифры</td>
+<td><code>s[:-2] + s[-1] + s[-2]</code> — всё до двух последних, потом они наоборот</td>
 </tr>
 </tbody>
 </table>
-<p>Найдите целую часть длины кратчайшего пути из вершины 1 в вершину 100.</p>
-<p><strong>Решение.</strong> Шаблон, только файл другой. Как меняется таблица <code>d</code> по проходам (строки — в порядке файла):</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>d[1]</th>
-<th>d[4]</th>
-<th>d[6]</th>
-<th>d[7]</th>
-<th>d[12]</th>
-<th>d[100]</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>сначала</td>
-<td>0</td>
-<td>10¹⁰</td>
-<td>10¹⁰</td>
-<td>10¹⁰</td>
-<td>10¹⁰</td>
-<td>10¹⁰</td>
-</tr>
-<tr>
-<td>после 1-го прохода</td>
-<td>0</td>
-<td>2,5</td>
-<td>10¹⁰</td>
-<td>5,5</td>
-<td>10¹⁰</td>
-<td>7,5</td>
-</tr>
-<tr>
-<td>после 2-го</td>
-<td>0</td>
-<td>2,5</td>
-<td>10¹⁰</td>
-<td>5,5</td>
-<td>8,5</td>
-<td>7,5</td>
-</tr>
-<tr>
-<td>дальше</td>
-<td>не меняется</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>На 1-м проходе ребро <code>100 12</code> стоит первым, когда до 100 ещё не дошли, — поэтому <code>d[12]</code> появляется только на 2-м.
-В вершину 6 не ведёт ни одно ребро: <code>d[6]</code> так и остаётся <code>10**10</code>, а ребро <code>6 1</code> ничего не меняет.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №23: типовой пример из условия демоверсии ЕГЭ-2027 (файл primer.txt, 8 рёбер) —</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># кратчайший путь из 1 в 100. Печатаем всю таблицу d по вершинам примера и ответ.</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: 1 0 4 2.5 6 10000000000 7 5.5 12 8.5 100 7.5</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Ответ: 7</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'primer.txt'</span><span class="p">):</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="o">**</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1001</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)):</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №23, демоверсия ЕГЭ-2027: A: прибавь 1; B: поменяй местами две последние цифры —</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># только если цифра десятков меньше цифры единиц. Сколько программ переводят 100 в 141?</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: 16</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">k</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>                          <span class="c1"># команда A — всегда</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>                        <span class="c1"># команда B — только при условии</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="n">k</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]),</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="k">return</span> <span class="n">k</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">100</span><span class="p">)])</span>   <span class="c1"># таблица: вершина и d</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="mi">6</span><span class="p">)))</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">141</span><span class="p">))</span>
 </code></pre></div>
-<p><strong>Ответ: 7.</strong> На файле демоверсии (<code>23.txt</code>) тот же шаблон печатает <strong>10971</strong> — это ответ демоверсии.</p>
+<p><strong>Ответ: 16.</strong></p>
 <details class="tip">
-<summary>Проверка вручную</summary>
-<p>Из 1 в 100 ведут три пути: прямо — 12; через 4 — 2,5 + 8 = 10,5; через 7 — 5,5 + 2 = 7,5. Кратчайший — 7,5,
-целая часть — 7. Прямое ребро не обязательно самое короткое: в обход бывает короче. Вручную так решают только
-маленькие графы; в файле 200 рёбер и миллиарды путей (в демоверсии из 1 в 100 — 2 033 652 335 путей) —
-поэтому и нужна программа.</p>
+<summary>Проверка вручную: таблица «с конца»</summary>
+<p>Для каждого числа n пишем, сколькими способами из него можно попасть в цель, — двигаясь <strong>от цели к началу</strong>:
+из самой цели — 1 способ, из числа, откуда цель недостижима, — 0, из остальных — сумма значений по командам.
+Например, для команд +1 и ×2 и цели 16: из 9…16 — по 1 способу (только +1), из 8 — 1 + 1 = 2 (в 9 и в 16),
+из 7 — 2 + 1 = 3 (в 8 и в 14) и так далее до начала. Так решают на бумаге, когда числа маленькие (до 20–30),
+и именно это делает функция <code>f</code>.</p>
+</details>
+<details class="tip">
+<summary>Как работает рекурсия — по шагам (та же задача, цель 150)</summary>
+<p><strong>Игра.</strong> На экране число, у нас две кнопки: A (+1) и B (переставить две последние цифры, только если
+десятки меньше единиц). Вопрос: сколькими способами дойти от 100 до 150? <code>f(x, y)</code> отвечает «сколько
+способов дойти от x до y», и каждая строчка — правило игры:</p>
+<table>
+<thead>
+<tr>
+<th>Строчка</th>
+<th>По-простому</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>if x &gt; y: return 0</code></td>
+<td>перескочили 150 — назад кнопок нет, тупик, <strong>0 способов</strong></td>
+</tr>
+<tr>
+<td><code>if x == y: return 1</code></td>
+<td>пришли ровно в 150 — нашли <strong>1 способ</strong></td>
+</tr>
+<tr>
+<td><code>k = f(x + 1, y)</code></td>
+<td>способы, если нажать A</td>
+</tr>
+<tr>
+<td><code>if …: k += f(…)</code></td>
+<td>плюс способы, если нажать B (когда её можно нажать)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Почему числа только растут.</strong> A прибавляет 1, а B срабатывает, только когда меньшая цифра стоит
+в десятках, — после перестановки в десятках оказывается бо́льшая: 101 → 110, 149 → 194. Число никогда не
+уменьшается, поэтому рекурсия обязательно закончится: попадём в 150 или перескочим его.</p>
+<p><strong>В каком порядке идут вызовы.</strong> Добавьте в начало функции <code>print(x)</code> — увидите длинный список (794 вызова):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №23 по шагам: функция из демоверсии (A: прибавь 1; B: поменяй местами две последние цифры, если десятки</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># меньше единиц), цель 150. Список calls запоминает каждый вызов — видно, в каком порядке рекурсия обходит числа.</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># Ответ: 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 194 184 174 164 154 193 183 173 163 153 143 144 145 146 147 148 149 150</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Ответ: 794</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Ответ: 35</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">calls</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">calls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                          <span class="c1"># то же, что print(x), но печатаем потом и не всё</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    <span class="n">k</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>                          <span class="c1"># команда A — всегда</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>                        <span class="c1"># команда B — только при условии</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="n">k</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]),</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="k">return</span> <span class="n">k</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="n">answer</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">calls</span><span class="p">[:</span><span class="mi">69</span><span class="p">])</span>                           <span class="c1"># первые 69 вызовов</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">calls</span><span class="p">))</span>                            <span class="c1"># всего вызовов</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+</code></pre></div>
+<p>Функция — это <strong>гонец</strong>. На каждом числе он отправляет помощника по кнопке A и ждёт, пока тот вернётся
+с ответом «я нашёл столько-то дорог»; потом, если можно, — второго помощника по кнопке B; складывает два
+ответа и несёт сумму своему начальнику. Помощники ходят <strong>по очереди</strong>: второй не выходит, пока первый
+не обошёл всю свою ветку. Поэтому:</p>
+<ol>
+<li>Сначала программа жмёт только A: 100, 101, …, 150 — это первая найденная программа (50 раз «+1»).</li>
+<li>Гонец со 150 вернул 1, ответ пошёл назад — к 149. У 149 можно нажать B → 194: перелёт, 0. Потом 148 → 184,
+   147 → 174… — отсюда «прыжки» в печати: 150 194 184 174 164 154 193 …</li>
+<li>У 134 кнопка B даёт 143 — это меньше 150, и от 143 снова идёт подъём 143, 144, …, 150 — вторая программа.</li>
+</ol>
+<p>Многие числа печатаются много раз — к ним приходят разными дорогами (поэтому для больших чисел нужен
+<code>@lru_cache</code>, см. «Типичные ошибки»).</p>
+<p><strong>Как всё складывается.</strong> Удобнее считать с конца — сколько способов дойти до 150 из каждого числа (функция
+делает то же самое, только сверху вниз):</p>
+<table>
+<thead>
+<tr>
+<th>Число</th>
+<th>Кнопка B</th>
+<th>Способов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>150</td>
+<td>—</td>
+<td>1 (уже пришли)</td>
+</tr>
+<tr>
+<td>135…149</td>
+<td>153…194 — перелёт (у 140…144 B нельзя)</td>
+<td>1 (только A)</td>
+</tr>
+<tr>
+<td>134</td>
+<td>143 → 1</td>
+<td>1 + 1 (A → 135) = <strong>2</strong></td>
+</tr>
+<tr>
+<td>125…133</td>
+<td>перелёт или нельзя</td>
+<td>2</td>
+</tr>
+<tr>
+<td>124</td>
+<td>142 → 1</td>
+<td>1 + 2 = <strong>3</strong></td>
+</tr>
+<tr>
+<td>123</td>
+<td>132 → 2</td>
+<td>2 + 3 = <strong>5</strong></td>
+</tr>
+<tr>
+<td>115…122</td>
+<td>перелёт или нельзя</td>
+<td>5</td>
+</tr>
+<tr>
+<td>114</td>
+<td>141 → 1</td>
+<td>1 + 5 = <strong>6</strong></td>
+</tr>
+<tr>
+<td>113</td>
+<td>131 → 2</td>
+<td>2 + 6 = <strong>8</strong></td>
+</tr>
+<tr>
+<td>112</td>
+<td>121 → 5</td>
+<td>5 + 8 = <strong>13</strong></td>
+</tr>
+<tr>
+<td>106…111</td>
+<td>перелёт или нельзя</td>
+<td>13</td>
+</tr>
+<tr>
+<td>105</td>
+<td>150 → 1</td>
+<td>1 + 13 = <strong>14</strong></td>
+</tr>
+<tr>
+<td>104</td>
+<td>140 → 1</td>
+<td>1 + 14 = <strong>15</strong></td>
+</tr>
+<tr>
+<td>103</td>
+<td>130 → 2</td>
+<td>2 + 15 = <strong>17</strong></td>
+</tr>
+<tr>
+<td>102</td>
+<td>120 → 5</td>
+<td>5 + 17 = <strong>22</strong></td>
+</tr>
+<tr>
+<td>101</td>
+<td>110 → 13</td>
+<td>13 + 22 = <strong>35</strong></td>
+</tr>
+<tr>
+<td>100</td>
+<td>нельзя (0 не меньше 0)</td>
+<td><strong>35</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Итог:</strong> «+» в <code>k += …</code> — это и есть суммирование. Каждый удачный конец пути (<code>x == y</code>) приносит единичку,
+каждый перелёт (<code>x &gt; y</code>) — ноль, и все единички по цепочке возвратов доходят до первого вызова
+<code>f(100, 150)</code> — их 35. Порядок кнопок (сначала A или сначала B) меняет только порядок печати, ответ тот же.</p>
 </details>
 <h2 id="_4">Разновидности<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>Демоверсия — пока единственная официальная задача; разновидности ниже — из проекта ФИПИ («оптимальный путь, число
-путей»), банков КомпЕГЭ и Решу ЕГЭ и разборов. Все ответы примеров проверены вторым способом — точным счётом по
-порядку вершин на дробях (<code>Fraction</code>).</p>
 <table>
 <thead>
 <tr>
@@ -2076,383 +2159,330 @@
 </thead>
 <tbody>
 <tr>
-<td>«из вершины 4 в вершину 298» — другие номера</td>
-<td><code>d[4] = 0</code>, ответ <code>d[298]</code>; удобнее функцией <code>put(start)</code> (вкладка «Через вершину»)</td>
+<td>только «прибавь …», «умножь на …»</td>
+<td>шаблон</td>
 </tr>
 <tr>
-<td>«самого длинного пути», «пути наибольшей длины»</td>
-<td><code>max</code> и <code>-10**10</code> (вкладка)</td>
+<td>команда с условием: «поменяй местами», «только для чётных», «если есть цифра 1»</td>
+<td><code>k = f(…)</code> для команды без условия, затем <code>if условие: k += f(…)</code> (пример выше)</td>
 </tr>
 <tr>
-<td>«проходящего через вершину 91»</td>
-<td><code>put(1)[91] + put(91)[100]</code> — до 91 плюс от 91 (вкладка)</td>
+<td>«поменяй местами две последние цифры» (демо-2027)</td>
+<td>срез <code>s[:-2] + s[-1] + s[-2]</code> — верно для чисел любой длины</td>
 </tr>
 <tr>
-<td>«проходящего сначала через 25, а затем через 50»</td>
-<td><code>put(A)[25] + put(25)[50] + put(50)[B]</code></td>
+<td>«замени каждую цифру 1 на 3» (ЕГЭ-2026)</td>
+<td><code>int(s.replace('1', '3'))</code> — <code>replace</code> меняет <strong>все</strong> вхождения (вкладка)</td>
 </tr>
 <tr>
-<td>«через обе вершины 91 и 474» (порядок не сказан)</td>
-<td>оба порядка и <code>min</code>: в ациклическом графе возможен только один, второй даст 10¹⁰ и больше</td>
+<td>«допиши справа сумму цифр, если она меньше 10»</td>
+<td><code>int(s + str(сумма))</code></td>
 </tr>
 <tr>
-<td>«не проходящего через вершину 312»</td>
-<td>выбросить её рёбра: <code>edges = [(a, b, w) for a, b, w in edges if a != 312 and b != 312]</code> (вкладка)</td>
+<td>«умножь на 1,5 — только чётные»</td>
+<td><code>f(x * 3 // 2, y)</code> — целое число вместо дробного</td>
 </tr>
 <tr>
-<td>«через 400 и не через 96»</td>
-<td>сначала выбросить 96, потом <code>put(4)[400] + put(400)[298]</code></td>
+<td>две и больше команд с условием</td>
+<td>каждая — свой <code>if … : k += …</code> (вкладка)</td>
 </tr>
 <tr>
-<td>«проходящего по ребру из 46 в 825»</td>
-<td><code>put(1)[46] + ves[(46, 825)] + put(825)[100]</code>, <code>ves</code> — веса по парам (вкладка «Ребро»)</td>
+<td>команды уменьшают число</td>
+<td><code>if x &lt; y: return 0</code> (вкладка)</td>
 </tr>
 <tr>
-<td>«не проходящего по ребру из 56 в 100»</td>
-<td>выбросить одно ребро: <code>if (a, b) != (56, 100)</code> (вкладка «Ребро»)</td>
+<td>«вычти», «раздели нацело», «отбрось последнюю цифру»</td>
+<td><code>x - 3</code>, <code>x // 3</code>, <code>x // 10</code></td>
 </tr>
 <tr>
-<td>«первое ребро пути — из A в C, последнее — из D в B»</td>
-<td><code>ves[(A, C)] + put(C)[D] + ves[(D, B)]</code></td>
+<td>«найди целую часть квадратного корня»</td>
+<td><code>f(isqrt(x), y)</code>, в начале программы <code>from math import isqrt</code></td>
 </tr>
 <tr>
-<td>«только рёбра с весом не менее 10»</td>
-<td>при чтении брать ребро, только если <code>w &gt;= 10</code></td>
+<td>траектория содержит m</td>
+<td><code>f(старт, m) * f(m, цель)</code></td>
 </tr>
 <tr>
-<td>«наименьшее (наибольшее) количество рёбер в пути»</td>
-<td>вес каждого ребра — 1: <code>edges.append((int(a), int(b), 1))</code> (вкладка)</td>
+<td>содержит m1 и m2</td>
+<td><code>f(старт, m1) * f(m1, m2) * f(m2, цель)</code> — числа <strong>в порядке движения</strong> (для убывающих — сверху вниз)</td>
 </tr>
 <tr>
-<td>«количество различных путей из 1 в 100»</td>
-<td>рекурсия с кэшем, как в №13 (вкладка «Число путей»)</td>
+<td>не содержит m (или m1 и m2)</td>
+<td><code>if x &gt; y or x == m:</code> (<code>or x == m1 or x == m2</code>)</td>
 </tr>
 <tr>
-<td>число путей через вершину / по ребру / не через вершину</td>
-<td><code>f(1, X) * f(X, 100)</code> / <code>f(1, a) * f(b, 100)</code> / <code>if x == X: return 0</code></td>
+<td>содержит одно и не содержит другое</td>
+<td>оба приёма вместе (вкладка)</td>
 </tr>
 <tr>
-<td>число путей «не более 10 рёбер», «ровно 25 рёбер»</td>
-<td>третий аргумент — сколько рёбер ещё можно (вкладка «Не больше K рёбер»)</td>
+<td>«ровно одно из чисел m1, m2» (не оба)</td>
+<td>два случая с запретом второго числа и сумма (вкладка)</td>
 </tr>
 <tr>
-<td>длины от вершины до всех; сколько вершин достижимо</td>
-<td>после шаблона: <code>[x for x in d if x &lt; 10**10]</code> — длины до всех достижимых, <code>len(…)</code> — сколько их</td>
+<td>«хотя бы одно из m1, m2»</td>
+<td>через m1 + через m2 − через оба: <code>a + b - f(s, m1) * f(m1, m2) * f(m2, e)</code></td>
+</tr>
+<tr>
+<td>«не проходит через m1 и m2 одновременно»</td>
+<td>все программы минус через оба</td>
+</tr>
+<tr>
+<td>«программы ровно из N команд» / «не более N»</td>
+<td>третий параметр — число команд (вкладка)</td>
+</tr>
+<tr>
+<td>«содержит не менее двух чисел из набора»</td>
+<td>третий параметр-счётчик: <code>+1</code>, когда <code>x</code> из набора; в конце <code>return k &gt;= 2</code></td>
+</tr>
+<tr>
+<td>условие на <strong>сами команды</strong>: «нет двух команд A подряд», «никакая команда не повторяется больше двух раз подряд», «ровно одна команда умножения»</td>
+<td>третий параметр — строка команд <code>p</code>, проверка <code>'33' in p</code> (вкладка)</td>
+</tr>
+<tr>
+<td>«вычти 1» вместе с увеличивающими и «нет двух A подряд»</td>
+<td>первая проверка <code>x &gt; y + 1</code>: из y + 1 ещё можно вернуться одной A (см. «Типичные ошибки»)</td>
+</tr>
+<tr>
+<td>«на экране ни разу не появляется цифра 2»</td>
+<td>запрещённое число: <code>if x &gt; y or '2' in str(x):</code></td>
+</tr>
+<tr>
+<td>одна команда, но «если чётное — раздели на 2, <strong>иначе</strong> вычти 5»</td>
+<td><code>if x % 2 == 0: k += f(x // 2, y)</code> и <code>else: k += f(x - 5, y)</code></td>
+</tr>
+<tr>
+<td>«подели на 2, нецелое округляется вверх»</td>
+<td><code>f((x + 1) // 2, y)</code></td>
+</tr>
+<tr>
+<td>«сделай нечётное» (x → 2x + 1), «прибавь предыдущее» (x + (x − 1)), «возведи в квадрат»</td>
+<td><code>f(2 * x + 1, y)</code>, <code>f(x + (x - 1), y)</code>, <code>f(x * x, y)</code></td>
+</tr>
+<tr>
+<td>«увеличь старшую цифру на 1» (23 → 33; у 9… число не меняется)</td>
+<td><code>if s[0] != '9': k += f(x + 10 ** (len(s) - 1), y)</code></td>
+</tr>
+<tr>
+<td>«поменяй местами» для <strong>убывающих</strong> команд (только если единицы &lt; десятков)</td>
+<td><code>if x &lt; y</code>, условие <code>s[-1] &lt; s[-2]</code>, тот же срез</td>
+</tr>
+<tr>
+<td>большие числа (сотни, тысячи)</td>
+<td><code>@lru_cache(None)</code> и прогрев от цели (вкладка, см. «Типичные ошибки»)</td>
 </tr>
 </tbody>
 </table>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Самый длинный</label><label for="__tabbed_1_2">Через вершину</label><label for="__tabbed_1_3">Ребро</label><label for="__tabbed_1_4">Число рёбер</label><label for="__tabbed_1_5">Число путей</label><label for="__tabbed_1_6">Не больше K рёбер</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:8"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><input id="__tabbed_1_7" name="__tabbed_1" type="radio" /><input id="__tabbed_1_8" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Обязательное и запрещённое</label><label for="__tabbed_1_2">Команды уменьшают</label><label for="__tabbed_1_3">Замена цифр (как в 2026)</label><label for="__tabbed_1_4">Две команды с условием</label><label for="__tabbed_1_5">Ровно одно из двух</label><label for="__tabbed_1_6">Ровно N команд</label><label for="__tabbed_1_7">Условие на команды</label><label for="__tabbed_1_8">Большие числа</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># №23 (файл демоверсии 23.txt): целая часть длины САМОГО ДЛИННОГО пути из вершины 1 в вершину 100.</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Ответ: 242730</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'23.txt'</span><span class="p">):</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="o">**</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1001</span>                          <span class="c1"># «пока не дошли» — теперь очень МАЛЕНЬКОЕ число</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)):</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span>            <span class="c1"># min → max</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="mi">6</span><span class="p">)))</span>
-</code></pre></div>
-<p>Меняются <strong>две</strong> вещи: <code>min</code> → <code>max</code> и «пока не дошли» → очень маленькое число. Если забыть второе, <code>max</code>
-выберет «бесконечность»: напечатается 10000241413.</p>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># №23 (файл демоверсии 23.txt): целая часть длины кратчайшего пути из 1 в 100,</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># 1) проходящего через вершину 91; 2) не проходящего через вершину 312.</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Ответ: 11609</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Ответ: 13714</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'23.txt'</span><span class="p">):</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># №23: команды +1, +3, *2. Сколько программ переводят 3 в 30,</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># если траектория содержит число 12 и не содержит число 20?</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Ответ: 7776</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>         <span class="c1"># перелетели или попали в запрещённое число</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>                               <span class="c1"># тот же шаблон, но старт — любой: d[v] — путь из start в v</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="o">**</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1001</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="n">d</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)):</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>            <span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    <span class="k">return</span> <span class="n">d</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">91</span><span class="p">]</span> <span class="o">+</span> <span class="n">put</span><span class="p">(</span><span class="mi">91</span><span class="p">)[</span><span class="mi">100</span><span class="p">],</span> <span class="mi">6</span><span class="p">)))</span>         <span class="c1"># через 91: от 1 до 91 плюс от 91 до 100</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">if</span> <span class="n">a</span> <span class="o">!=</span> <span class="mi">312</span> <span class="ow">and</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">312</span><span class="p">]</span>   <span class="c1"># без вершины 312 — без её рёбер</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">100</span><span class="p">],</span> <span class="mi">6</span><span class="p">)))</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>      <span class="c1"># через 12: до 12, потом от 12 — и перемножить</span>
 </code></pre></div>
-<p>Длины складываются: путь до 91 плюс путь от 91. (В №13 и в «числе путей» — <strong>произведение</strong>: там считают
-варианты, а не длину.)</p>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># №23 (файл демоверсии 23.txt): целая часть длины кратчайшего пути из 1 в 100,</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># 1) проходящего по ребру 46 → 825; 2) не проходящего по ребру 56 → 100.</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Ответ: 12902</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Ответ: 15962</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'23.txt'</span><span class="p">):</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># №23: команды A: вычти 1, B: вычти 3, C: найди целую часть от деления на 2.</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Сколько программ переводят 40 в 5, если траектория содержит число 18?</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Ответ: 363396</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>                    <span class="c1"># команды уменьшают число: «перелетели» — стали меньше цели</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="k">def</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="n">start</span><span class="p">):</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="o">**</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1001</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">d</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)):</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>            <span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span class="k">return</span> <span class="n">d</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="n">ves</span> <span class="o">=</span> <span class="p">{(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> <span class="n">w</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">}</span>        <span class="c1"># вес ребра по паре вершин: ves[(46, 825)]</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">46</span><span class="p">]</span> <span class="o">+</span> <span class="n">ves</span><span class="p">[(</span><span class="mi">46</span><span class="p">,</span> <span class="mi">825</span><span class="p">)]</span> <span class="o">+</span> <span class="n">put</span><span class="p">(</span><span class="mi">825</span><span class="p">)[</span><span class="mi">100</span><span class="p">],</span> <span class="mi">6</span><span class="p">)))</span>   <span class="c1"># до начала ребра + ребро + от его конца</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">!=</span> <span class="p">(</span><span class="mi">56</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span>     <span class="c1"># без одного ребра</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)[</span><span class="mi">100</span><span class="p">],</span> <span class="mi">6</span><span class="p">)))</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># №23 (файл демоверсии 23.txt): наименьшее и наибольшее количество рёбер в пути из вершины 1 в вершину 56.</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Ответ: 4</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Ответ: 40</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'23.txt'</span><span class="p">):</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>         <span class="c1"># считаем рёбра: вес каждого ребра — 1</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">put</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">big</span><span class="p">,</span> <span class="n">best</span><span class="p">):</span>                    <span class="c1"># best — min или max, big — «пока не дошли»</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="n">big</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1001</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">d</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)):</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>            <span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">best</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="k">return</span> <span class="n">d</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">10</span><span class="p">,</span> <span class="nb">min</span><span class="p">)[</span><span class="mi">56</span><span class="p">])</span>                <span class="c1"># наименьшее число рёбер</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="o">**</span><span class="mi">10</span><span class="p">,</span> <span class="nb">max</span><span class="p">)[</span><span class="mi">56</span><span class="p">])</span>               <span class="c1"># наибольшее</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># №23 (как ЕГЭ-2026): A: прибавь 1; B: замени каждую цифру 2 на 5 —</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># только если в числе есть цифра 2. Сколько программ переводят 12 в 80?</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Ответ: 160</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">k</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="k">if</span> <span class="s1">'2'</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>                             <span class="c1"># команда с условием</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="n">k</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'2'</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">)),</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># replace меняет КАЖДУЮ двойку</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="k">return</span> <span class="n">k</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">80</span><span class="p">))</span>
 </code></pre></div>
-<p>Наименьшее число рёбер — «кратчайший путь», если каждое ребро длины 1; наибольшее — «самый длинный».</p>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># №23 (файл демоверсии 23.txt): 1) сколько различных путей ведёт из вершины 1 в вершину 100;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># 2) сколько из них проходят через вершину 91; 3) сколько не проходят через вершину 312.</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Ответ: 2033652335</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Ответ: 782470800</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># Ответ: 605506251</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'23.txt'</span><span class="p">):</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="nd">@lru_cache</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>                              <span class="c1"># без кэша не дождаться: путей — миллиарды</span>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>                                  <span class="c1"># сколько путей из x в y — как в №13</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="k">return</span> <span class="mi">1</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">x</span><span class="p">)</span>    <span class="c1"># тупик: сумма пустого — 0</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
-<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
-<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">91</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="mi">91</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>                  <span class="c1"># через 91 — произведение, как в №13</span>
-<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
-<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
-<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="nd">@lru_cache</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>                                  <span class="c1"># то же, но в вершину 312 заходить нельзя</span>
-<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">312</span><span class="p">:</span>
-<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>        <span class="k">return</span> <span class="mi">0</span>
-<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>        <span class="k">return</span> <span class="mi">1</span>
-<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">x</span><span class="p">)</span>
-<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
-<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>
-<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># №23: A: вычти 2; B: раздели нацело на 3 — только чётные числа;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># C: отбрось последнюю цифру — только числа хотя бы из двух цифр.</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1"># Сколько программ переводят 500 в 7?</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Ответ: 8667</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">k</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>              <span class="c1"># команда без условия — всегда</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>               <span class="c1"># каждую команду с условием добавляем отдельным if</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        <span class="n">k</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">//</span> <span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        <span class="n">k</span> <span class="o">+=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">//</span> <span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>       <span class="c1"># «отбросить последнюю цифру» = // 10</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    <span class="k">return</span> <span class="n">k</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 </code></pre></div>
-<p>Та же функция <code>f(x, y)</code>, что в <a href="../task-13/">№13</a>: пришли в <code>y</code> — один путь, иначе сумма по рёбрам из <code>x</code>.
-Тупик (рёбер из <code>x</code> нет) — сумма пустого списка, 0. <strong>Кэш обязателен</strong>: путей больше двух миллиардов, без
-<code>lru_cache</code> программа не закончится.</p>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># №23 (файл демоверсии 23.txt): сколько различных путей из вершины 1 в вершину 100</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># 1) содержат не более 12 рёбер; 2) содержат ровно 12 рёбер.</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Ответ: 1458956</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Ответ: 977986</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'23.txt'</span><span class="p">):</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># №23: команды +1, +2, *2. Сколько программ переводят 2 в 30, если траектория</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># содержит ровно одно из чисел 10 и 14 (одно из них, но не оба)?</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Ответ: 406736</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bad</span><span class="p">):</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">==</span> <span class="n">bad</span><span class="p">:</span>        <span class="c1"># запрещённое число передаём параметром</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bad</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bad</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bad</span><span class="p">)</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="nd">@lru_cache</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>                               <span class="c1"># сколько путей из x в y, в которых не больше k рёбер</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        <span class="k">return</span> <span class="mi">1</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>                                <span class="c1"># рёбра кончились, а до y не дошли</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>        <span class="k">return</span> <span class="mi">0</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">x</span><span class="p">)</span>
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>
-<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
-<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>          <span class="c1"># ровно 12 = «не больше 12» минус «не больше 11»</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="n">s10</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>     <span class="c1"># через 10, но не через 14</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="n">s14</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>     <span class="c1"># через 14, но не через 10</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">s10</span> <span class="o">+</span> <span class="n">s14</span><span class="p">)</span>                       <span class="c1"># два случая не пересекаются — складываем</span>
 </code></pre></div>
 </div>
-</div>
-</div>
-<details class="info">
-<summary>Необычные разновидности (КомпЕГЭ, Лёня Шастин, Алексей Кабанов)</summary>
-<p>Пока это задачи авторов банков, на ЕГЭ таких не было. Код ниже проверен на задачах КомпЕГЭ (ответы совпали).</p>
-<table>
-<thead>
-<tr>
-<th>Условие</th>
-<th>Как записать</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>кратчайший путь, «содержащий не более 20 рёбер»</td>
-<td>20 проходов, каждый — по <strong>копии</strong>: <code>new = d.copy()</code>, в цикле <code>new[b] = min(new[b], d[a] + w)</code>, после цикла <code>d = new</code> (без копии путь за проход удлиняется больше чем на ребро)</td>
-</tr>
-<tr>
-<td>«из путей с наименьшим числом рёбер — с наименьшей суммой»</td>
-<td>в <code>d</code> пары <code>(рёбер, сумма)</code>: <code>d = [(10**10, 0)] * 1001</code>, <code>d[A] = (0, 0)</code>, <code>d[b] = min(d[b], (d[a][0] + 1, d[a][1] + w))</code> — пары сравниваются по первому числу, при равенстве по второму</td>
-</tr>
-<tr>
-<td>«кратчайший; если таких несколько — с меньшим числом рёбер; ответ — число рёбер»</td>
-<td>то же, пары <code>(сумма, рёбер)</code></td>
-</tr>
-<tr>
-<td>«наибольший вес ребра в пути — как можно меньше»</td>
-<td><code>d[b] = min(d[b], max(d[a], w))</code></td>
-</tr>
-<tr>
-<td>«самый длинный путь из 2027 до любого тупика»</td>
-<td>шаблон «Самый длинный», ответ — <code>max(d)</code></td>
-</tr>
-<tr>
-<td>«самый длинный путь, не превышающий 2000»</td>
-<td>только перебор всех путей (сумма — аргументом функции, без кэша); Кабанов: «на экзамене вряд ли»</td>
-</tr>
-<tr>
-<td>огромный файл: 100 000 рёбер, номера до 10 000</td>
-<td>список на <code>10001</code>; <code>range(len(edges))</code> проходов — 10¹⁰ шагов, не дождаться: выходить из цикла, когда проход <strong>ничего не изменил</strong> (флаг). На файле КомпЕГЭ в 85 000 рёбер кратчайший путь — 20 проходов, 0,3 с, а самый длинный — 4805 проходов, 2 минуты; рекурсия с кэшем — мгновенно</td>
-</tr>
-</tbody>
-</table>
-</details>
-<details class="info">
-<summary>Подробнее: второй способ — рекурсия с кэшем, как в №13</summary>
-<p>Так решают многие разборщики (Кабанов, Иглин, Марат, Умскул): <code>f(x, y)</code> — длина кратчайшего пути из <code>x</code>
-в <code>y</code>; в <code>y</code> — 0, иначе минимум «ребро + путь от его конца».</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># №23, демоверсия ЕГЭ-2027 (файл 23.txt) — второй способ: рекурсия с кэшем, как в №13.</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># Целая часть длины кратчайшего пути из 1 в 100.</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Ответ: 10971</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'23.txt'</span><span class="p">):</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># №23: команды +1, +3, *2. Сколько существует программ ровно из 6 команд,</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># которые число 1 преобразуют в число 20?</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># Ответ: 40</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>                  <span class="c1"># n — сколько команд уже выполнено</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">:</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">6</span> <span class="k">else</span> <span class="mi">0</span>     <span class="c1"># пришли — считаем, только если ровно 6 команд</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
 <a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nd">@lru_cache</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>                              <span class="c1"># обязательно: без кэша — миллиарды путей</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>                                  <span class="c1"># длина кратчайшего пути из x в y</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        <span class="k">return</span> <span class="mi">0</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="k">return</span> <span class="nb">min</span><span class="p">([</span><span class="n">w</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span> <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">x</span><span class="p">],</span> <span class="n">default</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">10</span><span class="p">)</span>   <span class="c1"># тупик — 10**10, НЕ 0</span>
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">6</span><span class="p">)))</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 </code></pre></div>
-<p>Две ловушки этого способа (проверены): <strong>тупик — <code>10**10</code>, а не 0</strong>. Из тупика до <code>y</code> не дойти; если вернуть 0,
-такой «путь» окажется самым коротким. В решении к демоверсии на Решу ЕГЭ тупик возвращает 0 — на файле демо
-ответ случайно верный, а на других файлах выходит 287 вместо 315, 107 вместо 443 (6 задач КомпЕГЭ из 9).
-<strong>Без кэша не дождаться</strong>: за 10 секунд — 27 миллионов вызовов, и конца не видно. Для числа путей рекурсия —
-основной способ (вкладка «Число путей»).</p>
-<p>Ещё называют алгоритм Дейкстры (Шастин, Семёнов, Флэш). Для 200 рёбер он не нужен, а ошибиться в нём проще.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># №23: команды 1: прибавь 1, 2: прибавь 2, 3: умножь на 2. Сколько программ переводят 2 в 20,</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># если в программе нет двух команд «умножь на 2» подряд?</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Ответ: 7828</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>                  <span class="c1"># p — строка команд, выполненных до сих пор</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="ow">or</span> <span class="s1">'33'</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>       <span class="c1"># перелетели или две команды 3 подряд</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="s1">'1'</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="s1">'2'</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="s1">'3'</span><span class="p">)</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">''</span><span class="p">))</span>
+</code></pre></div>
+<p>Строка <code>p</code> помнит, какие команды уже выполнены, — проверяем её так же, как запрещённое число. «Никакая команда
+не больше двух раз подряд» — <code>'111' in p or '222' in p</code>; «ровно одна команда умножения» — пишем в <code>p</code> знак
+<code>'*'</code> для умножений и в цели <code>return 1 if p.count('*') == 1 else 0</code>.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># №23: команды +1 и *2. Сколько программ переводят 1 в 1000?</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1"># Ответ: 1981471878</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nd">@lru_cache</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>                 <span class="c1"># без кэша программа считала бы часами</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>     <span class="c1"># прогрев ОТ ЦЕЛИ: f(1000), f(999), ... — иначе RecursionError</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<details class="info">
+<summary>Подробнее: что ещё бывает в сборниках (за рамками ЕГЭ)</summary>
+<p>В тренировочных сборниках встречаются «сколько <strong>разных чисел</strong> можно получить из 1 программами из N команд»
+(результаты складывают в множество <code>set</code>) и «длина <strong>самой короткой</strong> программы» (вместо суммы — <code>min</code>, при
+перелёте — очень большое число вместо 0). На ЕГЭ таких не было, но вторая — та же идея, что поиск кратчайшего пути.
+Первая есть в открытом банке ФИПИ и у СтатГрада: «Кузнечик» (+3 и −2, ровно 68 команд), «удвой» и «удвой и
+прибавь 1» (ровно 9 команд), «сколько разных <strong>отрицательных</strong> результатов» (−3 и ×(−3), 13 команд) — множество
+<code>a</code>, N раз <code>a = {x + 3 for x in a} | {x - 2 for x in a}</code>, ответ <code>len(a)</code> (отрицательные — <code>len([x for x in a if x &lt; 0])</code>).
+В банке Решу ЕГЭ есть родственная: «наименьшее число, которое <strong>нельзя</strong> получить из 1 не более чем пятью
+командами» — множество всех получаемых чисел (<code>a = a | {x + 1 for x in a} | …</code> пять раз) и первое пропущенное.</p>
 </details>
 <h2 id="_5">Типичные ошибки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Скрытые ловушки — проверены запуском</p>
 <ul>
-<li><strong><code>int</code> от дробной суммы теряет единицу.</strong> Дробные веса в компьютере хранятся неточно: 30.6 + 83.1 + 5.3
-  даёт <code>118.99999999999999</code>, и <code>int</code> пишет 118 вместо 119 (свой файл <code>drobi.txt</code>, вывод — ниже). На задаче
-  КомпЕГЭ 31554 (самый длинный путь, веса с одним знаком после точки) выходит <code>3362.9999999999995</code> — 3362 вместо</li>
-<li>Поэтому в шаблоне <code>int(round(d[100], 6))</code>: сначала округлить до 6 знаков (погрешность исчезнет), потом
-  взять целую часть. Python 3.11 и 3.12 — одинаково.</li>
-<li><strong>Мало проходов — ошибки нет, ответ больше верного.</strong> На демоверсии: 1 проход — <code>10000000000</code> (до 100 не
-  дошли), 3 прохода — 11782, верно 10971 — с 5-го. Проходов — <code>len(edges)</code>, не «на глаз».</li>
-<li><strong>Тупик = 0 в рекурсии</strong> (как в решении Решу ЕГЭ к демоверсии): на демо ответ случайно верный, на других
-  файлах — меньше верного (315 → 287, 443 → 107).</li>
-<li><strong><code>round(d[100])</code> без 6 — это округление, а не целая часть:</strong> 7,5 → 8 (в примере ответ 7).</li>
+<li><strong>Большие числа → <code>RecursionError</code> или «висит».</strong> Каждая команда «+1» — один уровень вложенности. Python
+  разрешает около 1000 уровней, а с <code>@lru_cache</code> — <strong>вдвое меньше: около 500</strong> (проверено на 3.11 и 3.12;
+  <code>sys.setrecursionlimit</code> вместе с кэшем на 3.12 не помогает — как в №16). Без кэша, наоборот, программа
+  с ответом в десятки миллионов считает минуты (100 → 300 с «поменяй местами» — 35 с). Правило: числа до
+  нескольких сотен — шаблон как есть; дольше пары секунд — добавьте <code>@lru_cache(None)</code>; <code>RecursionError</code> —
+  <strong>прогрев от цели</strong>: <code>for i in range(y, x - 1, -1): f(i, y)</code> (вкладка «Большие числа»).</li>
+<li><strong>«Поменяй местами» только для трёхзначных.</strong> Запись <code>s[0] + s[-1] + s[-2]</code> ошибок не выдаёт, но на
+  двузначных числах склеивает лишнюю цифру: на 80 → 141 получается 16 вместо 32. С <strong>убывающими</strong> командами
+  хуже: 75 превращается в 757, число снова растёт, и программа падает с <code>RecursionError</code> (две задачи Решу ЕГЭ,
+  57 → 13 и 43 → 13). Срез <code>s[:-2] + s[-1] + s[-2]</code> верен всегда.</li>
+<li><strong>«Вычти 1» среди увеличивающих команд.</strong> Проверка <code>x &gt; y</code> отсекает слишком рано: из y + 1 одна команда A
+  ещё приводит в цель. В задачах «нет двух A подряд» (−1, ×2, ×3; 3 → 20) получается 3 вместо 4, а в другой —
+  26 вместо 53. Нужна <code>x &gt; y + 1</code> — дальше вернуться нельзя: после A обязательно идёт команда, которая
+  увеличивает сильнее.</li>
+<li><strong>«Содержит 14 или 18».</strong> Это «хотя бы одно»: через 14 + через 18 − через оба. Без вычитания — 93 вместо 69.</li>
+<li><strong>«Подели на 2, нецелое — вверх».</strong> <code>x // 2</code> округляет вниз: 16 вместо 10. Вверх — <code>(x + 1) // 2</code>.</li>
+<li><strong>Команда, которая может не менять число</strong> («прибавь предыдущее» у 1: 1 + 0 = 1, «увеличь старшую цифру»
+  у 9…) — программ становится бесконечно много, и функция падает с <code>RecursionError</code>. В задачах ЕГЭ до таких
+  чисел не доходят, но старт с 1 у «прибавь предыдущее» уже ломает программу.</li>
+<li><strong>Однозначное число.</strong> У <code>str(5)</code> нет цифры <code>s[-2]</code> — <code>IndexError</code>. Если исходное число меньше 10, цифры
+  берите арифметикой: десятки <code>x // 10 % 10</code>, единицы <code>x % 10</code>.</li>
+<li><strong>Порядок обязательных чисел.</strong> Для убывающих команд путь 40 → 18 → 5, а не 40 → 5 → 18: перепутанный порядок
+  даёт <strong>0</strong> программ. Получили 0 — проверьте порядок.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># №23 (свой файл drobi.txt, веса с одним знаком после точки): целая часть длины кратчайшего пути из 1 в 100.</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># Печатаем d[100] как есть, int без round и int с round.</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Ответ: 118.99999999999999 118 119</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'drobi.txt'</span><span class="p">):</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">w</span><span class="p">)))</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="o">**</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1001</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)):</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">:</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>        <span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">b</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">+</span> <span class="n">w</span><span class="p">)</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">100</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="mi">6</span><span class="p">)))</span>   <span class="c1"># путь 1 → 2 → 3 → 100: 30.6 + 83.1 + 5.3 = 119 ровно</span>
-</code></pre></div>
 <ul>
-<li><strong><code>float</code>, а не <code>int</code> у веса.</strong> <code>int('4582.0')</code> — <code>ValueError</code>: в файле демоверсии все веса записаны с <code>.0</code>.</li>
-<li><strong><code>split(' ')</code> вместо <code>split()</code>.</strong> Между числами по нескольку пробелов и табуляций: <code>split(' ')</code> даёт пустые
-  строки — <code>ValueError: too many values to unpack</code>.</li>
-<li><strong>Пустая строка в файле</strong> (часто последняя) — <code>ValueError: not enough values to unpack (expected 3, got 0)</code>. Если
-  такая есть — пропускать: <code>if s.split():</code> перед разбором строки.</li>
-<li><strong>Список короче номеров вершин.</strong> Номера до 1000 — список на 1001 элемент; <code>[10**10] * 100</code> — <code>IndexError</code> на
-  первой же строке (вершина 655). В «огромных» файлах номера до 10 000.</li>
-<li><strong>Самый длинный путь с <code>10**10</code>.</strong> При <code>max</code> «пока не дошли» — <code>-10**10</code>, иначе ответ 10000241413.</li>
-<li><strong>Через вершину — сложение длин, а не произведение.</strong> Произведение — для числа путей (как в №13).</li>
-<li><strong>Перепутали «сначала 25, затем 50» и «через обе».</strong> В первом случае порядок задан; во втором — проверить оба.</li>
+<li><strong>Сложили отрезки вместо умножения.</strong> «Через 12» — это <code>f(3, 12) * f(12, 30)</code>: в примере 7776, а сумма дала бы 275.</li>
+<li><strong>Убывающие команды с проверкой <code>x &gt; y</code>.</strong> Функция сразу вернёт 0 (40 &gt; 5). Для «вычти»/«раздели» — <code>x &lt; y</code>.</li>
+<li><strong>Обычное деление.</strong> «Раздели нацело», «целая часть» — <code>//</code>; с <code>/</code> числа становятся дробными и в цель не попадают.</li>
+<li><strong>Запрещённое число проверяют в конце.</strong> Пишите его в самой первой проверке, вместе с «перелетели».</li>
+<li><strong>Команда с условием, а <code>return</code> с двумя слагаемыми без <code>if</code>.</strong> Тогда команда выполняется всегда — ответ завышен.</li>
+<li><strong>Сравнили многозначные числа как строки.</strong> <code>'9' &lt; '10'</code> — <code>False</code>. Строками сравнивают только отдельные цифры.</li>
 </ul>
 <details class="info">
 <summary>Откуда разновидности</summary>
-<p>Демоверсия ФИПИ 2027 (единственная официальная задача). Видео:
-<a href="https://www.youtube.com/watch?v=hzXrpdXZECo">Умскул, Виктория Ланская, «Новое задание №23»</a> (ссылка
-преподавателя; Беллман — Форд),
-<a href="https://www.youtube.com/watch?v=mLtfMdsx6Jk">Вова Информатик, «Решишь любое №23»</a> и
-<a href="https://www.youtube.com/watch?v=zw2zvbb8mLY">разбор демо-2027</a>,
-<a href="https://www.youtube.com/watch?v=RNev-MXeH0c">Профиматика</a>,
-<a href="https://www.youtube.com/watch?v=Um4Dtyzod1s">Миша Семёнов</a>,
-<a href="https://www.youtube.com/watch?v=XJDR5302HB4">ЕГЭ с АР, Ватиков</a>,
-<a href="https://www.youtube.com/watch?v=BDX7N-GWX_s">Иванформатика</a>,
-<a href="https://www.youtube.com/watch?v=IWaPDPHZuNM">Алексей Ковальчук</a>,
-<a href="https://www.youtube.com/watch?v=2GKfHOha0iQ">Техномишки</a> — Беллман — Форд;
-<a href="https://www.youtube.com/watch?v=wITqiDbP_VM">Алексей Кабанов, «Задание 23»</a> (10 разновидностей),
-<a href="https://www.youtube.com/watch?v=fcfqzbdYKgE">Иглин &amp; Михайлов</a>,
-<a href="https://www.youtube.com/watch?v=wrN2CYLBnVs">граф Марат, разбор демо</a>,
-<a href="https://www.youtube.com/watch?v=r5TxtrIRkYY">Умскул, «Разбор нового №23»</a>,
-<a href="https://www.youtube.com/watch?v=8dpagwuzxnA">Иван Викторович</a>,
-<a href="https://www.youtube.com/watch?v=GYcRvyFLF1U">EmEGE</a>,
-<a href="https://www.youtube.com/watch?v=yjLClt6uN7c">ЕГЭ от Технаря</a> — рекурсия;
-<a href="https://www.youtube.com/watch?v=MccYDiXEt1o">Лёня Шастин</a> — Дейкстра;
-<a href="https://www.youtube.com/watch?v=4hBCvN1ZdXE">Артём Флэш, разбор демо</a>.
-Сборника С. С. Крылова 2027 года пока нет; в сборниках 2025–2026 №23 — старый (число программ, теперь №13).
-<a href="https://kompege.ru/task">КомпЕГЭ, задание 23</a> — 68 задач (А. Левченко, Л. Шастин, А. Богданов и др.): все
-решены способом справочника, ответы совпали со всеми 68 (Python 3.11 и 3.12).
-Каталог Решу ЕГЭ, тип 23: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=430">«Анализ графов»</a> —
-1 задача (демоверсия), ответ совпал.</p>
+<p>Демоверсия ФИПИ 2027 (проект и финальная — одна и та же задача «Поменяй местами»);
+видеоразборы <a href="https://www.youtube.com/watch?v=tUyqgowQAGU">Вова Информатик, «Все типы №13 (2027)»</a>
+и <a href="https://www.youtube.com/watch?v=tmTACZRPGzk">«Любое задание №23»</a>,
+<a href="https://www.youtube.com/watch?v=vTUqRSYy64Y">Алексей Кабанов, «Задание 13, КЕГЭ-2027»</a>,
+<a href="https://www.youtube.com/watch?v=7NQ2hpIXvvQ">Информатик Родя, «23-е за 60 минут (теперь №13)»</a>,
+<a href="https://www.youtube.com/watch?v=26M9zfTmQq8">Иванформатика</a>, <a href="https://www.youtube.com/watch?v=hmRT-Ryr7-8">Иван Викторович</a>,
+<a href="https://www.youtube.com/watch?v=Hz7d5DZFtTY">Алексей Ковальчук</a>; материалы Умскула (В. Ланская).
+Все ответы из видео перепроверены своим кодом и вторым способом на Python 3.11 и 3.12.
+Каталог Решу ЕГЭ, тип 13: <a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=277">«…с обязательным этапом»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=217">«…с избегаемым этапом»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=183">«…с обязательным и избегаемым»</a>,
+<a href="https://inf-ege.sdamgia.ru/test?filter=all&amp;category_id=260">«…по заданному числу»</a> — 96 задач (ЕГЭ 2013–2026,
+демоверсии, СтатГрад, пробники СПб). Все решены нашим шаблоном на Python 3.11 и 3.12, ответы совпали со всеми 96.
+<a href="https://kompege.ru/task">КомпЕГЭ, задание 13</a> — 62 задачи с пометкой экзамена (демо 2021–2027, волны ЕГЭ 2021–2026,
+ЕГКР, апробации, СтатГрад, ФИПИ, новогодние варианты): все совпали с ключом. Сборник С. С. Крылова и Т. Е. Чуркиной
+ЕГЭ-2026 — все 20 вариантов решены шаблоном и сверены вторым способом. Задачи — в боте.</p>
 </details>
 <h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>Задачи №23 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №23</strong>.</p>

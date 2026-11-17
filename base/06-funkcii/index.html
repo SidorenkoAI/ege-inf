@@ -1289,7 +1289,7 @@
   <span class="md-ellipsis">
     
   
-    №10. IP-адрес и маска
+    №10. Поиск в тексте
   
 
     
@@ -1373,7 +1373,7 @@
   <span class="md-ellipsis">
     
   
-    №13. Число программ
+    №13. IP-адрес и маска
   
 
     
@@ -1597,7 +1597,7 @@
   <span class="md-ellipsis">
     
   
-    №23. Графы: пути
+    №23. Число программ
   
 
     
@@ -1894,7 +1894,7 @@
 <p><code>def f(x):</code> … <code>return ответ</code> — своя функция; <code>return</code> сразу заканчивает её и отдаёт значение (<code>print</code> только печатает).
 Рекурсия — функция вызывает сама себя: <strong>сначала</strong> условия остановки (<code>if x &gt; y: return 0</code>), потом формула. Глубина —
 до ≈ 1000 вызовов, с <code>@lru_cache(None)</code> — до ≈ 500, дальше <code>RecursionError</code>. Кэш нужен, когда функция вызывает себя
-два раза и больше (№13, №16, №19–21, №23); большие n — <strong>прогрев</strong> циклом от базы вверх.</p>
+два раза и больше (№16, №19–21, №23); большие n — <strong>прогрев</strong> циклом от базы вверх.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Как пробовать примеры</p>
@@ -1960,7 +1960,7 @@
 <code>sorted(…, key=…)</code>, <code>min(…, key=…)</code> (§5).</p>
 <h2 id="_1">Рекурсия<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Рекурсия — функция, которая вызывает сама себя для меньшей (или более близкой к концу) задачи. Так записаны условия
-№16 («F(n) = F(n − 1) + n»), и так считают число программ в №13 и выигрыши в №19–21.</p>
+№16 («F(n) = F(n − 1) + n»), и так считают число программ в №23 и выигрыши в №19–21.</p>
 <p>Любая рекурсивная функция состоит из двух частей:</p>
 <ol>
 <li><strong>условия остановки</strong> («база») — когда ответ известен сразу: <code>n == 1</code>, <code>x == y</code>, «куча ≥ 45»;</li>
@@ -1976,7 +1976,7 @@
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="go">(1, 3, 6, 5050)</span>
 </code></pre></div>
 <p><code>F(3)</code> вызывает <code>F(2)</code>, та — <code>F(1)</code>; <code>F(1)</code> отвечает сразу, и ответы возвращаются назад: 1 → 3 → 6.</p>
-<p><strong>Число программ (№13).</strong> «Сколько программ из команд „прибавь 1“ и „умножь на 2“ переводят 1 в 10»: из числа x можно
+<p><strong>Число программ (№23).</strong> «Сколько программ из команд „прибавь 1“ и „умножь на 2“ переводят 1 в 10»: из числа x можно
 пойти любой командой — программ столько, сколько их у всех продолжений вместе:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="gp">... </span>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
@@ -2042,11 +2042,11 @@
 <a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span><span class="p">(</span><span class="mi">25</span><span class="p">),</span> <span class="n">k</span>
 <a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="go">(75025, 25)</span>
 </code></pre></div>
-<p>25 вызовов вместо 150 049. <code>None</code> — «запоминать без ограничения». Кэш ставят в №13 (если ответ — миллионы программ),
-№16, №19–21 (без кэша игра «без ограничения числа ходов» — 2¹⁰⁰ вызовов), №23 (число путей).</p>
+<p>25 вызовов вместо 150 049. <code>None</code> — «запоминать без ограничения». Кэш ставят в №23 (если ответ — миллионы программ),
+№16, №19–21 (без кэша игра «без ограничения числа ходов» — 2¹⁰⁰ вызовов).</p>
 <ul>
 <li>Две функции, которые вызывают друг друга (№16, F и G), — кэш <strong>у обеих</strong>.</li>
-<li>Кэш помогает, только если аргументы повторяются: сумма пути в параметре функции (№23) делает почти все вызовы
+<li>Кэш помогает, только если аргументы повторяются: сумма пути в параметре функции (пути в графе) делает почти все вызовы
   разными — кэш бесполезен.</li>
 <li>Параметры функции с кэшем — числа, строки, кортежи; список — <code>TypeError: unhashable type</code> (§5).</li>
 </ul>
@@ -2071,7 +2071,7 @@
 <a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="go">2053351</span>
 </code></pre></div>
 <p><strong>Прогрев</strong> — вызвать функцию по порядку от базы вверх: каждое <code>F(i)</code> берёт из кэша готовое <code>F(i − 1)</code> и
-не уходит вглубь. Так написаны шаблоны №16 и №13 (там прогрев — от цели к началу).
+не уходит вглубь. Так написаны шаблоны №16 и №23 (там прогрев — от цели к началу).
 (<code>x = F(i)</code> — чтобы окно IDLE Shell не печатало 2026 чисел; в программе пишут просто <code>F(i)</code>.)</p>
 <p><strong>Почему не <code>sys.setrecursionlimit</code>.</strong> Совет «поднять предел» из разборов работает не везде: в Windows с <code>lru_cache</code> на
 Python 3.12 — снова <code>RecursionError</code> с глубины около 700, а Python 3.11 <strong>молча закрывается</strong> (ни ответа, ни сообщения
@@ -2111,7 +2111,7 @@ Python 3.12 — снова <code>RecursionError</code> с глубины око�
   первый.</li>
 </ul>
 <details class="info">
-<summary>Подробнее: теория игр (№19–21), «лучший путь» (№23), условие на последовательность команд</summary>
+<summary>Подробнее: теория игр (№19–21), «лучший путь», условие на последовательность команд</summary>
 <p><strong>Игра (№19–21)</strong> — функция <code>f(s, m)</code>: «из позиции s тот, кто должен выиграть, выигрывает, если в игре осталось m
 ходов». Ходит победитель (m нечётное) — хватит <strong>одного</strong> выигрышного хода (<code>any</code>), соперник — победа должна быть
 при <strong>всех</strong> его ходах (<code>all</code>):</p>
@@ -2140,10 +2140,10 @@ Python 3.12 — снова <code>RecursionError</code> с глубины око�
 <li>Ход зависит от прошлых ходов («нельзя повторять ход соперника») — прошлый ход в параметры функции.</li>
 <li>Подробно — карточка <a href="../../tasks/task-19-21/">№19–21</a>.</li>
 </ul>
-<p><strong>«Лучший путь» рекурсией (№23).</strong> Тупик (дальше идти некуда, а до цели не дошли) возвращает <code>10**10</code> для
+<p><strong>«Лучший путь» рекурсией (графы).</strong> Тупик (дальше идти некуда, а до цели не дошли) возвращает <code>10**10</code> для
 наименьшего пути и <code>-10**10</code> — для наибольшего, <strong>не 0</strong>: иначе тупик окажется «самым коротким путём» (решение сайта
 Решу ЕГЭ к демоверсии на демоверсии случайно верно, а на 6 из 9 задач КомпЕГЭ — нет).</p>
-<p><strong>Условие на последовательность команд (№13)</strong> — «программа не содержит двух команд B подряд»: третий параметр —
+<p><strong>Условие на последовательность команд (№23)</strong> — «программа не содержит двух команд B подряд»: третий параметр —
 строка уже сделанных команд, проверка <code>'BB' in p</code> вместо подсчёта:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="gp">... </span>    <span class="k">if</span> <span class="s1">'BB'</span> <span class="ow">in</span> <span class="n">p</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
@@ -2163,24 +2163,24 @@ Python 3.12 — снова <code>RecursionError</code> с глубины око�
 <p class="admonition-title">Скрытые ловушки — проверены запуском</p>
 <ul>
 <li><strong>Условие остановки после вызова</strong> (или забыто) — <code>RecursionError</code>; базу — первыми строками.</li>
-<li><strong>Команда не меняет число</strong> (<code>x * 2</code> при x = 0, «прибавь предыдущее» у 1) — бесконечная рекурсия (№13).</li>
+<li><strong>Команда не меняет число</strong> (<code>x * 2</code> при x = 0, «прибавь предыдущее» у 1) — бесконечная рекурсия (№23).</li>
 <li><strong><code>print</code> вместо <code>return</code></strong> — функция возвращает <code>None</code>, дальше <code>TypeError</code> или неверное сравнение.</li>
-<li><strong>Нет кэша</strong> у ветвящейся рекурсии — время ≈ размер ответа, не дождаться (№13, №16, №23); две функции друг через
+<li><strong>Нет кэша</strong> у ветвящейся рекурсии — время ≈ размер ответа, не дождаться (№16, №23); две функции друг через
   друга — кэш у обеих (№16).</li>
 <li><strong>С <code>lru_cache</code> глубина ≈ 500</strong>, а не 1000: F(2026) без прогрева — <code>RecursionError</code>; реальная задача КомпЕГЭ 2530
   проходит со старта 500 и падает со старта 504. Большие n — прогрев циклом от базы.</li>
 <li><strong><code>setrecursionlimit</code> в Windows</strong>: 3.12 — снова <code>RecursionError</code> (≈ 700), 3.11 — молча закрывается (≈ 1500) (№16).</li>
 <li><strong>Кэш огромных чисел</strong> — гигабайты памяти (№16, «факториалы» 2026: до 13–20 ГБ) — сокращать вручную.</li>
 <li><strong>Разложение без <code>if n &gt; 1</code></strong> — теряется последний большой множитель (№25, демо-2027).</li>
-<li><strong>Тупик = 0</strong> в рекурсии «наименьший путь» — тупик становится «лучшим» (№23); <code>10**10</code>.</li>
+<li><strong>Тупик = 0</strong> в рекурсии «наименьший путь» — тупик становится «лучшим»; <code>10**10</code>.</li>
 <li><strong>Игра</strong>: конец игры — до <code>m == 0</code>; в №20/21 — <code>not f(s, 1)</code> / <code>not f(s, 2)</code> (№19–21).</li>
 <li><strong>Своя <code>to_base</code> без нуля</strong> — <code>to_base(0, 3)</code> возвращает пустую строку, цифра пропадает (№5) — §7.</li>
 </ul>
 </div>
 <h2 id="_4">Где встречается<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><a href="../../tasks/task-5/">№5</a> и <a href="../../tasks/task-14/">№14</a> (своя функция перевода, §7), <a href="../../tasks/task-13/">№13</a> (число
-программ, кэш, прогрев от цели), <a href="../../tasks/task-16/">№16</a> (рекурсивные функции, кэш, прогрев, огромные числа),
-<a href="../../tasks/task-19-21/">№19–21</a> (игра <code>f(s, m)</code>), <a href="../../tasks/task-23/">№23</a> (число путей, «лучший путь»),
+<p><a href="../../tasks/task-5/">№5</a> и <a href="../../tasks/task-14/">№14</a> (своя функция перевода, §7),
+<a href="../../tasks/task-16/">№16</a> (рекурсивные функции, кэш, прогрев, огромные числа),
+<a href="../../tasks/task-19-21/">№19–21</a> (игра <code>f(s, m)</code>), <a href="../../tasks/task-23/">№23</a> (число программ, кэш, прогрев от цели),
 <a href="../../tasks/task-25/">№25</a> (разложение на множители).</p>
 
 

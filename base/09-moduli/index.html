@@ -793,10 +793,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ipaddress-no10" class="md-nav__link">
+  <a href="#ipaddress-no13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ipaddress: сети и маски (№10)
+        ipaddress: сети и маски (№13)
       
     </span>
   </a>
@@ -1289,7 +1289,7 @@
   <span class="md-ellipsis">
     
   
-    №10. IP-адрес и маска
+    №10. Поиск в тексте
   
 
     
@@ -1373,7 +1373,7 @@
   <span class="md-ellipsis">
     
   
-    №13. Число программ
+    №13. IP-адрес и маска
   
 
     
@@ -1597,7 +1597,7 @@
   <span class="md-ellipsis">
     
   
-    №23. Графы: пути
+    №23. Число программ
   
 
     
@@ -1828,10 +1828,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ipaddress-no10" class="md-nav__link">
+  <a href="#ipaddress-no13" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ipaddress: сети и маски (№10)
+        ipaddress: сети и маски (№13)
       
     </span>
   </a>
@@ -1893,7 +1893,7 @@
 <p class="admonition-title">Коротко</p>
 <p>Модули стандартной библиотеки есть в любом Python, ставить ничего не нужно: <code>from itertools import product</code> — все слова
 из букв (№8), <code>permutations</code> — перестановки, <code>combinations</code> — наборы по возрастанию; <code>math.isqrt</code> — целый корень (№25);
-<code>fnmatch(str(x), '3?12*5')</code> — маска (№25); <code>ipaddress.ip_network('узел/маска', 0)</code> — сеть (№10); <code>turtle</code> — Черепаха
+<code>fnmatch(str(x), '3?12*5')</code> — маска (№25); <code>ipaddress.ip_network('узел/маска', 0)</code> — сеть (№13); <code>turtle</code> — Черепаха
 (№6), координаты — только через <code>round</code>; <code>functools.lru_cache</code> — кэш (§6), <code>re</code> — регулярные выражения (§4).</p>
 </div>
 <div class="admonition tip">
@@ -1913,7 +1913,7 @@
 <ul>
 <li><code>import math</code> — потом пишут <code>math.isqrt(…)</code>, <code>math.ceil(…)</code>;</li>
 <li><code>from math import isqrt, ceil</code> — только нужные имена, без <code>math.</code>;</li>
-<li><code>from ipaddress import *</code> — все имена модуля (так в шаблоне №10 — меньше писать).</li>
+<li><code>from ipaddress import *</code> — все имена модуля (так в шаблоне №13 — меньше писать).</li>
 </ul>
 <p><strong>Не называйте свой файл как модуль</strong>: программа <code>turtle.py</code> или <code>math.py</code> в папке с решением подменит настоящий модуль, и
 <code>from turtle import *</code> загрузит её саму — посыпятся ошибки «нет такого имени».</p>
@@ -2060,7 +2060,7 @@
 <li>Перебирать <strong>только кратные</strong> делителю из условия — <code>range(K, N + 1, K)</code> (шаблон №25): так 10¹⁰ чисел превращаются в
   5 млн. Кратных больше ~10⁷ — уже долго; тогда числа строят по маске сами (карточка <a href="../../tasks/task-25/">№25</a>).</li>
 </ul>
-<h2 id="ipaddress-no10">ipaddress: сети и маски (№10)<a class="headerlink" href="#ipaddress-no10" title="Permanent link">&para;</a></h2>
+<h2 id="ipaddress-no13">ipaddress: сети и маски (№13)<a class="headerlink" href="#ipaddress-no13" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">ipaddress</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">net</span> <span class="o">=</span> <span class="n">ip_network</span><span class="p">(</span><span class="s1">'192.168.159.86/255.255.252.0'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">net</span>
@@ -2186,11 +2186,11 @@
 <li><strong><code>permutations</code> без <code>sorted</code></strong> — слова не по алфавиту (Решу ЕГЭ 58475: КИВТРО вместо КИВОТР) (№8).</li>
 <li><strong>Перестановки букв с повторами</strong> без <code>set</code> — дубли (№8: 288 вместо 156).</li>
 <li><strong><code>product</code> на миллиардах слов</strong> — не дождаться; 3 млн слов в секунду (№8).</li>
-<li><strong><code>ip_network</code> без <code>0</code></strong> — <code>ValueError: has host bits set</code> (№10).</li>
-<li><strong>Маска <code>range(32)</code></strong> теряет /32 — <code>range(33)</code> (№10).</li>
-<li><strong>Байт маски <code>range(256)</code></strong> — <code>ValueError</code> на A = 1; только 9 значений (№10, Крылов 2026).</li>
-<li><strong><code>net[1:-1]</code></strong> — <code>TypeError</code>; компьютеры — <code>net.hosts()</code> (№10).</li>
-<li><strong>Адреса строками</strong> — <code>'9.1.1.1' &lt; '10.1.1.1'</code> = <code>False</code> (№10).</li>
+<li><strong><code>ip_network</code> без <code>0</code></strong> — <code>ValueError: has host bits set</code> (№13).</li>
+<li><strong>Маска <code>range(32)</code></strong> теряет /32 — <code>range(33)</code> (№13).</li>
+<li><strong>Байт маски <code>range(256)</code></strong> — <code>ValueError</code> на A = 1; только 9 значений (№13, Крылов 2026).</li>
+<li><strong><code>net[1:-1]</code></strong> — <code>TypeError</code>; компьютеры — <code>net.hosts()</code> (№13).</li>
+<li><strong>Адреса строками</strong> — <code>'9.1.1.1' &lt; '10.1.1.1'</code> = <code>False</code> (№13).</li>
 <li><strong><code>int(ycor() / k)</code></strong> — 8 вместо 9; координаты Черепахи — только <code>round</code> (№6).</li>
 <li><strong>Масштаб у угла</strong>, нет <code>penup()</code> перед сеткой, нет <code>left(90)</code> в начале — рисунок не тот (№6).</li>
 <li><strong>«По одну сторону от всех сторон»</strong> — только для выпуклой фигуры (№6: 27 вместо 99).</li>
@@ -2201,8 +2201,8 @@
 </div>
 <h2 id="_3">Где встречается<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><a href="../../tasks/task-6/">№6</a> (<code>turtle</code>), <a href="../../tasks/task-7/">№7</a> и <a href="../../tasks/task-11/">№11</a> (<code>ceil</code>, <code>log2</code>),
-<a href="../../tasks/task-8/">№8</a> (<code>product</code>, <code>permutations</code>, <code>combinations</code>), <a href="../../tasks/task-10/">№10</a> (<code>ipaddress</code>),
-<a href="../../tasks/task-13/">№13</a>, <a href="../../tasks/task-16/">№16</a>, <a href="../../tasks/task-19-21/">№19–21</a> (<code>lru_cache</code>, §6),
+<a href="../../tasks/task-8/">№8</a> (<code>product</code>, <code>permutations</code>, <code>combinations</code>), <a href="../../tasks/task-13/">№13</a> (<code>ipaddress</code>),
+<a href="../../tasks/task-16/">№16</a>, <a href="../../tasks/task-19-21/">№19–21</a>, <a href="../../tasks/task-23/">№23</a> (<code>lru_cache</code>, §6),
 <a href="../../tasks/task-24/">№24</a> (<code>re</code>, §4), <a href="../../tasks/task-25/">№25</a> (<code>fnmatch</code>, <code>isqrt</code>), <a href="../../tasks/task-27/">№27</a>
 (<code>math.dist</code>).</p>
 

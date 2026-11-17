@@ -1322,7 +1322,7 @@
   <span class="md-ellipsis">
     
   
-    №10. IP-адрес и маска
+    №10. Поиск в тексте
   
 
     
@@ -1406,7 +1406,7 @@
   <span class="md-ellipsis">
     
   
-    №13. Число программ
+    №13. IP-адрес и маска
   
 
     
@@ -1630,7 +1630,7 @@
   <span class="md-ellipsis">
     
   
-    №23. Графы: пути
+    №23. Число программ
   
 
     
@@ -2166,7 +2166,7 @@
 <a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="go">119</span>
 </code></pre></div>
 <p><strong>Правило:</strong> дробный результат сначала округлить до 6 знаков, потом сравнивать или брать целую часть:
-<code>int(round(x, 6))</code>. Так в №23 (сумма дробных длин дорог: 3362 вместо 3363 без <code>round</code>) и в №6 (координаты Черепахи).
+<code>int(round(x, 6))</code>. Так в №6 (координаты Черепахи) и при сложении дробных длин дорог (3362 вместо 3363 без <code>round</code>).
 Проценты лучше считать в целых: <code>V * 30 // 100</code>, а не <code>V * 0.3</code> или <code>V * (1 - 0.7)</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mf">0.7</span><span class="p">)</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">3.0000000000000004</span>
@@ -2337,7 +2337,7 @@
 <li><strong><code>int</code> ≠ <code>//</code> у отрицательных.</strong> <code>int(-7 / 2)</code> = −3, <code>-7 // 2</code> = −4.</li>
 <li><strong>Целая часть суммы дробей — от всей суммы:</strong> <code>int(15/2 + 15/2)</code> = 15, а <code>15//2 + 15//2</code> = 14 (№16).</li>
 <li><strong><code>%</code> у отрицательных.</strong> <code>-17 % 10</code> = 3: последнюю цифру брать от <code>abs(x)</code> (№17).</li>
-<li><strong><code>int</code> от дробного результата.</strong> <code>int(118.99999999999999)</code> = 118 — сначала <code>round(x, 6)</code> (№6, №23).</li>
+<li><strong><code>int</code> от дробного результата.</strong> <code>int(118.99999999999999)</code> = 118 — сначала <code>round(x, 6)</code> (№6).</li>
 <li><strong>Проценты через дроби.</strong> <code>ceil(10 * (1 - 0.7))</code> = 4 вместо 3 — считать в целых: <code>V * 30 // 100</code> (№7).</li>
 <li><strong><code>round(10.5)</code> = 10</strong> — половина округляется к чётному (№7).</li>
 <li><strong><code>int(log2(N))</code> вместо <code>ceil</code></strong> — 10 бит на 1568 цветов вместо 11 (№7, №11).</li>
@@ -2350,10 +2350,10 @@
 </div>
 <h2 id="_10">Где встречается<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p><a href="../../tasks/task-5/">№5</a> (чётность, <code>%</code>), <a href="../../tasks/task-6/">№6</a> (дробные координаты), <a href="../../tasks/task-7/">№7</a> и
-<a href="../../tasks/task-11/">№11</a> (округления, <code>log2</code>), <a href="../../tasks/task-9/">№9</a> (полный куб), <a href="../../tasks/task-13/">№13</a>
+<a href="../../tasks/task-11/">№11</a> (округления, <code>log2</code>), <a href="../../tasks/task-9/">№9</a> (полный куб), <a href="../../tasks/task-23/">№23</a>
 (цифры числа, деление пополам вверх), <a href="../../tasks/task-14/">№14</a> (большие числа, цифры в системе счисления),
 <a href="../../tasks/task-16/">№16</a> (<code>/</code> и <code>//</code>, <code>Fraction</code>), <a href="../../tasks/task-17/">№17</a> (<code>%</code> у отрицательных),
-<a href="../../tasks/task-23/">№23</a> (<code>round</code> у суммы дробных), <a href="../../tasks/task-25/">№25</a> (делители, НОК, <code>//</code> в ответе).</p>
+<a href="../../tasks/task-25/">№25</a> (делители, НОК, <code>//</code> в ответе).</p>
 
 
 

@@ -1289,7 +1289,7 @@
   <span class="md-ellipsis">
     
   
-    №10. IP-адрес и маска
+    №10. Поиск в тексте
   
 
     
@@ -1373,7 +1373,7 @@
   <span class="md-ellipsis">
     
   
-    №13. Число программ
+    №13. IP-адрес и маска
   
 
     
@@ -1597,7 +1597,7 @@
   <span class="md-ellipsis">
     
   
-    №23. Графы: пути
+    №23. Число программ
   
 
     
@@ -2050,7 +2050,7 @@
 <li><code>key=…</code> — по какому признаку сортировать: <code>sorted(slova, key=len)</code> — по длине; при равенстве порядок сохраняется.</li>
 </ul>
 <p><strong>Кортежи</strong> (значения в круглых скобках: <code>(3, 'б')</code>) сравниваются по первому элементу, при равенстве — по второму. Так
-сортируют рейтинги в №26 и выбирают «меньше рёбер, при равенстве — меньшая сумма» в №23. Другой порядок — через <code>key</code>:
+сортируют рейтинги в №26. Другой порядок — через <code>key</code>:
 минус перед числом — «это поле по убыванию»:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">pary</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'б'</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'в'</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'а'</span><span class="p">)]</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">pary</span><span class="p">)</span>
@@ -2237,7 +2237,7 @@
 <a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
 <a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="go">[[1, 0, 0], [0, 0, 0]]</span>
 </code></pre></div>
-<p><strong>Список «по номеру»</strong> (вершины графа в №23) — длиной на наибольший номер + 1: <code>[10 ** 10] * 1001</code> при номерах до 1000;
+<p><strong>Список «по номеру»</strong> (например, вершины графа) — длиной на наибольший номер + 1: <code>[10 ** 10] * 1001</code> при номерах до 1000;
 короче — <code>IndexError</code>.</p>
 <p><strong>Список, который растёт во время обхода.</strong> <code>for x in a:</code> обходит и элементы, добавленные в <code>a</code> по ходу цикла — так
 собирают кластер в №27 (соседи соседей). А удалять из списка, по которому идёт цикл, нельзя — элементы будут
@@ -2285,7 +2285,7 @@
 (<code>min</code> по парам), <a href="../../tasks/task-8/">№8</a> (перестановки без повторов), <a href="../../tasks/task-9/">№9</a> (повторы в строке,
 <code>count</code>, <code>set</code>), <a href="../../tasks/task-12/">№12</a> (лента — список, программа — словарь словарей),
 <a href="../../tasks/task-17/">№17</a> (список подходящих, <code>len</code> и <code>max</code>), <a href="../../tasks/task-18/">№18</a> (таблица),
-<a href="../../tasks/task-22/">№22</a> (<code>max(…, default=0)</code>), <a href="../../tasks/task-23/">№23</a> (список по номеру вершины, кортежи),
+<a href="../../tasks/task-22/">№22</a> (<code>max(…, default=0)</code>),
 <a href="../../tasks/task-25/">№25</a> (делители в <code>set</code>), <a href="../../tasks/task-26/">№26</a> (сортировка кортежей, повторы),
 <a href="../../tasks/task-27/">№27</a> (точки-кортежи, кластер).</p>
 

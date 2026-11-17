@@ -1344,7 +1344,7 @@
   <span class="md-ellipsis">
     
   
-    №10. IP-адрес и маска
+    №10. Поиск в тексте
   
 
     
@@ -1428,7 +1428,7 @@
   <span class="md-ellipsis">
     
   
-    №13. Число программ
+    №13. IP-адрес и маска
   
 
     
@@ -1652,7 +1652,7 @@
   <span class="md-ellipsis">
     
   
-    №23. Графы: пути
+    №23. Число программ
   
 
     
@@ -2109,7 +2109,7 @@
 </code></pre></div>
 <p>Срез никогда не выдаёт ошибку: если строка короче, он просто берёт, что есть (<code>'12'[:5]</code> → <code>'12'</code>, <code>'12'[5:]</code> → <code>''</code>).
 А обращение к одному символу за концом строки — ошибка. Поэтому «всё, кроме двух последних цифр» надёжнее срезом
-<code>s[:-2]</code>, чем перечислением <code>s[0] + s[1]…</code>, рассчитанным на трёхзначные числа (№13).</p>
+<code>s[:-2]</code>, чем перечислением <code>s[0] + s[1]…</code>, рассчитанным на трёхзначные числа (№23).</p>
 <p><strong>Палиндром</strong> (читается одинаково в обе стороны): <code>s == s[::-1]</code> (№25).</p>
 <h2 id="_3">Склеить, повторить, сравнить<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="s1">'ЕГЭ'</span> <span class="o">+</span> <span class="s1">'-'</span> <span class="o">+</span> <span class="s1">'2027'</span>
@@ -2252,7 +2252,7 @@
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="go">'2101'</span>
 </code></pre></div>
 <ul>
-<li>Третье число — сколько замен сделать: <code>replace('1', '2', 1)</code> — только первое вхождение (№12, №13).</li>
+<li>Третье число — сколько замен сделать: <code>replace('1', '2', 1)</code> — только первое вхождение (№12, №23).</li>
 <li>Результат надо <strong>присвоить</strong>: <code>s = s.replace(…)</code>. Просто <code>s.replace(…)</code> отдельной строкой ничего не делает.</li>
 <li>Замены за один проход не перекрываются: <code>'000'.replace('00', '0 0')</code> даёт <code>'0 00'</code> — пара нулей осталась. Повторять, пока
   есть что заменять: <code>while '00' in s: s = s.replace('00', '0 0')</code> (№24).</li>
@@ -2321,7 +2321,7 @@
 </code></pre></div>
 <ul>
 <li><code>split()</code> <strong>без аргумента</strong> режет по любым пробелам и табуляциям и не даёт пустых кусков — так и читать строки файла
-  (№23, №26). <code>split(' ')</code> на нескольких пробелах подряд даёт пустые строки, и <code>a, b, c = …</code> падает.</li>
+  (№26). <code>split(' ')</code> на нескольких пробелах подряд даёт пустые строки, и <code>a, b, c = …</code> падает.</li>
 <li><code>join</code> склеивает только строки: числа сначала <code>str</code> — <code>''.join(str(d) for d in цифры)</code>.</li>
 <li><code>strip</code> убирает символы <strong>только по краям</strong>: <code>strip()</code> — пробелы и <code>\n</code>, <code>strip('_')</code> — подчёркивания (№12).</li>
 </ul>
@@ -2410,16 +2410,16 @@
 <p class="admonition-title">Скрытые ловушки — проверены запуском</p>
 <ul>
 <li><strong><code>s.replace(…)</code> без <code>s =</code></strong> — строка не изменилась (№5).</li>
-<li><strong><code>replace</code> меняет все вхождения</strong>: «заменить два левых разряда» — <code>'10' + s[2:]</code>; только первое — <code>replace(a, b, 1)</code> (№5, №13).</li>
+<li><strong><code>replace</code> меняет все вхождения</strong>: «заменить два левых разряда» — <code>'10' + s[2:]</code>; только первое — <code>replace(a, b, 1)</code> (№5, №23).</li>
 <li><strong><code>count</code> без наложений</strong>: <code>'TTTT'.count('TT')</code> = 2, а пар три (№8, №24).</li>
 <li><strong>Одна замена <code>replace('00', '0 0')</code> не рвёт «000»</strong> — <code>while '00' in s</code> (№24).</li>
 <li><strong><code>len(str(x))</code> считает минус</strong>: <code>len(str(-512))</code> = 4 — <code>len(str(abs(x)))</code> (№17).</li>
-<li><strong><code>'9' &lt; '10'</code> — <code>False</code></strong>: числа сравнивать числами (№13).</li>
+<li><strong><code>'9' &lt; '10'</code> — <code>False</code></strong>: числа сравнивать числами (№23).</li>
 <li><strong>Строка + число</strong> — <code>TypeError</code>: <code>'1' + str(5)</code>; в строке ищут строку: <code>s.count('1')</code>, не <code>s.count(1)</code> (№5).</li>
 <li><strong><code>s[i] = …</code></strong> — <code>TypeError</code>: собрать новую строку срезами или работать со списком <code>list(s)</code> (№12).</li>
 <li><strong><code>s[s.find(x)]</code></strong>, когда <code>x</code> нет, молча берёт последний символ (<code>find</code> вернул −1).</li>
-<li><strong><code>split(' ')</code></strong> на нескольких пробелах даёт пустые куски — <code>split()</code> без аргумента (№23).</li>
-<li><strong><code>int('4582.0')</code></strong> — <code>ValueError</code>: дробное из строки — <code>float</code>, потом <code>int</code> (№23).</li>
+<li><strong><code>split(' ')</code></strong> на нескольких пробелах даёт пустые куски — <code>split()</code> без аргумента.</li>
+<li><strong><code>int('4582.0')</code></strong> — <code>ValueError</code>: дробное из строки — <code>float</code>, потом <code>int</code>.</li>
 <li><strong>Латиница вместо русских букв</strong> (О/O, А/A, Е/E) — <code>'О' == 'O'</code> даёт <code>False</code>; буквы набирать самим (№8).</li>
 <li><strong><code>sorted</code> ставит Ё перед А</strong> — <code>key=алфавит.index</code> (№8).</li>
 <li><strong>Пары символов — <code>range(len(s) - 1)</code></strong>, иначе <code>s[i + 1]</code> выйдет за конец строки.</li>
@@ -2430,9 +2430,10 @@
 <h2 id="_10">Где встречается<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p><a href="../../tasks/task-4/">№4</a> (<code>startswith</code>), <a href="../../tasks/task-5/">№5</a> (двоичная запись строкой, срезы, <code>count</code>),
 <a href="../../tasks/task-8/">№8</a> (буквы, <code>sorted</code>, <code>count</code>), <a href="../../tasks/task-12/">№12</a> (лента — список символов),
-<a href="../../tasks/task-13/">№13</a> (цифры числа срезами, <code>replace</code>), <a href="../../tasks/task-14/">№14</a> (цифры в строке),
-<a href="../../tasks/task-17/">№17</a> (<code>len(str(x))</code>), <a href="../../tasks/task-23/">№23</a> и <a href="../../tasks/task-26/">№26</a> (<code>split</code>),
-<a href="../../tasks/task-24/">№24</a> (всё о строках, регулярные выражения), <a href="../../tasks/task-25/">№25</a> (<code>count</code>, палиндром, маски).</p>
+<a href="../../tasks/task-14/">№14</a> (цифры в строке), <a href="../../tasks/task-17/">№17</a> (<code>len(str(x))</code>),
+<a href="../../tasks/task-23/">№23</a> (цифры числа срезами, <code>replace</code>),
+<a href="../../tasks/task-24/">№24</a> (всё о строках, регулярные выражения), <a href="../../tasks/task-25/">№25</a> (<code>count</code>, палиндром, маски),
+<a href="../../tasks/task-26/">№26</a> (<code>split</code>).</p>
 
 
 
