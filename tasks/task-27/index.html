@@ -1967,9 +1967,9 @@ E = m(Vx² + Vy²) / 2 так, что энергии любых двух час�
 частицами одного кластера с признаком II — и Q2 — наибольшую энергию центра кластера. Ответ — целые части Q1 × 10 000 и
 Q2 × 10 000.</p>
 <p><strong>Решение.</strong> Это тот же шаблон, только «расстояние» между частицами — разность энергий <code>abs(a[0] - b[0])</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №27, демоверсия ЕГЭ-2027: частицы делятся на 4 кластера по кинетической энергии (разброс в кластере не больше 2,0);</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №27, демоверсия ЕГЭ-2027 (файл финальной, 17.11.2026): частицы делятся на 4 кластера по кинетической энергии (разброс в кластере не больше 2,0);</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># наибольшее расстояние между частицами одного кластера с признаком II и наибольшая энергия центра кластера</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: [800, 600, 500, 700]</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Ответ: [701, 501, 601, 801]</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Ответ: 539936 100704</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">dist</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
@@ -2024,7 +2024,7 @@ Q2 × 10 000.</p>
 </tr>
 <tr>
 <td>кластеры по энергии</td>
-<td>соседи — <code>abs(a[0] - b[0]) &lt; R</code>; R = 0,5 даёт ровно 4 кластера (500, 600, 700, 800 частиц)</td>
+<td>соседи — <code>abs(a[0] - b[0]) &lt; R</code>; R = 0,5 даёт ровно 4 кластера (501, 601, 701, 801 частица)</td>
 </tr>
 <tr>
 <td>центр — сумма модулей разности энергий</td>
