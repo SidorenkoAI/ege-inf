@@ -1850,12 +1850,6 @@
 <span>1 балл</span>
 <span>файл .odt / .docx</span></p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Черновик — на одобрение преподавателю</p>
-<p>Карточка новая (17.11.2026): в финальной демоверсии ЕГЭ-2027 №10 снова «поиск в тексте», как в 2026 году.
-Ответ демоверсии и все числа на странице проверены поиском LibreOffice и программой на Python; разбор видео,
-Решу ЕГЭ и КомпЕГЭ — ещё впереди.</p>
-</div>
 <div class="admonition abstract">
 <p class="admonition-title">Коротко</p>
 <p>Выделить <strong>только нужную главу</strong> → <strong>Ctrl+H</strong> → в «Найти» и «Заменить» одно и то же слово → галочки
@@ -1901,12 +1895,33 @@
 <td>ничего не выделять, «Только выбранное» снять</td>
 </tr>
 <tr>
+<td>«не считая сносок»</td>
+<td>искать только в основном тексте: <strong>Ctrl+A</strong> (сноски в выделение не попадают) + «Только выбранное». Без выделения «Заменить все» считает и сноски</td>
+</tr>
+<tr>
+<td>«в главах VIII и IX <strong>первой части</strong>»</td>
+<td>номера глав повторяются в каждой части — сначала найти заголовок части («ЧАСТЬ ПЕРВАЯ»), главы — после него</td>
+</tr>
+<tr>
+<td>«другие формы слова учитывать не следует»</td>
+<td>одно слово со «Слова целиком»: «Лбову» в счёт не попадёт</td>
+</tr>
+<tr>
+<td>«в любом падеже», «во всех формах»</td>
+<td><strong>каждую форму — отдельным поиском</strong> со «Слова целиком» и сложить</td>
+</tr>
+<tr>
 <td>сосчитать</td>
 <td>в «Найти» и «Заменить» — <strong>одно и то же</strong>, «Заменить все»; сообщение «Искомое слово заменено N раз»</td>
 </tr>
 </tbody>
 </table>
-<p>Замена «и» на «и» текст не меняет — нужен только счётчик. Сохранять файл не нужно.</p>
+<p>Замена «и» на «и» нужна только ради счётчика. Но при снятом «Учитывать регистр» LibreOffice пишет замену как
+набрано: все «И» станут «и». Файл <strong>не сохранять</strong>, а перед следующим поиском с учётом регистра — отменить замену
+(Ctrl+Z) или открыть файл заново.</p>
+<p>В <strong>Word</strong> то же самое: Ctrl+F → «Расширенный поиск» → «Больше &gt;&gt;» — «Только слово целиком», «Учитывать регистр»;
+кнопка «Найти в» → «Текущий фрагмент» (выделенная глава) или «Основной документ» (весь текст без сносок) — Word
+сам напишет, сколько найдено.</p>
 <h2 id="_3">Пример с разбором<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><strong>Задача</strong> (демоверсия ЕГЭ-2027, пересказ). Файл с повестью А. И. Куприна «Поединок». Сколько раз в тексте
 <strong>главы II</strong> встречается отдельное слово «и» или «И»? Файл для тренировки —
@@ -2010,6 +2025,34 @@
 <td>во всём тексте / в нескольких главах</td>
 <td>выделить нужные главы подряд или искать по главам и сложить</td>
 </tr>
+<tr>
+<td>главы <strong>одной части тома</strong> («Война и мир», ЕГЭ-2024, апробация-2026)</td>
+<td>найти заголовок части, главы — после него; глава I есть в каждой части</td>
+</tr>
+<tr>
+<td><strong>«не считая сносок»</strong> (ЕГЭ-2023, досрочный ЕГЭ-2025)</td>
+<td>Ctrl+A → «Только выбранное» ✓: ищется только основной текст</td>
+</tr>
+<tr>
+<td>в составе слов, <strong>«в том числе в сложных словах через дефис»</strong> (ЕГЭ-2024, демо-2025)</td>
+<td>разность двух поисков <strong>плюс</strong> вхождения перед дефисом: «по» в «по-гречески» «Слова целиком» считает отдельным словом — найти такие поиском «по-» без «Слова целиком» и прибавить</td>
+</tr>
+<tr>
+<td>отдельное слово, <strong>«слова с дефисами не учитывать»</strong></td>
+<td>из числа отдельных слов вычесть «из-за», «кто-то» и т. п.: поиски «-за» и «за-» без «Слова целиком»</td>
+</tr>
+<tr>
+<td>слово <strong>во всех формах / в любом падеже</strong></td>
+<td>каждую форму — отдельным поиском со «Слова целиком»; не забыть старые формы («Катериною», «которою»)</td>
+</tr>
+<tr>
+<td>одна <strong>повесть сборника</strong> («Страшная месть» в «Вечерах на хуторе…»)</td>
+<td>выделить от заголовка повести до заголовка следующей</td>
+</tr>
+<tr>
+<td><strong>два слова</strong> («ворон» и «ворона»)</td>
+<td>два поиска со «Слова целиком», сложить</td>
+</tr>
 </tbody>
 </table>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">В составе других слов</label></div>
@@ -2026,6 +2069,11 @@
 берёт абзацы между заголовками «II» и «III» и считает слово регулярным выражением: <code>(?&lt;!\w)и(?!\w)</code> — «перед и
 после не буква», то есть «слово целиком», <code>re.I</code> — без учёта регистра. На экзамене быстрее поиск в редакторе;
 программа пригодится, если ответ вызывает сомнение.</p>
+<p>Две строки в начале программы обязательны для файлов со сносками: текст сноски в <code>content.xml</code> стоит <strong>прямо
+внутри абзаца</strong> (<code>&lt;text:note&gt;…&lt;/text:note&gt;</code>). Без них программа посчитает слова сносок, а абзац со сноской
+оборвётся на её первой строке (проверено на файле «Поединка» с ЕГЭ: лишние вхождения из сносок и потерянные
+хвосты абзацев). Пробел в <code>.odt</code> бывает тегом <code>&lt;text:s/&gt;</code>, перенос строки — <code>&lt;text:line-break/&gt;</code>: их заменяем
+пробелом, иначе слова склеятся.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># №10, демоверсия ЕГЭ-2027: сколько раз в тексте главы II повести А. И. Куприна «Поединок» (файл 10.odt)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># встречается отдельное слово «и» или «И». Python — для проверки ответа, найденного поиском в LibreOffice / Word.</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Ответ: 93</span>
@@ -2033,16 +2081,18 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">xml</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="s1">'10.odt'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">'content.xml'</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>   <span class="c1"># odt — это zip, текст — в content.xml</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">abzacy</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">for</span> <span class="n">teg</span><span class="p">,</span> <span class="n">telo</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:(p|h)\b[^&gt;]*?(?:/&gt;|&gt;(.*?)&lt;/text:\1&gt;)'</span><span class="p">,</span> <span class="n">xml</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">):</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">telo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:s(?: text:c="(\d+)")?/&gt;'</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="s1">' '</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">),</span> <span class="n">telo</span><span class="p">)</span>  <span class="c1"># пробелы</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">abzacy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;[^&gt;]+&gt;'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="n">telo</span><span class="p">))</span>                       <span class="c1"># убрать остальную разметку</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">start</span> <span class="o">=</span> <span class="n">abzacy</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'II'</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>                  <span class="c1"># абзац после заголовка «II»</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">stop</span> <span class="o">=</span> <span class="n">abzacy</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'III'</span><span class="p">)</span>                      <span class="c1"># до заголовка «III»</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">glava</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">abzacy</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">])</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># «только слово целиком»: перед и после — не буква и не цифра; flags=re.I — без учёта регистра</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(?&lt;!\w)и(?!\w)'</span><span class="p">,</span> <span class="n">glava</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)))</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">xml</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:note .*?&lt;/text:note&gt;'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="n">xml</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>  <span class="c1"># сноски: их текст стоит внутри абзаца</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">xml</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:(tab|line-break)/&gt;'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="n">xml</span><span class="p">)</span>               <span class="c1"># табуляция и перенос строки — тоже пробел</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">abzacy</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">for</span> <span class="n">teg</span><span class="p">,</span> <span class="n">telo</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:(p|h)\b[^&gt;]*?(?:/&gt;|&gt;(.*?)&lt;/text:\1&gt;)'</span><span class="p">,</span> <span class="n">xml</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">):</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">telo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:s(?: text:c="(\d+)")?/&gt;'</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="s1">' '</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">),</span> <span class="n">telo</span><span class="p">)</span>  <span class="c1"># пробелы</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">abzacy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;[^&gt;]+&gt;'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="n">telo</span><span class="p">))</span>                       <span class="c1"># убрать остальную разметку</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="n">start</span> <span class="o">=</span> <span class="n">abzacy</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'II'</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>                  <span class="c1"># абзац после заголовка «II»</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">stop</span> <span class="o">=</span> <span class="n">abzacy</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'III'</span><span class="p">)</span>                      <span class="c1"># до заголовка «III»</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="n">glava</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">abzacy</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">])</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1"># «только слово целиком»: перед и после — не буква и не цифра; flags=re.I — без учёта регистра</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(?&lt;!\w)и(?!\w)'</span><span class="p">,</span> <span class="n">glava</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)))</span>
 </code></pre></div>
 <p>«В составе других слов» — разность двух поисков:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># №10 (своя, файл демоверсии 10.odt): сколько раз в главе II «Поединка» сочетание букв «не» (с любой буквы) встречается</span>
@@ -2054,18 +2104,29 @@
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">zipfile</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">xml</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="s1">'10.odt'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">'content.xml'</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">abzacy</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="k">for</span> <span class="n">teg</span><span class="p">,</span> <span class="n">telo</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:(p|h)\b[^&gt;]*?(?:/&gt;|&gt;(.*?)&lt;/text:\1&gt;)'</span><span class="p">,</span> <span class="n">xml</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">):</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">telo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:s(?: text:c="(\d+)")?/&gt;'</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="s1">' '</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">),</span> <span class="n">telo</span><span class="p">)</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="n">abzacy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;[^&gt;]+&gt;'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="n">telo</span><span class="p">))</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">glava</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">abzacy</span><span class="p">[</span><span class="n">abzacy</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'II'</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">abzacy</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'III'</span><span class="p">)])</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">vse</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'не'</span><span class="p">,</span> <span class="n">glava</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">))</span>                   <span class="c1"># поиск без «Слова целиком»</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">slovo</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(?&lt;!\w)не(?!\w)'</span><span class="p">,</span> <span class="n">glava</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">))</span>   <span class="c1"># с «Слова целиком»</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">vse</span><span class="p">)</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">slovo</span><span class="p">)</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">vse</span> <span class="o">-</span> <span class="n">slovo</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">xml</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:note .*?&lt;/text:note&gt;'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="n">xml</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">)</span>  <span class="c1"># сноски: их текст стоит внутри абзаца</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">xml</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:(tab|line-break)/&gt;'</span><span class="p">,</span> <span class="s1">' '</span><span class="p">,</span> <span class="n">xml</span><span class="p">)</span>               <span class="c1"># табуляция и перенос строки — тоже пробел</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">abzacy</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">for</span> <span class="n">teg</span><span class="p">,</span> <span class="n">telo</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:(p|h)\b[^&gt;]*?(?:/&gt;|&gt;(.*?)&lt;/text:\1&gt;)'</span><span class="p">,</span> <span class="n">xml</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">S</span><span class="p">):</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="n">telo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;text:s(?: text:c="(\d+)")?/&gt;'</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="s1">' '</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">),</span> <span class="n">telo</span><span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="n">abzacy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;[^&gt;]+&gt;'</span><span class="p">,</span> <span class="s1">''</span><span class="p">,</span> <span class="n">telo</span><span class="p">))</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">glava</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">abzacy</span><span class="p">[</span><span class="n">abzacy</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'II'</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="n">abzacy</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">'III'</span><span class="p">)])</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">vse</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">'не'</span><span class="p">,</span> <span class="n">glava</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">))</span>                   <span class="c1"># поиск без «Слова целиком»</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">slovo</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(?&lt;!\w)не(?!\w)'</span><span class="p">,</span> <span class="n">glava</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">))</span>   <span class="c1"># с «Слова целиком»</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">vse</span><span class="p">)</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">slovo</span><span class="p">)</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">vse</span> <span class="o">-</span> <span class="n">slovo</span><span class="p">)</span>
 </code></pre></div>
+</details>
+<details class="info">
+<summary>Откуда разновидности</summary>
+<p>Демоверсии ФИПИ 2025–2027; реальные ЕГЭ 2022–2024, досрочные ЕГЭ 2023 и 2025, ЕГКР 2024–2025, апробации
+2025–2026, открытый вариант 2025 — по каталогу задач №10
+<a href="https://kpolyakov.spb.ru/school/ege/gen.php?action=viewAllEgeNo&amp;egeId=10&amp;cat148=on">К. Полякова</a> (там же
+файлы текстов). Тексты на экзамене — «Поединок» А. И. Куприна, второй том «Войны и мира», «Отцы и дети»,
+«Севастопольские рассказы», Правила дорожного движения. Все разновидности из таблицы проверены на этих файлах
+поиском LibreOffice и программой на Python.</p>
 </details>
 <h2 id="_5">Типичные ошибки<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2076,9 +2137,28 @@
   главы; длинную главу удобно выделять щелчком в начале и Shift + щелчком в конце.</li>
 <li><strong>В Word после замены в выделенном фрагменте</strong> появляется вопрос, искать ли в остальной части документа, —
   ответить «Нет», иначе к числу добавятся вхождения из всего текста.</li>
+<li><strong>Второй поиск — после замены без регистра.</strong> «Заменить все» «и» → «и» без «Учитывать регистр» превращает все «И»
+  в «и» (в файле демоверсии было 256 «И» — после замены 0). Поиск «И» с учётом регистра после этого даст 0 — сначала
+  Ctrl+Z.</li>
+<li><strong>«Не считая сносок», а поиск — по всему документу.</strong> Без выделения «Заменить все» заходит и в сноски (в файлах
+  прошлых ЕГЭ — «Поединок», «Капитанская дочка» — их десятки). Проверено в LibreOffice: в «Поединке» слово
+  «сударь» без выделения заменено 3 раза, а в основном тексте его нет вовсе — все три в сносках-переводах.</li>
+<li><strong>Дефис — граница слова.</strong> «Слова целиком» находит «за» в «из-за», «по» в «по-гречески», «я» в «1-я», «не» в
+  опечатке «я-не». Если условие говорит о словах с дефисом — поправить ответ (см. «Разновидности»), если молчит —
+  считать, как нашёл поиск.</li>
+<li><strong>Номер главы без части.</strong> В «Войне и мире» глава I есть в каждой части: «главы I и IV второй части» — только
+  после заголовка «ЧАСТЬ ВТОРАЯ».</li>
+<li><strong>Заголовок не совпадает с номером.</strong> В файлах прошлых ЕГЭ бывают опечатки: глава X «Поединка» озаглавлена «X0»,
+  в «Войне и мире» заголовок «ХI» набран с русской «Х» — поиск «XI» латиницей его не найдёт. Главу искать
+  глазами между соседними номерами.</li>
+<li><strong>«е» и «ё» — разные буквы.</strong> Поиск «все» не находит «всё»: во втором томе «Войны и мира» «все» — 255 раз,
+  «всё» — 510 (LibreOffice и Python).</li>
+<li><strong>Формы слова — поиском основы.</strong> «Пугачев» без «Слова целиком» находит и «Пугачева», и «Пугачевщину», и
+  «пугачевцев». Каждую форму — отдельным поиском со «Слова целиком».</li>
 </ul>
 <h2 id="_6">Потренируйся<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>Задачи №10 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №10</strong>.</p>
+<p>Задачи №10 — в боте <a href="https://t.me/egeSidorenkoBot">@egeSidorenkoBot</a>: <strong>Тренировка → №10</strong> (задания ЕГЭ
+2022–2026 и демоверсий с файлами текстов).</p>
 
 
 
