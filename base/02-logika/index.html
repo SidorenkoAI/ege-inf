@@ -2197,11 +2197,11 @@
 </tr>
 <tr>
 <td>«при любом ходе» соперника (№19–21)</td>
-<td><code>all(…)</code> по ходам</td>
+<td><code>and</code> между ходами или <code>all(…)</code> по ходам</td>
 </tr>
 <tr>
 <td>«есть ход», «может выиграть» (№19–21)</td>
-<td><code>any(…)</code> по ходам</td>
+<td><code>or</code> между ходами или <code>any(…)</code> по ходам</td>
 </tr>
 </tbody>
 </table>
@@ -2242,8 +2242,8 @@
 <li><strong>Знак на единицу.</strong> «Более 500» — <code>&gt; 500</code>, «не менее» — <code>&gt;=</code>: файл ровно 500 Кбайт при «более 500» не подходит (№11).</li>
 <li><strong>ДЕЛ(90, A)</strong> — <code>90 % A == 0</code>, не <code>A % 90</code> (№15).</li>
 <li><strong><code>all([])</code> — <code>True</code>.</strong> Позиция без ходов в №19–21 — проверять отдельно.</li>
-<li><strong><code>any</code> и <code>all</code> в №19–21.</strong> «Неудачный ход Пети», «Ваня выиграл» — у соперника <code>any</code>; «при любом ходе» — <code>all</code>.
-  Перепутать — неверны все задачи такого вида (№19–21).</li>
+<li><strong><code>or</code> и <code>and</code> (<code>any</code> и <code>all</code>) в №19–21.</strong> «Неудачный ход Пети», «Ваня выиграл» — у соперника <code>or</code>; «при любом
+  ходе» — <code>and</code>. Перепутать — неверны все задачи такого вида (№19–21).</li>
 <li><strong>«Найдутся x, при которых ложно»</strong> — <code>any(not (…))</code>; через <code>all</code> ответ уходит на край <code>range</code> (Решу ЕГЭ 61361, №15).</li>
 <li><strong>Порядок в <code>and</code>.</strong> То, без чего вторая часть упадёт (<code>len(a) &gt; 0</code>), — первым; долгие проверки — последними (№9, №25).</li>
 <li><strong>Символы <code>˄</code> <code>˅</code> и похожие русские/латинские буквы</strong> в скопированной формуле — перенабирать руками (№2).</li>
